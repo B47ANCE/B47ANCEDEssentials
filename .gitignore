@@ -1,0 +1,15 @@
+dist/*
+!dist/.gitkeep
+
+# Machine-local linked tools, authentication/upload receipts, and caches.
+/.agents/
+/.codex/
+/.steamcmd-last-upload.sha256
+/.venv/
+/.env
+/.env.*
+__pycache__/
+*.py[cod]
+*.log
+/logs/
+/diagnostics/

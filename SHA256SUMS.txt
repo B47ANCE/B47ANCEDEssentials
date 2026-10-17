@@ -1,0 +1,5 @@
+fcb4276413b68529080faa8321d76631c4df233b6dedfdeb61ab4d874f82a830  dist/itjustWorks-0.5.1-workshop-ready.zip
+a8de7886145840f5d5702df8c081099491128355fea7a1e1fbe3c09d4dbc03f1  dist/itjustWorks-0.6.0-workshop-ready.zip
+23896979fdfb9958bc8382cf61e326468a526365d2b637b42181c1045d30aa22  dist/itjustWorks-0.7.0-workshop-ready.zip
+a0555e15a2aeb070e5810350a96bb1001e64336f754a8b0e7b540235edc2245f  dist/itjustWorks-0.9.0-workshop-ready.zip
+346c4f4fcbcb5e9eb5ce46a24e07c29733e086fa026260a1c87ab6de46dc3b48  dist/itjustWorks-0.9.1-workshop-ready.zip

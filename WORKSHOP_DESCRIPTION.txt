@@ -1,0 +1,52 @@
+[h1]B47ANCE'd Essentials[/h1]
+
+Configurable quality-of-life and cross-system convenience features for theWorks ecosystem.
+
+B47ANCE'd Essentials consolidates practical, independently configurable workflow improvements without taking ownership of simulation systems that belong to other Works modules.
+
+[b]Mod Version: 0.19.0[/b]
+
+[h2]Current Features[/h2]
+[list]
+[*]Live-refreshing combined proximity inventory built from vanilla-reachable nearby containers
+[*]Live-refreshing Equipped inventory view for worn, held, and attached items
+[*]Device-owned context submenus for supported device actions
+[*]Complete powerWorks multi-cell battery removal and replacement presentation
+[*]Exact-minute digital clocks and expanded military-watch information
+[*]Automatic key-ring filing
+[*]Bounded configurable inventory sorting with postcondition-verified server transfers
+[*]Bulk magazine handling and crafting-output routing
+[*]Hotbar reordering and map-symbol defaults
+[*]Read and watched tracking plus reward hints for literature, recipes, VHS tapes, and XP media
+[*]Inventory-selection and context-menu cleanup
+[*]Property-driven realistic ladders with contextual direction resolution
+[*]Discoverable Ladder → Climb Ladder submenu using the same revalidated native traversal request for ascent and descent
+[*]Bounded third-party ladder-property registration without per-map UI patches
+[*]Independent sandbox controls for gameplay features
+[*]Fail-closed one-handed melee/firearm pair classification foundation with third-party providers
+[*]Exact actor-root, nested, world, vehicle, and corpse references for authority-validated storage actions
+[/list]
+
+[h2]Ecosystem Integration[/h2]
+[list]
+[*]Uses powerWorks device capabilities when powerWorks is installed
+[*]Provides quality-of-life presentation without owning power, lighting, media progression, or storage simulation
+[*]Supports verified vanilla and third-party workflows through original compatibility adapters
+[*]Has no universal hard dependency
+[/list]
+
+[h2]Upcoming Features[/h2]
+[list]
+[*]Broader verified vanilla workflow improvements
+[*]Additional third-party device and inventory adapters
+[*]Controller, split-screen, hosted, and dedicated-server validation
+[*]Automatic movement and Space mounting after their native input and pre-fall interception points are verified
+[*]Independent-hand firing, melee, manipulation, reload, animation, authority, and multiplayer integration after native proof
+[/list]
+
+[b]Credits[/b]
+Project Director & Designer: B47ANCE
+Development, systems architecture, implementation, testing & documentation: Codex
+
+Workshop ID: 3788591728
+Mod ID: B47ANCEDEssentials
