@@ -1,0 +1,37 @@
+VERSION = 1,
+
+option B47ANCEDEssentials.EnableProximityInventory { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableProximityInventory, }
+option B47ANCEDEssentials.EnableSeparateEquippedInventory { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableSeparateEquippedInventory, }
+option B47ANCEDEssentials.EnableInventorySelectionRepair { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableInventorySelectionRepair, }
+option B47ANCEDEssentials.EnableDeviceBatteryMenuGrouping { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableDeviceBatteryMenuGrouping, }
+option B47ANCEDEssentials.EnableExactMinuteClock { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableExactMinuteClock, }
+option B47ANCEDEssentials.EnableAutoKeyRing { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableAutoKeyRing, }
+option B47ANCEDEssentials.AutoKeyRingIncludeNestedInventory { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_AutoKeyRingIncludeNestedInventory, }
+option B47ANCEDEssentials.AutoKeyRingPreserveFavorites { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_AutoKeyRingPreserveFavorites, }
+option B47ANCEDEssentials.AutoKeyRingMaxTransfersPerPass { type = integer, min = 1, max = 100, default = 25, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_AutoKeyRingMaxTransfersPerPass, }
+option B47ANCEDEssentials.EnableSortingAutomation { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableSortingAutomation, }
+option B47ANCEDEssentials.SortingRadius { type = integer, min = 1, max = 12, default = 5, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_SortingRadius, }
+option B47ANCEDEssentials.SortingAllowCategoryFallback { type = boolean, default = false, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_SortingAllowCategoryFallback, }
+option B47ANCEDEssentials.SortingPreserveFavorites { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_SortingPreserveFavorites, }
+option B47ANCEDEssentials.SortingIncludeMultipleFloors { type = boolean, default = false, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_SortingIncludeMultipleFloors, }
+option B47ANCEDEssentials.SortingMaxTransfersPerOperation { type = integer, min = 1, max = 500, default = 100, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_SortingMaxTransfersPerOperation, }
+option B47ANCEDEssentials.EnableBulkMagazineActions { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableBulkMagazineActions, }
+option B47ANCEDEssentials.BulkMagazinesIncludeNestedInventory { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_BulkMagazinesIncludeNestedInventory, }
+option B47ANCEDEssentials.BulkMagazinesMaximumPerAction { type = integer, min = 2, max = 100, default = 50, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_BulkMagazinesMaximumPerAction, }
+option B47ANCEDEssentials.EnableCraftingOutputRouting { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableCraftingOutputRouting, }
+option B47ANCEDEssentials.RouteSawedPlanksToGround { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_RouteSawedPlanksToGround, }
+option B47ANCEDEssentials.RouteHeavyCraftingOutputs { type = boolean, default = false, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_RouteHeavyCraftingOutputs, }
+option B47ANCEDEssentials.CraftingOutputWeightThreshold { type = double, min = 0.1, max = 50.0, default = 3.0, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_CraftingOutputWeightThreshold, }
+option B47ANCEDEssentials.EnableHotbarReordering { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableHotbarReordering, }
+option B47ANCEDEssentials.EnableMapSymbolDefaultScale { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableMapSymbolDefaultScale, }
+option B47ANCEDEssentials.MapSymbolDefaultScalePercent { type = integer, min = 25, max = 300, default = 100, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_MapSymbolDefaultScalePercent, }
+option B47ANCEDEssentials.EnableLiteratureTracking { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableLiteratureTracking, }
+option B47ANCEDEssentials.EnableRecordedMediaTracking { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableRecordedMediaTracking, }
+option B47ANCEDEssentials.EnableMediaRewardHints { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableMediaRewardHints, }
+option B47ANCEDEssentials.LiteratureInventoryScanLimit { type = integer, min = 25, max = 1000, default = 250, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_LiteratureInventoryScanLimit, }
+option B47ANCEDEssentials.EnableContextMenuCleanup { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableContextMenuCleanup, }
+option B47ANCEDEssentials.ContextGroupDebugActions { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_ContextGroupDebugActions, }
+option B47ANCEDEssentials.ContextGroupAdminActions { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_ContextGroupAdminActions, }
+option B47ANCEDEssentials.EnableLadderClimbing { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_EnableLadderClimbing, }
+option B47ANCEDEssentials.LadderMaximumLevels { type = integer, min = 1, max = 32, default = 8, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_LadderMaximumLevels, }
+option B47ANCEDEssentials.LadderRequireSafeLanding { type = boolean, default = true, page = B47ANCEDEssentials, translation = B47ANCEDEssentials_LadderRequireSafeLanding, }

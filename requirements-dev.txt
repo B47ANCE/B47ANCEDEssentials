@@ -1,0 +1,2 @@
+# Host regressions only; never shipped as a PZ runtime dependency.
+lupa==2.8

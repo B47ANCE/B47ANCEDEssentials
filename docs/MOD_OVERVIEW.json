@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "id": "essentials",
+  "name": "Essentials",
+  "version": "0.19.0",
+  "source_digest": "643de6d4b14930a34d7c1953cf75d3e8894af3d6b99b33bd8e894c22fe5d0f7f",
+  "reviewed": true,
+  "features": [
+    {"status": "Source", "text": "Nearby inventory aggregation, Equipped view, exact-minute watch clock, selection repair and automatic key filing."},
+    {"status": "Source", "text": "Device-owned menus, matching-magazine actions, craft output routing, hotbar ordering, map defaults, literature/media progress and context grouping."},
+    {"status": "Source", "text": "Bounded seeded-container sorting with server-side access/capacity checks and committed-ownership replication; property-driven native ladder context actions."},
+    {"status": "Foundation", "text": "Cycle-safe inventory traversal, exact actor/nested/world/vehicle/corpse references and bounded replay-aware batch transport. No UI automatically invokes general batch transfers."},
+    {"status": "Foundation", "text": "Heavy-object provider observations and authoritative reserve/start/complete/cancel lifecycle; no production physics provider or generic movement engine."},
+    {"status": "Foundation", "text": "Fail-closed independent-hand equipment classification only; no dual-wield attacks, reloads, animations or input integration."},
+    {"status": "Blocked", "text": "Ear-protector audio needs a verified reversible Lua-accessible diegetic listener path. Camera/visibility Java proposals are superseded by Lua-only policy."},
+    {"status": "Blocked", "text": "Automatic traversal needs verified consumable input and safe native transition hooks; context-action support does not prove these capabilities."}
+  ],
+  "limits": "Reviewed source description only. 0.19.0 SP and dedicated multiplayer NOT TESTED; G7 and stable G8 BLOCKED. Rename requires coordinated mod lists, sandbox presets and consumers. Legacy powerWorks adapter compatibility with renamed Power is unverified. No hard mod dependencies.",
+  "evidence": [
+    "README.md",
+    "VERSION",
+    "Contents/mods/B47ANCEDEssentials/42/mod.info",
+    "Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/SortingServer.lua",
+    "Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua",
+    "docs/RENAME_COMPATIBILITY.md",
+    "docs/MASTER_ROADMAP.md",
+    "docs/GITHUB_ONBOARDING.md",
+    "docs/VALIDATION_0.19.0.md"
+  ],
+  "relations": [
+    {"target": "power", "kind": "Optional", "text": "Device-menu and watch adapters probe the legacy powerWorks namespace/provider contract. No current renamed-Power compatibility or runtime connection is claimed."}
+  ]
+}

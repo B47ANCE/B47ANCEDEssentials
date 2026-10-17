@@ -1,0 +1,9 @@
+B47ANCE'd Essentials
+
+Configurable workflow improvements that keep vanilla actions, balance, and authority intact while removing repetitive inventory and interface work.
+
+Includes proximity and equipped inventory views, device-owned action menus, exact-minute clocks, selection repair, automatic key-ring filing, bounded server-authoritative sorting, bulk magazines, sensible crafting output, hotbar ordering, map defaults, literature status, context cleanup, and property-driven realistic ladders.
+
+Author: B47ANCE
+Version: 0.19.0
+Mod ID: B47ANCEDEssentials

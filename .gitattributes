@@ -1,0 +1,5 @@
+# Retain original bytes, and recognize CRLF endings during whitespace checks.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# These historical audit documents deliberately use Markdown two-space hard breaks.
+docs/BUILD42_EAR_PROTECTION_AUDIO_AUDIT.md whitespace=-blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/CSR_PROVENANCE_AUDIT.md whitespace=-blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

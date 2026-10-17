@@ -1,0 +1,9 @@
+name=B47ANCE'd Essentials
+id=B47ANCEDEssentials
+author=B47ANCE
+description=Configurable vanilla-plus workflow improvements for proximity and equipped inventory views, inventory selection, device menus, exact-minute clocks, key filing, storage sorting, magazines, crafting output, hotbars, maps, literature, context menus, and realistic ladders.
+poster=thumbnail.png
+icon=icon.png
+tags=Build 42;Quality of Life;Framework
+versionMin=42.20.3
+modversion=0.19.0
