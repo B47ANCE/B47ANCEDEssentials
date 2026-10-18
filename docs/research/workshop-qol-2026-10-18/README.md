@@ -1,10 +1,12 @@
 # Downloaded Workshop quality of life audit
 
+**Current Essentials-only plan:** [top 25](TOP_25_PLAN.md), [29 eligible entries and 15 ownership exclusions](ESSENTIALS_RANKING.md), [decision ledger](essentials-only.json). All 20 current Essentials entries stay included; five new proposals fill the remaining slots. The 44-entry ranking below is the broader portfolio comparison, not an Essentials implementation list.
+
 The [portfolio ownership audit](PORTFOLIO_OWNERSHIP.md) checks all 44 retained entries against 28 local projects, identifies existing coverage and corrects proposed owners. Auto Clean already covers selected-area cleaning; SPXTRM is the lighting owner, UI is presentation, and Health Care owns treatment.
 
 The complete vanilla recheck leaves **44 ranked entries**: **20 existing Essentials entries** and **24 specific additions**. Every prior requirement is accounted for in [the comparison matrix](VANILLA_RECHECK.md): **37 native-covered proposals removed**, **33 uncertain proposals held outside the ranking**, and **2 duplicates merged**. All 21 original Essentials source/foundation identifiers remain represented; container inspection is included under nested inspection rather than counted twice.
 
-The downloaded census remains **595 copies / 592 distinct Workshop IDs** (591 Steam-client folders and four SteamCMD-cache folders). The [new top 25](TOP_25_PLAN.md) retains existing Essentials features and plans only the specific remaining workflow. Native search, recipe requirements/favorites, map centering/legend/sharing, ordinary medical consent and other existing controls are not proposed as new features.
+The downloaded census remains **595 copies / 592 distinct Workshop IDs** (591 Steam-client folders and four SteamCMD-cache folders). The [historical portfolio top 25](PORTFOLIO_TOP_25_HISTORY.md) recorded the earlier cross-project plan; the Essentials-only plan above supersedes it. Native search, recipe requirements/favorites, map centering/legend/sharing, ordinary medical consent and other existing controls are not proposed as new features.
 
 - [Complete vanilla recheck and all removals](VANILLA_RECHECK.md)
 - [Top 25 implementation plans](TOP_25_PLAN.md)

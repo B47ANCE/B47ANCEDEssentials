@@ -1,568 +1,574 @@
-# Top 25 after the complete vanilla recheck
+# Essentials-only top 25
 
-[Portfolio ownership audit](PORTFOLIO_OWNERSHIP.md) corrects project assignments and distinguishes coverage outside Essentials. NEW still means absent from Essentials, not absent from our portfolio. Scores and the top-25 membership are unchanged.
+This replaces the cross-project top 25. **All 20 existing Essentials source/partial/foundation entries are retained**, representing all 21 original identifiers (`container-open` is merged into `nested-view`). Five slots go to the highest-scored new Essentials workflows. The 29 eligible entries and every excluded proposal are recorded in [the ranking](ESSENTIALS_RANKING.md) and [decision ledger](essentials-only.json).
 
-This plan includes existing Essentials features as requested. Fully native-covered proposals and unproven additions are not candidates. Read [all 116 dispositions](VANILLA_RECHECK.md) for removals and evidence limits. No gameplay implementation is performed by this research update.
+The retained set is sorted by estimated impact, with stable-ID tie ordering. Because existing features must stay included, this is a preservation-constrained selection: four eligible new ideas remain outside the top 25, even where they outscore a retained foundation. No new idea was invented or split into extra entries to reach 25. Scores remain ordinal estimates from the reviewed scoped requirements, not measured benefits or implementation readiness.
 
-## Shared gates and delivery order
+Existing means source is present, Partial means narrower behavior, and Foundation means supporting contracts without the complete workflow. **NEW is unimplemented. No entry is runtime-verified by this research.** Existing adapters are retained under the user exception; that does not authorize duplicating their providers' gameplay systems.
 
-1. Preserve native controls, information/knowledge limits, duration, capacity and authority. Implement only the remaining scope below. A local-source comparison is not runtime proof; reproduce the specific gap in a vanilla-only test before implementing any new slice.
-2. Validate current Essentials behavior first: nearby/equipped views, selection, sorting, magazines, media, output routing, hotbar, key filing and map defaults. Keep foundations labeled as foundations; a classifier is not dual-wield combat and heavy-object orchestration is not physics.
-3. Develop protected-item/read-model adapters, then explicit transfer/quantity previews. Use current stable references and authoritative committed-result handling; do not introduce a second inventory engine.
-4. Add bounded reading or mechanics planners one native-action adapter at a time; validate Auto Clean's existing selected-area cleaner instead of rebuilding it. Vanilla already has timed-action queues; no new generic queue engine is needed.
-5. State shared-state ownership, execution side, synchronization, persistence, join/reconnect and restart behavior. Reuse verified native synchronization. New shared mutations require safe server validation; stop if the model is unresolved. Local presentation uses no custom gameplay networking.
-6. Every meaningful behavior needs reviewed sandbox policy with stable/localized identifiers, bounds and old-save defaults. Native local UI preferences own style/layout. Proposed keys are design candidates only, not implemented configuration. Record each future target SemVer and keep its mirrors synchronized.
-7. Independent implementation uses only neutral requirements and verified vanilla APIs. No third-party algorithms, distinctive architecture, taxonomies, assets, strings or translations. Independent clean-room signoff remains PENDING.
-8. Add targeted offline tests and SP evidence. Shared gameplay needs dedicated two-client G7 evidence before stable G8; existing offline checks and this review prove neither. No game, server, deploy, package or publish is authorized here.
+## Selection
 
-S/M/L are relative slice sizes, not calendar estimates. Ranking is estimated impact; delivery order follows dependencies. Other project owners are proposed and must be checked in their own fresh repositories before edits.
+| Rank | Essentials feature | Coverage | Impact |
+|---:|---|---|---:|
+| 1 | [Reachable nearby-loot view](#nearby-view) | IMPLEMENTED | 96 |
+| 2 | [Validated bulk-transfer preview and execution](#batch-transfer) | FOUNDATION | 94 |
+| 3 | [Sort into nearby seeded containers](#storage-sort) | PARTIAL | 92 |
+| 4 | [Preserve inventory selection through refreshes](#selection) | IMPLEMENTED | 89 |
+| 5 | [Protect items during Essentials bulk actions](#item-protection) | PARTIAL | 88 |
+| 6 | [Group related context-menu actions](#context) | PARTIAL | 87 |
+| 7 | [Inspect nested bags without unpacking](#nested-view) | FOUNDATION | 85 |
+| 8 | [Choose an exact whole-item transfer quantity](#take-quantity) | NEW | 83 |
+| 9 | [Separate equipped items from carried inventory](#equipment-view) | IMPLEMENTED | 81 |
+| 10 | [Show native reading/media progress and carried duplicates](#media-progress) | IMPLEMENTED | 81 |
+| 11 | [Load or unload matching magazines in batches](#magazine-batch) | IMPLEMENTED | 78 |
+| 12 | [Item and recipe action shortcuts](#shortcuts) | NEW | 78 |
+| 13 | [Route bulky native crafting output safely](#craft-output) | IMPLEMENTED | 74 |
+| 14 | [Reorder existing hotbar slots](#hotbar) | IMPLEMENTED | 74 |
+| 15 | [Remember the default map-symbol scale](#map-annotation) | PARTIAL | 72 |
+| 16 | [Group battery actions under their device](#device-menus) | IMPLEMENTED | 71 |
+| 17 | [Queue selected vanilla vehicle-part services](#maintenance-queue) | NEW | 71 |
+| 18 | [Queue selected eligible native books](#reading-queue) | NEW | 70 |
+| 19 | [Automatically file keys into carried key rings](#key-filing) | IMPLEMENTED | 69 |
+| 20 | [Explain Essentials partial-transfer outcomes](#transfer-feedback) | FOUNDATION | 68 |
+| 21 | [Mark an owned book or media item for later](#personal-marks) | NEW | 63 |
+| 22 | [Independent-hand compatibility classifier](#equipment-swap) | PARTIAL | 62 |
+| 23 | [Display permitted watch time to the minute](#clock) | IMPLEMENTED | 59 |
+| 24 | [Heavy-object provider lifecycle foundation](#heavy-movement) | FOUNDATION | 51 |
+| 25 | [Expose valid tagged-ladder interactions](#ladder) | IMPLEMENTED | 49 |
 
-## 1. One view for reachable nearby loot
+## Shared implementation gates
 
-Impact **96**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+1. Retain current behavior before expanding it. Source/foundation labels must not become claims of working dual wield, physics, complete nested browsing or a finished bulk-transfer interface.
+2. Use original Lua-only code and verified vanilla APIs; no third-party code, algorithms, architecture, assets, text or taxonomies are imported. Provenance stays in the broader census. Independent clean-room signoff remains PENDING.
+3. Preserve native time, skill, tools, resources, knowledge, capacity and access. Each new workflow needs a reproduced non-native gap and exact installed-build API evidence before implementation. Do not revive native search or the other vanilla removals.
+4. Clients supply intent. Authority revalidates shared mutations and persists/synchronizes results using verified native behavior where possible. Reconnect/restart, replay, competing actors and uncertain completion remain explicit acceptance gates. Pure local presentation requires no custom gameplay networking.
+5. Reuse current sandbox settings. Meaningful new shared behavior needs server-authoritative localized settings, stable identifiers, bounds/defaults and existing-save policy; identifiers below are proposals until implementation review. Technical safety limits remain internal. Local appearance preferences do not override gameplay policy.
+6. Do not add dependencies or move code through this plan. UI may supply controls; Power owns energy, Knowledge & Wisdom owns custom knowledge, Quartermaster owns designated storage/logistics, and domain providers own their state. Known legacy Power adapter incompatibility remains open.
+7. This is documentation at Essentials 0.19.2. Record a target SemVer before any future implementation. Offline tests do not prove native SP or dedicated G7; gameplay stable G8 remains blocked without the required dedicated evidence. No build, deploy, upload or launch is part of this update.
 
-**Portfolio ownership.** Keep the admitted-root nearby projection. Quartermaster can inspect multiple storage targets, but that is not a replacement loot pane. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+## Feature breakdown and implementation slices
 
-**Already vanilla.** Vanilla discovers individual reachable loot containers and exposes their buttons.
+<a id="nearby-view"></a>
+## 1. Reachable nearby-loot view
 
-**Retained scope.** Retain Essentials' admitted-root aggregate; do not replace native discovery or expand reach.
+Impact **96**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**First slice.** Retain the current aggregator. Review source admission, refresh invalidation and coexistence with standalone inventory mods; add only missing source labels and failure explanations after runtime reproduction.
+**What it does / Essentials boundary.** Combine only real containers already admitted by vanilla. Keep true item sources and native access; no Quartermaster storage scanner.
 
-**Ownership and lifecycle.** Pure read projection of currently admitted vanilla loot buttons. Preserve true source containers and item identity. Do not persist projected contents or synchronize a second inventory.
+**Native baseline.** Vanilla discovers individual reachable loot containers and exposes their buttons.
 
-**Settings and existing saves.** Retain existing proximity master, scan and safety settings. No new search-radius slider that exceeds native loot admission. Any optional label is a presentation choice.
+**Next Essentials slice.** Retain the current aggregator. Review source admission, refresh invalidation and coexistence with standalone inventory mods; add only missing source labels and failure explanations after runtime reproduction.
 
-**Acceptance scenarios.** Walk across admission boundaries, close a door, stream a vehicle out, change corpse state and reconnect. Each real item appears once; locked or removed roots disappear. Compare with standalone Proximity Inventory enabled and disabled.
+**Authority and lifecycle.** Pure read projection of currently admitted vanilla loot buttons. Preserve true source containers and item identity. Do not persist projected contents or synchronize a second inventory.
 
-**Risk and dependency gates.** Medium: admitted-root lifecycle and replacement-pane interoperability. Dependencies: native/current implementation first.
+**Settings / existing saves.** Retain existing proximity master, scan and safety settings. No new search-radius slider that exceeds native loot admission. Any optional label is a presentation choice.
 
-**Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native groups: inventory in [the source comparison](VANILLA_RECHECK.md).
+**Acceptance.** Walk across admission boundaries, close a door, stream a vehicle out, change corpse state and reconnect. Each real item appears once; locked or removed roots disappear. Compare with standalone Proximity Inventory enabled and disabled.
 
-## 2. Safe bulk transfer between selected containers
+**Risk and dependencies.** Medium: admitted-root lifecycle and replacement-pane interoperability. Dependencies: native/current implementation first.
 
-Impact **94**; Essentials **FOUNDATION**; owner **Essentials + Quartermaster**; effort **L**.
+**Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native evidence groups: inventory in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Portfolio ownership.** Essentials retains its reference/transaction service. Quartermaster already owns a separate logistics executor. A general explicit preview remains unfinished; do not merge executors or introduce a dependency without a reviewed contract. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+<a id="batch-transfer"></a>
+## 2. Validated bulk-transfer preview and execution
 
-**Already vanilla.** Vanilla already transfers selected items, all items and matching types with timed actions.
+Impact **94**; coverage **FOUNDATION**; owner **Essentials**; effort **L**.
 
-**Retained scope.** Retain the existing reference/replay/authority foundation; proposed UI is only an explicit multi-source transaction preview and result workflow, not a new Transfer All button.
+**What it does / Essentials boundary.** Retain Essentials stable references, replay binding and transfer core; finish its own explicit preview/result workflow only. Quartermaster keeps its logistics executor and rules.
 
-**First slice.** Expose the existing transfer foundation through an explicit preview and finite confirmation workflow. First support player-selected carried and ordinary world-container items; extend vehicle and corpse domains only after dedicated tests.
+**Native baseline.** Vanilla already transfers selected items, all items and matching types with timed actions.
 
-**Ownership and lifecycle.** Client supplies intent and stable references. Server re-resolves actor, source, destination, ownership, access, capacity and item restrictions for every move. Use the existing replay binding and committed-result snapshots; never persist live Lua item pointers.
+**Next Essentials slice.** Complete only Essentials' explicit selected-item preview and committed-result workflow over its existing exact-reference/transfer service. Do not merge in Quartermaster executors or designation policy.
 
-**Settings and existing saves.** Reuse current operation and traversal limits. Propose EnableBatchTransfer=false until runtime gates pass; protect favorites and equipped items by default. Avoid configurable retry/protocol internals.
+**Authority and lifecycle.** Client supplies intent and stable references. Server re-resolves actor, source, destination, ownership, access, capacity and item restrictions for every move. Use the existing replay binding and committed-result snapshots; never persist live Lua item pointers.
 
-**Acceptance scenarios.** Test two clients moving the same item, duplicate and reordered requests, disconnect after commit, full destination, removed container, invalid source and partial completion. Inventory totals and unique ownership must remain conserved after restart.
+**Settings / existing saves.** Reuse current operation and traversal limits. Propose EnableBatchTransfer=false until runtime gates pass; protect favorites and equipped items by default. Avoid configurable retry/protocol internals.
 
-**Risk and dependency gates.** High: duplication, replay handling and authority. A preview alone is not authorization. Dependencies: item-protection, selection.
+**Acceptance.** Test two clients moving the same item, duplicate and reordered requests, disconnect after commit, full destination, removed container, invalid source and partial completion. Inventory totals and unique ownership must remain conserved after restart.
 
-**Evidence.** [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [InventoryTransferServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/InventoryTransferServer.lua); [InventoryTransferClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryTransferClient.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native groups: inventory, actions in [the source comparison](VANILLA_RECHECK.md).
+**Risk and dependencies.** High: duplication, replay handling and authority. A preview alone is not authorization. Dependencies: item-protection, selection.
 
-## 3. Put loot into designated or seeded storage
+**Evidence.** [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [InventoryTransferServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/InventoryTransferServer.lua); [InventoryTransferClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryTransferClient.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-Impact **92**; Essentials **PARTIAL**; owner **Quartermaster + Essentials**; effort **M**.
+<a id="storage-sort"></a>
+## 3. Sort into nearby seeded containers
 
-**Portfolio ownership.** Quartermaster already supplies designated category/item rules, priorities and sorting. Keep current Essentials seeded sorting for standalone use; do not rebuild designation policy. Prevent competing menu actions/plans when both are enabled. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+Impact **92**; coverage **PARTIAL**; owner **Essentials**; effort **M**.
 
-**Already vanilla.** Native transfers choose a destination; container discovery is not category/seed destination planning.
+**What it does / Essentials boundary.** Retain current bounded seeded matching only. Category designations, storage presets, room allocations and building logistics remain Quartermaster work.
 
-**Retained scope.** Retain bounded Essentials seeded sorting; richer shared designation rules remain Quartermaster work.
+**Native baseline.** Native transfers choose a destination; container discovery is not category/seed destination planning.
 
-**First slice.** Keep Essentials' bounded seeded-container behavior and make its exclusions and partial results visible. Route richer category designations to Quartermaster via a reviewed optional contract; do not introduce a second competing taxonomy or storage authority.
+**Next Essentials slice.** Retain seeded-container matching and clarify eligible/skipped destinations/results. Do not implement designated category storage, presets, quotas, room/building logistics or a new taxonomy.
 
-**Ownership and lifecycle.** The existing server sorting and transfer core owns mutations. Quartermaster would own shared destination rules and validate edits. Resolve storage identity on authority; replicate committed changes and read canonical rules on join.
+**Authority and lifecycle.** The existing server sorting and transfer core owns mutations. Quartermaster would own shared destination rules and validate edits. Resolve storage identity on authority; replicate committed changes and read canonical rules on join.
 
-**Settings and existing saves.** Retain existing exact-type preference, category fallback, favorite protection and bounded range settings. Future designation policy belongs to Quartermaster's authoritative sandbox; client presentation never overrides it.
+**Settings / existing saves.** Retain existing exact-type preference, category fallback, favorite protection and bounded range settings. Future designation policy belongs to Quartermaster's authoritative sandbox; client presentation never overrides it.
 
-**Acceptance scenarios.** Test seeded ties, no eligible destination, stacked and nested containers, capacity changes mid-sort, safehouse access, two clients sorting concurrently, reconnect and restart. Confirm each moved item has one owner and native timing is retained where required.
+**Acceptance.** Test seeded ties, no eligible destination, stacked and nested containers, capacity changes mid-sort, safehouse access, two clients sorting concurrently, reconnect and restart. Confirm each moved item has one owner and native timing is retained where required.
 
-**Risk and dependency gates.** High: shared ownership and cross-project policy overlap. Dependencies: item-protection, batch-transfer.
+**Risk and dependencies.** High: shared ownership and cross-project policy overlap. Dependencies: item-protection, batch-transfer.
 
-**Evidence.** [SortingCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/SortingCore.lua); [SortingServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/SortingServer.lua); [SortingClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/SortingClient.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua). Native groups: inventory, actions in [the source comparison](VANILLA_RECHECK.md).
+**Evidence.** [SortingCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/SortingCore.lua); [SortingServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/SortingServer.lua); [SortingClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/SortingClient.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-## 4. Keep inventory selection through refreshes
+<a id="selection"></a>
+## 4. Preserve inventory selection through refreshes
 
-Impact **89**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+Impact **89**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Portfolio ownership.** Keep native inventory selection repair here. The UI library has focus helpers, not this inventory integration. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**What it does / Essentials boundary.** Repair local native-pane selection by surviving item identity. Do not build a replacement inventory interface.
 
-**Already vanilla.** Native pane rebuilds and transfer actions maintain their own row/selection state.
+**Native baseline.** Native pane rebuilds and transfer actions maintain their own row/selection state.
 
-**Retained scope.** Retain Essentials' stable-item selection repair and verify regressions against the native rebuild lifecycle.
+**Next Essentials slice.** Retain the current selection repair and review edge cases around filtered, nested and virtual views. Add stable focus restoration only where native controller behavior leaves a reproducible gap.
 
-**First slice.** Retain the current selection repair and review edge cases around filtered, nested and virtual views. Add stable focus restoration only where native controller behavior leaves a reproducible gap.
+**Authority and lifecycle.** Local selection and focus only. Preserve identity for surviving visible items; remove destroyed or inaccessible items. No gameplay persistence or network commands.
 
-**Ownership and lifecycle.** Local selection and focus only. Preserve identity for surviving visible items; remove destroyed or inaccessible items. No gameplay persistence or network commands.
+**Settings / existing saves.** Use existing selection feature toggle. Any optional focus preference remains local and must not change which items a bulk gameplay action is permitted to move.
 
-**Settings and existing saves.** Use existing selection feature toggle. Any optional focus preference remains local and must not change which items a bulk gameplay action is permitted to move.
+**Acceptance.** Test sorting, stack expansion, item removal, pane switch, search changes, controller selection and split-screen. A removed item must never remain an actionable hidden selection.
 
-**Acceptance scenarios.** Test sorting, stack expansion, item removal, pane switch, search changes, controller selection and split-screen. A removed item must never remain an actionable hidden selection.
+**Risk and dependencies.** Low to medium: native row rebuilding and replacement UI hooks. Dependencies: native/current implementation first.
 
-**Risk and dependency gates.** Low to medium: native row rebuilding and replacement UI hooks. Dependencies: native/current implementation first.
+**Evidence.** [InventorySelectionRepair.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventorySelectionRepair.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Native evidence groups: inventory in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Evidence.** [InventorySelectionRepair.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventorySelectionRepair.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Native groups: inventory in [the source comparison](VANILLA_RECHECK.md).
+<a id="item-protection"></a>
+## 5. Protect items during Essentials bulk actions
 
-## 5. Protect favorites and reserved equipment from bulk actions
+Impact **88**; coverage **PARTIAL**; owner **Essentials**; effort **M**.
 
-Impact **88**; Essentials **PARTIAL**; owner **Essentials + Quartermaster**; effort **M**.
+**What it does / Essentials boundary.** Apply favorite/equipped/crafting/reservation checks to Essentials-owned operations where verified. Do not create a global Dibs, reservation or protection engine for other mods.
 
-**Portfolio ownership.** Both executors already check some protected states. Quartermaster SupplyAPI checks favorites, equipped/attached and crafting-consumed items. Define interoperability for active reservations; no portfolio-wide protection API is established. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Native baseline.** Native favorite checks already protect ordinary bulk transfers and some destructive operations.
 
-**Already vanilla.** Native favorite checks already protect ordinary bulk transfers and some destructive operations.
+**Next Essentials slice.** Audit and consistently apply protection to Essentials-owned transfer/sorting/queue entry points. Revalidate at execution; leave Quartermaster Dibs and cross-mod reservation authority with their owners.
 
-**Retained scope.** Retain only consistency and protected-equipment checks in Essentials-owned workflows; do not add a second Favorite feature.
+**Authority and lifecycle.** For shared mutations the server checks authoritative protection and equipment state at execution. Client marks are advisory unless a validated server policy stores them. Avoid inventing persistent item flags until their native lifecycle is verified.
 
-**First slice.** Document one original eligibility policy across existing key filing, sorting and magazine helpers before exposing new bulk operations. Add an explicit protected-item explanation; do not silently override the native favorite flag.
+**Settings / existing saves.** Retain existing favorite protection. Propose ProtectEquippedItems=true and an explicit per-operation opt-in override only where server policy allows it. Confirm existing keys to avoid conflicting mirrors.
 
-**Ownership and lifecycle.** For shared mutations the server checks authoritative protection and equipment state at execution. Client marks are advisory unless a validated server policy stores them. Avoid inventing persistent item flags until their native lifecycle is verified.
+**Acceptance.** Mark an item favorite or equip it after preview, retry the request, change character and reconnect. Protected items stay untouched; manual native actions remain available with clear scope.
 
-**Settings and existing saves.** Retain existing favorite protection. Propose ProtectEquippedItems=true and an explicit per-operation opt-in override only where server policy allows it. Confirm existing keys to avoid conflicting mirrors.
+**Risk and dependencies.** High: a client-only exclusion is insufficient for a shared transaction. Native favorite visibility/replication is UNKNOWN until audited; do not label a client preference as an authoritative reservation. Dependencies: native/current implementation first.
 
-**Acceptance scenarios.** Mark an item favorite or equip it after preview, retry the request, change character and reconnect. Protected items stay untouched; manual native actions remain available with clear scope.
+**Evidence.** [SortingCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/SortingCore.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [AutoKeyRing.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/AutoKeyRing.lua); [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Risk and dependency gates.** High: a client-only exclusion is insufficient for a shared transaction. Native favorite visibility/replication is UNKNOWN until audited; do not label a client preference as an authoritative reservation. Dependencies: native/current implementation first.
+<a id="context"></a>
+## 6. Group related context-menu actions
 
-**Evidence.** [SortingCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/SortingCore.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [AutoKeyRing.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/AutoKeyRing.lua); [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Native groups: inventory, actions in [the source comparison](VANILLA_RECHECK.md).
+Impact **87**; coverage **PARTIAL**; owner **Essentials**; effort **S**.
 
-## 6. Make context actions easier to find
+**What it does / Essentials boundary.** Keep current native-menu grouping and preserved callbacks. Domain actions retain their own authorization; no shared-UI overhaul.
 
-Impact **87**; Essentials **PARTIAL**; owner **Essentials**; effort **S**.
+**Native baseline.** Vanilla has submenus, disabled reasons and native option callbacks.
 
-**Portfolio ownership.** Keep native context grouping here. Domain callbacks and validation remain with their owning mods; UI may supply reusable controls. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Next Essentials slice.** Retain device and developer grouping. Extend only demonstrably crowded families with an original grouping policy, localized labels and preserved option objects; coordinate overlapping menu providers.
 
-**Already vanilla.** Vanilla has submenus, disabled reasons and native option callbacks.
+**Authority and lifecycle.** Local presentation; callbacks and permissions remain the original owners' responsibility. The grouping layer never recreates, elevates or executes callbacks automatically.
 
-**Retained scope.** Retain Essentials device/developer grouping; no wholesale context-menu replacement.
+**Settings / existing saves.** Keep existing menu toggles. Propose one opt-in group policy per meaningful family, not individual option micro-settings. Technical ordering and UI geometry remain internal.
 
-**First slice.** Retain device and developer grouping. Extend only demonstrably crowded families with an original grouping policy, localized labels and preserved option objects; coordinate overlapping menu providers.
+**Acceptance.** Compare callback target and arguments before and after grouping; test disabled options, nested submenus, tooltip ownership, controller back navigation and duplicate providers.
 
-**Ownership and lifecycle.** Local presentation; callbacks and permissions remain the original owners' responsibility. The grouping layer never recreates, elevates or executes callbacks automatically.
+**Risk and dependencies.** Medium: compatibility with mods that mutate the same option objects. Dependencies: native/current implementation first.
 
-**Settings and existing saves.** Keep existing menu toggles. Propose one opt-in group policy per meaningful family, not individual option micro-settings. Technical ordering and UI geometry remain internal.
+**Evidence.** [ContextMenuCleanup.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/ContextMenuCleanup.lua); [DevicePowerMenu.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua); [InventoryActionGrouping.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryActionGrouping.lua). Native evidence groups: inventory, world, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Acceptance scenarios.** Compare callback target and arguments before and after grouping; test disabled options, nested submenus, tooltip ownership, controller back navigation and duplicate providers.
-
-**Risk and dependency gates.** Medium: compatibility with mods that mutate the same option objects. Dependencies: native/current implementation first.
-
-**Evidence.** [ContextMenuCleanup.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/ContextMenuCleanup.lua); [DevicePowerMenu.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua); [InventoryActionGrouping.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryActionGrouping.lua). Native groups: inventory, world, actions in [the source comparison](VANILLA_RECHECK.md).
-
+<a id="nested-view"></a>
 ## 7. Inspect nested bags without unpacking
 
-Impact **85**; Essentials **FOUNDATION**; owner **Essentials + UI**; effort **M**.
+Impact **85**; coverage **FOUNDATION**; owner **Essentials**; effort **M**.
 
-**Portfolio ownership.** Essentials has traversal and nested stable references, while Quartermaster has selected nested-bag logistics. Neither establishes the proposed finished nested browser. Keep the read model in Essentials; UI may render controls. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**What it does / Essentials boundary.** Retain traversal/reference foundation and complete an Essentials inventory workflow over authorized roots. UI may render generic controls, but does not own this inventory behavior.
 
-**Already vanilla.** Vanilla exposes equipped carried bags and bags in admitted vehicle/world roots; native recursive queries are not a recursive browsing UI.
+**Native baseline.** Vanilla exposes equipped carried bags and bags in admitted vehicle/world roots; native recursive queries are not a recursive browsing UI.
 
-**Retained scope.** Retain bounded stable-reference traversal foundation; a future UI is limited to deeper accessible nested inspection with breadcrumbs.
+**Next Essentials slice.** Render the existing bounded traversal and stable reference foundation as native-compatible nested inspection with breadcrumbs. First slice remains read-only; transfers use a separately reviewed action path.
 
-**First slice.** Render the existing bounded traversal and stable reference foundation as native-compatible nested inspection with breadcrumbs. First slice remains read-only; transfers use a separately reviewed action path.
+**Authority and lifecycle.** No projected-container ownership or saved contents. Every nested result retains an admitted root and exact path; root removal or failed resolution hides it. Join rebuilds from current game state.
 
-**Ownership and lifecycle.** No projected-container ownership or saved contents. Every nested result retains an admitted root and exact path; root removal or failed resolution hides it. Join rebuilds from current game state.
+**Settings / existing saves.** Reuse traversal depth and item/container budgets. Propose EnableNestedInspection=false until UI and runtime checks pass. No option may bypass locks or make remote roots visible.
 
-**Settings and existing saves.** Reuse traversal depth and item/container budgets. Propose EnableNestedInspection=false until UI and runtime checks pass. No option may bypass locks or make remote roots visible.
+**Acceptance.** Test deep nesting, cycles, duplicate roots, bag removal, permission change, streamed-out vehicle, zero items and budget exhaustion. Explain truncation instead of silently implying full coverage.
 
-**Acceptance scenarios.** Test deep nesting, cycles, duplicate roots, bag removal, permission change, streamed-out vehicle, zero items and budget exhaustion. Explain truncation instead of silently implying full coverage.
+**Risk and dependencies.** Medium: nested access rules and virtual-pane compatibility. Dependencies: native/current implementation first.
 
-**Risk and dependency gates.** Medium: nested access rules and virtual-pane compatibility. Dependencies: native/current implementation first.
+**Evidence.** [InventoryTraversal.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Native evidence groups: inventory in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Evidence.** [InventoryTraversal.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Native groups: inventory in [the source comparison](VANILLA_RECHECK.md).
+<a id="take-quantity"></a>
+## 8. Choose an exact whole-item transfer quantity
 
-## 8. Choose an exact whole-item transfer count
+Impact **83**; coverage **NEW**; owner **Essentials**; effort **M**.
 
-Impact **83**; Essentials **NEW**; owner **Essentials**; effort **M**.
+**What it does / Essentials boundary.** Add an explicit count for a finite native transfer of whole items. Do not duplicate native one/half/all choices or Quartermaster shopping targets.
 
-**Portfolio ownership.** Exact whole-item count selection belongs with inventory workflows. Quartermaster shopping target quantities are not the same native inventory transfer dialog. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Native baseline.** The reviewed grab menu offers one, half and all for a selected stack.
 
-**Already vanilla.** The reviewed grab menu offers one, half and all for a selected stack.
+**Next Essentials slice.** Add an original bounded count prompt for a selected real-item stack, with an eligible-item preview. Distinguish item count from fluid amount and food portions; the first slice supports whole items only.
 
-**Retained scope.** Keep a whole-item exact-count prompt, excluding existing one/half/all choices and fluid portions.
+**Authority and lifecycle.** Resolve a finite list of actual item identities; native transfer actions own moves. Shared transfer extensions require the existing authoritative reference service. Never split an item by cloning its fields.
 
-**First slice.** Add an original bounded count prompt for a selected real-item stack, with an eligible-item preview. Distinguish item count from fluid amount and food portions; the first slice supports whole items only.
+**Settings / existing saves.** Propose EnableQuantityTransfer=true; reuse batch limits. Count defaults to one and is bounded by eligible items and server policy. UI step controls remain local.
 
-**Ownership and lifecycle.** Resolve a finite list of actual item identities; native transfer actions own moves. Shared transfer extensions require the existing authoritative reference service. Never split an item by cloning its fields.
+**Acceptance.** Test zero/negative/malformed count, mixed items in one displayed stack, favorites, disappearing items, partial capacity, controller entry and another client taking one item mid-queue.
 
-**Settings and existing saves.** Propose EnableQuantityTransfer=true; reuse batch limits. Count defaults to one and is bounded by eligible items and server policy. UI step controls remain local.
+**Risk and dependencies.** Medium: displayed stacks are not necessarily homogeneous item objects. Dependencies: item-protection, batch-transfer.
 
-**Acceptance scenarios.** Test zero/negative/malformed count, mixed items in one displayed stack, favorites, disappearing items, partial capacity, controller entry and another client taking one item mid-queue.
+**Evidence.** [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Risk and dependency gates.** Medium: displayed stacks are not necessarily homogeneous item objects. Dependencies: item-protection, batch-transfer.
+<a id="equipment-view"></a>
+## 9. Separate equipped items from carried inventory
 
-**Evidence.** [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native groups: inventory, actions in [the source comparison](VANILLA_RECHECK.md).
+Impact **81**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-## 9. Separate equipped items from carried clutter
+**What it does / Essentials boundary.** Keep current worn/held/attached projection in Essentials. No new equipment state, lighting-attachment ownership or broad UI framework.
 
-Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials + UI**; effort **S**.
+**Native baseline.** Vanilla marks equipped rows and exposes equipment controls.
 
-**Portfolio ownership.** The Equipped view is already in Essentials. UI can provide presentation helpers; SPXTRM owns light attachments only and must not own this inventory pane. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Next Essentials slice.** Retain the current worn/held/attached projection and deferral to compatible standalone providers. Improve missing labels or controller behavior only after inspecting actual conflicts; keep a paper-doll redesign in SPXTRM.
 
-**Already vanilla.** Vanilla marks equipped rows and exposes equipment controls.
+**Authority and lifecycle.** Read-only local view of native equipment. A worn-and-held item appears once; drag and equip continue through native actions. No new equipment slots or independent-hand combat behavior.
 
-**Retained scope.** Retain Essentials' separate worn/held/attached projection and general-list filtering; no new equipment slots.
+**Settings / existing saves.** Keep current Equipped view and carried-filter toggles. Retain safe native fallback if another mod owns the view. UI layout preferences remain local.
 
-**First slice.** Retain the current worn/held/attached projection and deferral to compatible standalone providers. Improve missing labels or controller behavior only after inspecting actual conflicts; keep a paper-doll redesign in SPXTRM.
+**Acceptance.** Test key rings, two-handed items, holsters, bags, rapid equip changes, split-screen and standalone O.C.D. Inventory. Selection must survive without hiding an actionable equipped item from both views.
 
-**Ownership and lifecycle.** Read-only local view of native equipment. A worn-and-held item appears once; drag and equip continue through native actions. No new equipment slots or independent-hand combat behavior.
+**Risk and dependencies.** Medium: equipment classifier and replacement-pane compatibility. Dependencies: selection.
 
-**Settings and existing saves.** Keep current Equipped view and carried-filter toggles. Retain safe native fallback if another mod owns the view. UI layout preferences remain local.
+**Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [InventorySelectionRepair.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventorySelectionRepair.lua); [IndependentHandClassifier.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/IndependentHandClassifier.lua). Native evidence groups: inventory, hotbar in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Acceptance scenarios.** Test key rings, two-handed items, holsters, bags, rapid equip changes, split-screen and standalone O.C.D. Inventory. Selection must survive without hiding an actionable equipped item from both views.
+<a id="media-progress"></a>
+## 10. Show native reading/media progress and carried duplicates
 
-**Risk and dependency gates.** Medium: equipment classifier and replacement-pane compatibility. Dependencies: selection.
+Impact **81**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [InventorySelectionRepair.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventorySelectionRepair.lua); [IndependentHandClassifier.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/IndependentHandClassifier.lua). Native groups: inventory, hotbar in [the source comparison](VANILLA_RECHECK.md).
+**What it does / Essentials boundary.** Keep existing native progress, carried-copy counts and data-driven hints. Knowledge & Wisdom retains custom knowledge, research and progression; no duplicate ledger or knowledge grant.
 
-## 10. Show read watched and useful-media progress
+**Native baseline.** Native inventory already tests read literature and stores per-character page/media progress.
 
-Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials + Knowledge & Wisdom**; effort **S**.
+**Next Essentials slice.** Retain existing literature/media tracking, then verify partial completion, nested carried duplicates and modded reward data. Present original concise text and do not maintain a second knowledge registry.
 
-**Portfolio ownership.** Keep existing menu progress and carried-duplicate hints in Essentials. Knowledge & Wisdom already supplies bounded recorded-media inspection and owns custom knowledge/research. Do not create a second knowledge ledger; any optional adapter remains unimplemented. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Authority and lifecycle.** Read native per-character pages, known recipes and recorded-media lines. Cache only bounded derived data, invalidating on character and inventory changes. Never mark media learned merely because it is carried.
 
-**Already vanilla.** Native inventory already tests read literature and stores per-character page/media progress.
+**Settings / existing saves.** Retain existing literature master, duplicate and scan-limit settings. Keep knowledge-respecting defaults; reward-detail display is optional. Existing saves derive progress from vanilla state.
 
-**Retained scope.** Retain Essentials' carried-duplicate and reward context integration; existing source remains included even where native indicators overlap.
+**Acceptance.** Test partially read books, differently named copies, media with multiple lessons, no reward metadata, nested bags, character switch, reconnect and standalone tracker coexistence.
 
-**First slice.** Retain existing literature/media tracking, then verify partial completion, nested carried duplicates and modded reward data. Present original concise text and do not maintain a second knowledge registry.
+**Risk and dependencies.** Medium: recorded-media identity and knowledge leaks. Dependencies: native/current implementation first.
 
-**Ownership and lifecycle.** Read native per-character pages, known recipes and recorded-media lines. Cache only bounded derived data, invalidating on character and inventory changes. Never mark media learned merely because it is carried.
+**Evidence.** [LiteratureCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/LiteratureCore.lua); [LiteratureTracking.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/LiteratureTracking.lua). Native evidence groups: inventory, media in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Settings and existing saves.** Retain existing literature master, duplicate and scan-limit settings. Keep knowledge-respecting defaults; reward-detail display is optional. Existing saves derive progress from vanilla state.
+<a id="magazine-batch"></a>
+## 11. Load or unload matching magazines in batches
 
-**Acceptance scenarios.** Test partially read books, differently named copies, media with multiple lessons, no reward metadata, nested bags, character switch, reconnect and standalone tracker coexistence.
+Impact **78**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Risk and dependency gates.** Medium: recorded-media identity and knowledge leaks. Dependencies: native/current implementation first.
+**What it does / Essentials boundary.** Keep current native magazine action orchestration, ammunition reservations, timing and interruption behavior.
 
-**Evidence.** [LiteratureCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/LiteratureCore.lua); [LiteratureTracking.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/LiteratureTracking.lua). Native groups: inventory, media in [the source comparison](VANILLA_RECHECK.md).
+**Native baseline.** Native magazine menu loads/unloads the selected magazine through native timed actions.
 
-## 11. Compare fill across container buttons and magazine entries
+**Next Essentials slice.** Retain current native batch loading/unloading and audit ammunition reservation, nested sources and interrupt handling. Add a preview or optional return adapter only after the existing workflow passes dedicated scenarios.
 
-Impact **80**; Essentials **NEW**; owner **UI**; effort **S**.
+**Authority and lifecycle.** Native timed actions own ammunition changes. Reserve unique real rounds within a finite client plan, then rely on current execution validation; never set ammo counts directly. Reconnect discards pending work and reads actual magazine state.
 
-**Portfolio ownership.** Simultaneous container-button and magazine fill cues fit planned vanilla presentation adapters. UI has reusable controls but no implemented overlay. Essentials can supply permitted inventory views. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Settings / existing saves.** Retain current magazine master, nesting and operation limits. Keep matching restrictions and normal load duration. Any source-return option follows the separately validated tool-return policy.
 
-**Already vanilla.** The selected inventory header already shows weight/capacity; magazine counts are available through native interactions.
+**Acceptance.** Test mixed ammunition, partial magazines, nested bags, two clients sharing rounds, interruption during transfer/load, missing magazine and repeated command. Total rounds must be conserved apart from ordinary firing.
 
-**Retained scope.** Only simultaneous fill cues on container buttons and detachable-magazine entries remain; no new capacity or ammo information is claimed.
+**Risk and dependencies.** High until native multiplayer action behavior is exercised. Dependencies: item-protection.
 
-**First slice.** Add simultaneous compact fill cues to native container buttons and detachable-magazine entries only. Native header weight/capacity and ordinary ammo information remain the source.
+**Evidence.** [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Ownership and lifecycle.** Local display of already visible weight/capacity and current magazine state. Do not set item or container fields, synchronize an extra count or reveal inaccessible bag contents.
+<a id="shortcuts"></a>
+## 12. Item and recipe action shortcuts
 
-**Settings and existing saves.** Propose EnableCapacityIndicators=true, with local text/bar and contrast preferences. A magazine indicator can be toggled as a presentation choice. Never make actual capacity configurable through this feature.
+Impact **78**; coverage **NEW**; owner **Essentials**; effort **M**.
 
-**Acceptance scenarios.** Test zero or unknown capacity, nested bags, weight reduction, overfull containers, empty and mixed magazines, UI scale and color-blind readability. Verify gameplay state is unchanged.
+**What it does / Essentials boundary.** Own the workflow that invokes a known native item/recipe action. Generic UI controls may be optional helpers; exclude a general hotbar replacement, theme/layout engine and PC app host.
 
-**Risk and dependency gates.** Low: receiver-specific capacity semantics and overlapping overlays. Dependencies: native/current implementation first.
+**Native baseline.** Native hotbar/keybindings expose equipment and predefined actions.
 
-**Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Native groups: inventory, hotbar in [the source comparison](VANILLA_RECHECK.md).
+**Next Essentials slice.** Add a small configurable set of item/known-native-recipe invocation slots. Resolve a valid native action on use and preserve requirements/time; UI may supply controls without transferring this workflow or introducing a presentation framework.
 
-## 12. Compact local injury summary outside the health panel
+**Authority and lifecycle.** Persist local identifiers and preference data only, never serialized item objects or executable callbacks. Resolve a permitted current item/action on use and delegate gameplay effects to ordinary authority paths.
 
-Impact **80**; Essentials **NEW**; owner **Health Care + UI**; effort **M**.
+**Settings / existing saves.** Owning UI project provides enable policy, rebindable keys and local slot count within layout limits. Default bindings must avoid native and existing team conflicts; provide a reset action.
 
-**Portfolio ownership.** Health Care has examination reports and an examiner/patient-scoped five-minute snapshot, not a live injury HUD. Put medical visibility/meaning there and rendering in UI. Medical Checks supplies no enforcing consent service today. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Acceptance.** Test missing item, duplicate type, removed recipe, key conflict, controller, text entry focus, reconnect and mod removal. An empty slot may display a preference but must never create an item.
 
-**Already vanilla.** Vanilla already has body-part injuries, bandage details and treatment handlers in the health panel.
+**Risk and dependencies.** Medium: input conflicts and selecting an unintended same-type item. Dependencies: item-protection.
 
-**Retained scope.** Only an optional compact local injury summary outside the full panel remains; no new diagnosis, hidden wound or other-player detail.
+**Evidence.** No implementation claimed; production paths are chosen only after the API/authority spike. Native evidence groups: options, hotbar, craft in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**First slice.** Create an optional compact local injury summary outside the full native health panel. Render only already revealed facts; native diagnosis, treatment and examination consent are baseline.
+<a id="craft-output"></a>
+## 13. Route bulky native crafting output safely
 
-**Ownership and lifecycle.** Local personal presentation only; no other-player inspection or custom consent/network protocol. Native health state owns all facts. Treatment remains outside this first display slice.
+Impact **74**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Settings and existing saves.** Owning medical project sets shared visibility policy and any skill threshold. Personal size, contrast and collapse choices remain local. Confirm actual project option identifiers before implementation.
+**What it does / Essentials boundary.** Keep current authoritative native crafting-output routing and provider predicates. Junk Drawer salvage outcomes and Provisions process transactions remain their own.
 
-**Acceptance scenarios.** Compare uncovered, covered and undiagnosed injuries across skill levels; test split-screen privacy, medical-check permission denial, reconnect, healing updates and no stale urgent warnings.
+**Native baseline.** Vanilla crafting owns output creation and item consumption.
 
-**Risk and dependency gates.** High: medical privacy and skill-gated hidden state. Dependencies: native/current implementation first.
+**Next Essentials slice.** Keep the existing authoritative output adapter. Recheck the approved plank rule and heavy-output option against native creation, and fix only reproduced routing defects.
 
-**Evidence.** No implementation claimed in Essentials; inspect the owning repository before choosing production files. Native groups: health in [the source comparison](VANILLA_RECHECK.md).
+**Authority and lifecycle.** Native crafting owns consumption and output creation; the existing scoped adapter chooses an allowed output destination. Clients never create results or mutate yield. No independent output registry is introduced.
 
-## 13. Load and unload matching magazines in batches
+**Settings / existing saves.** Reuse current output-routing master, approved rules and heavy threshold. No new output count or capacity setting. Existing saves continue using native item ownership.
 
-Impact **78**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+**Acceptance.** Test sawed planks, disallowed recipes, full ground capacity, heavy outputs, interrupted crafting, hook restoration, concurrent crafting and reconnect; inputs and outputs must remain conserved.
 
-**Portfolio ownership.** Keep existing matching-magazine native action orchestration. Power and SPXTRM do not own firearm ammunition. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Risk and dependencies.** High until current native completion and dedicated replication are exercised. Dependencies: native/current implementation first.
 
-**Already vanilla.** Native magazine menu loads/unloads the selected magazine through native timed actions.
+**Evidence.** [CraftOutputRouting.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/CraftOutputRouting.lua). Native evidence groups: craft, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Retained scope.** Retain existing matching-magazine batching and reservation checks; no direct ammunition setters.
+<a id="hotbar"></a>
+## 14. Reorder existing hotbar slots
 
-**First slice.** Retain current native batch loading/unloading and audit ammunition reservation, nested sources and interrupt handling. Add a preview or optional return adapter only after the existing workflow passes dedicated scenarios.
+Impact **74**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Ownership and lifecycle.** Native timed actions own ammunition changes. Reserve unique real rounds within a finite client plan, then rely on current execution validation; never set ammo counts directly. Reconnect discards pending work and reads actual magazine state.
+**What it does / Essentials boundary.** Keep current left/right reorder with native attachment indexes. New condition overlays and general hotbar presentation belong to UI.
 
-**Settings and existing saves.** Retain current magazine master, nesting and operation limits. Keep matching restrictions and normal load duration. Any source-return option follows the separately validated tool-return policy.
+**Native baseline.** Native hotbar supports attaching, removing and activating equipment slots.
 
-**Acceptance scenarios.** Test mixed ammunition, partial magazines, nested bags, two clients sharing rounds, interruption during transfer/load, missing magazine and repeated command. Total rounds must be conserved apart from ordinary firing.
+**Next Essentials slice.** Keep Essentials' existing left/right slot swaps and controller menu. Compare against native attach/remove/activate behavior; add no replacement hotbar or automatic equipment swap.
 
-**Risk and dependency gates.** High until native multiplayer action behavior is exercised. Dependencies: item-protection.
+**Authority and lifecycle.** Local slot order and matching native attachment indices stay paired. Native equipment actions retain mutation ownership. Rebuild from actual equipment after reconnect or item removal.
 
-**Evidence.** [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Native groups: inventory, actions in [the source comparison](VANILLA_RECHECK.md).
+**Settings / existing saves.** Reuse the existing hotbar reorder toggle. Layout limits stay internal; no new equipment-slot or combat setting.
 
-## 14. Configurable non-equipment item and recipe action slots
+**Acceptance.** Test empty and occupied swaps, incompatible attachment types, missing items, rapid equipment changes, save/reload and controller focus. Saved slot order must not detach or duplicate equipment.
 
-Impact **78**; Essentials **NEW**; owner **Essentials + UI**; effort **M**.
+**Risk and dependencies.** Medium: attachment index persistence and hotbar replacement conflicts. Dependencies: native/current implementation first.
 
-**Portfolio ownership.** Essentials owns ordinary item/recipe invocation and validation; UI can render/configure slots. PC Framework apps are world-computer applications, not global survivor action shortcuts. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Evidence.** [HotbarReordering.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/HotbarReordering.lua). Native evidence groups: hotbar in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Already vanilla.** Native hotbar/keybindings expose equipment and predefined actions.
+<a id="map-annotation"></a>
+## 15. Remember the default map-symbol scale
 
-**Retained scope.** Only configurable item-action and known-recipe shortcut slots beyond native equipment hotkeys remain.
+Impact **72**; coverage **PARTIAL**; owner **Essentials**; effort **S**.
 
-**First slice.** SPXTRM should supply original configurable action slots using native keybinding and controller conventions. First support a small documented set of native item actions; defer automatic build/craft activation until their adapters exist.
+**What it does / Essentials boundary.** Retain the current default-scale behavior while preserving the native symbol editor. Do not add Rooms designation editing or replace map UI.
 
-**Ownership and lifecycle.** Persist local identifiers and preference data only, never serialized item objects or executable callbacks. Resolve a permitted current item/action on use and delegate gameplay effects to ordinary authority paths.
+**Native baseline.** Native maps already have notes, symbols, sharing and scale controls.
 
-**Settings and existing saves.** Owning UI project provides enable policy, rebindable keys and local slot count within layout limits. Default bindings must avoid native and existing team conflicts; provide a reset action.
+**Next Essentials slice.** Retain only the existing configured default symbol-scale adapter. Vanilla already supplies notes, symbols, per-symbol resizing and sharing; do not rebuild those tools.
 
-**Acceptance scenarios.** Test missing item, duplicate type, removed recipe, key conflict, controller, text entry focus, reconnect and mod removal. An empty slot may display a preference but must never create an item.
+**Authority and lifecycle.** Local default presentation preference; native map symbols and synchronization own saved notes. Changing the default does not resize existing annotations or add a second map store.
 
-**Risk and dependency gates.** Medium: input conflicts and selecting an unintended same-type item. Dependencies: item-protection.
+**Settings / existing saves.** Reuse the current map-symbol default and existing supported bounds. Do not add a second scale slider or symbol pack.
 
-**Evidence.** No implementation claimed in Essentials; inspect the owning repository before choosing production files. Native groups: options, hotbar, craft in [the source comparison](VANILLA_RECHECK.md).
+**Acceptance.** Test a new symbol, a previously edited symbol, notes, map reopening, character changes, native sharing and another map UI. Only new-symbol defaults should change.
 
-## 15. Customize local world-container button presets and order
+**Risk and dependencies.** Low to medium: defaults must not overwrite per-symbol choices. Dependencies: native/current implementation first.
 
-Impact **76**; Essentials **NEW**; owner **UI**; effort **M**.
+**Evidence.** [MapSymbolDefaults.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/MapSymbolDefaults.lua). Native evidence groups: maps in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Portfolio ownership.** Local button label/icon/order presets belong to UI presentation. Quartermaster storage presets/rules and Rooms room names already exist but are different data. Displaying a label must not create a designation or edit shared names. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+<a id="device-menus"></a>
+## 16. Group battery actions under their device
 
-**Already vanilla.** Vanilla names bag buttons from items, selects built-in container icons and persists ordinary window layout.
+Impact **71**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Retained scope.** Only local world-container button label/icon/order presets remain; remove ordinary bag renaming and native window persistence.
+**What it does / Essentials boundary.** Keep current Essentials presentation adapter, including a future repair for the renamed Power API. Power owns compatibility, energy and battery actions; SPXTRM owns lighting service.
 
-**First slice.** Start with local world-container button label/icon/order presets over stable identities. Native bag renaming and window persistence are excluded. Shared storage designation rules belong to the separately reviewed sorting owner.
+**Native baseline.** Native devices already have battery, power and media actions.
 
-**Ownership and lifecycle.** Local presentation order has no custom networking. Shared names/designations need server-owned validation, safehouse checks, persistence and canonical snapshots on join; do not overload an item name with a hidden storage rule.
+**Next Essentials slice.** Retain the existing device-owned action grouping and optional-provider duplicate suppression. Native radio and item menus already supply power, battery and media actions.
 
-**Settings and existing saves.** Owning storage project sets shared-label edit policy; local order and visual choices use native preferences. Defaults preserve native labels, and reset removes only feature-owned presentation data.
+**Authority and lifecycle.** Client rearranges existing option objects; native actions or the verified optional power provider own mutations. Never infer current Power compatibility from the old powerWorks namespace.
 
-**Acceptance scenarios.** Test two same-name containers, relocation, destruction, rename conflicts, object replacement, save/load, reconnect and another container-order mod. No stale label may target a newly created object at the same coordinates.
+**Settings / existing saves.** Reuse current device-menu options. Optional provider detection fails safely to native menus; no new electricity model or battery rates.
 
-**Risk and dependency gates.** High for shared labels; low to medium for local ordering. Dependencies: native/current implementation first.
+**Acceptance.** Compare callback identity and arguments; test provider absent/present/error, installed cells, ordinary cells, radio/media controls, disabled reasons and controller navigation.
 
-**Evidence.** [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Native groups: inventory, layout in [the source comparison](VANILLA_RECHECK.md).
+**Risk and dependencies.** Medium: optional provider identity and duplicated menu ownership. Dependencies: native/current implementation first.
 
-## 16. Choose a safe destination for bulky crafting output
+**Evidence.** [DevicePowerMenu.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua). Native evidence groups: radio, inventory in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-Impact **74**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+<a id="maintenance-queue"></a>
+## 17. Queue selected vanilla vehicle-part services
 
-**Portfolio ownership.** Keep existing native craft-output routing. Junk Drawer owns salvage outcomes and Provisions owns food-process outcomes; do not intercept or redirect their custom transactions without an explicit provider contract. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+Impact **71**; coverage **NEW**; owner **Essentials**; effort **L**.
 
-**Already vanilla.** Vanilla crafting owns output creation and item consumption.
+**What it does / Essentials boundary.** Coordinate a finite player-selected native mechanics itinerary only. No general vehicle simulation, CAT qualification system, clothing-maintenance system or changed service requirements.
 
-**Retained scope.** Retain the current approved plank/heavy-output routing adapter, subject to authoritative output and capacity rules.
+**Native baseline.** Native mechanics offers part-specific servicing and ordinary queued actions.
 
-**First slice.** Keep the existing authoritative output adapter. Recheck the approved plank rule and heavy-output option against native creation, and fix only reproduced routing defects.
+**Next Essentials slice.** Start with an explicit reviewed list of eligible vehicle parts and one supported ordinary service action per part. Present a finite itinerary with skip reasons. Do not add a generic queue engine, clothing repair replacement or XP training loop.
 
-**Ownership and lifecycle.** Native crafting owns consumption and output creation; the existing scoped adapter chooses an allowed output destination. Clients never create results or mutate yield. No independent output registry is introduced.
+**Authority and lifecycle.** Native mechanics actions own servicing, parts, wear and experience. Revalidate part identity, tools, skill, access and vehicle state at each step. Pending intent is discarded on disconnect; shared results remain native.
 
-**Settings and existing saves.** Reuse current output-routing master, approved rules and heavy threshold. No new output count or capacity setting. Existing saves continue using native item ownership.
+**Settings / existing saves.** Owning vehicle project supplies a server enable policy, default off, protected-item handling and a meaningful finite part limit. UI preferences remain local; no duration/XP multiplier.
 
-**Acceptance scenarios.** Test sawed planks, disallowed recipes, full ground capacity, heavy outputs, interrupted crafting, hook restoration, concurrent crafting and reconnect; inputs and outputs must remain conserved.
+**Acceptance.** Test tool loss, failed native repair, vehicle movement, another player servicing the same part, full inventory, cancel, reconnect and restart. No repeated training cycle or automatic restart.
 
-**Risk and dependency gates.** High until current native completion and dedicated replication are exercised. Dependencies: native/current implementation first.
+**Risk and dependencies.** High: each native mechanics action needs independent authority and interruption evidence. Dependencies: item-protection.
 
-**Evidence.** [CraftOutputRouting.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/CraftOutputRouting.lua). Native groups: craft, actions in [the source comparison](VANILLA_RECHECK.md).
+**Evidence.** No implementation claimed; production paths are chosen only after the API/authority spike. Native evidence groups: vehicle, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-## 17. Arrange hotbar slots without reattaching items
+<a id="reading-queue"></a>
+## 18. Queue selected eligible native books
 
-Impact **74**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+Impact **70**; coverage **NEW**; owner **Essentials**; effort **M**.
 
-**Portfolio ownership.** Keep current slot reordering and saved attachment-index handling. Shared styling can use UI. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**What it does / Essentials boundary.** Coordinate a finite native-book reading list. Exclude custom study, research, progression, journal recovery and recorded-media playback/device scheduling. Knowledge & Wisdom retains those domain contracts.
 
-**Already vanilla.** Native hotbar supports attaching, removing and activating equipment slots.
+**Native baseline.** Native reading processes one selected book and tracks pages.
 
-**Retained scope.** Retain Essentials' slot-order swaps preserving attached-item indices.
+**Next Essentials slice.** Offer an explicit finite list of eligible native books, with a skip preview and native reading actions. Exclude recorded-media playback, custom research/study or knowledge-provider actions from this slice.
 
-**First slice.** Keep Essentials' existing left/right slot swaps and controller menu. Compare against native attach/remove/activate behavior; add no replacement hotbar or automatic equipment swap.
+**Authority and lifecycle.** Native reading owns pages, recipe unlocks and knowledge. Essentials coordinates selected eligible books only, uses no custom progression store and clears pending intent on reconnect. No bypass of Knowledge & Wisdom MP guards or invocation of its blocked mutation APIs.
 
-**Ownership and lifecycle.** Local slot order and matching native attachment indices stay paired. Native equipment actions retain mutation ownership. Rebuild from actual equipment after reconnect or item removal.
+**Settings / existing saves.** Propose a server-visible reading-playlist enable, default off, with favorite protection and a bounded list size. Preserve reading speed, skill eligibility, light and interruption rules. Exact identifiers must be reviewed before implementation.
 
-**Settings and existing saves.** Reuse the existing hotbar reorder toggle. Layout limits stay internal; no new equipment-slot or combat setting.
+**Acceptance.** Test partial books, already learned recipes, books above skill level, darkness, missing or moved books, source removal, interruption and character switch. Never reread forever or grant media completion from carrying an item.
 
-**Acceptance scenarios.** Test empty and occupied swaps, incompatible attachment types, missing items, rapid equipment changes, save/reload and controller focus. Saved slot order must not detach or duplicate equipment.
+**Risk and dependencies.** Native reading sequencing and source restoration require verified action adapters and runtime acceptance. Custom provider research and recorded-media playback are excluded. Dependencies: media-progress, item-protection.
 
-**Risk and dependency gates.** Medium: attachment index persistence and hotbar replacement conflicts. Dependencies: native/current implementation first.
+**Evidence.** [LiteratureCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/LiteratureCore.lua); [LiteratureTracking.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/LiteratureTracking.lua). Native evidence groups: media, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Evidence.** [HotbarReordering.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/HotbarReordering.lua). Native groups: hotbar in [the source comparison](VANILLA_RECHECK.md).
+<a id="key-filing"></a>
+## 19. Automatically file keys into carried key rings
 
-## 18. Show condition directly on hotbar slots
+Impact **69**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-Impact **73**; Essentials **NEW**; owner **UI**; effort **S**.
+**What it does / Essentials boundary.** Keep current recognition predicates and bounded native transfers into accessible carried rings. No global storage policy.
 
-**Portfolio ownership.** Hotbar-only condition display is a planned vanilla UI adapter. Eyewear already displays its own retainer durability, which does not cover general hotbar condition. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Native baseline.** Native menus already transfer keys into recognized key rings.
 
-**Already vanilla.** Native inventory details already draw weapon-condition bars. The reviewed hotbar render draws slots, textures and equipped marks without a condition cue.
+**Next Essentials slice.** Retain the existing automatic bounded filing helper. Native menus already provide manual transfers into key rings; the retained behavior is explicit-policy automatic filing through those native actions.
 
-**Retained scope.** Keep only an optional hotbar-slot condition cue. Remove duplicate inventory condition rendering.
+**Authority and lifecycle.** Native transfer actions own item movement. Search only authorized carried roots and recognized rings; revalidate access and protection before moving. No custom key registry or remote key storage.
 
-**First slice.** Add only an original optional condition cue to native hotbar slots; inventory condition rendering is already vanilla and is excluded.
+**Settings / existing saves.** Reuse existing key-filing settings and recognition predicates. Preserve favorite protection, limits and safe defaults for existing saves.
 
-**Ownership and lifecycle.** Local read model, invalidated by actual item changes. Do not expose hidden mechanical state, modify durability or predict future breakage as a fact.
+**Acceptance.** Test nested bags, multiple rings, full rings, protected keys, predicate errors, item removal mid-queue, reconnect and manual destination changes. Each real key retains one owner.
 
-**Settings and existing saves.** Propose a hotbar-only enable policy and local accessible text/bar style. No duplicate inventory indicator, durability mutation or new low-condition gameplay threshold.
+**Risk and dependencies.** Medium until current native transfer replication is exercised in dedicated multiplayer. Dependencies: item-protection.
 
-**Acceptance scenarios.** Test broken, unconditioned, renamed and modded items, hotbar swaps, equipment changes, UI scaling and another overlay mod. Maximum-condition zero and missing APIs must safely hide the cue.
+**Evidence.** [AutoKeyRing.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/AutoKeyRing.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Risk and dependency gates.** Low: overlay overlap and different item receiver types. Dependencies: native/current implementation first.
+<a id="transfer-feedback"></a>
+## 20. Explain Essentials partial-transfer outcomes
 
-**Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [HotbarReordering.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/HotbarReordering.lua). Native groups: inventory, hotbar in [the source comparison](VANILLA_RECHECK.md).
+Impact **68**; coverage **FOUNDATION**; owner **Essentials**; effort **M**.
 
-## 19. Preserve a configured default map-symbol scale
+**What it does / Essentials boundary.** Retain current read-only transaction results and add explanations for this executor only. Quartermaster retains its own logistics progress/results; no universal notifications framework.
 
-Impact **72**; Essentials **PARTIAL**; owner **Essentials**; effort **S**.
+**Native baseline.** Native transfers perform valid moves and handle access/capacity failures.
 
-**Portfolio ownership.** Keep the current default-symbol-scale behavior. Rooms designation editing and SPXTRM optical rendering are different systems. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Next Essentials slice.** Retain inspectReferencedTransferResult and its bounded read-only snapshots. Add a compact explanation of committed, skipped, stale and rejected moves to Essentials-owned confirmation/results; do not retry automatically.
 
-**Already vanilla.** Native maps already have notes, symbols, sharing and scale controls.
+**Authority and lifecycle.** Only authority receipts establish completion. Local text must not recalculate ownership or infer success from a closed pane. Reconnect requires current state rather than replaying stale client intent.
 
-**Retained scope.** Retain only Essentials' configured default symbol scale; no new notes/symbol editor or copied symbol pack.
+**Settings / existing saves.** Reuse current operation/result bounds and feature policy; presentation verbosity can remain local. No retry/protocol micro-settings.
 
-**First slice.** Retain only the existing configured default symbol-scale adapter. Vanilla already supplies notes, symbols, per-symbol resizing and sharing; do not rebuild those tools.
+**Acceptance.** Exercise partial capacity failures, disappeared containers, inaccessible items, duplicate/reordered replies, missing result, disconnect after commit and operation-ID mismatch. Never present unknown ownership as success.
 
-**Ownership and lifecycle.** Local default presentation preference; native map symbols and synchronization own saved notes. Changing the default does not resize existing annotations or add a second map store.
+**Risk and dependencies.** Result presentation is incomplete; native receipt/replication behavior remains a runtime gate. Dependencies: batch-transfer.
 
-**Settings and existing saves.** Reuse the current map-symbol default and existing supported bounds. Do not add a second scale slider or symbol pack.
+**Evidence.** [InventoryTransferClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryTransferClient.lua); [InventoryTransferServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/InventoryTransferServer.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua). Native evidence groups: inventory, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Acceptance scenarios.** Test a new symbol, a previously edited symbol, notes, map reopening, character changes, native sharing and another map UI. Only new-symbol defaults should change.
+<a id="personal-marks"></a>
+## 21. Mark an owned book or media item for later
 
-**Risk and dependency gates.** Low to medium: defaults must not overwrite per-symbol choices. Dependencies: native/current implementation first.
+Impact **63**; coverage **NEW**; owner **Essentials**; effort **M**.
 
-**Evidence.** [MapSymbolDefaults.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/MapSymbolDefaults.lua). Native groups: maps in [the source comparison](VANILLA_RECHECK.md).
+**What it does / Essentials boundary.** Local, explicitly chosen seen-for-later mark on an accessible item. Do not grant read state, reveal hidden titles, create a research/study ledger, add shopping demands or duplicate Dibs lists.
 
-## 20. Keep device power actions attached to the device
+**Native baseline.** Native favorites and native learned/read state already exist.
 
-Impact **71**; Essentials **IMPLEMENTED**; owner **Essentials + Power**; effort **S**.
+**Next Essentials slice.** Prototype a local explicit read-later mark for an exact accessible item. Resolve native identity and a supported local persistence route before shipping; if identity cannot survive reload safely, keep it session-only and label that limit.
 
-**Portfolio ownership.** Keep grouping in Essentials and battery transactions in Power; light-specific servicing belongs to SPXTRM. Essentials still probes legacy powerWorks globals/imports, while renamed Power has no legacy aliases: current pairing requires a compatibility repair and tests. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Authority and lifecycle.** Personal note only, never a favorite/read/learned setter. Do not expose inaccessible item names or sync another player's notes. Removed or replaced items must not inherit a stale mark.
 
-**Already vanilla.** Native devices already have battery, power and media actions.
+**Settings / existing saves.** Propose a meaningful enable policy; mark display and confirmation are local preferences. Choose actual identifiers and old-save defaults in the future implementation version. No custom knowledge or shopping configuration.
 
-**Retained scope.** Retain current device-owned grouping and optional-provider duplicate suppression, not new electricity/device ownership.
+**Acceptance.** Test not-yet-readable books, known/unknown media titles, nested items, split/merge, transfer, destruction, reconnect, save/reload and character replacement. A bookmark grants no recipe, page progress, title knowledge or demand.
 
-**First slice.** Retain the existing device-owned action grouping and optional-provider duplicate suppression. Native radio and item menus already supply power, battery and media actions.
+**Risk and dependencies.** Stable local item identity/persistence and native title-reveal policy need verification; no implementation claimed. Dependencies: media-progress.
 
-**Ownership and lifecycle.** Client rearranges existing option objects; native actions or the verified optional power provider own mutations. Never infer current Power compatibility from the old powerWorks namespace.
+**Evidence.** No implementation claimed; production paths are chosen only after the API/authority spike. Native evidence groups: inventory, media in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Settings and existing saves.** Reuse current device-menu options. Optional provider detection fails safely to native menus; no new electricity model or battery rates.
+<a id="equipment-swap"></a>
+## 22. Independent-hand compatibility classifier
 
-**Acceptance scenarios.** Compare callback identity and arguments; test provider absent/present/error, installed cells, ordinary cells, radio/media controls, disabled reasons and controller navigation.
+Impact **62**; coverage **PARTIAL**; owner **Essentials**; effort **Validation first**.
 
-**Risk and dependency gates.** Medium: optional provider identity and duplicated menu ownership. Dependencies: native/current implementation first.
+**What it does / Essentials boundary.** Keep the existing fail-closed pairing classifier and bounded providers only. No working dual-wield combat, input, reload or animation system is claimed by this entry.
 
-**Evidence.** [DevicePowerMenu.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua). Native groups: radio, inventory in [the source comparison](VANILLA_RECHECK.md).
+**Native baseline.** Vanilla already equips primary/secondary items and switches attached equipment.
 
-## 21. Plan a finite vehicle-part service itinerary
+**Next Essentials slice.** Retain and validate the current independent-hand classifier/provider registry. Audit pair changes and provider errors; defer any attack, input, swapping or animation implementation to a separate proven Lua-only slice.
 
-Impact **71**; Essentials **NEW**; owner **Essentials**; effort **L**.
+**Authority and lifecycle.** Read-only classification of real current hand equipment. No ammunition, damage, animation or equipment mutation is provided by this foundation.
 
-**Portfolio ownership.** No general vehicle-service owner was identified. A finite vanilla vehicle-part itinerary fits Essentials. CAT construction machinery qualification and Eyewear retainers do not cover ordinary mechanics. Scope excludes clothing queues. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Settings / existing saves.** Retain current classifier/provider configuration; no hypothetical combat balance settings are implemented by this plan.
 
-**Already vanilla.** Native mechanics offers part-specific servicing and ordinary queued actions.
+**Acceptance.** Test one/two-handed, broken, duplicate and unknown weapons, reversed pairs, missing actors, provider failure/removal and repeated registration. Unsupported equipment must fail closed.
 
-**Retained scope.** Keep an explicit finite vehicle-part service itinerary with skip reasons and tool return; exclude generic repair menus and repeated XP-training loops.
+**Risk and dependencies.** Classifier source is not dual-wield feasibility or dedicated combat proof. Dependencies: native/current implementation first.
 
-**First slice.** Start with an explicit reviewed list of eligible vehicle parts and one supported ordinary service action per part. Present a finite itinerary with skip reasons. Do not add a generic queue engine, clothing repair replacement or XP training loop.
+**Evidence.** [IndependentHandClassifier.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/IndependentHandClassifier.lua). Native evidence groups: hotbar, inventory in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Ownership and lifecycle.** Native mechanics actions own servicing, parts, wear and experience. Revalidate part identity, tools, skill, access and vehicle state at each step. Pending intent is discarded on disconnect; shared results remain native.
+<a id="clock"></a>
+## 23. Display permitted watch time to the minute
 
-**Settings and existing saves.** Owning vehicle project supplies a server enable policy, default off, protected-item handling and a meaningful finite part limit. UI preferences remain local; no duration/XP multiplier.
+Impact **59**; coverage **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
-**Acceptance scenarios.** Test tool loss, failed native repair, vehicle movement, another player servicing the same part, full inventory, cancel, reconnect and restart. No repeated training cycle or automatic restart.
+**What it does / Essentials boundary.** Keep current clock formatting and device information limits. Power retains powered-watch behavior; the legacy adapter mismatch is an unresolved compatibility gate.
 
-**Risk and dependency gates.** High: each native mechanics action needs independent authority and interruption evidence. Dependencies: item-protection.
+**Native baseline.** Native watch display supplies device-dependent time information.
 
-**Evidence.** No implementation claimed in Essentials; inspect the owning repository before choosing production files. Native groups: vehicle, actions in [the source comparison](VANILLA_RECHECK.md).
+**Next Essentials slice.** Retain exact-minute formatting and current native device precision limits. Separately repair the legacy Power contract only after checking the renamed provider in its own current source; no new watch simulation.
 
-## 22. Queue a chosen eligible unread-book and media playlist
+**Authority and lifecycle.** Local formatting of permitted time/device facts. Power owns battery/charge and mechanical/digital behavior. No extra information for a device that cannot supply it.
 
-Impact **70**; Essentials **NEW**; owner **Essentials + Knowledge & Wisdom**; effort **M**.
+**Settings / existing saves.** Retain EnableExactMinuteClock and native clock-size/12/24-hour preferences. Keep energy/service policy in Power.
 
-**Portfolio ownership.** Essentials may orchestrate native reading; Knowledge & Wisdom owns provider documents, completion and knowledge requirements. A finished reading/media playlist was not found. Preserve its MP authority guard; start only with a proven native reading slice. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Acceptance.** Check minute rollover, midnight/noon, 12/24-hour, mechanical/digital clocks, unavailable or unpowered devices, UI scale and split-screen. Test renamed-Power present/absent without claiming adapter compatibility before proof.
 
-**Already vanilla.** Native reading processes one selected book and tracks pages.
+**Risk and dependencies.** Legacy powerWorks watch probe is incompatible/unverified against renamed Power; native layout and device behavior remain runtime gates. Dependencies: native/current implementation first.
 
-**Retained scope.** Keep an explicitly selected eligible unread-book/media playlist with return and interruption; no new reading/progress engine.
+**Evidence.** [ExactWatchClock.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/ExactWatchClock.lua). Native evidence groups: options, inventory in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**First slice.** First offer a player-selected finite list of eligible unread books with ordinary native reading actions and a clear skip preview. Add recorded-media playback only after the powered-player/media lifecycle is separately proven.
+<a id="heavy-movement"></a>
+## 24. Heavy-object provider lifecycle foundation
 
-**Ownership and lifecycle.** Native reading/media systems own pages and knowledge. The client only coordinates chosen actions and optional source return; no learned-content registry or knowledge grant. Reconnect clears pending intent and reads actual progress.
+Impact **51**; coverage **FOUNDATION**; owner **Essentials**; effort **Validation first**.
 
-**Settings and existing saves.** Propose a server-visible reading-playlist enable, default off, with favorite protection and a bounded list size. Preserve reading speed, skill eligibility, light and interruption rules. Exact identifiers must be reviewed before implementation.
+**What it does / Essentials boundary.** Keep existing capability and reserve/start/complete/cancel contracts. Domain providers own all physics/object/terrain state; Quartermaster keeps hauling logistics. No production physics provider is claimed.
 
-**Acceptance scenarios.** Test partial books, already learned recipes, books above skill level, darkness, missing or moved books, source removal, interruption and character switch. Never reread forever or grant media completion from carrying an item.
+**Native baseline.** Vanilla moveable/placement systems own supported movement and collision.
 
-**Risk and dependency gates.** Medium to high: source restoration and media device sequencing are separate action adapters. Dependencies: media-progress, item-protection.
+**Next Essentials slice.** Retain the bounded provider query and authoritative lifecycle/recovery foundation. Validate contracts with disposable offline providers; do not add physics, wheelbarrow or logistics implementations to fill this entry.
 
-**Evidence.** [LiteratureCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/LiteratureCore.lua); [LiteratureTracking.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/LiteratureTracking.lua). Native groups: media, actions in [the source comparison](VANILLA_RECHECK.md).
+**Authority and lifecycle.** Provider owns actual object mutation and simulation. Essentials validates operation identity and lifecycle; clients submit intent. Uncertain commits stay quarantined and replay must not repeat mutation.
 
-## 23. File keys into an eligible carried key ring
+**Settings / existing saves.** Preserve current enable/policy settings and technical limits. A later gameplay provider must define its own meaningful server sandbox policy, supported persistence and old-save behavior.
 
-Impact **69**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+**Acceptance.** Test missing/failed provider, changed actor/target, denied reach, duplicate requests, reserve/start/complete/cancel ordering, uncertain completion, reload and restart. Dedicated evidence with a real safe provider is required before production claims.
 
-**Portfolio ownership.** Keep current key/ring predicates and native transfers. Quartermaster storage/shopping rules are not a key-ring replacement. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+**Risk and dependencies.** No production physics provider; native authority, synchronization and recovery are not established by mocks. Dependencies: native/current implementation first.
 
-**Already vanilla.** Native menus already transfer keys into recognized key rings.
+**Evidence.** [HeavyObjects.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/HeavyObjects.lua); [HeavyObjectServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/HeavyObjectServer.lua); [HeavyObjectClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/HeavyObjectClient.lua). Native evidence groups: placement, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).
 
-**Retained scope.** Retain Essentials' bounded automatic filing via native transfers, not another manual Move To Ring menu.
+<a id="ladder"></a>
+## 25. Expose valid tagged-ladder interactions
 
-**First slice.** Retain the existing automatic bounded filing helper. Native menus already provide manual transfers into key rings; the retained behavior is explicit-policy automatic filing through those native actions.
+Impact **49**; coverage **IMPLEMENTED**; owner **Essentials**; effort **Validation first**.
 
-**Ownership and lifecycle.** Native transfer actions own item movement. Search only authorized carried roots and recognized rings; revalidate access and protection before moving. No custom key registry or remote key storage.
+**What it does / Essentials boundary.** Keep the current property-based native-transition adapter and access/landing checks. No teleportation, terrain simulation, Fences catalog or new traversal engine.
 
-**Settings and existing saves.** Reuse existing key-filing settings and recognition predicates. Preserve favorite protection, limits and safe defaults for existing saves.
+**Native baseline.** Native traversal states support climbing; their presence is not an automatic property-based ladder context adapter.
 
-**Acceptance scenarios.** Test nested bags, multiple rings, full rings, protected keys, predicate errors, item removal mid-queue, reconnect and manual destination changes. Each real key retains one owner.
+**Next Essentials slice.** Retain property-driven ladder context actions and verify the existing native rope-state adapter on valid orientations. No new automatic input/traversal or terrain system.
 
-**Risk and dependency gates.** Medium until current native transfer replication is exercised in dedicated multiplayer. Dependencies: item-protection.
+**Authority and lifecycle.** Native transition states own movement. Admit only valid tagged loaded tiles with legal access and safe landing; no teleport or global scan.
 
-**Evidence.** [AutoKeyRing.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/AutoKeyRing.lua). Native groups: inventory, actions in [the source comparison](VANILLA_RECHECK.md).
+**Settings / existing saves.** Reuse existing ladder master/safety settings and bounded property registration. No speed boost or physics setting.
 
-## 24. Preview and queue cleanup across a chosen rectangle
+**Acceptance.** Test four orientations, blocked/missing landing, multi-floor edges, actor death/incapacitation, streamed tiles, modded tags, controller selection and two-client observation. Native transition/replication remains untested until actual PZ evidence.
 
-Impact **68**; Essentials **NEW**; owner **Auto Clean**; effort **Validation first**.
+**Risk and dependencies.** Source adapter does not prove runtime collision, animation or dedicated movement correctness. Dependencies: native/current implementation first.
 
-**Portfolio ownership.** Already covered by Auto Clean rectangle/paint/erase/floor selection, confirmation, building cleanup, guarded actions and tool returns. Remove duplicate implementation work from Essentials. Validate or improve the existing Auto Clean workflow in its own repository. See [project evidence](PORTFOLIO_OWNERSHIP.md).
-
-**Already vanilla.** Vanilla provides target-specific cleanup actions and some area-affecting actions.
-
-**Retained scope.** Keep a player-drawn bounded cleanup target plan, eligible-target preview and finite itinerary across that selection; no global scan or speed boost.
-
-**First slice.** Do not implement another area cleaner in Essentials. Auto Clean already provides confirmed rectangle/paint/erase/floor selection, native cleanup and supply return. Review that existing workflow and its runtime acceptance matrix; implement only a reproduced missing behavior in Auto Clean after its own freshness gate.
-
-**Ownership and lifecycle.** Native timed actions own cleanup mutations and supplies. Selected targets are intent, never authority; revalidate loaded target identity, access, distance, tool and resources at execution. Cancel clears pending work and reconnect does not restart it.
-
-**Settings and existing saves.** Reuse current Auto Clean, Rooms cleaning-scope and Quartermaster supply settings. Do not invent a second Essentials cleaning enable switch, selection policy or supply store.
-
-**Acceptance scenarios.** Test rectangle edges, targets removed by another player, safehouses, exhausted tools, resource depletion, cancel, danger, disconnect and server restart. No target outside the selection or unloaded-world scan is admitted.
-
-**Risk and dependency gates.** High: selected-area planning differs from an action merely affecting neighboring tiles; each cleanup adapter needs authority proof. Dependencies: item-protection.
-
-**Evidence.** No implementation claimed in Essentials; inspect the owning repository before choosing production files. Native groups: world, actions in [the source comparison](VANILLA_RECHECK.md).
-
-## 25. Estimate remaining generator runtime from inspected load
-
-Impact **68**; Essentials **NEW**; owner **Power + UI**; effort **M**.
-
-**Portfolio ownership.** Power already reports loaded generator fuel, condition, activation, connection and native consumption. A remaining-runtime estimate is not implemented in that adapter; keep calculation/units with Power and optional presentation with UI. Electrical output capacity remains unknown. See [project evidence](PORTFOLIO_OWNERSHIP.md).
-
-**Already vanilla.** Native generator info already shows fuel, condition, powered items and total draw.
-
-**Retained scope.** Only a clearly labeled remaining-runtime estimate under current measured load remains; remove duplicate fuel/load/device lists and unproven range rendering.
-
-**First slice.** Extend only the inspected generator panel with an original remaining-runtime estimate from currently inspected fuel and actual load. Native fuel, condition, powered-item and consumption lists remain unchanged. Do not add an unproven power-range overlay.
-
-**Ownership and lifecycle.** Local derived presentation only; generator fuel, load and consumption remain native authoritative state. Show units and assumptions, invalidate when inspected load/fuel changes and label estimates rather than predicting unknown devices or future operation.
-
-**Settings and existing saves.** Propose an estimate-display enable policy with local formatting preferences. No new fuel consumption, generator range, capacity or electricity setting. Calculation limits and zero-load safety stay internal.
-
-**Acceptance scenarios.** Test generator off/on, zero or changing load, empty fuel, native consumption units, sandbox time/fuel modifiers, inspection ending, stream-out and reconnect. Unsupported or uncertain unit conversions must display unavailable rather than a fabricated duration.
-
-**Risk and dependency gates.** Medium: exact native units and changing loads need verified Lua receiver contracts and runtime comparison before any estimate is shipped. Dependencies: native/current implementation first.
-
-**Evidence.** No implementation claimed in Essentials; inspect the owning repository before choosing production files. Native groups: generator in [the source comparison](VANILLA_RECHECK.md).
+**Evidence.** [LadderInteraction.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/LadderInteraction.lua). Native evidence groups: world, actions in [the complete vanilla recheck](VANILLA_RECHECK.md).

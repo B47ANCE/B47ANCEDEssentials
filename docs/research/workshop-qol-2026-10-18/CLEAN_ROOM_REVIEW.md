@@ -1,6 +1,6 @@
 # Clean room review status
 
-Purpose: discover downloaded QoL behavior and specify independent Lua-only improvements without importing third-party expression. Provenance is in packages.json, neutral requirements in capabilities.json, and vanilla-source observations in api-evidence.json.
+Purpose: discover downloaded QoL behavior and specify independent Lua-only improvements without importing third-party expression. Provenance is in packages.json, portfolio neutral requirements in capabilities.json, current scoped Essentials specifications in essentials-only.json, and vanilla-source observations in api-evidence.json.
 
 - [x] Downloaded roots and every enumerated instance recorded, with revision hashes scoped accurately.
 - [x] Metadata author/version/license uncertainty preserved. Public current declarations separated from installed revision facts.

@@ -1,5 +1,7 @@
 {
   "schema": 2,
+  "scope": "44-entry portfolio comparison; current Essentials selection is essentials-only.json",
+  "plan_document": "PORTFOLIO_TOP_25_HISTORY.md",
   "date": "2026-10-18",
   "ranking": "Vanilla-filtered shortlist. Existing Essentials source/foundations preserved by user request. Scores estimate the remaining workflow, not the value of duplicating native controls. Ties use capability ID.",
   "weights": {

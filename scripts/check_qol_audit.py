@@ -52,7 +52,8 @@ def main():
     assert caps == expected
     weights = catalog['weights']
     assert sum(weights.values()) == 100
-    top_plan = (AUDIT / 'TOP_25_PLAN.md').read_text(encoding='utf-8')
+    # The original portfolio plans remain separately scoped history.
+    top_plan = (AUDIT / catalog['plan_document']).read_text(encoding='utf-8')
     ranking = (AUDIT / 'RANKING.md').read_text(encoding='utf-8')
     package_table = (AUDIT / 'PACKAGES.md').read_text(encoding='utf-8')
     for rank, capability in enumerate(caps, 1):
@@ -125,11 +126,58 @@ def main():
     assert owners['area-clean']['portfolio_coverage'] == 'COVERED_SOURCE'
     assert owners['area-clean']['recommended_owner'] == 'Auto Clean'
     assert owners['bandage-queue']['recommended_owner'] == owners['treatment-queue']['recommended_owner'] == 'Health Care'
+    essentials = json.loads((AUDIT / 'essentials-only.json').read_text(encoding='utf-8'))
+    current_plan = (AUDIT / 'TOP_25_PLAN.md').read_text(encoding='utf-8')
+    current_ranking = (AUDIT / 'ESSENTIALS_RANKING.md').read_text(encoding='utf-8')
+    assert essentials['version'] == summary['base_version']
+    dispositions = {e['id']: e for e in essentials['decisions']}
+    assert len(dispositions) == len(essentials['decisions']) == len(caps)
+    assert set(dispositions) == cap_ids
+    eligible = essentials['eligible']
+    eligible_ids = {e['id'] for e in eligible}
+    assert len(eligible_ids) == len(eligible) == 29
+    retained = {c['id'] for c in caps if c['essentials_status'] != 'NEW'}
+    assert set(essentials['existing_retained']) == retained
+    assert len(retained) == 20
+    assert len([e for e in dispositions.values() if e['decision'] == 'EXCLUDE_OTHER_DOMAIN']) == 15
+    assert eligible_ids == {e['id'] for e in dispositions.values() if e['decision'] != 'EXCLUDE_OTHER_DOMAIN'}
+    assert eligible == sorted(eligible, key=lambda e: (-e['impact_score'], e['id']))
+    additions = [e for e in eligible if e['id'] not in retained]
+    assert essentials['new_selected'] == [e['id'] for e in additions[:5]]
+    selected = sorted(retained | set(essentials['new_selected']), key=lambda ident: (-next(e['impact_score'] for e in eligible if e['id'] == ident), ident))
+    assert len(selected) == len(set(selected)) == 25
+    assert essentials['top_25_ids'] == selected
+    assert retained <= set(selected)
+    for ident in review['preserved_essentials_ids']:
+        assert (ident in selected) or (decisions[ident]['decision'] == 'MERGE' and decisions[ident]['merged_into'] in selected)
+    for rank, entry in enumerate(eligible, 1):
+        assert entry['eligible_rank'] == rank
+        assert entry['owner'] == 'Essentials'
+        original = next(c for c in caps if c['id'] == entry['id'])
+        assert entry['dimensions'] == original['dimensions']
+        assert entry['impact_score'] == original['impact_score']
+        assert entry['essentials_status'] == original['essentials_status']
+        assert entry['scope_boundary'] and entry['title'] in current_ranking
+        if entry['id'] in selected:
+            selected_rank = selected.index(entry['id']) + 1
+            assert entry['selected_rank'] == selected_rank
+            assert f'## {selected_rank}. {entry["title"]}' in current_plan
+            assert entry['scope_boundary'] in current_plan
+            assert entry['plan']['slice'] in current_plan
+            assert set(entry['plan']['depends']) <= set(selected)
+            assert set(entry['plan']['api_groups']) <= review['evidence_groups'].keys()
+            for name in entry['plan']['existing']:
+                assert len(list((ROOT / 'Contents/mods').rglob(name))) == 1
+        else:
+            assert entry['selected_rank'] is None and 'plan' not in entry
+    assert len(re.findall(r'^## \d+\. ', current_plan, flags=re.M)) == 25
+    assert essentials['runtime_status'] == 'NOT TESTED'
+    assert essentials['independent_review'] == 'PENDING'
     for path in AUDIT.rglob('*'):
         if path.is_file():
             text = path.read_text(encoding='utf-8')
             assert not re.search(r'[A-Za-z]:[\\/](?:Users|Program Files)', text), path.name
-    print(f'PASS: {len(packages)} instances, {len(workshop_ids)} Workshop IDs, {len(caps)} scored capabilities, 25 plans, provenance and evidence limits (offline).')
+    print(f'PASS: {len(packages)} instances, {len(workshop_ids)} Workshop IDs; {len(caps)} portfolio entries; Essentials-only 29 eligible, 15 excluded, top 25 = 20 retained + 5 new (offline).')
 
 
 if __name__ == '__main__':

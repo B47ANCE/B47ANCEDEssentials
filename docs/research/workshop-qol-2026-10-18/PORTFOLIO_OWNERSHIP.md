@@ -1,5 +1,7 @@
 # QoL ownership and portfolio coverage audit
 
+Current Essentials work is selected in [the Essentials-only ranking](ESSENTIALS_RANKING.md) and [top-25 plan](TOP_25_PLAN.md). This document preserves the broader portfolio comparison.
+
 The 44-entry QoL shortlist contains work already covered by other projects. The clearest duplicate is **selected-area cleanup in Auto Clean**. **Quartermaster already owns designated storage and logistics**; Essentials should retain its smaller seeded-sort workflow without rebuilding those rules. General HUD/inventory styling was incorrectly assigned to SPXTRM: **UI owns shared presentation; SPXTRM owns lighting and optics**. Medical treatment belongs to **Health Care**, not the blocked Medical Checks scaffold.
 
 ## Scope and evidence

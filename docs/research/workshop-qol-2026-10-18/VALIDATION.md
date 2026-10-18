@@ -122,3 +122,47 @@ No new gameplay test suite was needed for documentation/report consistency edits
 Earlier host and vanilla evidence below retain their exact historical scope.
 SP/dedicated NOT TESTED; G7/stable G8 and independent clean-room signoff unchanged.
 No game/server launch, deployment, package or Workshop upload.
+
+# Essentials-only selection — 2026-10-18
+
+Documentation-only continuation from `84009973a446f62595032dfcfc006d53b07981ee`
+at canonical version 0.19.2. The current plan replaces the cross-project top 25
+with a preservation-constrained Essentials list: 20 retained entries (11
+implemented, five partial, four foundations) plus five new proposals. All 21
+original source/foundation identifiers remain represented through 20 entries;
+container-open remains merged into nested-view.
+
+The 44-entry portfolio comparison is preserved. Current eligibility accounts
+for all 44: 29 Essentials-scoped entries and 15 other-domain exclusions. Retain
+all 20 existing entries, add the five highest-scored eligible NEW proposals,
+then sort that selected set by score/ID. Four new eligible ideas remain backlog.
+This is not an unrestricted highest-25 selection, and no new capability or
+artificial subdivision was added to fill slots. Narrowed Essentials boundaries
+exclude foreign gameplay systems and broad presentation ownership.
+
+[TESTED — offline] Exact project commands:
+
+```powershell
+python scripts/check_qol_audit.py
+python scripts/check_versions.py
+python scripts/check_identity.py
+git diff --check
+```
+
+All PASS. The report checker covers the historical census/portfolio evidence,
+all 44 current scope decisions, 29 eligibility ranks, all retained identifiers,
+20+5 selection rule, 25 plans, selected dependencies, source-file links and
+native evidence-group references. Version checks confirm nine mirrors at
+0.19.2; identity checks cover 28 Lua files and 35 sandbox options plus metadata,
+translations and case-correct internal requires. A separate read-only pass
+confirmed all audit local Markdown file links, exact preservation of the prior
+portfolio plan body and no runtime-source/VERSION changes.
+
+Startup freshness PASS: HEAD/upstream `84009973a446`, ahead/behind 0/0,
+main ahead 4 / behind 0, clean, no unfinished operation. Pre-commit freshness
+REVIEW was solely these understood research edits; ancestry remained unchanged.
+Public tracked/staged-tree credentials/artifacts/overview checks run before push.
+No new gameplay tests were needed for documentation and report-consistency
+changes; prior host/API/runtime evidence is not relabeled as current proof.
+SP/dedicated NOT TESTED; G7/stable G8 and independent clean-room signoff remain
+unchanged. No package, deploy, Workshop upload or game/server launch.

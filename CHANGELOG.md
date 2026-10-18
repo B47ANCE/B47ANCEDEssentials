@@ -2,6 +2,12 @@
 
 ## 0.19.2 — 2026-10-18
 
+- Rebuilt the current top 25 for Essentials only: all 20 existing source, partial
+  and foundation entries plus the five highest-scored eligible new workflows.
+  Recorded 29 eligible entries, 15 other-domain exclusions and four optional
+  backlog items; preserved the earlier portfolio plan as historical research.
+  Runtime source, version, dependencies and configuration are unchanged.
+
 - Audited 28 local project scopes against all 44 retained QoL entries. Corrected
   UI/SPXTRM and Health Care/Medical Checks ownership, identified existing Auto Clean
   area cleanup and Quartermaster logistics, and recorded incomplete adapters,

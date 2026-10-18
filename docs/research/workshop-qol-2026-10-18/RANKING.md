@@ -1,5 +1,7 @@
 # Vanilla-filtered quality of life ranking
 
+Current Essentials work is selected in [the Essentials-only ranking](ESSENTIALS_RANKING.md) and [top-25 plan](TOP_25_PLAN.md). This document preserves the broader portfolio comparison.
+
 [Portfolio ownership audit](PORTFOLIO_OWNERSHIP.md) corrects project assignments and distinguishes coverage outside Essentials. NEW still means absent from Essentials, not absent from our portfolio. Scores and the top-25 membership are unchanged.
 
 Only current Essentials entries and scoped additions survive this ranking. Native-covered and unproven proposals are removed from it; every prior item is accounted for in [the complete vanilla comparison](VANILLA_RECHECK.md). Scores estimate remaining workflow benefit and are ordinal judgments, not measurements. Equal scores are ties.
