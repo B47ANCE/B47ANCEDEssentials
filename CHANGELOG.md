@@ -16,6 +16,12 @@ Validation: offline version/identity and PNG integrity/visual checks; see
 `docs/THUMBNAIL_0.19.1.md`. SP/dedicated NOT TESTED; G7 and stable G8 BLOCKED.
 No deployment or Workshop upload.
 
+Publication preparation for the user-authorized Workshop MP test upload retains
+version `0.19.1`: add the required testing label, accurate compatibility limits,
+public GitHub source link and a deterministic staging/provenance builder. The
+existing hidden item's visibility is preserved by omitting visibility from the
+upload VDF. No runtime behavior changes are introduced by this metadata update.
+
 ## 0.19.0 — 2026-10-16
 
 - Renamed the project to **B47ANCE'd Essentials** and the Mod ID, public Lua

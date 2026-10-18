@@ -6,12 +6,15 @@ B47ANCE'd Essentials consolidates practical, independently configurable workflow
 
 [b]Mod Version: 0.19.1[/b]
 
+[b]MP testing build - dedicated multiplayer NOT TESTED[/b]
+Offline Lua regression and source checks pass. Single-player and dedicated multiplayer are NOT TESTED for this build. This is a development test distribution; stable-release validation remains blocked.
+
 [h2]Current Features[/h2]
 [list]
 [*]Live-refreshing combined proximity inventory built from vanilla-reachable nearby containers
 [*]Live-refreshing Equipped inventory view for worn, held, and attached items
 [*]Device-owned context submenus for supported device actions
-[*]Complete powerWorks multi-cell battery removal and replacement presentation
+[*]Optional battery and watch presentation adapters for the legacy powerWorks provider contract
 [*]Exact-minute digital clocks and expanded military-watch information
 [*]Automatic key-ring filing
 [*]Bounded configurable inventory sorting with postcondition-verified server transfers
@@ -29,20 +32,29 @@ B47ANCE'd Essentials consolidates practical, independently configurable workflow
 
 [h2]Ecosystem Integration[/h2]
 [list]
-[*]Uses powerWorks device capabilities when powerWorks is installed
+[*]No hard mod dependencies. Legacy powerWorks adapters are optional; compatibility with renamed B47ANCE'd Power is unverified
 [*]Provides quality-of-life presentation without owning power, lighting, media progression, or storage simulation
 [*]Supports verified vanilla and third-party workflows through original compatibility adapters
 [*]Has no universal hard dependency
 [/list]
 
-[h2]Upcoming Features[/h2]
+[h2]Compatibility and Known Limitations[/h2]
 [list]
-[*]Broader verified vanilla workflow improvements
-[*]Additional third-party device and inventory adapters
-[*]Controller, split-screen, hosted, and dedicated-server validation
-[*]Automatic movement and Space mounting after their native input and pre-fall interception points are verified
-[*]Independent-hand firing, melee, manipulation, reload, animation, authority, and multiplayer integration after native proof
+[*]Requires Project Zomboid Build 42.20.3 or newer; the current installed Steam build is not runtime-validated
+[*]The Mod ID is now B47ANCEDEssentials. Update client/server mod lists and dependent integrations together; do not enable the old and new identities together
+[*]Sandbox options now use B47ANCEDEssentials. Existing presets do not migrate automatically; review intended settings before using an existing save
+[*]Dedicated synchronization, reconnects, persistence, restarts, controller and split-screen behavior require native acceptance tests
+[*]Independent-hand support is equipment classification only; no dual-wield attacks, reloads, animations or input integration are enabled
+[*]Heavy-object APIs are a provider foundation, with no generic physics or production movement provider
+[*]General batch-transfer transport is not automatically invoked by a storage UI
 [/list]
+
+[h2]Configuration[/h2]
+Use the B47ANCE'd Essentials sandbox page for feature toggles, search and operation limits, favorites, inventory nesting, map scale, output routing and ladder safety. Server sandbox settings govern shared gameplay.
+
+[h2]Source Code and Development[/h2]
+[url=https://github.com/B47ANCE/B47ANCEDEssentials]GitHub — Source Code & Issues[/url]
+Runtime mod content is Lua-only. Offline tests do not establish multiplayer compatibility.
 
 [b]Credits[/b]
 Project Director & Designer: B47ANCE
