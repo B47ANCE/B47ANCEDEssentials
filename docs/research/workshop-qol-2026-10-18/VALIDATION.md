@@ -15,7 +15,7 @@ Commands run from the repository root with its development Python environment:
 git diff --check
 ```
 
-[TESTED: offline Windows] Report accounting and deterministic scoring PASS:
+[TESTED: offline Windows, initial commit 4a9caf0] Report accounting and deterministic scoring PASS:
 595 downloaded instances, 592 unique Workshop IDs, 116 deduplicated capability
 entries and 25 detailed plans. Each reference resolves to an inventoried package;
 all local Markdown file links were checked. Two overlapping media/menu entries
@@ -49,3 +49,15 @@ current installed metadata remain separate evidence layers.
 deployment, packaging or Workshop publication occurred. G7 and stable G8 remain
 BLOCKED for gameplay. Independent clean-room reviewer signoff is PENDING;
 implementation has not started. No stable release tag is appropriate.
+
+## Vanilla baseline correction
+
+Following the project owner correction, inventory search/filtering is baseline
+functionality and no longer a proposed implementation. The current ranking
+contains 115 candidates; nearby loot is first, and recipe-dependency browsing
+moves into the top 25. The census and provenance observations are unchanged.
+All candidates explicitly require a demonstrated vanilla gap before work begins.
+
+The audit checker now prevents vanilla-baseline entries from appearing as
+ranked implementation candidates. Current audit, version and identity checks
+PASS offline. This correction adds no runtime evidence or gameplay changes.

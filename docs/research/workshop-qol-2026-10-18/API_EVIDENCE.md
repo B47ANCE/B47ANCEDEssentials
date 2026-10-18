@@ -4,6 +4,8 @@ Installed Steam build **25485521**, full engine version **UNKNOWN**. All observa
 
 ## Important native overlap
 
+The project owner corrected inventory search/filtering as vanilla baseline on 2026-10-18. Its proposed implementation was removed. The focused installed-Lua check located the native inventory filter/weight-order menu; it did not independently establish the full-text-search binding. That distinction is recorded in vanilla-baseline.json rather than claiming unsupported source proof.
+
 Native crafting already declares search/filter controls, including output filtering. Native inventory already renders condition ratios. Build 42 also has some native item-return behavior, so the tool-return slice must begin with a reproduced gap. A publisher feature list does not justify duplicating these systems.
 
 ## Direct source observations

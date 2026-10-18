@@ -20,7 +20,7 @@
     "read_errors": 0,
     "oversized_text": 18,
     "linked_paths": 0,
-    "ranked_capabilities": 116,
+    "ranked_capabilities": 115,
     "mapped_unique_packages": 174,
     "native_or_declared_dependency_flagged_unique_packages": 12,
     "duplicate_roots": [
@@ -15153,7 +15153,6 @@
       "native_files": [],
       "lua_only_dependency_review": "No native route detected in declarations; not execution proof",
       "capabilities": [
-        "inventory-search",
         "capacity",
         "container-labels",
         "compact-ui",
@@ -19241,7 +19240,6 @@
       "native_files": [],
       "lua_only_dependency_review": "No native route detected in declarations; not execution proof",
       "capabilities": [
-        "inventory-search",
         "nearby-view",
         "batch-transfer",
         "item-protection",

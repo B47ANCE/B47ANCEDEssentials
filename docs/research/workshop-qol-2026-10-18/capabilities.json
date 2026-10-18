@@ -11,49 +11,6 @@
   },
   "capabilities": [
     {
-      "id": "inventory-search",
-      "title": "Search and filter accessible inventory",
-      "dimensions": {
-        "frequency": 5,
-        "reach": 5,
-        "friction": 5,
-        "error_prevention": 4,
-        "accessibility": 5
-      },
-      "impact_score": 98.0,
-      "source_workshop_ids": [
-        "3586216562",
-        "3437629766"
-      ],
-      "proposed_owner": "SPXTRM + Essentials",
-      "essentials_status": "NEW",
-      "neutral_requirement": "Search names, native categories and visible state across admitted roots; show the real source and explain excluded roots.",
-      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
-      "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 1,
-      "plan": {
-        "slice": "Add an original query model over the existing authorized traversal snapshots, then a small native-pane search field with source breadcrumbs. Start with carried and vanilla-admitted nearby roots; add nested roots only through their existing access contract.",
-        "state": "Local query, focus and display preferences only. Search results carry stable references rather than owning item instances. Opening a result never expands reach. Any move delegates to the native action or reviewed server transfer service.",
-        "configuration": "Propose EnableInventorySearch=true and SearchNested=false under the existing Essentials sandbox namespace. Keep nesting depth and scan budgets within existing traversal settings. Local font and field position use native UI preferences; do not expose implementation cache limits.",
-        "acceptance": "Queries update after item rename, transfer, container destruction and root removal; identical names retain distinct sources. Test locked nested bags, non-ASCII search, favorites, controller focus, large inventories and no per-tick world scan.",
-        "depends": [
-          "nested-view",
-          "selection"
-        ],
-        "effort": "M",
-        "risk": "Medium: stale snapshots and conflicts with inventory replacements.",
-        "api_groups": [
-          "inventory",
-          "context"
-        ],
-        "existing": [
-          "InventoryTraversal.lua",
-          "InventoryReferences.lua",
-          "InventoryViews.lua"
-        ]
-      }
-    },
-    {
       "id": "nearby-view",
       "title": "One view for reachable nearby loot",
       "dimensions": {
@@ -73,7 +30,8 @@
       "neutral_requirement": "Aggregate only containers admitted by the vanilla loot window; retain real ownership, reach and permissions.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 2,
+      "rank": 1,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Retain the current aggregator. Review source admission, refresh invalidation and coexistence with standalone inventory mods; add only missing source labels and failure explanations after runtime reproduction.",
         "state": "Pure read projection of currently admitted vanilla loot buttons. Preserve true source containers and item identity. Do not persist projected contents or synchronize a second inventory.",
@@ -112,7 +70,8 @@
       "neutral_requirement": "Preview a finite set of moves, protect excluded items, then execute ordinary authorized transfers with partial results.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 3,
+      "rank": 2,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Expose the existing transfer foundation through an explicit preview and finite confirmation workflow. First support player-selected carried and ordinary world-container items; extend vehicle and corpse domains only after dedicated tests.",
         "state": "Client supplies intent and stable references. Server re-resolves actor, source, destination, ownership, access, capacity and item restrictions for every move. Use the existing replay binding and committed-result snapshots; never persist live Lua item pointers.",
@@ -158,7 +117,8 @@
       "neutral_requirement": "Queue a finite selection of valid native actions, show progress and stop cleanly when danger or prerequisites change.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 4,
+      "rank": 3,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Design a small original finite action coordinator with progress and cancel. First adapter: a selected set of ordinary dismantling actions. Domain projects own cooking, medical, farming and vehicle adapters; no universal action monkey-patch.",
         "state": "Client sequences ordinary native timed actions; each action retains its vanilla authority path. Shared effects must be revalidated on authority at execution. Persist no active queue initially; reconnect discards pending client intent and re-reads authoritative results.",
@@ -199,7 +159,8 @@
       "neutral_requirement": "Offer explicit destination rules or existing-content matches with capacity, access and favorite safeguards.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 5,
+      "rank": 4,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Keep Essentials' bounded seeded-container behavior and make its exclusions and partial results visible. Route richer category designations to Quartermaster via a reviewed optional contract; do not introduce a second competing taxonomy or storage authority.",
         "state": "The existing server sorting and transfer core owns mutations. Quartermaster would own shared destination rules and validate edits. Resolve storage identity on authority; replicate committed changes and read canonical rules on join.",
@@ -243,7 +204,8 @@
       "neutral_requirement": "Search and filter known recipe entries by name, required item and result while retaining skill and station requirements.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 6,
+      "rank": 5,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Have SPXTRM add an original search/filter adapter to the native known-recipe list. Start with name, input and output matching and preserve native recipe selection; do not replace the entire crafting engine.",
         "state": "Local indexes contain only currently available recipe metadata. Rebuild on recipe registry, character knowledge or source changes. Selecting a result opens the ordinary native recipe workflow.",
@@ -279,7 +241,8 @@
       "neutral_requirement": "Present alternatives, quantities, tool roles and station requirements from current recipe data without granting knowledge.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 7,
+      "rank": 6,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Add an original requirements view for the selected recipe using native recipe data and admitted inventory snapshots. Distinguish consumed material, reusable tool, alternative ingredient, knowledge and workstation requirements.",
         "state": "Local presentation only. The native craft transaction chooses and consumes inputs. A displayed estimate never authorizes consumption or substitutes a client count for authoritative ingredients.",
@@ -321,7 +284,8 @@
       "neutral_requirement": "Preserve still-valid selected item identities when rows rebuild; remove stale selections and retain controller focus.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 8,
+      "rank": 7,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Retain the current selection repair and review edge cases around filtered, nested and virtual views. Add stable focus restoration only where native controller behavior leaves a reproducible gap.",
         "state": "Local selection and focus only. Preserve identity for surviving visible items; remove destroyed or inaccessible items. No gameplay persistence or network commands.",
@@ -359,7 +323,8 @@
       "neutral_requirement": "Explain and consistently apply protected-item exclusions before transfer, dismantling, consumption or crafting helpers.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 9,
+      "rank": 8,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Document one original eligibility policy across existing key filing, sorting and magazine helpers before exposing new bulk operations. Add an explicit protected-item explanation; do not silently override the native favorite flag.",
         "state": "For shared mutations the server checks authoritative protection and equipment state at execution. Client marks are advisory unless a validated server policy stores them. Avoid inventing persistent item flags until their native lifecycle is verified.",
@@ -401,7 +366,8 @@
       "neutral_requirement": "Group related actions and retain native callback objects, disabled reasons, tooltips and controller navigation.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 10,
+      "rank": 9,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Retain device and developer grouping. Extend only demonstrably crowded families with an original grouping policy, localized labels and preserved option objects; coordinate overlapping menu providers.",
         "state": "Local presentation; callbacks and permissions remain the original owners' responsibility. The grouping layer never recreates, elevates or executes callbacks automatically.",
@@ -442,7 +408,8 @@
       "neutral_requirement": "Display capacity and loading state as text plus optional bars without changing weight, capacity or ammunition.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 11,
+      "rank": 10,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Prototype original text plus compact optional fill indicators on native container buttons and magazine rows. Share the read model with SPXTRM; reuse no external art, thresholds or color scheme.",
         "state": "Local display of already visible weight/capacity and current magazine state. Do not set item or container fields, synchronize an extra count or reveal inaccessible bag contents.",
@@ -480,7 +447,8 @@
       "neutral_requirement": "Add readable condition indicators to native item and equipment views using actual visible condition data.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 12,
+      "rank": 11,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Show an original optional numeric or non-color condition cue beside native equipped and inventory entries. Use current visible condition and maximum condition; add a low-condition hint only after thresholds are reviewed.",
         "state": "Local read model, invalidated by actual item changes. Do not expose hidden mechanical state, modify durability or predict future breakage as a fact.",
@@ -519,7 +487,8 @@
       "neutral_requirement": "Expose accessible nested contents with bounded traversal, source breadcrumbs and cycle protection.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 13,
+      "rank": 12,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Render the existing bounded traversal and stable reference foundation as native-compatible nested inspection with breadcrumbs. First slice remains read-only; transfers use a separately reviewed action path.",
         "state": "No projected-container ownership or saved contents. Every nested result retains an admitted root and exact path; root removal or failed resolution hides it. Join rebuilds from current game state.",
@@ -558,7 +527,8 @@
       "neutral_requirement": "Let a player choose a bounded count and preview eligible real items while vanilla performs each transfer.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 14,
+      "rank": 13,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Add an original bounded count prompt for a selected real-item stack, with an eligible-item preview. Distinguish item count from fluid amount and food portions; the first slice supports whole items only.",
         "state": "Resolve a finite list of actual item identities; native transfer actions own moves. Shared transfer extensions require the existing authoritative reference service. Never split an item by cloning its fields.",
@@ -603,7 +573,8 @@
       "neutral_requirement": "Expose only character-permitted freshness, cooking, contamination and nutrition information in native views.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 15,
+      "rank": 14,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Provisions and SPXTRM should supply an original permitted-food read model and small native tooltip/row adapter. Start with vanilla freshness and cooking state; nutrition and contamination require explicit knowledge-policy proof.",
         "state": "Local display only, reading authoritative native item state already available to this character. No eating, spoilage changes, ingredient transformation or client-owned safety verdict used to bypass server rules.",
@@ -641,7 +612,8 @@
       "neutral_requirement": "Present worn held and attached items once while retaining native equip actions and ownership.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 16,
+      "rank": 15,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Retain the current worn/held/attached projection and deferral to compatible standalone providers. Improve missing labels or controller behavior only after inspecting actual conflicts; keep a paper-doll redesign in SPXTRM.",
         "state": "Read-only local view of native equipment. A worn-and-held item appears once; drag and equip continue through native actions. No new equipment slots or independent-hand combat behavior.",
@@ -685,7 +657,8 @@
       "neutral_requirement": "Show native per-character completion and recipe or skill benefits; distinguish carried duplicates from known content.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 17,
+      "rank": 16,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Retain existing literature/media tracking, then verify partial completion, nested carried duplicates and modded reward data. Present original concise text and do not maintain a second knowledge registry.",
         "state": "Read native per-character pages, known recipes and recorded-media lines. Cache only bounded derived data, invalidating on character and inventory changes. Never mark media learned merely because it is carried.",
@@ -725,7 +698,8 @@
       "neutral_requirement": "Present revealed injuries, bandages and treatment needs without revealing hidden diagnoses or other players' private health.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 18,
+      "rank": 17,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Health Care should own permitted clinical facts, Medical Checks retains examination consent, and SPXTRM owns optional compact presentation. Begin with the local player's already revealed wounds and native treatment availability, not diagnosis through bandages. Verify the current contracts in each repository first.",
         "state": "Local presentation of permitted personal facts. Inspecting another character requires that project's authoritative authorization and privacy contract. Treatment remains a distinct server-validated native action.",
@@ -766,7 +740,8 @@
       "neutral_requirement": "Use optional legible gauges and original explanations for already available personal status; avoid hidden-stat disclosure and replace external dashboards with a Lua-only in-game option.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 19,
+      "rank": 18,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "SPXTRM should extend native status and moodle presentation with original explanations and accessible optional gauges. First retain native information granularity; expose additional numeric values only after a visibility-policy decision.",
         "state": "Local personal status only; no other-player tracking, gameplay mutation or new networking. Clear caches at character changes and rebuild from current native values.",
@@ -802,7 +777,8 @@
       "neutral_requirement": "Remember an action's temporary source and restore items only when access and ownership still permit it.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 20,
+      "rank": 19,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "First audit native Build 42 auto-return coverage and add only a reproduced gap, such as a specific magazine workflow. Store a short-lived origin reference at action start and offer safe return after successful completion.",
         "state": "Ordinary native transfer paths own movement. Re-resolve original source after the action; if inaccessible, destroyed or full, leave the real item safely carried and report it. No persisted return queue or forced teleport.",
@@ -843,7 +819,8 @@
       "neutral_requirement": "Search known building choices and explain missing skill, materials and placement constraints without adding structures.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 21,
+      "rank": 20,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Reuse the original query presentation from crafting but audit the native building registry separately. Start with known existing construction entries; retain native placement previews and add no buildable entity definitions.",
         "state": "Local recipe browsing only. Building placement and material consumption remain on the verified native authority path. No world state is stored by the search feature.",
@@ -884,7 +861,8 @@
       "neutral_requirement": "Queue ordinary magazine actions with finite ammunition reservation and interruption-safe item handling.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 22,
+      "rank": 21,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Retain current native batch loading/unloading and audit ammunition reservation, nested sources and interrupt handling. Add a preview or optional return adapter only after the existing workflow passes dedicated scenarios.",
         "state": "Native timed actions own ammunition changes. Reserve unique real rounds within a finite client plan, then rely on current execution validation; never set ammo counts directly. Reconnect discards pending work and reads actual magazine state.",
@@ -925,7 +903,8 @@
       "neutral_requirement": "Bind explicit native actions to configurable slots and keys, with controller alternatives and no fabricated items.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 23,
+      "rank": 22,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "SPXTRM should supply original configurable action slots using native keybinding and controller conventions. First support a small documented set of native item actions; defer automatic build/craft activation until their adapters exist.",
         "state": "Persist local identifiers and preference data only, never serialized item objects or executable callbacks. Resolve a permitted current item/action on use and delegate gameplay effects to ordinary authority paths.",
@@ -963,7 +942,8 @@
       "neutral_requirement": "Offer an eligible carried food and queue a normal eating action only under explicit player policy; preserve knowledge, duration and interruption rules.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 24,
+      "rank": 23,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Provisions owns an original safe-food eligibility read model. Start with a reminder and one explicit native Eat action on a chosen carried item; consider opt-in queuing only after knowledge and server authority are proven. Do not reproduce background instant consumption.",
         "state": "The native timed eating action owns item depletion and nutrition effects on its established authority path. Recheck item identity, known safety, access, favorite and interruption before execution. Persist preferences only, never a pending consumption instruction or a second nutrition model.",
@@ -1006,7 +986,8 @@
       "neutral_requirement": "Offer original text and icon choices for storage identification and ordering, preserving container identity.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 25,
+      "rank": 24,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
       "plan": {
         "slice": "Quartermaster and SPXTRM should distinguish local button ordering from shared storage labels. First implement local order and labels over stable identities; separately design authorized shared designation edits with original icons.",
         "state": "Local presentation order has no custom networking. Shared names/designations need server-owned validation, safehouse checks, persistence and canonical snapshots on join; do not overload an item name with a hidden storage rule.",
@@ -1043,7 +1024,24 @@
       "neutral_requirement": "Link known input and output recipes into a bounded navigable reference without auto-crafting or granting recipes.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 26
+      "rank": 25,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation",
+      "plan": {
+        "slice": "Add an original read-only dependency browser after recipe search is stable. Follow known input/output relationships with explicit alternatives and cycle markers; do not choose or auto-execute a crafting plan.",
+        "state": "Local derived metadata graph only. Knowledge changes and mod removal invalidate nodes. Never cache live item ownership or grant a hidden recipe because a known recipe depends on it.",
+        "configuration": "Owning UI project offers enable policy and local expansion preference. Keep traversal/node limits internal technical safeguards and show a truncation message rather than promising a complete graph.",
+        "acceptance": "Test recipe cycles, multiple producers, fluid requirements, reusable tools, unknown intermediates, mod removal and large registries. Back navigation preserves selection and every craft action still uses the native workflow.",
+        "depends": [
+          "craft-search",
+          "craft-requirements"
+        ],
+        "effort": "M",
+        "risk": "Medium: recipe graphs can be cyclic, ambiguous and knowledge-sensitive.",
+        "api_groups": [
+          "craft"
+        ],
+        "existing": []
+      }
     },
     {
       "id": "craft-output",
@@ -1065,7 +1063,8 @@
       "neutral_requirement": "Route approved output through the authoritative crafting path to an allowed nearby destination without increasing yield.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 27
+      "rank": 26,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "hotbar",
@@ -1088,7 +1087,8 @@
       "neutral_requirement": "Reorder native slot and attachment pairs while preserving saved indices and controller access.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 28
+      "rank": 27,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "action-preview",
@@ -1110,7 +1110,8 @@
       "neutral_requirement": "Preview admitted item identities or selected area cells and explain skips before confirming a finite operation.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 29
+      "rank": 28,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "compact-ui",
@@ -1135,7 +1136,8 @@
       "neutral_requirement": "Offer original reversible spacing, collapse and navigation improvements; grid-inventory capacity changes and a full map replacement are separate decisions.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 30
+      "rank": 29,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "controller-access",
@@ -1160,7 +1162,8 @@
       "neutral_requirement": "Extend legible fonts, focus movement, contrast and non-color cues across compatible native panels.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 31
+      "rank": 30,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "craft-xp",
@@ -1181,7 +1184,8 @@
       "neutral_requirement": "Show verified base awards and clearly labeled estimates plus source mod identity; never alter experience.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 32
+      "rank": 31,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "generator-info",
@@ -1203,7 +1207,8 @@
       "neutral_requirement": "Show inspected generator state and estimated runtime with assumptions, without discovering unobserved world devices.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 33
+      "rank": 32,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "map-annotation",
@@ -1228,7 +1233,8 @@
       "neutral_requirement": "Make personal notes, original symbols and scale preferences easy to apply to already known map regions.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 34
+      "rank": 33,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "device-menus",
@@ -1250,7 +1256,8 @@
       "neutral_requirement": "Group valid device power actions and avoid duplicate battery choices when an optional provider owns the cell.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 35
+      "rank": 34,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "maintenance-queue",
@@ -1275,7 +1282,8 @@
       "neutral_requirement": "Offer finite native repair or servicing sequences with normal tools, skill checks, time, parts and experience rules.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 36
+      "rank": 35,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "reading-queue",
@@ -1298,7 +1306,8 @@
       "neutral_requirement": "Queue a chosen finite reading or viewing list using native completion and skill gates with interrupt and resume choices.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 37
+      "rank": 36,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "key-filing",
@@ -1319,7 +1328,8 @@
       "neutral_requirement": "Queue normal transfers into carried key rings with bounded scans and favorite protection.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 38
+      "rank": 37,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "area-clean",
@@ -1342,7 +1352,8 @@
       "neutral_requirement": "Preview bounded valid cleanup targets and queue normal native tasks without speed boosts or remote reach.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 39
+      "rank": 38,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "fluid-readouts",
@@ -1365,7 +1376,8 @@
       "neutral_requirement": "Display verified fluid component state and valid native transfer choices without changing mixing or contamination.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 40
+      "rank": 39,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "loot-categories",
@@ -1388,7 +1400,8 @@
       "neutral_requirement": "Derive original categories from vanilla item properties with explicit optional overrides; do not copy item taxonomies.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 41
+      "rank": 40,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "transfer-feedback",
@@ -1410,7 +1423,8 @@
       "neutral_requirement": "Report moved skipped stale and blocked items with actionable reasons and no automatic retry loops.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 42
+      "rank": 41,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "map-center",
@@ -1431,7 +1445,8 @@
       "neutral_requirement": "Offer an explicit recenter action and optional follow behavior only when vanilla position visibility permits it.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 43
+      "rank": 42,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "bandage-queue",
@@ -1455,7 +1470,8 @@
       "neutral_requirement": "Chain ordinary removal and application actions with patient consent and complete server validation at both stages.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 44
+      "rank": 43,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "dashboard",
@@ -1477,7 +1493,8 @@
       "neutral_requirement": "Display inspected engine battery and lamp condition alongside native controls without modifying vehicle state.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 45
+      "rank": 44,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "map-legend",
@@ -1498,7 +1515,8 @@
       "neutral_requirement": "Explain existing map color classes using original labels and accessible contrast.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 46
+      "rank": 45,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "seed-season",
@@ -1521,7 +1539,8 @@
       "neutral_requirement": "Expose current season and character-permitted crop facts with original text and no growth or yield change.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 47
+      "rank": 46,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "alarm-clear",
@@ -1542,7 +1561,8 @@
       "neutral_requirement": "Offer explicit native alarm adjustment on selected owned clocks without silently changing other devices.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 48
+      "rank": 47,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "food-prep-queue",
@@ -1565,7 +1585,8 @@
       "neutral_requirement": "Queue chosen native preparation actions with real tools, spoilage, quantities, interruption and ingredients.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 49
+      "rank": 48,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "livestock-table",
@@ -1587,7 +1608,8 @@
       "neutral_requirement": "Present a bounded permitted zone table with the same skill-gated facts available from individual inspections.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 50
+      "rank": 49,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "washing-queue",
@@ -1611,7 +1633,8 @@
       "neutral_requirement": "Batch selected ordinary washing tasks with real water, soap, time and equipment restoration; new bath fixtures are separate mechanics.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 51
+      "rank": 50,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "gas-pump",
@@ -1632,7 +1655,8 @@
       "neutral_requirement": "Show permitted pump availability and interaction state without revealing undiscovered fuel reserves.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 52
+      "rank": 51,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "personal-marks",
@@ -1654,7 +1678,8 @@
       "neutral_requirement": "Let a player mark a visible item for later attention without altering global item knowledge or ownership.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 53
+      "rank": 52,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "radio-presets",
@@ -1676,7 +1701,8 @@
       "neutral_requirement": "Simplify existing channel, media and battery controls with keyboard and controller support.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 54
+      "rank": 53,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "window-memory",
@@ -1698,7 +1724,8 @@
       "neutral_requirement": "Persist local layout preferences with resolution-safe restoration and a reset action.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 55
+      "rank": 54,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "equipment-swap",
@@ -1721,7 +1748,8 @@
       "neutral_requirement": "Queue permitted equipment swaps while preserving attachment constraints and interrupt behavior; no new combat mechanics.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 56
+      "rank": 55,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "medical-consent",
@@ -1743,7 +1771,8 @@
       "neutral_requirement": "Request and enforce server-owned examination permissions with explicit administrative policy, revocation and reconnect behavior.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 57
+      "rank": 56,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "weight-column",
@@ -1764,7 +1793,8 @@
       "neutral_requirement": "Provide optional weight sorting and readable stack totals using current native values without changing carrying capacity.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 58
+      "rank": 57,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "context-performance",
@@ -1785,7 +1815,8 @@
       "neutral_requirement": "Measure first and bound repeated presentation work with reliable invalidation and an immediate native fallback.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 59
+      "rank": 58,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "furniture-placement",
@@ -1810,7 +1841,8 @@
       "neutral_requirement": "Preview original placement choices with server revalidation of real items, surfaces and collision constraints.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 60
+      "rank": 59,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "map-sharing",
@@ -1831,7 +1863,8 @@
       "neutral_requirement": "Share selected player-created notes with explicit scope and permission; never share unexplored cells by default.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 61
+      "rank": 60,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "recipe-favorites",
@@ -1853,7 +1886,8 @@
       "neutral_requirement": "Keep a local list of known recipe identifiers and discard missing identifiers safely after mod changes.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 62
+      "rank": 61,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "vehicle-entry",
@@ -1875,7 +1909,8 @@
       "neutral_requirement": "Preview a permitted reachable door and seat and invoke native entry without teleporting or bypassing locks.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 63
+      "rank": 62,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "clock",
@@ -1896,7 +1931,8 @@
       "neutral_requirement": "Format native time to the available device precision without giving mechanical watches digital-only information.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 64
+      "rank": 63,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "container-open",
@@ -1918,7 +1954,8 @@
       "neutral_requirement": "Admit a finite set of accessible carried bags into the existing inspection model without changing contents.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 65
+      "rank": 64,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "treatment-queue",
@@ -1939,7 +1976,8 @@
       "neutral_requirement": "Offer a finite preview of revealed treatable wounds and validated native treatment actions with patient permissions and interruption.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 66
+      "rank": 65,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "xp-feedback",
@@ -1962,7 +2000,8 @@
       "neutral_requirement": "Render optional aggregate experience notifications from actual player gains without multiplying or predicting awards.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 67
+      "rank": 66,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "hud-autohide",
@@ -1984,7 +2023,8 @@
       "neutral_requirement": "Offer explicit per-panel visibility and reveal-on-demand while retaining urgent native warnings.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 68
+      "rank": 67,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "navigation",
@@ -2006,7 +2046,8 @@
       "neutral_requirement": "Offer player-requested bearings and notes limited to allowed known data; no unexplored loot or enemy reveal.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 69
+      "rank": 68,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "room-organization",
@@ -2027,7 +2068,8 @@
       "neutral_requirement": "Present server-owned room labels, permission state and denial reasons without creating a second safehouse ownership system in Essentials.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 70
+      "rank": 69,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "trait-explanation",
@@ -2048,7 +2090,8 @@
       "neutral_requirement": "Generate original fact-based explanations from verified character creation data without copying community descriptions.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 71
+      "rank": 70,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "driving-controls",
@@ -2069,7 +2112,8 @@
       "neutral_requirement": "Expose supported native control preferences with reversible local bindings; do not defer other mods' world callbacks without a verified contract.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 72
+      "rank": 71,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "fuel-service",
@@ -2092,7 +2136,8 @@
       "neutral_requirement": "Queue selected native refueling or maintenance steps with verified fluids, real materials and server validation.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 73
+      "rank": 72,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "mp-sleep",
@@ -2114,7 +2159,8 @@
       "neutral_requirement": "Show an explicit server-approved readiness vote and cancel state; time changes require native server authority and a separate gameplay policy.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 74
+      "rank": 73,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "rename-items",
@@ -2135,7 +2181,8 @@
       "neutral_requirement": "Use native naming where supported; define authority and persistence before any shared object label extension.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 75
+      "rank": 74,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "device-off",
@@ -2156,7 +2203,8 @@
       "neutral_requirement": "Change permitted powered-device state on authority and synchronize it; do not implement parallel electricity ownership.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 76
+      "rank": 75,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "water-queue",
@@ -2177,7 +2225,8 @@
       "neutral_requirement": "Preview finite permitted native water actions with component fluid checks and server-owned consumption.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 77
+      "rank": 76,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "bag-traversal",
@@ -2199,7 +2248,8 @@
       "neutral_requirement": "Offer only a verified native transfer or placement sequence and preserve traversal burden; no item teleport, unsafe throwing or new physics.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 78
+      "rank": 77,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "direct-equip",
@@ -2222,7 +2272,8 @@
       "neutral_requirement": "Resolve a selected reachable real item and use the ordinary equip and transfer path without making pickup instant.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 79
+      "rank": 78,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "visual-storage",
@@ -2247,7 +2298,8 @@
       "neutral_requirement": "Offer original optional storage summaries and verified native previews; new physical storage and cargo models remain separate mechanics and asset work.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 80
+      "rank": 79,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "map-automark",
@@ -2268,7 +2320,8 @@
       "neutral_requirement": "Offer opt-in marks from permitted observations with rate limits and deduplicated local notes.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 81
+      "rank": 80,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "vehicle-repair",
@@ -2290,7 +2343,8 @@
       "neutral_requirement": "Improve requirements and failure feedback around native repairs; added repair recipes remain separate balance decisions.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 82
+      "rank": 81,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "warmth-light",
@@ -2312,7 +2366,8 @@
       "neutral_requirement": "Display original readouts of currently available clothing and device properties without changing protection or emitters.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 83
+      "rank": 82,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "building-maintenance",
@@ -2333,7 +2388,8 @@
       "neutral_requirement": "Select bounded targets and queue native tasks while respecting tools, materials, doors and safehouses.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 84
+      "rank": 83,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "corpse-haul",
@@ -2354,7 +2410,8 @@
       "neutral_requirement": "Move a finite set of reachable bodies through native actions while preserving burden and disease rules.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 85
+      "rank": 84,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "personal-statistics",
@@ -2376,7 +2433,8 @@
       "neutral_requirement": "Summarize native personal counters with explicit limits around vehicle and indirect kills; do not invent authoritative combat attribution.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 86
+      "rank": 85,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "weapon-info",
@@ -2400,7 +2458,8 @@
       "neutral_requirement": "Display inspected native weapon facts and matching ammunition without changing damage or revealing inaccessible state.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 87
+      "rank": 86,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "craft-pack",
@@ -2422,7 +2481,8 @@
       "neutral_requirement": "Queue only existing authorized transformations with exact input-output accounting; do not import packing recipes.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 88
+      "rank": 87,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "item-distinction",
@@ -2443,7 +2503,8 @@
       "neutral_requirement": "Author original accessible markers derived from native metadata and preserve textual identification; copy no icons or classification tables.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 89
+      "rank": 88,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "weapon-ammo",
@@ -2464,7 +2525,8 @@
       "neutral_requirement": "Chain native unloading steps and optional magazine restoration without duplicating or instantly extracting ammunition.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 90
+      "rank": 89,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "crop-queue",
@@ -2486,7 +2548,8 @@
       "neutral_requirement": "Plan a bounded crop task set using existing skill, season, access, water and native-action checks.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 91
+      "rank": 90,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "heavy-movement",
@@ -2509,7 +2572,8 @@
       "neutral_requirement": "Coordinate original verified providers for permitted movement; no generic physics, free lifting or capacity bypass.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 92
+      "rank": 91,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "tow-feedback",
@@ -2532,7 +2596,8 @@
       "neutral_requirement": "Improve selection and feedback without removing force, vehicle or attachment constraints.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 93
+      "rank": 92,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "avatar-preview",
@@ -2554,7 +2619,8 @@
       "neutral_requirement": "Resize and navigate existing previews locally with safe layout bounds and controller access.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 94
+      "rank": 93,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "visible-carry",
@@ -2576,7 +2642,8 @@
       "neutral_requirement": "Use verified native attachment and original asset contracts without altering weight or carrying capacity.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 95
+      "rank": 94,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "animal-queue",
@@ -2598,7 +2665,8 @@
       "neutral_requirement": "Queue selected reachable permitted care targets without changing yield or revealing skill-locked facts.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 96
+      "rank": 95,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "ladder",
@@ -2619,7 +2687,8 @@
       "neutral_requirement": "Offer context actions on properly tagged ladder tiles using verified native transitions and fail-closed landing checks.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 97
+      "rank": 96,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "error-reporting",
@@ -2640,7 +2709,8 @@
       "neutral_requirement": "Provide a local opt-in summary with private-data redaction and explicit export; no automatic uploads.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 98
+      "rank": 97,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "session-briefing",
@@ -2661,7 +2731,8 @@
       "neutral_requirement": "Show an unobtrusive original recap of already available player facts without copying visual themes or disclosing hidden coordinates.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 99
+      "rank": 98,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "furniture-look",
@@ -2682,7 +2753,8 @@
       "neutral_requirement": "Choose only vanilla-supported variants with shared state validation; author all new preview assets independently.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 100
+      "rank": 99,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "vehicle-push",
@@ -2703,7 +2775,8 @@
       "neutral_requirement": "Require a proven Lua movement and collision path with server ownership; stop if only client physics is possible.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 101
+      "rank": 100,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "item-model-preview",
@@ -2724,7 +2797,8 @@
       "neutral_requirement": "Render permitted existing model previews through verified UI support without changing world items.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 102
+      "rank": 101,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "mod-organization",
@@ -2747,7 +2821,8 @@
       "neutral_requirement": "Show metadata-based dependency relationships and configuration changes for review without silently rewriting mod lists.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 103
+      "rank": 102,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "rest-actions",
@@ -2769,7 +2844,8 @@
       "neutral_requirement": "Expose original context entries for supported native actions without copying animation assets or disabling anti-cheat.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 104
+      "rank": 103,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "map-conflicts",
@@ -2790,7 +2866,8 @@
       "neutral_requirement": "Inspect declared map metadata outside gameplay with explicit uncertainty for generated or missing cells.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 105
+      "rank": 104,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "translation-access",
@@ -2814,7 +2891,8 @@
       "neutral_requirement": "Author original translations with a documented fallback and check real localized strings rather than folder counts.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 106
+      "rank": 105,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "equipment-light",
@@ -2837,7 +2915,8 @@
       "neutral_requirement": "Expose allowed attachment actions only; new equipment slots and light behavior require separate balance approval.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 107
+      "rank": 106,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "sandbox-admin",
@@ -2859,7 +2938,8 @@
       "neutral_requirement": "Use native administration authorization and controls; never allow clients to set server gameplay rules.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 108
+      "rank": 107,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "visual-contrast",
@@ -2881,7 +2961,8 @@
       "neutral_requirement": "Prefer reversible UI contrast and native settings; do not copy replacement world textures or alter visibility rules.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 109
+      "rank": 108,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "placement-entry",
@@ -2903,7 +2984,8 @@
       "neutral_requirement": "Offer a context entry to supported native adjustment while preserving ordinary bounds and server mutation.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 110
+      "rank": 109,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "sound-accessibility",
@@ -2924,7 +3006,8 @@
       "neutral_requirement": "Only implement after a Lua-exposed reversible listener path can exclude UI, voice and AI hearing changes.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 111
+      "rank": 110,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "update-notices",
@@ -2945,7 +3028,8 @@
       "neutral_requirement": "Display verified metadata without downloading executable code, sending player data or forcing updates.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 112
+      "rank": 111,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "camera-accessibility",
@@ -2970,7 +3054,8 @@
       "neutral_requirement": "Require a verified Lua-only camera path and retain native occlusion; never import native patches or reveal hidden enemies. Publisher visibility claims do not prove permitted Lua exposure.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 113
+      "rank": 112,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "cosmetic-emotes",
@@ -2995,7 +3080,8 @@
       "neutral_requirement": "Expose existing permitted animations with original labels; do not copy animation assets.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 114
+      "rank": 113,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "radio-state",
@@ -3016,7 +3102,8 @@
       "neutral_requirement": "Audit native state transitions and fix only reproducible defects through Lua without extending network relevance unsafely.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 115
+      "rank": 114,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     },
     {
       "id": "item-readability",
@@ -3037,7 +3124,8 @@
       "neutral_requirement": "Present existing authoritative item text where permitted; any new stories or shared identity records require original content and design.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
       "implementation_origin": "Independent design required; external code/assets/text import NONE",
-      "rank": 116
+      "rank": 115,
+      "vanilla_gap_status": "NOT_ESTABLISHED; reproduce a distinct native limitation before implementation"
     }
   ]
 }

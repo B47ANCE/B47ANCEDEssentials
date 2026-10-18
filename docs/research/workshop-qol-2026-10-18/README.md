@@ -1,8 +1,8 @@
 # Downloaded Workshop quality of life audit
 
-The strongest recurring opportunities are accessible inventory search, reachable-loot aggregation, safe bulk transfers, cancellable native-action queues and storage sorting. Several already have Essentials implementations or foundations. Broad crafting, health and HUD work belongs with its presentation or domain owner rather than a second implementation inside Essentials.
+The strongest recurring workflow candidates are reachable-loot aggregation, safe bulk transfers, cancellable native-action queues and storage sorting. Inventory search and filtering are excluded from implementation work as vanilla baseline functionality, following the project owner correction. Several already have Essentials implementations or foundations. Broad crafting, health and HUD work belongs with its presentation or domain owner rather than a second implementation inside Essentials.
 
-The snapshot covers **595 downloaded instances, 592 distinct Workshop IDs**, comprising 591 Steam-client folders and 4 SteamCMD-cache folders. It identifies **116 deduplicated QoL capabilities**, ranked by estimated impact, and supplies an independent implementation plan for the **top 25 overall, including existing Essentials features**, as requested.
+The snapshot covers **595 downloaded instances, 592 distinct Workshop IDs**, comprising 591 Steam-client folders and 4 SteamCMD-cache folders. It identifies **115 deduplicated QoL capabilities**, ranked by estimated impact, and supplies an independent implementation plan for the **top 25 overall, including existing Essentials features**, as requested.
 
 - [Top 25 implementation plans](TOP_25_PLAN.md)
 - [Complete impact ranking](RANKING.md)
@@ -11,6 +11,7 @@ The snapshot covers **595 downloaded instances, 592 distinct Workshop IDs**, com
 - [Excluded mechanics and unresolved boundaries](EXCLUSIONS.md)
 - [Validation commands and results](VALIDATION.md)
 - [Exact scan omissions](LIMITS.md)
+- [Vanilla baseline exclusions](vanilla-baseline.json)
 - [Clean-room review checklist](CLEAN_ROOM_REVIEW.md)
 - Machine-readable records: [summary](summary.json), [packages](packages.json), [capabilities and plans](capabilities.json), [API evidence](api-evidence.json).
 
@@ -30,11 +31,11 @@ Scope roots are the discovered Steam-client and SteamCMD content/108600 trees. O
 
 Impact = `(30 × frequency + 25 × reach + 25 × friction + 10 × error prevention + 10 × accessibility) / 5`. Every dimension is an ordinal judgment from 1 to 5. Frequency ranges from exceptional/setup use to recurring play-session use; reach from a specialist workflow to most survival players; friction from a minor cue to repeated multi-step work; error prevention from cosmetic benefit to avoiding common costly mistakes; accessibility from a small convenience to a substantial reduction in input or interpretation burden.
 
-Scores estimate benefit from the **capability being available**, even if Essentials or vanilla already implements it. They are not the incremental value of writing new code, a popularity ranking, measured time saved, evidence of safety, or an implementation priority. Cost, authority risk, native overlap and owning project are separate. Closely related families are distinguished by observable workflow: search finds items, nearby aggregation admits roots, nested inspection exposes permitted bag contents, and transfer moves a chosen set. They share infrastructure and must not be implemented as four competing inventory engines. Forks, bundles and old/new build variants do not multiply a capability's score.
+Scores estimate benefit from the **capability being available**, even if Essentials or vanilla already implements it. They are not the incremental value of writing new code, a popularity ranking, measured time saved, evidence of safety, or an implementation priority. Cost, authority risk, native overlap and owning project are separate. Closely related families are distinguished by observable workflow: nearby aggregation admits roots, nested inspection exposes permitted bag contents, and transfer moves a chosen set. Native inventory search/filtering is baseline, not a proposed new feature. They share infrastructure and must not be implemented as four competing inventory engines. Forks, bundles and old/new build variants do not multiply a capability's score.
 
 Treat differences of roughly five points as an uncertainty band. Equal scores are tied and sorted by stable capability ID only. Reweighting for a dedicated-server administrator, controller-only player or builder can change the order. The top 25 follows this published formula, rather than silently choosing only new work.
 
-Coverage labels describe **Essentials at the audited base**, not every other project: IMPLEMENTED = source implementation present, PARTIAL = narrower behavior exists, FOUNDATION = reviewed support code without the full proposed user workflow, NEW = no implementation claimed in Essentials, BLOCKED = a safe permitted route remains unresolved. None means runtime PASS. Other projects may already implement a listed requirement and must be inspected before work begins there.
+Coverage labels describe **Essentials at the audited base**, not every other project: IMPLEMENTED = source implementation present, PARTIAL = narrower behavior exists, FOUNDATION = reviewed support code without the full proposed user workflow, NEW = no implementation claimed in Essentials, BLOCKED = a safe permitted route remains unresolved. None means runtime PASS. NEW means absent from Essentials only; it does not establish a missing vanilla feature. Each candidate now records an unproven vanilla gap and may proceed only after a distinct limitation is reproduced. Inventory search/filtering has been moved to vanilla-baseline.json and removed from the implementation ranking. Other projects may already implement a listed requirement and must be inspected before work begins there.
 
 ## Implementation boundaries
 

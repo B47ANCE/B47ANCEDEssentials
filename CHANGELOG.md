@@ -2,6 +2,10 @@
 
 ## 0.19.2 — 2026-10-18
 
+- Corrected the research backlog after the owner's vanilla-baseline clarification:
+  inventory search/filtering is excluded from new implementation work. Reranked
+  115 candidates and updated the top 25; every candidate now explicitly requires
+  a demonstrated gap against vanilla before any implementation is proposed.
 - Added a documentation-only downloaded-Workshop QoL census, impact ranking and
   top-25 clean-room implementation plan, including current Essentials coverage,
   proposed owning projects, native overlap and explicit evidence limits.

@@ -13,6 +13,10 @@ def main():
     catalog = json.loads((AUDIT / 'capabilities.json').read_text(encoding='utf-8'))
     packages = package_data['instances']
     caps = catalog['capabilities']
+    baseline = json.loads((AUDIT / 'vanilla-baseline.json').read_text(encoding='utf-8'))['entries']
+    baseline_ids = {entry['id'] for entry in baseline}
+    assert 'inventory-search' in baseline_ids
+    assert not baseline_ids.intersection(c['id'] for c in caps), 'Vanilla baseline must not be proposed as new work'
     sha = re.compile(r'^[a-f0-9]{64}$')
     assert summary == package_data['snapshot'], 'Diverging snapshot summary'
     assert summary['base_version'] == (ROOT / 'VERSION').read_text().strip()
@@ -31,6 +35,7 @@ def main():
     package_table = (AUDIT / 'PACKAGES.md').read_text(encoding='utf-8')
     for rank, capability in enumerate(caps, 1):
         assert rank == capability['rank']
+        assert capability['vanilla_gap_status'].startswith('NOT_ESTABLISHED')
         dims = capability['dimensions']
         assert dims.keys() == weights.keys()
         assert all(isinstance(v, int) and 1 <= v <= 5 for v in dims.values())

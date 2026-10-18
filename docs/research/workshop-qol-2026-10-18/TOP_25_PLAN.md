@@ -4,7 +4,7 @@ These plans cover the top 25 overall, including existing features. Impact order 
 
 ## Shared entry gates
 
-1. Reproduce a concrete gap against the installed vanilla build and current owning-project implementation. Native search, condition displays and Build 42 auto-return already cover parts of these requirements. If no gap exists, record native coverage and add no duplicate feature.
+1. Inventory search and filtering are vanilla baseline and are not implementation work. Reproduce a concrete gap against the installed vanilla build and current owning-project implementation. Native search, condition displays and Build 42 auto-return already cover parts of these requirements. If no gap exists, record native coverage and add no duplicate feature.
 2. A fresh implementer receives only neutral requirements, permitted metadata references and verified vanilla evidence. Keep private lexical/raw-description research outside the implementation context. No external Lua, algorithms, private tables, architecture, assets, translations or distinctive UI text are an implementation source. The current audit author has seen metadata, module/interface names and declarations; this is a separation workflow, not a claim of legally certified isolation.
 3. Audit the exact vanilla receiver, signature, execution side and source hash for the selected slice. [API evidence](API_EVIDENCE.md) is a starting point, not a finished authority proof. Stop gameplay work if a safe Lua-only authority model cannot be established.
 4. Record the next development SemVer before implementation. This documentation stays tied to 0.19.2 and does not authorize a version bump in another project. Preserve canonical VERSION and mirrors through each later iteration.
@@ -16,34 +16,14 @@ These plans cover the top 25 overall, including existing features. Impact order 
 ## Delivery sequence
 
 - Phase A: audit existing coverage and native overlap: nearby view, selection, equipment, media, magazines and current sorting. Add no replacement engines.
-- Phase B: protection and read models: item exclusions, nested inspection, search, capacity and condition; then local health/food/status presentation through their owners.
+- Phase B: protection and read models: item exclusions, nested inspection, capacity and condition; then local health/food/status presentation through their owners.
 - Phase C: expose explicit transfer/quantity previews, finish authoritative result handling, then storage integration. The foundation must pass its mutation gates before dependent UI ships.
 - Phase D: one cancellable native-action adapter, then source return and optional food assistance. Each adapter has independent authority and interruption gates.
 - Phase E: SPXTRM recipe/building improvements, shortcuts and storage labels after focused native-gap audits. Do not bundle broad UI replacement or shared ownership changes into Essentials.
 
 Effort S = one bounded adapter/review slice; M = several related slices; L = authority or cross-project work. These are relative scope estimates, not calendar promises. Source paths below identify current Essentials evidence; future production files must be chosen after inspecting the owning repository.
 
-## 1. Search and filter accessible inventory
-
-Impact **98**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort **M**.
-
-**Behavioral contract.** Search names, native categories and visible state across admitted roots; show the real source and explain excluded roots.
-
-**First independent slice.** Add an original query model over the existing authorized traversal snapshots, then a small native-pane search field with source breadcrumbs. Start with carried and vanilla-admitted nearby roots; add nested roots only through their existing access contract.
-
-**Ownership and lifecycle.** Local query, focus and display preferences only. Search results carry stable references rather than owning item instances. Opening a result never expands reach. Any move delegates to the native action or reviewed server transfer service.
-
-**Configuration and saves.** Propose EnableInventorySearch=true and SearchNested=false under the existing Essentials sandbox namespace. Keep nesting depth and scan budgets within existing traversal settings. Local font and field position use native UI preferences; do not expose implementation cache limits.
-
-**Acceptance scenarios.** Queries update after item rename, transfer, container destruction and root removal; identical names retain distinct sources. Test locked nested bags, non-ASCII search, favorites, controller focus, large inventories and no per-tick world scan.
-
-**Cost and blockers.** Medium: stale snapshots and conflicts with inventory replacements. Dedicated and performance evidence remain open; all shared entry gates apply.
-
-**Dependencies.** nested-view, selection.
-
-**Evidence.** [InventoryTraversal.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Vanilla groups: inventory, context in [API evidence](API_EVIDENCE.md). Discovery: [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [3437629766](https://steamcommunity.com/sharedfiles/filedetails/?id=3437629766).
-
-## 2. One view for reachable nearby loot
+## 1. One view for reachable nearby loot
 
 Impact **96**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort **S**.
 
@@ -63,7 +43,7 @@ Impact **96**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort *
 
 **Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [2847184718](https://steamcommunity.com/sharedfiles/filedetails/?id=2847184718), [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562).
 
-## 3. Safe bulk transfer between selected containers
+## 2. Safe bulk transfer between selected containers
 
 Impact **94**; coverage **FOUNDATION**; proposed owner **Essentials + Quartermaster**; effort **L**.
 
@@ -83,7 +63,7 @@ Impact **94**; coverage **FOUNDATION**; proposed owner **Essentials + Quartermas
 
 **Evidence.** [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [InventoryTransferServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/InventoryTransferServer.lua); [InventoryTransferClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryTransferClient.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Vanilla groups: inventory, actions in [API evidence](API_EVIDENCE.md). Discovery: [3422220305](https://steamcommunity.com/sharedfiles/filedetails/?id=3422220305), [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [3761216758](https://steamcommunity.com/sharedfiles/filedetails/?id=3761216758).
 
-## 4. Queue repeated ordinary actions with cancellation
+## 3. Queue repeated ordinary actions with cancellation
 
 Impact **92**; coverage **NEW**; proposed owner **Essentials orchestrator + domain owners**; effort **L**.
 
@@ -103,7 +83,7 @@ Impact **92**; coverage **NEW**; proposed owner **Essentials orchestrator + doma
 
 **Evidence.** [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Vanilla groups: actions, context in [API evidence](API_EVIDENCE.md). Discovery: [3777237134](https://steamcommunity.com/sharedfiles/filedetails/?id=3777237134), [3761218629](https://steamcommunity.com/sharedfiles/filedetails/?id=3761218629), [3776658529](https://steamcommunity.com/sharedfiles/filedetails/?id=3776658529), [3793163745](https://steamcommunity.com/sharedfiles/filedetails/?id=3793163745).
 
-## 5. Put loot into designated or seeded storage
+## 4. Put loot into designated or seeded storage
 
 Impact **92**; coverage **PARTIAL**; proposed owner **Quartermaster + Essentials**; effort **M**.
 
@@ -123,7 +103,7 @@ Impact **92**; coverage **PARTIAL**; proposed owner **Quartermaster + Essentials
 
 **Evidence.** [SortingCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/SortingCore.lua); [SortingServer.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/server/B47ANCEDEssentials/SortingServer.lua); [SortingClient.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/SortingClient.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua). Vanilla groups: inventory, actions in [API evidence](API_EVIDENCE.md). Discovery: [3761216758](https://steamcommunity.com/sharedfiles/filedetails/?id=3761216758), [3807217050](https://steamcommunity.com/sharedfiles/filedetails/?id=3807217050), [3290232938](https://steamcommunity.com/sharedfiles/filedetails/?id=3290232938).
 
-## 6. Find crafting recipes by inputs and outputs
+## 5. Find crafting recipes by inputs and outputs
 
 Impact **91**; coverage **NEW**; proposed owner **SPXTRM**; effort **M**.
 
@@ -141,9 +121,9 @@ Impact **91**; coverage **NEW**; proposed owner **SPXTRM**; effort **M**.
 
 **Dependencies.** No new catalog dependency; validate native/current project behavior first.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: craft in [API evidence](API_EVIDENCE.md). Discovery: [3502080466](https://steamcommunity.com/sharedfiles/filedetails/?id=3502080466), [3390169945](https://steamcommunity.com/sharedfiles/filedetails/?id=3390169945).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: craft in [API evidence](API_EVIDENCE.md). Discovery: [3502080466](https://steamcommunity.com/sharedfiles/filedetails/?id=3502080466), [3390169945](https://steamcommunity.com/sharedfiles/filedetails/?id=3390169945).
 
-## 7. Explain missing ingredients tools and stations
+## 6. Explain missing ingredients tools and stations
 
 Impact **89**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort **M**.
 
@@ -163,7 +143,7 @@ Impact **89**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort 
 
 **Evidence.** [InventoryTraversal.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua). Vanilla groups: craft, inventory, fluid in [API evidence](API_EVIDENCE.md). Discovery: [3502080466](https://steamcommunity.com/sharedfiles/filedetails/?id=3502080466), [3540503606](https://steamcommunity.com/sharedfiles/filedetails/?id=3540503606), [3536052310](https://steamcommunity.com/sharedfiles/filedetails/?id=3536052310).
 
-## 8. Keep inventory selection through refreshes
+## 7. Keep inventory selection through refreshes
 
 Impact **89**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort **S**.
 
@@ -183,7 +163,7 @@ Impact **89**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort *
 
 **Evidence.** [InventorySelectionRepair.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventorySelectionRepair.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [3782920935](https://steamcommunity.com/sharedfiles/filedetails/?id=3782920935), [3773985930](https://steamcommunity.com/sharedfiles/filedetails/?id=3773985930).
 
-## 9. Protect favorites and reserved equipment from bulk actions
+## 8. Protect favorites and reserved equipment from bulk actions
 
 Impact **88**; coverage **PARTIAL**; proposed owner **Essentials + Quartermaster**; effort **M**.
 
@@ -203,7 +183,7 @@ Impact **88**; coverage **PARTIAL**; proposed owner **Essentials + Quartermaster
 
 **Evidence.** [SortingCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/SortingCore.lua); [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [AutoKeyRing.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/AutoKeyRing.lua); [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [3795435563](https://steamcommunity.com/sharedfiles/filedetails/?id=3795435563).
 
-## 10. Make context actions easier to find
+## 9. Make context actions easier to find
 
 Impact **87**; coverage **PARTIAL**; proposed owner **Essentials**; effort **S**.
 
@@ -223,7 +203,7 @@ Impact **87**; coverage **PARTIAL**; proposed owner **Essentials**; effort **S**
 
 **Evidence.** [ContextMenuCleanup.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/ContextMenuCleanup.lua); [DevicePowerMenu.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua); [InventoryActionGrouping.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryActionGrouping.lua). Vanilla groups: context in [API evidence](API_EVIDENCE.md). Discovery: [3780688809](https://steamcommunity.com/sharedfiles/filedetails/?id=3780688809), [3781012462](https://steamcommunity.com/sharedfiles/filedetails/?id=3781012462), [2875848298](https://steamcommunity.com/sharedfiles/filedetails/?id=2875848298), [3554048011](https://steamcommunity.com/sharedfiles/filedetails/?id=3554048011).
 
-## 11. Show container and magazine fill at a glance
+## 10. Show container and magazine fill at a glance
 
 Impact **85**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort **S**.
 
@@ -243,7 +223,7 @@ Impact **85**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort 
 
 **Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [3789660055](https://steamcommunity.com/sharedfiles/filedetails/?id=3789660055), [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [3781012462](https://steamcommunity.com/sharedfiles/filedetails/?id=3781012462), [3437629766](https://steamcommunity.com/sharedfiles/filedetails/?id=3437629766).
 
-## 12. Show item condition where it is used
+## 11. Show item condition where it is used
 
 Impact **85**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort **S**.
 
@@ -263,7 +243,7 @@ Impact **85**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort 
 
 **Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [HotbarReordering.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/HotbarReordering.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [2852309899](https://steamcommunity.com/sharedfiles/filedetails/?id=2852309899), [3641048285](https://steamcommunity.com/sharedfiles/filedetails/?id=3641048285), [3781012462](https://steamcommunity.com/sharedfiles/filedetails/?id=3781012462).
 
-## 13. Inspect nested bags without unpacking
+## 12. Inspect nested bags without unpacking
 
 Impact **85**; coverage **FOUNDATION**; proposed owner **Essentials + SPXTRM**; effort **M**.
 
@@ -283,7 +263,7 @@ Impact **85**; coverage **FOUNDATION**; proposed owner **Essentials + SPXTRM**; 
 
 **Evidence.** [InventoryTraversal.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua); [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [3410947298](https://steamcommunity.com/sharedfiles/filedetails/?id=3410947298), [3465040406](https://steamcommunity.com/sharedfiles/filedetails/?id=3465040406), [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562).
 
-## 14. Transfer an exact quantity from a stack
+## 13. Transfer an exact quantity from a stack
 
 Impact **83**; coverage **NEW**; proposed owner **Essentials**; effort **M**.
 
@@ -303,7 +283,7 @@ Impact **83**; coverage **NEW**; proposed owner **Essentials**; effort **M**.
 
 **Evidence.** [InventoryTransfers.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Vanilla groups: inventory, actions, context in [API evidence](API_EVIDENCE.md). Discovery: [3422220305](https://steamcommunity.com/sharedfiles/filedetails/?id=3422220305), [3781012462](https://steamcommunity.com/sharedfiles/filedetails/?id=3781012462).
 
-## 15. Make food freshness safety and nutrition readable
+## 14. Make food freshness safety and nutrition readable
 
 Impact **82**; coverage **NEW**; proposed owner **Provisions + SPXTRM**; effort **M**.
 
@@ -321,9 +301,9 @@ Impact **82**; coverage **NEW**; proposed owner **Provisions + SPXTRM**; effort 
 
 **Dependencies.** No new catalog dependency; validate native/current project behavior first.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: food, fluid in [API evidence](API_EVIDENCE.md). Discovery: [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [3781012462](https://steamcommunity.com/sharedfiles/filedetails/?id=3781012462), [3490188370](https://steamcommunity.com/sharedfiles/filedetails/?id=3490188370), [3723726293](https://steamcommunity.com/sharedfiles/filedetails/?id=3723726293).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: food, fluid in [API evidence](API_EVIDENCE.md). Discovery: [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [3781012462](https://steamcommunity.com/sharedfiles/filedetails/?id=3781012462), [3490188370](https://steamcommunity.com/sharedfiles/filedetails/?id=3490188370), [3723726293](https://steamcommunity.com/sharedfiles/filedetails/?id=3723726293).
 
-## 16. Separate equipped items from carried clutter
+## 15. Separate equipped items from carried clutter
 
 Impact **81**; coverage **IMPLEMENTED**; proposed owner **Essentials + SPXTRM**; effort **S**.
 
@@ -343,7 +323,7 @@ Impact **81**; coverage **IMPLEMENTED**; proposed owner **Essentials + SPXTRM**;
 
 **Evidence.** [InventoryViews.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventoryViews.lua); [InventorySelectionRepair.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/InventorySelectionRepair.lua); [IndependentHandClassifier.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/IndependentHandClassifier.lua). Vanilla groups: inventory in [API evidence](API_EVIDENCE.md). Discovery: [3773985930](https://steamcommunity.com/sharedfiles/filedetails/?id=3773985930), [3790656296](https://steamcommunity.com/sharedfiles/filedetails/?id=3790656296), [2950902979](https://steamcommunity.com/sharedfiles/filedetails/?id=2950902979), [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562).
 
-## 17. Show read watched and useful-media progress
+## 16. Show read watched and useful-media progress
 
 Impact **81**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort **S**.
 
@@ -363,7 +343,7 @@ Impact **81**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort *
 
 **Evidence.** [LiteratureCore.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/LiteratureCore.lua); [LiteratureTracking.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/LiteratureTracking.lua). Vanilla groups: media, inventory in [API evidence](API_EVIDENCE.md). Discovery: [2544353492](https://steamcommunity.com/sharedfiles/filedetails/?id=2544353492), [3777800131](https://steamcommunity.com/sharedfiles/filedetails/?id=3777800131), [3716522633](https://steamcommunity.com/sharedfiles/filedetails/?id=3716522633), [3739168410](https://steamcommunity.com/sharedfiles/filedetails/?id=3739168410), [2732294885](https://steamcommunity.com/sharedfiles/filedetails/?id=2732294885).
 
-## 18. Make existing health information easier to inspect
+## 17. Make existing health information easier to inspect
 
 Impact **80**; coverage **NEW**; proposed owner **Health Care + Medical Checks + SPXTRM**; effort **M**.
 
@@ -381,9 +361,9 @@ Impact **80**; coverage **NEW**; proposed owner **Health Care + Medical Checks +
 
 **Dependencies.** No new catalog dependency; validate native/current project behavior first.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: health in [API evidence](API_EVIDENCE.md). Discovery: [2866258937](https://steamcommunity.com/sharedfiles/filedetails/?id=2866258937), [3779405481](https://steamcommunity.com/sharedfiles/filedetails/?id=3779405481), [3723726293](https://steamcommunity.com/sharedfiles/filedetails/?id=3723726293).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: health in [API evidence](API_EVIDENCE.md). Discovery: [2866258937](https://steamcommunity.com/sharedfiles/filedetails/?id=2866258937), [3779405481](https://steamcommunity.com/sharedfiles/filedetails/?id=3779405481), [3723726293](https://steamcommunity.com/sharedfiles/filedetails/?id=3723726293).
 
-## 19. Readable configurable survival status and moodles
+## 18. Readable configurable survival status and moodles
 
 Impact **80**; coverage **NEW**; proposed owner **SPXTRM**; effort **M**.
 
@@ -401,9 +381,9 @@ Impact **80**; coverage **NEW**; proposed owner **SPXTRM**; effort **M**.
 
 **Dependencies.** No new catalog dependency; validate native/current project behavior first.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: status in [API evidence](API_EVIDENCE.md). Discovery: [2867431511](https://steamcommunity.com/sharedfiles/filedetails/?id=2867431511), [3399432867](https://steamcommunity.com/sharedfiles/filedetails/?id=3399432867), [3451167732](https://steamcommunity.com/sharedfiles/filedetails/?id=3451167732), [3776182375](https://steamcommunity.com/sharedfiles/filedetails/?id=3776182375), [3389003300](https://steamcommunity.com/sharedfiles/filedetails/?id=3389003300), [3674800555](https://steamcommunity.com/sharedfiles/filedetails/?id=3674800555), [3395171770](https://steamcommunity.com/sharedfiles/filedetails/?id=3395171770), [3753700423](https://steamcommunity.com/sharedfiles/filedetails/?id=3753700423).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: status in [API evidence](API_EVIDENCE.md). Discovery: [2867431511](https://steamcommunity.com/sharedfiles/filedetails/?id=2867431511), [3399432867](https://steamcommunity.com/sharedfiles/filedetails/?id=3399432867), [3451167732](https://steamcommunity.com/sharedfiles/filedetails/?id=3451167732), [3776182375](https://steamcommunity.com/sharedfiles/filedetails/?id=3776182375), [3389003300](https://steamcommunity.com/sharedfiles/filedetails/?id=3389003300), [3674800555](https://steamcommunity.com/sharedfiles/filedetails/?id=3674800555), [3395171770](https://steamcommunity.com/sharedfiles/filedetails/?id=3395171770), [3753700423](https://steamcommunity.com/sharedfiles/filedetails/?id=3753700423).
 
-## 20. Return borrowed tools and magazines to their source
+## 19. Return borrowed tools and magazines to their source
 
 Impact **80**; coverage **NEW**; proposed owner **Essentials**; effort **M**.
 
@@ -423,7 +403,7 @@ Impact **80**; coverage **NEW**; proposed owner **Essentials**; effort **M**.
 
 **Evidence.** [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua); [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Vanilla groups: actions, inventory in [API evidence](API_EVIDENCE.md). Discovery: [2769706949](https://steamcommunity.com/sharedfiles/filedetails/?id=2769706949), [3793171582](https://steamcommunity.com/sharedfiles/filedetails/?id=3793171582), [2366717227](https://steamcommunity.com/sharedfiles/filedetails/?id=2366717227).
 
-## 21. Search and explain available construction recipes
+## 20. Search and explain available construction recipes
 
 Impact **78**; coverage **NEW**; proposed owner **SPXTRM + building owners**; effort **M**.
 
@@ -441,9 +421,9 @@ Impact **78**; coverage **NEW**; proposed owner **SPXTRM + building owners**; ef
 
 **Dependencies.** craft-search, craft-requirements.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: building, craft in [API evidence](API_EVIDENCE.md). Discovery: [3536052310](https://steamcommunity.com/sharedfiles/filedetails/?id=3536052310), [3540503606](https://steamcommunity.com/sharedfiles/filedetails/?id=3540503606).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: building, craft in [API evidence](API_EVIDENCE.md). Discovery: [3536052310](https://steamcommunity.com/sharedfiles/filedetails/?id=3536052310), [3540503606](https://steamcommunity.com/sharedfiles/filedetails/?id=3540503606).
 
-## 22. Load and unload matching magazines in batches
+## 21. Load and unload matching magazines in batches
 
 Impact **78**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort **S**.
 
@@ -463,7 +443,7 @@ Impact **78**; coverage **IMPLEMENTED**; proposed owner **Essentials**; effort *
 
 **Evidence.** [BulkMagazines.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/BulkMagazines.lua). Vanilla groups: actions, inventory, magazine in [API evidence](API_EVIDENCE.md). Discovery: [2920899878](https://steamcommunity.com/sharedfiles/filedetails/?id=2920899878), [3777237134](https://steamcommunity.com/sharedfiles/filedetails/?id=3777237134), [3750253491](https://steamcommunity.com/sharedfiles/filedetails/?id=3750253491), [2875848298](https://steamcommunity.com/sharedfiles/filedetails/?id=2875848298).
 
-## 23. Rebindable shortcuts for ordinary item and recipe actions
+## 22. Rebindable shortcuts for ordinary item and recipe actions
 
 Impact **78**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort **M**.
 
@@ -481,9 +461,9 @@ Impact **78**; coverage **NEW**; proposed owner **SPXTRM + Essentials**; effort 
 
 **Dependencies.** item-protection.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: input, actions, context in [API evidence](API_EVIDENCE.md). Discovery: [3470659758](https://steamcommunity.com/sharedfiles/filedetails/?id=3470659758), [3786918614](https://steamcommunity.com/sharedfiles/filedetails/?id=3786918614).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: input, actions, context in [API evidence](API_EVIDENCE.md). Discovery: [3470659758](https://steamcommunity.com/sharedfiles/filedetails/?id=3470659758), [3786918614](https://steamcommunity.com/sharedfiles/filedetails/?id=3786918614).
 
-## 24. Opt-in safe-food reminders and native consumption assistance
+## 23. Opt-in safe-food reminders and native consumption assistance
 
 Impact **76**; coverage **NEW**; proposed owner **Provisions + Essentials**; effort **L**.
 
@@ -501,9 +481,9 @@ Impact **76**; coverage **NEW**; proposed owner **Provisions + Essentials**; eff
 
 **Dependencies.** food-state, item-protection.
 
-**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files.. Vanilla groups: food, actions, inventory in [API evidence](API_EVIDENCE.md). Discovery: [3795435563](https://steamcommunity.com/sharedfiles/filedetails/?id=3795435563).
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: food, actions, inventory in [API evidence](API_EVIDENCE.md). Discovery: [3795435563](https://steamcommunity.com/sharedfiles/filedetails/?id=3795435563).
 
-## 25. Name order and recognize storage containers
+## 24. Name order and recognize storage containers
 
 Impact **76**; coverage **NEW**; proposed owner **Quartermaster + SPXTRM**; effort **M**.
 
@@ -522,3 +502,23 @@ Impact **76**; coverage **NEW**; proposed owner **Quartermaster + SPXTRM**; effo
 **Dependencies.** No new catalog dependency; validate native/current project behavior first.
 
 **Evidence.** [InventoryReferences.lua](../../../Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryReferences.lua). Vanilla groups: inventory, context in [API evidence](API_EVIDENCE.md). Discovery: [3290232938](https://steamcommunity.com/sharedfiles/filedetails/?id=3290232938), [2901962885](https://steamcommunity.com/sharedfiles/filedetails/?id=2901962885), [3586216562](https://steamcommunity.com/sharedfiles/filedetails/?id=3586216562), [2867163008](https://steamcommunity.com/sharedfiles/filedetails/?id=2867163008), [3437629766](https://steamcommunity.com/sharedfiles/filedetails/?id=3437629766).
+
+## 25. Trace recipe dependencies and useful item applications
+
+Impact **76**; coverage **NEW**; proposed owner **SPXTRM**; effort **M**.
+
+**Behavioral contract.** Link known input and output recipes into a bounded navigable reference without auto-crafting or granting recipes.
+
+**First independent slice.** Add an original read-only dependency browser after recipe search is stable. Follow known input/output relationships with explicit alternatives and cycle markers; do not choose or auto-execute a crafting plan.
+
+**Ownership and lifecycle.** Local derived metadata graph only. Knowledge changes and mod removal invalidate nodes. Never cache live item ownership or grant a hidden recipe because a known recipe depends on it.
+
+**Configuration and saves.** Owning UI project offers enable policy and local expansion preference. Keep traversal/node limits internal technical safeguards and show a truncation message rather than promising a complete graph.
+
+**Acceptance scenarios.** Test recipe cycles, multiple producers, fluid requirements, reusable tools, unknown intermediates, mod removal and large registries. Back navigation preserves selection and every craft action still uses the native workflow.
+
+**Cost and blockers.** Medium: recipe graphs can be cyclic, ambiguous and knowledge-sensitive. Dedicated and performance evidence remain open; all shared entry gates apply.
+
+**Dependencies.** craft-search, craft-requirements.
+
+**Evidence.** No implementation claimed in Essentials; inspect the proposed owning repository before creating production files. Vanilla groups: craft in [API evidence](API_EVIDENCE.md). Discovery: [3502080466](https://steamcommunity.com/sharedfiles/filedetails/?id=3502080466).

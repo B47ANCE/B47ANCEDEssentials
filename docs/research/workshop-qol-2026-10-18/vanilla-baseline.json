@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "entries": [
+    {
+      "id": "inventory-search",
+      "title": "Search and filter accessible inventory",
+      "source_workshop_ids": [
+        "3586216562",
+        "3437629766"
+      ],
+      "proposed_owner": "SPXTRM + Essentials",
+      "essentials_status": "NOT_APPLICABLE",
+      "neutral_requirement": "Search names, native categories and visible state across admitted roots; show the real source and explain excluded roots.",
+      "evidence": "Project owner correction on 2026-10-18: inventory search and filtering are vanilla. Exact current full-text-search binding was not independently established by this source check.",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "decision": "Do not replace or duplicate native inventory search/filtering. An extension requires a separately reproduced vanilla limitation and a new review.",
+      "source_check": "Installed ISInventoryPane.lua contains onFilterMenu and weight ordering. That observation alone is not proof of the full-text search UI; no such proof is claimed.",
+      "limited_vanilla_source_evidence": {
+        "path": "media/lua/client/ISUI/ISInventoryPane.lua",
+        "sha256": "8cce738cc0dfec8655d2970c42572596bf6294b85e4917a245dc41d1827a56be",
+        "lines": [
+          185,
+          200
+        ],
+        "claim": "Native inventory filter menu with weight ordering is present. Full-text-search binding NOT ESTABLISHED by this observation."
+      }
+    }
+  ]
+}
