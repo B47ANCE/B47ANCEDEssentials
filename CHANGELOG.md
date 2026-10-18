@@ -2,6 +2,11 @@
 
 ## 0.19.2 — 2026-10-18
 
+- Audited 28 local project scopes against all 44 retained QoL entries. Corrected
+  UI/SPXTRM and Health Care/Medical Checks ownership, identified existing Auto Clean
+  area cleanup and Quartermaster logistics, and recorded incomplete adapters,
+  unassigned livestock scope and Lua-only blockers. Research/documentation only.
+
 - Rechecked every prior QoL requirement against vanilla and rebuilt the top 25.
   The shortlist now has 44 entries: 20 existing Essentials entries and 24 scoped
   additions. Removed 37 native-covered proposals, held 33 unproven entries, and

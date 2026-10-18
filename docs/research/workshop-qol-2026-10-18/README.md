@@ -1,5 +1,7 @@
 # Downloaded Workshop quality of life audit
 
+The [portfolio ownership audit](PORTFOLIO_OWNERSHIP.md) checks all 44 retained entries against 28 local projects, identifies existing coverage and corrects proposed owners. Auto Clean already covers selected-area cleaning; SPXTRM is the lighting owner, UI is presentation, and Health Care owns treatment.
+
 The complete vanilla recheck leaves **44 ranked entries**: **20 existing Essentials entries** and **24 specific additions**. Every prior requirement is accounted for in [the comparison matrix](VANILLA_RECHECK.md): **37 native-covered proposals removed**, **33 uncertain proposals held outside the ranking**, and **2 duplicates merged**. All 21 original Essentials source/foundation identifiers remain represented; container inspection is included under nested inspection rather than counted twice.
 
 The downloaded census remains **595 copies / 592 distinct Workshop IDs** (591 Steam-client folders and four SteamCMD-cache folders). The [new top 25](TOP_25_PLAN.md) retains existing Essentials features and plans only the specific remaining workflow. Native search, recipe requirements/favorites, map centering/legend/sharing, ordinary medical consent and other existing controls are not proposed as new features.

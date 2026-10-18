@@ -82,3 +82,43 @@ Current report, version, identity, Markdown link and source-hash checks PASS
 offline. The earlier 26-host-test result is historical baseline support; no
 runtime source changed and it is not new SP or dedicated evidence. Independent
 clean-room signoff remains pending; no deploy, package, upload or game launch.
+# Portfolio ownership audit — 2026-10-18
+
+Documentation-only continuation at Essentials 0.19.2 from research source commit
+`ff59b1e877e9cc09e1481e33bb04e72356eafb81`. The portfolio ledger records 28 primary
+local projects and all 44 retained capability decisions. Other project checkouts,
+including dirty work, were read only. No runtime source, version, identity,
+dependency, configuration or package changed. Scores and top-25 membership remain
+the same; existing Auto Clean coverage now replaces duplicate implementation work.
+
+[TESTED — offline] Commands from the Essentials repository using its development
+Python environment:
+
+```powershell
+python scripts/check_qol_audit.py
+python scripts/check_versions.py
+python scripts/check_identity.py
+git diff --check
+```
+
+All PASS. The report checker now verifies the 28-project/44-feature ownership
+ledger, owner mirrors, evidence references and the explicit Auto Clean/Health Care
+dispositions in addition to the existing census and vanilla accounting. A separate
+read-only hash/link pass checked 135 recorded evidence entries (including 38
+mod.info candidates), local Markdown file links and unchanged runtime source.
+Essentials README's pre-edit hash was verified against the recorded source commit;
+other evidence hashes matched their local snapshot files. These are provenance
+checks, not proof of domain correctness or feature absence.
+
+Freshness before editing: PASS; HEAD/upstream `ff59b1e877e9`, ahead/behind 0/0,
+main ahead 3 / behind 0, clean, no unfinished operation. Other projects' remote
+freshness was not checked and their local features are not claimed merged,
+released, installed or runtime verified. Pre-commit freshness returned REVIEW solely for these understood audit edits;
+HEAD/upstream still matched, main behind 0, no unfinished operation. The public
+tracked/staged scan passed for 127 files, including credential-pattern, linked-file,
+generated-artifact, case-collision and overview-digest checks.
+
+No new gameplay test suite was needed for documentation/report consistency edits.
+Earlier host and vanilla evidence below retain their exact historical scope.
+SP/dedicated NOT TESTED; G7/stable G8 and independent clean-room signoff unchanged.
+No game/server launch, deployment, package or Workshop upload.

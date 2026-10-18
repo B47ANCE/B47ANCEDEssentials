@@ -98,6 +98,33 @@ def main():
     assert all(r['runtime_status'] == 'NOT_TESTED' for r in api['curated_rechecks'] + api['observations'])
     assert summary['clean_room_independent_review'] == 'PENDING'
     assert summary['sp_runtime'] == summary['dedicated_runtime'] == 'NOT TESTED'
+    portfolio = json.loads((AUDIT / 'portfolio-ownership.json').read_text(encoding='utf-8'))
+    assert portfolio['essentials_version'] == summary['base_version']
+    projects = {p['id']: p for p in portfolio['projects']}
+    assert len(projects) == len(portfolio['projects']) == 28
+    owners = {f['id']: f for f in portfolio['features']}
+    assert len(owners) == len(portfolio['features']) == len(caps)
+    assert set(owners) == cap_ids
+    for project in projects.values():
+        assert project['evidence'] and project['scope']
+        for entry in project['evidence']:
+            assert sha.fullmatch(entry['sha256'])
+            assert entry['anchor_line'] >= 1
+            assert not Path(entry['path']).is_absolute() and '..' not in Path(entry['path']).parts
+    for capability in caps:
+        owner = owners[capability['id']]
+        assert owner['rank'] == capability['rank']
+        assert owner['recommended_owner'] == capability['proposed_owner']
+        assert capability['portfolio_review']['coverage'] == owner['portfolio_coverage']
+        assert capability['portfolio_review']['recommendation'] == owner['recommendation']
+        assert set(owner['evidence_projects']) <= projects.keys()
+        assert f'owner {owner["recommended_owner"]}; Essentials coverage' in ranking
+        if capability['rank'] <= 25:
+            assert f'owner **{owner["recommended_owner"]}**;' in top_plan
+            assert owner['recommendation'] in top_plan
+    assert owners['area-clean']['portfolio_coverage'] == 'COVERED_SOURCE'
+    assert owners['area-clean']['recommended_owner'] == 'Auto Clean'
+    assert owners['bandage-queue']['recommended_owner'] == owners['treatment-queue']['recommended_owner'] == 'Health Care'
     for path in AUDIT.rglob('*'):
         if path.is_file():
             text = path.read_text(encoding='utf-8')

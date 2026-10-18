@@ -9,6 +9,9 @@ plans for the top 25 overall, including existing features. It is research tied t
 0.19.2; independent review and feature-specific runtime gates remain open.
 The complete vanilla recheck removes native-covered proposals and holds unproven
 additions outside the ranking while preserving current Essentials coverage.
+The [portfolio audit](docs/research/workshop-qol-2026-10-18/PORTFOLIO_OWNERSHIP.md)
+compares all 44 candidates with 28 local projects and separates existing coverage
+from proposed domain-owned work.
 
 B47ANCE'd Essentials is a configurable vanilla-plus quality-of-life collection for Project Zomboid. It reduces repetitive inventory and interface work while preserving timed actions, character knowledge, capacity rules, and server authority.
 

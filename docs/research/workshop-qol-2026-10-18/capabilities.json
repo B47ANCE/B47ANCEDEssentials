@@ -55,6 +55,14 @@
           "InventoryViews.lua",
           "InventoryReferences.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep the admitted-root nearby projection. Quartermaster can inspect multiple storage targets, but that is not a replacement loot pane.",
+        "evidence_projects": [
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -110,6 +118,15 @@
           "InventoryTransferClient.lua",
           "InventoryReferences.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials retains its reference/transaction service. Quartermaster already owns a separate logistics executor. A general explicit preview remains unfinished; do not merge executors or introduce a dependency without a reviewed contract.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -165,6 +182,16 @@
           "SortingClient.lua",
           "InventoryTransfers.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Quartermaster already supplies designated category/item rules, priorities and sorting. Keep current Essentials seeded sorting for standalone use; do not rebuild designation policy. Prevent competing menu actions/plans when both are enabled.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "rooms"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -212,6 +239,15 @@
           "InventorySelectionRepair.lua",
           "InventoryViews.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep native inventory selection repair here. The UI library has focus helpers, not this inventory integration.",
+        "evidence_projects": [
+          "essentials",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -262,6 +298,15 @@
           "AutoKeyRing.lua",
           "BulkMagazines.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Both executors already check some protected states. Quartermaster SupplyAPI checks favorites, equipped/attached and crafting-consumed items. Define interoperability for active reservations; no portfolio-wide protection API is established.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -314,6 +359,15 @@
           "DevicePowerMenu.lua",
           "InventoryActionGrouping.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep native context grouping here. Domain callbacks and validation remain with their owning mods; UI may supply reusable controls.",
+        "evidence_projects": [
+          "essentials",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -332,7 +386,7 @@
         "3465040406",
         "3586216562"
       ],
-      "proposed_owner": "Essentials + SPXTRM",
+      "proposed_owner": "Essentials + UI",
       "essentials_status": "FOUNDATION",
       "neutral_requirement": "Retain bounded stable-reference traversal foundation; a future UI is limited to deeper accessible nested inspection with breadcrumbs.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -363,6 +417,16 @@
           "InventoryReferences.lua",
           "InventoryViews.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials has traversal and nested stable references, while Quartermaster has selected nested-bag logistics. Neither establishes the proposed finished nested browser. Keep the read model in Essentials; UI may render controls.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -416,6 +480,15 @@
           "InventoryTransfers.lua",
           "InventoryReferences.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Exact whole-item count selection belongs with inventory workflows. Quartermaster shopping target quantities are not the same native inventory transfer dialog.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -435,7 +508,7 @@
         "2950902979",
         "3586216562"
       ],
-      "proposed_owner": "Essentials + SPXTRM",
+      "proposed_owner": "Essentials + UI",
       "essentials_status": "IMPLEMENTED",
       "neutral_requirement": "Retain Essentials' separate worn/held/attached projection and general-list filtering; no new equipment slots.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -469,6 +542,16 @@
           "InventorySelectionRepair.lua",
           "IndependentHandClassifier.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "The Equipped view is already in Essentials. UI can provide presentation helpers; SPXTRM owns light attachments only and must not own this inventory pane.",
+        "evidence_projects": [
+          "essentials",
+          "ui",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -489,7 +572,7 @@
         "3739168410",
         "2732294885"
       ],
-      "proposed_owner": "Essentials",
+      "proposed_owner": "Essentials + Knowledge & Wisdom",
       "essentials_status": "IMPLEMENTED",
       "neutral_requirement": "Retain Essentials' carried-duplicate and reward context integration; existing source remains included even where native indicators overlap.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -521,6 +604,15 @@
           "LiteratureCore.lua",
           "LiteratureTracking.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Keep existing menu progress and carried-duplicate hints in Essentials. Knowledge & Wisdom already supplies bounded recorded-media inspection and owns custom knowledge/research. Do not create a second knowledge ledger; any optional adapter remains unimplemented.",
+        "evidence_projects": [
+          "essentials",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -540,7 +632,7 @@
         "3781012462",
         "3437629766"
       ],
-      "proposed_owner": "SPXTRM + Essentials",
+      "proposed_owner": "UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only simultaneous fill cues on container buttons and detachable-magazine entries remain; no new capacity or ammo information is claimed.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -571,6 +663,15 @@
         "existing": [
           "InventoryViews.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Simultaneous container-button and magazine fill cues fit planned vanilla presentation adapters. UI has reusable controls but no implemented overlay. Essentials can supply permitted inventory views.",
+        "evidence_projects": [
+          "ui",
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -589,7 +690,7 @@
         "3779405481",
         "3723726293"
       ],
-      "proposed_owner": "Health Care + Medical Checks + SPXTRM",
+      "proposed_owner": "Health Care + UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only an optional compact local injury summary outside the full panel remains; no new diagnosis, hidden wound or other-player detail.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -616,6 +717,16 @@
           "health"
         ],
         "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Health Care has examination reports and an examiner/patient-scoped five-minute snapshot, not a live injury HUD. Put medical visibility/meaning there and rendering in UI. Medical Checks supplies no enforcing consent service today.",
+        "evidence_projects": [
+          "health",
+          "medical",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -669,6 +780,14 @@
         "existing": [
           "BulkMagazines.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep existing matching-magazine native action orchestration. Power and SPXTRM do not own firearm ammunition.",
+        "evidence_projects": [
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -686,7 +805,7 @@
         "3470659758",
         "3786918614"
       ],
-      "proposed_owner": "SPXTRM + Essentials",
+      "proposed_owner": "Essentials + UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only configurable item-action and known-recipe shortcut slots beyond native equipment hotkeys remain.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -719,6 +838,16 @@
           "context"
         ],
         "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Essentials owns ordinary item/recipe invocation and validation; UI can render/configure slots. PC Framework apps are world-computer applications, not global survivor action shortcuts.",
+        "evidence_projects": [
+          "essentials",
+          "ui",
+          "pc"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -739,7 +868,7 @@
         "2867163008",
         "3437629766"
       ],
-      "proposed_owner": "Quartermaster + SPXTRM",
+      "proposed_owner": "UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only local world-container button label/icon/order presets remain; remove ordinary bag renaming and native window persistence.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -770,6 +899,16 @@
         "existing": [
           "InventoryReferences.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Local button label/icon/order presets belong to UI presentation. Quartermaster storage presets/rules and Rooms room names already exist but are different data. Displaying a label must not create a designation or edit shared names.",
+        "evidence_projects": [
+          "ui",
+          "qm",
+          "rooms"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -818,6 +957,16 @@
         "existing": [
           "CraftOutputRouting.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep existing native craft-output routing. Junk Drawer owns salvage outcomes and Provisions owns food-process outcomes; do not intercept or redirect their custom transactions without an explicit provider contract.",
+        "evidence_projects": [
+          "essentials",
+          "junk",
+          "food"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -865,6 +1014,15 @@
         "existing": [
           "HotbarReordering.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep current slot reordering and saved attachment-index handling. Shared styling can use UI.",
+        "evidence_projects": [
+          "essentials",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -883,7 +1041,7 @@
         "3641048285",
         "3781012462"
       ],
-      "proposed_owner": "SPXTRM + Essentials",
+      "proposed_owner": "UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep only an optional hotbar-slot condition cue. Remove duplicate inventory condition rendering.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -915,6 +1073,15 @@
           "InventoryViews.lua",
           "HotbarReordering.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Hotbar-only condition display is a planned vanilla UI adapter. Eyewear already displays its own retainer durability, which does not cover general hotbar condition.",
+        "evidence_projects": [
+          "ui",
+          "eyewear"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -935,7 +1102,7 @@
         "2734705913",
         "2804531012"
       ],
-      "proposed_owner": "Essentials + SPXTRM",
+      "proposed_owner": "Essentials",
       "essentials_status": "PARTIAL",
       "neutral_requirement": "Retain only Essentials' configured default symbol scale; no new notes/symbol editor or copied symbol pack.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -964,6 +1131,16 @@
         "existing": [
           "MapSymbolDefaults.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep the current default-symbol-scale behavior. Rooms designation editing and SPXTRM optical rendering are different systems.",
+        "evidence_projects": [
+          "essentials",
+          "rooms",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1012,6 +1189,16 @@
         "existing": [
           "DevicePowerMenu.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Keep grouping in Essentials and battery transactions in Power; light-specific servicing belongs to SPXTRM. Essentials still probes legacy powerWorks globals/imports, while renamed Power has no legacy aliases: current pairing requires a compatibility repair and tests.",
+        "evidence_projects": [
+          "essentials",
+          "power",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1032,7 +1219,7 @@
         "3522680786",
         "3777237134"
       ],
-      "proposed_owner": "Vehicle and clothing owners + Essentials",
+      "proposed_owner": "Essentials",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep an explicit finite vehicle-part service itinerary with skip reasons and tool return; exclude generic repair menus and repeated XP-training loops.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1063,6 +1250,16 @@
           "actions"
         ],
         "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "No general vehicle-service owner was identified. A finite vanilla vehicle-part itinerary fits Essentials. CAT construction machinery qualification and Eyewear retainers do not cover ordinary mechanics. Scope excludes clothing queues.",
+        "evidence_projects": [
+          "essentials",
+          "cat",
+          "eyewear"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1081,7 +1278,7 @@
         "3777237134",
         "3777800131"
       ],
-      "proposed_owner": "Essentials",
+      "proposed_owner": "Essentials + Knowledge & Wisdom",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep an explicitly selected eligible unread-book/media playlist with return and interruption; no new reading/progress engine.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1117,6 +1314,15 @@
           "LiteratureCore.lua",
           "LiteratureTracking.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials may orchestrate native reading; Knowledge & Wisdom owns provider documents, completion and knowledge requirements. A finished reading/media playlist was not found. Preserve its MP authority guard; start only with a proven native reading slice.",
+        "evidence_projects": [
+          "essentials",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1166,6 +1372,15 @@
         "existing": [
           "AutoKeyRing.lua"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep current key/ring predicates and native transfers. Quartermaster storage/shopping rules are not a key-ring replacement.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1184,7 +1399,7 @@
         "3777237134",
         "3820151540"
       ],
-      "proposed_owner": "Auto Clean + Essentials",
+      "proposed_owner": "Auto Clean",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep a player-drawn bounded cleanup target plan, eligible-target preview and finite itinerary across that selection; no global scan or speed boost.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1201,20 +1416,30 @@
         ]
       },
       "plan": {
-        "slice": "Auto Clean owns cleanup selection and Essentials may provide shared stable-reference support. Begin with one ordinary cleanup task over a player-drawn bounded rectangle, showing eligible and skipped targets before starting. Do not replace native single-target or existing area-effect actions.",
+        "slice": "Do not implement another area cleaner in Essentials. Auto Clean already provides confirmed rectangle/paint/erase/floor selection, native cleanup and supply return. Review that existing workflow and its runtime acceptance matrix; implement only a reproduced missing behavior in Auto Clean after its own freshness gate.",
         "state": "Native timed actions own cleanup mutations and supplies. Selected targets are intent, never authority; revalidate loaded target identity, access, distance, tool and resources at execution. Cancel clears pending work and reconnect does not restart it.",
-        "configuration": "The cleanup owner provides server enable policy, default off for the new planner, bounded selection dimensions/target count and interruption policy. Keep technical queue internals private; preserve native duration and cost.",
+        "configuration": "Reuse current Auto Clean, Rooms cleaning-scope and Quartermaster supply settings. Do not invent a second Essentials cleaning enable switch, selection policy or supply store.",
         "acceptance": "Test rectangle edges, targets removed by another player, safehouses, exhausted tools, resource depletion, cancel, danger, disconnect and server restart. No target outside the selection or unloaded-world scan is admitted.",
         "depends": [
           "item-protection"
         ],
-        "effort": "L",
+        "effort": "Validation first",
         "risk": "High: selected-area planning differs from an action merely affecting neighboring tiles; each cleanup adapter needs authority proof.",
         "api_groups": [
           "world",
           "actions"
         ],
         "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "COVERED_SOURCE",
+        "recommendation": "Already covered by Auto Clean rectangle/paint/erase/floor selection, confirmation, building cleanup, guarded actions and tool returns. Remove duplicate implementation work from Essentials. Validate or improve the existing Auto Clean workflow in its own repository.",
+        "evidence_projects": [
+          "clean",
+          "rooms",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1232,7 +1457,7 @@
         "3576056135",
         "2972289937"
       ],
-      "proposed_owner": "Power + SPXTRM",
+      "proposed_owner": "Power + UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only a clearly labeled remaining-runtime estimate under current measured load remains; remove duplicate fuel/load/device lists and unproven range rendering.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1260,6 +1485,15 @@
           "generator"
         ],
         "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Power already reports loaded generator fuel, condition, activation, connection and native consumption. A remaining-runtime estimate is not implemented in that adapter; keep calculation/units with Power and optional presentation with UI. Electrical output capacity remains unknown.",
+        "evidence_projects": [
+          "power",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1292,6 +1526,16 @@
           "inventory",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials exposes committed result snapshots; Quartermaster has progress, rejection and partial-outcome presentation. Reuse each executor result contract. A common result vocabulary may be specified, but is not currently a shared implemented API.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1311,7 +1555,7 @@
         "3777237134",
         "2875848298"
       ],
-      "proposed_owner": "Medical Checks",
+      "proposed_owner": "Health Care",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep one explicit replace request chaining those actions with revalidation; no new treatment effect or hidden diagnosis.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1326,6 +1570,15 @@
           "health",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "One-request replace-bandage sequencing belongs to medical procedure ownership, with native action guards. Medical Checks is a blocked consent scaffold, not a treatment engine.",
+        "evidence_projects": [
+          "health",
+          "medical"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1343,7 +1596,7 @@
         "3783623999",
         "3723726293"
       ],
-      "proposed_owner": "Animal owner + SPXTRM",
+      "proposed_owner": "Animal owner TBD + UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only a sortable cross-animal care comparison table with the same revealed facts remains; no new animal knowledge or care mechanics.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1357,6 +1610,16 @@
         "evidence_groups": [
           "animals"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "OWNER_UNASSIGNED",
+        "recommendation": "No general livestock owner was identified among these projects. Dog Training is canine-specific and not a deployed herd-care provider. Keep a neutral read-only proposal; do not silently expand Dog Training or Harvest scope.",
+        "evidence_projects": [
+          "dog",
+          "harvest",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1374,7 +1637,7 @@
         "2544353492",
         "3586216562"
       ],
-      "proposed_owner": "Essentials + Quartermaster",
+      "proposed_owner": "Essentials",
       "essentials_status": "NEW",
       "neutral_requirement": "Only separate local seen-for-later notes on not-yet-readable media remain, without setting Favorite or granting read knowledge.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1389,6 +1652,16 @@
           "inventory",
           "media"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Local seen-for-later media notes fit Essentials. Quartermaster Dibs personal item labels/Wanted/Needed lists overlap in intent, but do not prove an unreadability-aware media bookmark. Integrate optionally rather than duplicate shopping or knowledge ledgers.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1422,6 +1695,16 @@
           "hotbar",
           "inventory"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep only current independent-hand classifier foundation. It supplies no off-hand attacks, animations or finished swapping workflow. Eyewear protection and SPXTRM light mounts have separate ownership.",
+        "evidence_projects": [
+          "essentials",
+          "eyewear",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1456,7 +1739,17 @@
           "inventory"
         ]
       },
-      "score_note": "Reduced estimate after subtracting native information/controls; benefit is the specific remaining workflow only."
+      "score_note": "Reduced estimate after subtracting native information/controls; benefit is the specific remaining workflow only.",
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "The retained delta is magazine source restoration only. Auto Clean already returns its borrowed cleaning equipment through its own job/SupplyAPI contract; generic crafting returns are vanilla and stay excluded.",
+        "evidence_projects": [
+          "essentials",
+          "clean",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
     },
     {
       "id": "weight-column",
@@ -1472,7 +1765,7 @@
       "source_workshop_ids": [
         "3586216562"
       ],
-      "proposed_owner": "SPXTRM",
+      "proposed_owner": "UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only an optional simultaneously visible per-row individual/stack weight column remains; no new weight calculation or carrying capacity.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1486,6 +1779,15 @@
         "evidence_groups": [
           "inventory"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Optional simultaneous per-item/stack weight columns fit vanilla UI adapters. Quartermaster carry budgets govern logistics, not a general native inventory column.",
+        "evidence_projects": [
+          "ui",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1502,7 +1804,7 @@
       "source_workshop_ids": [
         "3778884296"
       ],
-      "proposed_owner": "Essentials",
+      "proposed_owner": "Essentials + Power",
       "essentials_status": "IMPLEMENTED",
       "neutral_requirement": "Retain current Essentials exact-minute formatting and device precision constraints; native rendering comparison remains a runtime gate.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1517,6 +1819,15 @@
           "options",
           "inventory"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials owns exact-minute formatting; Power owns powered watches, cell charge and mechanical/digital device distinctions. Current legacy namespace integration needs review; neither project should invent hidden watch information.",
+        "evidence_projects": [
+          "essentials",
+          "power"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1533,7 +1844,7 @@
       "source_workshop_ids": [
         "3777237134"
       ],
-      "proposed_owner": "Medical Checks",
+      "proposed_owner": "Health Care",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep an explicit finite treatment plan across already revealed wounds, with patient consent and per-step revalidation.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1548,6 +1859,15 @@
           "health",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Finite treatment plans belong to Health Care. Its reservation/procedure framework is related foundation, not a finished wound itinerary. Do not use inactive Medical Checks preferences as valid consent.",
+        "evidence_projects": [
+          "health",
+          "medical"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1579,6 +1899,15 @@
           "world",
           "radio"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Power infrastructure/appliance registries are related foundation. No implemented fridge/freezer off toggle is established by the reviewed adapter/API/docs. Provisions can consume real appliance state; it should not own a competing electrical simulation.",
+        "evidence_projects": [
+          "power",
+          "food"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1595,7 +1924,7 @@
       "source_workshop_ids": [
         "3782332412"
       ],
-      "proposed_owner": "SPXTRM",
+      "proposed_owner": "Essentials",
       "essentials_status": "NEW",
       "neutral_requirement": "Only opt-in rate-limited marks from actual permitted observations remain, using native notes and no unexplored-world scan.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1610,6 +1939,16 @@
           "maps",
           "world"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Observed-only native map annotation fits Essentials. Knowledge & Wisdom geographic familiarity and Rooms designations are separate facts and must not reveal unobserved world state. UI may style controls.",
+        "evidence_projects": [
+          "essentials",
+          "knowledge",
+          "rooms"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1626,7 +1965,7 @@
       "source_workshop_ids": [
         "3793163745"
       ],
-      "proposed_owner": "Building owners + Essentials",
+      "proposed_owner": "Essentials + Rooms",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep only a bounded player-selected multi-target itinerary, not new barricade/window actions or changed material cost.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1641,6 +1980,16 @@
           "world",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Essentials may orchestrate player-selected vanilla curtain/barricade actions. Rooms can supply explicit permitted geometry only through a reviewed adapter; its existing API explicitly does not enforce unrelated doors/building/destruction actions. Fences & Gates owns its added construction content.",
+        "evidence_projects": [
+          "essentials",
+          "rooms",
+          "fences"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1657,7 +2006,7 @@
       "source_workshop_ids": [
         "3793163745"
       ],
-      "proposed_owner": "Auto Clean + Essentials",
+      "proposed_owner": "Auto Clean",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep only selected-source-area to chosen-destination planning with native carry/drag actions; no faster dragging or teleportation.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1672,6 +2021,17 @@
           "world",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Selected-area corpse handling is an Auto Clean extension candidate, not current trash cleanup. Corpses must use native handling and exact identities; Health Care recovers body parts and MORTIS supplies anatomy/provenance, neither is a hauling planner.",
+        "evidence_projects": [
+          "clean",
+          "essentials",
+          "health",
+          "mortis"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1703,6 +2063,14 @@
           "inventory",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "A finite native firearm/magazine unloading sequence belongs with existing magazine workflows. Do not introduce instant extraction or modify ammunition counts directly.",
+        "evidence_projects": [
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1735,6 +2103,15 @@
           "farm",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Harvest owns crops, bounded field inspection and crop-side irrigation. A selected-plot planting/watering/harvest itinerary is not implemented. Waterworks owns real water withdrawal/quality; atomic cross-owner delivery remains incomplete.",
+        "evidence_projects": [
+          "harvest",
+          "water"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1753,7 +2130,7 @@
         "3805553089",
         "3781716360"
       ],
-      "proposed_owner": "Heavy-object provider owner TBD + Essentials",
+      "proposed_owner": "Essentials + domain providers",
       "essentials_status": "FOUNDATION",
       "neutral_requirement": "Retain Essentials' provider observation and reserve/start/complete/cancel foundation only; no production physics provider is claimed.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1768,6 +2145,17 @@
           "placement",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Keep generic capability/lifecycle foundation in Essentials. Quartermaster already owns carry logistics; Earthworks/CAT own terrain/machine/wheelbarrow state. No generic physics provider is established and the experimental Earthworks wheelbarrow is SP-only.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "earth",
+          "cat"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1785,7 +2173,7 @@
         "3793163745",
         "3783623999"
       ],
-      "proposed_owner": "Animal owner",
+      "proposed_owner": "Animal owner TBD",
       "essentials_status": "NEW",
       "neutral_requirement": "Keep only a selected finite herd-care itinerary using revealed eligible targets and native actions.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1800,6 +2188,15 @@
           "animals",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "OWNER_UNASSIGNED",
+        "recommendation": "No general herd-care owner was identified. Dog Training owns canine-specific tasks and remains blocked on native ownership/persistence. Do not create client-authoritative animal jobs or treat crop irrigation as animal care.",
+        "evidence_projects": [
+          "dog",
+          "harvest"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1831,6 +2228,16 @@
           "world",
           "actions"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep the tagged-tile native-transition adapter. Earthworks owns its excavation/climb affordances and Fences & Gates owns construction content; do not replace either domain state with a generic traversal engine.",
+        "evidence_projects": [
+          "essentials",
+          "earth",
+          "fences"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     },
     {
@@ -1847,7 +2254,7 @@
       "source_workshop_ids": [
         "3808944882"
       ],
-      "proposed_owner": "SPXTRM",
+      "proposed_owner": "UI",
       "essentials_status": "NEW",
       "neutral_requirement": "Only an original optional brief nonblocking start-of-session recap remains, without copying presentation themes or adding hidden coordinates.",
       "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
@@ -1862,6 +2269,15 @@
           "character",
           "options"
         ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "A nonblocking recap fits UI presentation. Domain providers retain data permissions, age/completeness and provenance; Knowledge & Wisdom history is not a live omniscient session report.",
+        "evidence_projects": [
+          "ui",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
       }
     }
   ]

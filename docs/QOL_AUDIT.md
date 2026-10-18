@@ -1,5 +1,7 @@
 # Quality-of-Life Audit
 
+The [portfolio ownership audit](research/workshop-qol-2026-10-18/PORTFOLIO_OWNERSHIP.md) checks all 44 retained entries against 28 local projects, identifies existing coverage and corrects proposed owners. Auto Clean already covers selected-area cleaning; SPXTRM is the lighting owner, UI is presentation, and Health Care owns treatment.
+
 The [2026-10-18 downloaded-Workshop census](research/workshop-qol-2026-10-18/README.md)
 adds per-package provenance, a deduplicated estimated impact ranking and detailed
 top-25 clean-room plans. The implementation table below describes the existing
@@ -30,9 +32,9 @@ The implementation was cross-checked against installed Build 42 Workshop example
 
 ## Ownership boundaries
 
-- powerWorks owns batteries, energy stores, consumption rates, watches as devices, and grid power.
-- lightWorks owns light compatibility, emitters, bulbs, colors, cones, attachment rules, and light semantics.
-- uiWorks owns broad reusable presentation and accessibility systems.
+- B47ANCE’d Power owns batteries, energy stores, consumption rates, watches as devices, and grid power.
+- B47ANCED SPXTRM (retained lightWorks API) owns light compatibility, emitters, bulbs, colors, cones, attachment rules, and light semantics.
+- B47ANCE’d UI owns broad reusable presentation and accessibility systems.
 - B47ANCEDEssentials owns small workflow and vanilla-interface conveniences.
 
 ## Deliberate exclusions

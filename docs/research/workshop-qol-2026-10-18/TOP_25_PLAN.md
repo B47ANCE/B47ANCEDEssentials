@@ -1,5 +1,7 @@
 # Top 25 after the complete vanilla recheck
 
+[Portfolio ownership audit](PORTFOLIO_OWNERSHIP.md) corrects project assignments and distinguishes coverage outside Essentials. NEW still means absent from Essentials, not absent from our portfolio. Scores and the top-25 membership are unchanged.
+
 This plan includes existing Essentials features as requested. Fully native-covered proposals and unproven additions are not candidates. Read [all 116 dispositions](VANILLA_RECHECK.md) for removals and evidence limits. No gameplay implementation is performed by this research update.
 
 ## Shared gates and delivery order
@@ -7,7 +9,7 @@ This plan includes existing Essentials features as requested. Fully native-cover
 1. Preserve native controls, information/knowledge limits, duration, capacity and authority. Implement only the remaining scope below. A local-source comparison is not runtime proof; reproduce the specific gap in a vanilla-only test before implementing any new slice.
 2. Validate current Essentials behavior first: nearby/equipped views, selection, sorting, magazines, media, output routing, hotbar, key filing and map defaults. Keep foundations labeled as foundations; a classifier is not dual-wield combat and heavy-object orchestration is not physics.
 3. Develop protected-item/read-model adapters, then explicit transfer/quantity previews. Use current stable references and authoritative committed-result handling; do not introduce a second inventory engine.
-4. Add bounded reading, mechanics or selected-area cleanup planners one native-action adapter at a time. Vanilla already has timed-action queues; no new generic queue engine is needed.
+4. Add bounded reading or mechanics planners one native-action adapter at a time; validate Auto Clean's existing selected-area cleaner instead of rebuilding it. Vanilla already has timed-action queues; no new generic queue engine is needed.
 5. State shared-state ownership, execution side, synchronization, persistence, join/reconnect and restart behavior. Reuse verified native synchronization. New shared mutations require safe server validation; stop if the model is unresolved. Local presentation uses no custom gameplay networking.
 6. Every meaningful behavior needs reviewed sandbox policy with stable/localized identifiers, bounds and old-save defaults. Native local UI preferences own style/layout. Proposed keys are design candidates only, not implemented configuration. Record each future target SemVer and keep its mirrors synchronized.
 7. Independent implementation uses only neutral requirements and verified vanilla APIs. No third-party algorithms, distinctive architecture, taxonomies, assets, strings or translations. Independent clean-room signoff remains PENDING.
@@ -18,6 +20,8 @@ S/M/L are relative slice sizes, not calendar estimates. Ranking is estimated imp
 ## 1. One view for reachable nearby loot
 
 Impact **96**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+
+**Portfolio ownership.** Keep the admitted-root nearby projection. Quartermaster can inspect multiple storage targets, but that is not a replacement loot pane. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Vanilla discovers individual reachable loot containers and exposes their buttons.
 
@@ -39,6 +43,8 @@ Impact **96**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
 Impact **94**; Essentials **FOUNDATION**; owner **Essentials + Quartermaster**; effort **L**.
 
+**Portfolio ownership.** Essentials retains its reference/transaction service. Quartermaster already owns a separate logistics executor. A general explicit preview remains unfinished; do not merge executors or introduce a dependency without a reviewed contract. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Vanilla already transfers selected items, all items and matching types with timed actions.
 
 **Retained scope.** Retain the existing reference/replay/authority foundation; proposed UI is only an explicit multi-source transaction preview and result workflow, not a new Transfer All button.
@@ -58,6 +64,8 @@ Impact **94**; Essentials **FOUNDATION**; owner **Essentials + Quartermaster**; 
 ## 3. Put loot into designated or seeded storage
 
 Impact **92**; Essentials **PARTIAL**; owner **Quartermaster + Essentials**; effort **M**.
+
+**Portfolio ownership.** Quartermaster already supplies designated category/item rules, priorities and sorting. Keep current Essentials seeded sorting for standalone use; do not rebuild designation policy. Prevent competing menu actions/plans when both are enabled. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native transfers choose a destination; container discovery is not category/seed destination planning.
 
@@ -79,6 +87,8 @@ Impact **92**; Essentials **PARTIAL**; owner **Quartermaster + Essentials**; eff
 
 Impact **89**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
+**Portfolio ownership.** Keep native inventory selection repair here. The UI library has focus helpers, not this inventory integration. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Native pane rebuilds and transfer actions maintain their own row/selection state.
 
 **Retained scope.** Retain Essentials' stable-item selection repair and verify regressions against the native rebuild lifecycle.
@@ -98,6 +108,8 @@ Impact **89**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 ## 5. Protect favorites and reserved equipment from bulk actions
 
 Impact **88**; Essentials **PARTIAL**; owner **Essentials + Quartermaster**; effort **M**.
+
+**Portfolio ownership.** Both executors already check some protected states. Quartermaster SupplyAPI checks favorites, equipped/attached and crafting-consumed items. Define interoperability for active reservations; no portfolio-wide protection API is established. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native favorite checks already protect ordinary bulk transfers and some destructive operations.
 
@@ -119,6 +131,8 @@ Impact **88**; Essentials **PARTIAL**; owner **Essentials + Quartermaster**; eff
 
 Impact **87**; Essentials **PARTIAL**; owner **Essentials**; effort **S**.
 
+**Portfolio ownership.** Keep native context grouping here. Domain callbacks and validation remain with their owning mods; UI may supply reusable controls. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Vanilla has submenus, disabled reasons and native option callbacks.
 
 **Retained scope.** Retain Essentials device/developer grouping; no wholesale context-menu replacement.
@@ -137,7 +151,9 @@ Impact **87**; Essentials **PARTIAL**; owner **Essentials**; effort **S**.
 
 ## 7. Inspect nested bags without unpacking
 
-Impact **85**; Essentials **FOUNDATION**; owner **Essentials + SPXTRM**; effort **M**.
+Impact **85**; Essentials **FOUNDATION**; owner **Essentials + UI**; effort **M**.
+
+**Portfolio ownership.** Essentials has traversal and nested stable references, while Quartermaster has selected nested-bag logistics. Neither establishes the proposed finished nested browser. Keep the read model in Essentials; UI may render controls. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Vanilla exposes equipped carried bags and bags in admitted vehicle/world roots; native recursive queries are not a recursive browsing UI.
 
@@ -159,6 +175,8 @@ Impact **85**; Essentials **FOUNDATION**; owner **Essentials + SPXTRM**; effort 
 
 Impact **83**; Essentials **NEW**; owner **Essentials**; effort **M**.
 
+**Portfolio ownership.** Exact whole-item count selection belongs with inventory workflows. Quartermaster shopping target quantities are not the same native inventory transfer dialog. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** The reviewed grab menu offers one, half and all for a selected stack.
 
 **Retained scope.** Keep a whole-item exact-count prompt, excluding existing one/half/all choices and fluid portions.
@@ -177,7 +195,9 @@ Impact **83**; Essentials **NEW**; owner **Essentials**; effort **M**.
 
 ## 9. Separate equipped items from carried clutter
 
-Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials + SPXTRM**; effort **S**.
+Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials + UI**; effort **S**.
+
+**Portfolio ownership.** The Equipped view is already in Essentials. UI can provide presentation helpers; SPXTRM owns light attachments only and must not own this inventory pane. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Vanilla marks equipped rows and exposes equipment controls.
 
@@ -197,7 +217,9 @@ Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials + SPXTRM**; effort
 
 ## 10. Show read watched and useful-media progress
 
-Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
+Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials + Knowledge & Wisdom**; effort **S**.
+
+**Portfolio ownership.** Keep existing menu progress and carried-duplicate hints in Essentials. Knowledge & Wisdom already supplies bounded recorded-media inspection and owns custom knowledge/research. Do not create a second knowledge ledger; any optional adapter remains unimplemented. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native inventory already tests read literature and stores per-character page/media progress.
 
@@ -217,7 +239,9 @@ Impact **81**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
 ## 11. Compare fill across container buttons and magazine entries
 
-Impact **80**; Essentials **NEW**; owner **SPXTRM + Essentials**; effort **S**.
+Impact **80**; Essentials **NEW**; owner **UI**; effort **S**.
+
+**Portfolio ownership.** Simultaneous container-button and magazine fill cues fit planned vanilla presentation adapters. UI has reusable controls but no implemented overlay. Essentials can supply permitted inventory views. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** The selected inventory header already shows weight/capacity; magazine counts are available through native interactions.
 
@@ -237,7 +261,9 @@ Impact **80**; Essentials **NEW**; owner **SPXTRM + Essentials**; effort **S**.
 
 ## 12. Compact local injury summary outside the health panel
 
-Impact **80**; Essentials **NEW**; owner **Health Care + Medical Checks + SPXTRM**; effort **M**.
+Impact **80**; Essentials **NEW**; owner **Health Care + UI**; effort **M**.
+
+**Portfolio ownership.** Health Care has examination reports and an examiner/patient-scoped five-minute snapshot, not a live injury HUD. Put medical visibility/meaning there and rendering in UI. Medical Checks supplies no enforcing consent service today. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Vanilla already has body-part injuries, bandage details and treatment handlers in the health panel.
 
@@ -259,6 +285,8 @@ Impact **80**; Essentials **NEW**; owner **Health Care + Medical Checks + SPXTRM
 
 Impact **78**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
+**Portfolio ownership.** Keep existing matching-magazine native action orchestration. Power and SPXTRM do not own firearm ammunition. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Native magazine menu loads/unloads the selected magazine through native timed actions.
 
 **Retained scope.** Retain existing matching-magazine batching and reservation checks; no direct ammunition setters.
@@ -277,7 +305,9 @@ Impact **78**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
 ## 14. Configurable non-equipment item and recipe action slots
 
-Impact **78**; Essentials **NEW**; owner **SPXTRM + Essentials**; effort **M**.
+Impact **78**; Essentials **NEW**; owner **Essentials + UI**; effort **M**.
+
+**Portfolio ownership.** Essentials owns ordinary item/recipe invocation and validation; UI can render/configure slots. PC Framework apps are world-computer applications, not global survivor action shortcuts. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native hotbar/keybindings expose equipment and predefined actions.
 
@@ -297,7 +327,9 @@ Impact **78**; Essentials **NEW**; owner **SPXTRM + Essentials**; effort **M**.
 
 ## 15. Customize local world-container button presets and order
 
-Impact **76**; Essentials **NEW**; owner **Quartermaster + SPXTRM**; effort **M**.
+Impact **76**; Essentials **NEW**; owner **UI**; effort **M**.
+
+**Portfolio ownership.** Local button label/icon/order presets belong to UI presentation. Quartermaster storage presets/rules and Rooms room names already exist but are different data. Displaying a label must not create a designation or edit shared names. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Vanilla names bag buttons from items, selects built-in container icons and persists ordinary window layout.
 
@@ -319,6 +351,8 @@ Impact **76**; Essentials **NEW**; owner **Quartermaster + SPXTRM**; effort **M*
 
 Impact **74**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
+**Portfolio ownership.** Keep existing native craft-output routing. Junk Drawer owns salvage outcomes and Provisions owns food-process outcomes; do not intercept or redirect their custom transactions without an explicit provider contract. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Vanilla crafting owns output creation and item consumption.
 
 **Retained scope.** Retain the current approved plank/heavy-output routing adapter, subject to authoritative output and capacity rules.
@@ -339,6 +373,8 @@ Impact **74**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
 Impact **74**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
+**Portfolio ownership.** Keep current slot reordering and saved attachment-index handling. Shared styling can use UI. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Native hotbar supports attaching, removing and activating equipment slots.
 
 **Retained scope.** Retain Essentials' slot-order swaps preserving attached-item indices.
@@ -357,7 +393,9 @@ Impact **74**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
 ## 18. Show condition directly on hotbar slots
 
-Impact **73**; Essentials **NEW**; owner **SPXTRM + Essentials**; effort **S**.
+Impact **73**; Essentials **NEW**; owner **UI**; effort **S**.
+
+**Portfolio ownership.** Hotbar-only condition display is a planned vanilla UI adapter. Eyewear already displays its own retainer durability, which does not cover general hotbar condition. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native inventory details already draw weapon-condition bars. The reviewed hotbar render draws slots, textures and equipped marks without a condition cue.
 
@@ -377,7 +415,9 @@ Impact **73**; Essentials **NEW**; owner **SPXTRM + Essentials**; effort **S**.
 
 ## 19. Preserve a configured default map-symbol scale
 
-Impact **72**; Essentials **PARTIAL**; owner **Essentials + SPXTRM**; effort **S**.
+Impact **72**; Essentials **PARTIAL**; owner **Essentials**; effort **S**.
+
+**Portfolio ownership.** Keep the current default-symbol-scale behavior. Rooms designation editing and SPXTRM optical rendering are different systems. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native maps already have notes, symbols, sharing and scale controls.
 
@@ -399,6 +439,8 @@ Impact **72**; Essentials **PARTIAL**; owner **Essentials + SPXTRM**; effort **S
 
 Impact **71**; Essentials **IMPLEMENTED**; owner **Essentials + Power**; effort **S**.
 
+**Portfolio ownership.** Keep grouping in Essentials and battery transactions in Power; light-specific servicing belongs to SPXTRM. Essentials still probes legacy powerWorks globals/imports, while renamed Power has no legacy aliases: current pairing requires a compatibility repair and tests. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Native devices already have battery, power and media actions.
 
 **Retained scope.** Retain current device-owned grouping and optional-provider duplicate suppression, not new electricity/device ownership.
@@ -417,7 +459,9 @@ Impact **71**; Essentials **IMPLEMENTED**; owner **Essentials + Power**; effort 
 
 ## 21. Plan a finite vehicle-part service itinerary
 
-Impact **71**; Essentials **NEW**; owner **Vehicle and clothing owners + Essentials**; effort **L**.
+Impact **71**; Essentials **NEW**; owner **Essentials**; effort **L**.
+
+**Portfolio ownership.** No general vehicle-service owner was identified. A finite vanilla vehicle-part itinerary fits Essentials. CAT construction machinery qualification and Eyewear retainers do not cover ordinary mechanics. Scope excludes clothing queues. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native mechanics offers part-specific servicing and ordinary queued actions.
 
@@ -437,7 +481,9 @@ Impact **71**; Essentials **NEW**; owner **Vehicle and clothing owners + Essenti
 
 ## 22. Queue a chosen eligible unread-book and media playlist
 
-Impact **70**; Essentials **NEW**; owner **Essentials**; effort **M**.
+Impact **70**; Essentials **NEW**; owner **Essentials + Knowledge & Wisdom**; effort **M**.
+
+**Portfolio ownership.** Essentials may orchestrate native reading; Knowledge & Wisdom owns provider documents, completion and knowledge requirements. A finished reading/media playlist was not found. Preserve its MP authority guard; start only with a proven native reading slice. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native reading processes one selected book and tracks pages.
 
@@ -459,6 +505,8 @@ Impact **70**; Essentials **NEW**; owner **Essentials**; effort **M**.
 
 Impact **69**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
+**Portfolio ownership.** Keep current key/ring predicates and native transfers. Quartermaster storage/shopping rules are not a key-ring replacement. See [project evidence](PORTFOLIO_OWNERSHIP.md).
+
 **Already vanilla.** Native menus already transfer keys into recognized key rings.
 
 **Retained scope.** Retain Essentials' bounded automatic filing via native transfers, not another manual Move To Ring menu.
@@ -477,17 +525,19 @@ Impact **69**; Essentials **IMPLEMENTED**; owner **Essentials**; effort **S**.
 
 ## 24. Preview and queue cleanup across a chosen rectangle
 
-Impact **68**; Essentials **NEW**; owner **Auto Clean + Essentials**; effort **L**.
+Impact **68**; Essentials **NEW**; owner **Auto Clean**; effort **Validation first**.
+
+**Portfolio ownership.** Already covered by Auto Clean rectangle/paint/erase/floor selection, confirmation, building cleanup, guarded actions and tool returns. Remove duplicate implementation work from Essentials. Validate or improve the existing Auto Clean workflow in its own repository. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Vanilla provides target-specific cleanup actions and some area-affecting actions.
 
 **Retained scope.** Keep a player-drawn bounded cleanup target plan, eligible-target preview and finite itinerary across that selection; no global scan or speed boost.
 
-**First slice.** Auto Clean owns cleanup selection and Essentials may provide shared stable-reference support. Begin with one ordinary cleanup task over a player-drawn bounded rectangle, showing eligible and skipped targets before starting. Do not replace native single-target or existing area-effect actions.
+**First slice.** Do not implement another area cleaner in Essentials. Auto Clean already provides confirmed rectangle/paint/erase/floor selection, native cleanup and supply return. Review that existing workflow and its runtime acceptance matrix; implement only a reproduced missing behavior in Auto Clean after its own freshness gate.
 
 **Ownership and lifecycle.** Native timed actions own cleanup mutations and supplies. Selected targets are intent, never authority; revalidate loaded target identity, access, distance, tool and resources at execution. Cancel clears pending work and reconnect does not restart it.
 
-**Settings and existing saves.** The cleanup owner provides server enable policy, default off for the new planner, bounded selection dimensions/target count and interruption policy. Keep technical queue internals private; preserve native duration and cost.
+**Settings and existing saves.** Reuse current Auto Clean, Rooms cleaning-scope and Quartermaster supply settings. Do not invent a second Essentials cleaning enable switch, selection policy or supply store.
 
 **Acceptance scenarios.** Test rectangle edges, targets removed by another player, safehouses, exhausted tools, resource depletion, cancel, danger, disconnect and server restart. No target outside the selection or unloaded-world scan is admitted.
 
@@ -497,7 +547,9 @@ Impact **68**; Essentials **NEW**; owner **Auto Clean + Essentials**; effort **L
 
 ## 25. Estimate remaining generator runtime from inspected load
 
-Impact **68**; Essentials **NEW**; owner **Power + SPXTRM**; effort **M**.
+Impact **68**; Essentials **NEW**; owner **Power + UI**; effort **M**.
+
+**Portfolio ownership.** Power already reports loaded generator fuel, condition, activation, connection and native consumption. A remaining-runtime estimate is not implemented in that adapter; keep calculation/units with Power and optional presentation with UI. Electrical output capacity remains unknown. See [project evidence](PORTFOLIO_OWNERSHIP.md).
 
 **Already vanilla.** Native generator info already shows fuel, condition, powered items and total draw.
 
