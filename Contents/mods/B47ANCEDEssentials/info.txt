@@ -5,5 +5,5 @@ Configurable workflow improvements that keep vanilla actions, balance, and autho
 Includes proximity and equipped inventory views, device-owned action menus, exact-minute clocks, selection repair, automatic key-ring filing, bounded server-authoritative sorting, bulk magazines, sensible crafting output, hotbar ordering, map defaults, literature status, context cleanup, and property-driven realistic ladders.
 
 Author: B47ANCE
-Version: 0.19.1
+Version: 0.19.2
 Mod ID: B47ANCEDEssentials

@@ -1,5 +1,15 @@
 # Workshop MP test publication
 
+## Paused prepared upload
+
+The prepared `0.19.1` package from source `e002cae` remains frozen and local.
+SteamCMD requested a password on 2026-10-17, and the user chose to leave the upload
+for later. No upload was confirmed. Current source advanced to `0.19.2` for an
+icon-only update; that does not resume publication or modify the prepared package.
+A future publish request must select the intended build and repeat freshness,
+authentication, staging/provenance and applicable checks. The 0.19.1 instructions
+and evidence below describe that preparation.
+
 Canonical upload text remains `WORKSHOP_DESCRIPTION.txt` (Steam BBCode) and
 `WORKSHOP_CHANGE_NOTE.txt`. `workshop.txt` mirrors the description for local
 authoring. The user confirmed existing Workshop item `3788591728` is hidden;
