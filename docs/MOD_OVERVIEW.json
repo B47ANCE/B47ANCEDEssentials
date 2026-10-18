@@ -26,7 +26,8 @@
     "docs/MASTER_ROADMAP.md",
     "docs/GITHUB_ONBOARDING.md",
     "docs/VALIDATION_0.19.0.md",
-    "docs/THUMBNAIL_0.19.1.md"
+    "docs/THUMBNAIL_0.19.1.md",
+    "docs/WORKSHOP_PUBLISHING.md"
   ],
   "relations": [
     {"target": "power", "kind": "Optional", "text": "Device-menu and watch adapters probe the legacy powerWorks namespace/provider contract. No current renamed-Power compatibility or runtime connection is claimed."}

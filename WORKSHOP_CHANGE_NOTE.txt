@@ -1,5 +1,8 @@
 [b]Version 0.19.1[/b]
 
+[b]MP testing build - dedicated multiplayer NOT TESTED[/b]
+This test upload includes the Essentials rename (Mod ID B47ANCEDEssentials) and supplied backpack/keys/watch thumbnail. Update client/server mod lists, integrations and sandbox presets together; do not enable both identities. Existing serialized state keys are retained, but native save/reconnect/restart behavior is not verified. SP and dedicated multiplayer remain NOT TESTED; stable release is blocked. Hidden item visibility is preserved.
+
 [h2]New Essentials thumbnail[/h2]
 
 Selected the user-supplied backpack, keys and watch artwork as the Workshop thumbnail. The mod poster and icon are unchanged.
