@@ -4,7 +4,7 @@ Configurable quality-of-life and cross-system convenience features for theWorks 
 
 B47ANCE'd Essentials consolidates practical, independently configurable workflow improvements without taking ownership of simulation systems that belong to other Works modules.
 
-[b]Mod Version: 0.19.1[/b]
+[b]Mod Version: 0.19.2[/b]
 
 [b]MP testing build - dedicated multiplayer NOT TESTED[/b]
 Offline Lua regression and source checks pass. Single-player and dedicated multiplayer are NOT TESTED for this build. This is a development test distribution; stable-release validation remains blocked.

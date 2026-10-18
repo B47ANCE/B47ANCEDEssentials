@@ -26,7 +26,7 @@ function B47ANCEDEssentials.testStatus()
         "EnableAutoKeyRing","EnableSortingAutomation","EnableBulkMagazineActions","EnableCraftingOutputRouting",
         "EnableHotbarReordering","EnableMapSymbolDefaultScale","EnableLiteratureTracking","EnableRecordedMediaTracking","EnableMediaRewardHints",
         "EnableContextMenuCleanup","EnableLadderClimbing"}
-    print("[B47ANCEDEssentials][Test] version=0.19.1 feature status")
+    print("[B47ANCEDEssentials][Test] version=0.19.2 feature status")
     for _,name in ipairs(names) do print("[B47ANCEDEssentials][Test] "..name.."="..tostring(values[name]~=false)) end
     print("[B47ANCEDEssentials][Test] Commands: B47ANCEDEssentialsTestKit(true), B47ANCEDEssentialsTestStatus()")
     return true

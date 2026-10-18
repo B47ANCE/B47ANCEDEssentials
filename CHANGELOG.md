@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.19.2 — 2026-10-18
+
+- Added a backpack-only transparent icon derived from the supplied thumbnail:
+  no text, loose keys, wristwatch or background fill. Saved the full-resolution
+  RGBA master, a 128 px export and a 32 px export matching the existing game slot.
+- Preserved the thumbnail, poster, their masters and historical packages.
+  Gameplay/configuration are unchanged; the sole Lua edit is the version diagnostic.
+- Synchronized current version mirrors and feature overview. Current Workshop
+  changenotes describe this patch; earlier notes remain preserved in Git history.
+
+Offline version/identity, image decode/alpha and source/asset integrity checks
+are recorded in `docs/ICON_0.19.2.md`. No new PZ runtime proof. The prepared
+0.19.1 Workshop upload remains paused; no package, deployment or upload is run.
+
 ## 0.19.1 — 2026-10-17
 
 - Replaced the Workshop thumbnail with the user-supplied Essentials backpack,
