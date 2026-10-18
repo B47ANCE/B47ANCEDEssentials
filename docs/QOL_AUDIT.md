@@ -1,5 +1,11 @@
 # Quality-of-Life Audit
 
+The [2026-10-18 downloaded-Workshop census](research/workshop-qol-2026-10-18/README.md)
+adds per-package provenance, a deduplicated estimated impact ranking and detailed
+top-25 clean-room plans. The implementation table below describes the existing
+source; the new ranking also includes planned capabilities and work owned by
+other projects. Neither document establishes current runtime verification.
+
 The implementation was cross-checked against installed Build 42 Workshop examples and the installed 42.20.3 vanilla Lua/tile definitions. Third-party code and assets are not included.
 
 ## Completed ownership

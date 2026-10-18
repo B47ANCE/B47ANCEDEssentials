@@ -2,6 +2,11 @@
 
 ## 0.19.2 — 2026-10-18
 
+- Added a documentation-only downloaded-Workshop QoL census, impact ranking and
+  top-25 clean-room implementation plan, including current Essentials coverage,
+  proposed owning projects, native overlap and explicit evidence limits.
+  Added development-only metadata and report consistency tools. No runtime,
+  identity, configuration, package or Workshop change; independent review pending.
 - Added a backpack-only transparent icon derived from the supplied thumbnail:
   no text, loose keys, wristwatch or background fill. Saved the full-resolution
   RGBA master, a 128 px export and a 32 px export matching the existing game slot.

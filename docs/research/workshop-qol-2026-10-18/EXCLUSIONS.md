@@ -1,0 +1,22 @@
+# Mechanics and unresolved boundaries
+
+QoL here means reducing input, organization or interpretation burden while preserving native survival constraints. A useful new mechanic is recorded in package coverage but is not silently reclassified as a vanilla-preserving convenience.
+
+| Candidate | Examples | Treatment |
+|---|---|---|
+| More carrying capacity or less item weight | More on the Floor, Zero Weight Keys, Pack Mule, grid-inventory capacity modes | Balance changes; capacity readouts and organization are ranked, capacity increases are not. |
+| Faster actions or passive action-free effects | Faster Hood Opening, Drag Bodies Faster, background eating, action-speed skills | Preserve ordinary duration and interruption. Consumable assistance is ranked with a native-action alternative; instant consumption is excluded. |
+| XP loops, grants or recovered progress | Auto All training loops, skill journals, trait magazines, level-cap expansion | Finite ordinary task queues and progress explanations are ranked. Automatic training loops and progression changes are separate gameplay proposals. |
+| New entry, traversal, combat or movement powers | Lockpicking/prying, Hold the Door, ledge catching, elevators, throwing, off-hand attacks | Separate mechanics with authority, collision, knowledge and balance requirements. A shortcut to an existing valid action is different from granting a new action. |
+| New recipes, fixtures or resource production | Hydrocraft, Snake's ModPack, Functional Appliances, plumbing, greenhouse and corpse-resource systems | Content/domain mechanics. Their neutral UI, information or finite-queue needs can map to ranked shared capabilities without copying recipes or systems. |
+| Health-rule changes or privileged inspection | Antibodies, new injuries, instant cures, administrative bypass | Health display and consent are ranked; medical rules and bypasses require their own explicit policy. Never reveal skill-locked or private patient data. |
+| Replacement assets and new content | Cars, firearms, clothing, maps, animals, sounds, emotes, texture packs | Not separate QoL capabilities for each asset. Original preview, recognition and accessibility needs may be ranked. No external assets or translations are imported. |
+| Native/manual engine modifications | ZombieBuddy and dependent packages, manual optimization/camera packages | Current Lua-only policy blocks using those implementation routes. A native file in a multi-variant download triggers review; it does not establish that every variant requires it. No Java/JAR/bridge substitution. |
+| Optimization claims | Texture optimization, menu caching, driving callback scheduling | No measured benefit is established here. Narrow presentation performance requirements are ranked; do not copy caching/scheduling algorithms or defer another mod's world callbacks without a verified contract. |
+| Hidden map or enemy knowledge | Full-map reveal, camera/visibility changes, automatic world marks | Only permitted observed data can feed a new UI. Publisher visibility or MP claims do not prove a safe Lua-only implementation. |
+
+Large bundles were split by purpose. QoL Compendium supplies leads for condition, capacity, generator information, media marks, menu/readout clarity and hotbar work; its adrenaline, alarm-rule, torch-capacity, trait and corpse-conversion changes are separate. Auto All supplies finite task-queue leads; continuous exercise/XP training and claimed multiplayer behavior are not adopted. Common Sense and its fork share capability entries; prying and new recipes are not counted as duplicate QoL. Neat Building's browsing needs are separated from its buildable/entity and uninstall-support variants.
+
+The conservative native-dependency flag follows declared required Mod IDs across downloaded variants and detects native/manual file types. Optional, build-specific or stale dependencies can over-flag a package; exact active-variant resolution is a gate before any compatibility work. A clean flag also does not prove that a package is safe, Lua-only at runtime or MP-correct.
+
+No permission to redistribute is inferred from a public download, a filename named LICENSE, another bundle's credits, a candidate permissive license or an author declaration about an upstream project. Every future import would need verified scope, obligations and explicit owner authorization; independent designs use none of those imports.

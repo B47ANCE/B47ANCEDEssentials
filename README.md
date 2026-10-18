@@ -3,6 +3,11 @@
 The implementation and approved clean-room research backlog are documented in
 [docs/ROADMAP.md](docs/ROADMAP.md).
 
+The [downloaded Workshop QoL audit](docs/research/workshop-qol-2026-10-18/README.md)
+records package provenance, the complete estimated impact ranking, and clean-room
+plans for the top 25 overall, including existing features. It is research tied to
+0.19.2; independent review and feature-specific runtime gates remain open.
+
 B47ANCE'd Essentials is a configurable vanilla-plus quality-of-life collection for Project Zomboid. It reduces repetitive inventory and interface work while preserving timed actions, character knowledge, capacity rules, and server authority.
 
 - Version: `0.19.2` (canonical: `VERSION`)

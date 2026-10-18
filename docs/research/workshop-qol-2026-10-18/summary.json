@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-18",
+  "base_version": "0.19.2",
+  "base_commit": "ee5c66a24878fc5a000a07224957f6177e3999fa",
+  "base_git_tree": "860960f2463268869f297a66c0c41169137ef364",
+  "base_runtime_tree": "b10544a12bbaca8c6dca3ff6c2e6ad43e1a5f86c",
+  "steam_build": "25485521",
+  "full_engine_version": "UNKNOWN",
+  "steam_client_packages": 591,
+  "steamcmd_cache_packages": 4,
+  "instances": 595,
+  "unique_workshop_ids": 592,
+  "mod_info_instances": 1480,
+  "files_enumerated": 345223,
+  "lua_files_enumerated": 16956,
+  "text_files_read": 114197,
+  "eligible_text_bytes_read": 577363790,
+  "read_errors": 0,
+  "oversized_text": 18,
+  "linked_paths": 0,
+  "ranked_capabilities": 116,
+  "mapped_unique_packages": 174,
+  "native_or_declared_dependency_flagged_unique_packages": 12,
+  "duplicate_roots": [
+    {
+      "workshop_id": "3508537032",
+      "text_revision": "IDENTICAL",
+      "file_count_match": true,
+      "binary_asset_identity": "NOT HASHED / UNKNOWN"
+    },
+    {
+      "workshop_id": "3807217050",
+      "text_revision": "DIFFERENT",
+      "file_count_match": false,
+      "binary_asset_identity": "NOT HASHED / UNKNOWN"
+    },
+    {
+      "workshop_id": "3820077442",
+      "text_revision": "IDENTICAL",
+      "file_count_match": true,
+      "binary_asset_identity": "NOT HASHED / UNKNOWN"
+    }
+  ],
+  "package_dispositions": {
+    "CONTENT/PATCH: no distinct additional QoL identified": 268,
+    "OUTSIDE QOL: new mechanics balance or content": 123,
+    "INFRASTRUCTURE: no standalone player workflow ranked": 15,
+    "MAPPED: neutral QoL capabilities": 149,
+    "MIXED: ranked QoL plus separate mechanics/content": 23,
+    "CONTENT/PATCH: no distinct additional QoL identified; LUA-ONLY BLOCKED": 5,
+    "ASSET OPTIMIZATION: no distinct player workflow": 1,
+    "INFRASTRUCTURE: no standalone player workflow ranked; LUA-ONLY BLOCKED": 1,
+    "OUTSIDE QOL: new mechanics balance or content; LUA-ONLY BLOCKED": 2,
+    "OUTSIDE QOL: additional enemy-health information": 1,
+    "INFRASTRUCTURE: rendering extension; LUA-ONLY BLOCKED": 1,
+    "MAPPED: neutral QoL capabilities; LUA-ONLY BLOCKED": 2,
+    "MIXED REVIEW: presentation overhaul or performance claim; LUA-ONLY BLOCKED": 1
+  },
+  "external_code_executed": "NONE",
+  "code_assets_text_imported": "NONE",
+  "gameplay_changes": "NONE",
+  "sp_runtime": "NOT TESTED",
+  "dedicated_runtime": "NOT TESTED",
+  "clean_room_independent_review": "PENDING"
+}
