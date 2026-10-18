@@ -5,6 +5,9 @@ adds per-package provenance, a deduplicated estimated impact ranking and detaile
 top-25 clean-room plans. The implementation table below describes the existing
 source; the new ranking also includes planned capabilities and work owned by
 other projects. Neither document establishes current runtime verification.
+The [complete vanilla recheck](research/workshop-qol-2026-10-18/VANILLA_RECHECK.md)
+removes native-covered proposals, excludes unresolved additions from ranking,
+and preserves existing Essentials features and accurately labeled foundations.
 
 The implementation was cross-checked against installed Build 42 Workshop examples and the installed 42.20.3 vanilla Lua/tile definitions. Third-party code and assets are not included.
 

@@ -13,10 +13,32 @@ def main():
     catalog = json.loads((AUDIT / 'capabilities.json').read_text(encoding='utf-8'))
     packages = package_data['instances']
     caps = catalog['capabilities']
+    review = json.loads((AUDIT / 'vanilla-review.json').read_text(encoding='utf-8'))
+    decisions = {entry['id']: entry for entry in review['entries']}
+    assert len(decisions) == len(review['entries']) == summary['vanilla_review_entries'] == 116
+    counts = {key: sum(e['decision'] == key for e in review['entries']) for key in review['decision_counts']}
+    assert counts == review['decision_counts'] == summary['vanilla_review_decisions']
+    prior_ids = {ident for p in packages for ident in p['pre_vanilla_review_capabilities']} | {'inventory-search'}
+    assert set(decisions) == prior_ids, 'Prior capability omitted or invented during native filtering'
+    assert set(review['preserved_essentials_ids']) == {e['id'] for e in review['entries'] if e.get('existing_essentials_preserved')}
     baseline = json.loads((AUDIT / 'vanilla-baseline.json').read_text(encoding='utf-8'))['entries']
     baseline_ids = {entry['id'] for entry in baseline}
     assert 'inventory-search' in baseline_ids
     assert not baseline_ids.intersection(c['id'] for c in caps), 'Vanilla baseline must not be proposed as new work'
+    assert baseline_ids == {e['id'] for e in review['entries'] if e['decision'] == 'REMOVE_VANILLA'}
+    expected_active = {e['id'] for e in review['entries'] if e['decision'] in ('KEEP_EXISTING', 'RETAIN_DELTA')}
+    assert {c['id'] for c in caps} == expected_active, 'Held, duplicate or native-only entry in ranking'
+    for ident in review['preserved_essentials_ids']:
+        assert ident in expected_active or (decisions[ident]['decision'] == 'MERGE' and decisions[ident]['merged_into'] in expected_active)
+    for entry in review['entries']:
+        assert entry['evidence_groups'] and entry['runtime_status'] == 'NOT_TESTED'
+        assert all(group in review['evidence_groups'] for group in entry['evidence_groups'])
+    for files in review['evidence_groups'].values():
+        assert files
+        for evidence in files:
+            assert re.fullmatch('[a-f0-9]{64}', evidence['sha256'])
+            assert evidence['scope_lines'][0] == 1
+            assert all(1 <= n <= evidence['scope_lines'][1] for n in evidence['anchor_lines'])
     sha = re.compile(r'^[a-f0-9]{64}$')
     assert summary == package_data['snapshot'], 'Diverging snapshot summary'
     assert summary['base_version'] == (ROOT / 'VERSION').read_text().strip()
@@ -35,7 +57,7 @@ def main():
     package_table = (AUDIT / 'PACKAGES.md').read_text(encoding='utf-8')
     for rank, capability in enumerate(caps, 1):
         assert rank == capability['rank']
-        assert capability['vanilla_gap_status'].startswith('NOT_ESTABLISHED')
+        assert capability['vanilla_review']['decision'] == decisions[capability['id']]['decision']
         dims = capability['dimensions']
         assert dims.keys() == weights.keys()
         assert all(isinstance(v, int) and 1 <= v <= 5 for v in dims.values())
@@ -48,6 +70,7 @@ def main():
         if rank <= 25:
             assert capability.get('plan')
             assert f'## {rank}. {capability["title"]}' in top_plan
+            assert set(capability['plan']['depends']) <= expected_active
             for name in capability['plan']['existing']:
                 assert len(list((ROOT / 'Contents/mods').rglob(name))) == 1
         else:

@@ -1,30 +1,630 @@
 {
-  "schema": 1,
+  "schema": 2,
   "entries": [
     {
       "id": "inventory-search",
       "title": "Search and filter accessible inventory",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
       "source_workshop_ids": [
         "3586216562",
         "3437629766"
       ],
-      "proposed_owner": "SPXTRM + Essentials",
-      "essentials_status": "NOT_APPLICABLE",
-      "neutral_requirement": "Search names, native categories and visible state across admitted roots; show the real source and explain excluded roots.",
-      "evidence": "Project owner correction on 2026-10-18: inventory search and filtering are vanilla. Exact current full-text-search binding was not independently established by this source check.",
-      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "reason": "Project owner confirms inventory search/filtering is native. The reviewed Lua exposes the native filter/weight menu; exact full-text binding remains unverified locally.",
+      "decision": "Excluded by user-confirmed baseline; no replacement search implementation.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "USER_CONFIRMED_BASELINE; PARTIAL_SOURCE_BINDING",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "repeat-queue",
+      "title": "Queue repeated ordinary actions with cancellation",
       "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
-      "decision": "Do not replace or duplicate native inventory search/filtering. An extension requires a separately reproduced vanilla limitation and a new review.",
-      "source_check": "Installed ISInventoryPane.lua contains onFilterMenu and weight ordering. That observation alone is not proof of the full-text search UI; no such proof is claimed.",
-      "limited_vanilla_source_evidence": {
-        "path": "media/lua/client/ISUI/ISInventoryPane.lua",
-        "sha256": "8cce738cc0dfec8655d2970c42572596bf6294b85e4917a245dc41d1827a56be",
-        "lines": [
-          185,
-          200
-        ],
-        "claim": "Native inventory filter menu with weight ordering is present. Full-text-search binding NOT ESTABLISHED by this observation."
-      }
+      "source_workshop_ids": [
+        "3777237134",
+        "3761218629",
+        "3776658529",
+        "3793163745"
+      ],
+      "reason": "Native timed-action queues already sequence actions and support cancellation.",
+      "decision": "Generic queueing/cancellation is not a new feature. Specific service playlists and selected-area planning remain separately reviewed.",
+      "evidence_groups": [
+        "actions",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "craft-search",
+      "title": "Find crafting recipes by inputs and outputs",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3502080466",
+        "3390169945"
+      ],
+      "reason": "The native recipe filter exposes RecipeName, InputName and OutputName modes.",
+      "decision": "Remove the replacement recipe-search proposal.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "craft-requirements",
+      "title": "Explain missing ingredients tools and stations",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3502080466",
+        "3540503606",
+        "3536052310"
+      ],
+      "reason": "Native recipe info and input/tool widgets show requirements, alternatives, skill checks and available/used inputs.",
+      "decision": "Remove generic requirements explanation; no missing native outcome was established.",
+      "evidence_groups": [
+        "craft",
+        "build"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "food-state",
+      "title": "Make food freshness safety and nutrition readable",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3586216562",
+        "3781012462",
+        "3490188370",
+        "3723726293"
+      ],
+      "reason": "Native food details and item tooltips already expose permitted cooking, hunger and food state information.",
+      "decision": "The generic readout requirement supplies no demonstrated additional workflow. Do not add hidden spoilage/poison knowledge.",
+      "evidence_groups": [
+        "food",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "build-search",
+      "title": "Search and explain available construction recipes",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3536052310",
+        "3540503606"
+      ],
+      "reason": "The native build panel instantiates searchable/filterable recipe widgets and native material/skill views.",
+      "decision": "Remove generic construction search and requirements browsing.",
+      "evidence_groups": [
+        "build",
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "recipe-chain",
+      "title": "Trace recipe dependencies and useful item applications",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3502080466"
+      ],
+      "reason": "Native input/output widgets jump to recipes producing/using that item through the filter panel.",
+      "decision": "The existing proposal is navigable recipe relationships, not a separately specified graph planner; remove it rather than invent a new requirement to retain its score.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "controller-access",
+      "title": "Provide controller and scalable alternatives to mouse UI",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3502080466",
+        "3536052310",
+        "3420581050",
+        "3437629766",
+        "3723726293"
+      ],
+      "reason": "Reviewed native panels implement joypad focus/navigation and native settings expose controller/font choices.",
+      "decision": "Remove generic controller/scaling support. A specific broken focus path would be a separately reproduced fix.",
+      "evidence_groups": [
+        "options",
+        "craft",
+        "health",
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "fluid-readouts",
+      "title": "Readable fluid identity amount and container compatibility",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3791681525",
+        "3791686284",
+        "3791686779"
+      ],
+      "reason": "Native fluid panels already show amount/capacity and fluid details and provide transfer controls.",
+      "decision": "Remove the generic fluid readout/compatibility UI proposal; unknown contamination details are not grounds to invent a second panel.",
+      "evidence_groups": [
+        "fluid"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "map-center",
+      "title": "Center the map on the permitted current position",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3790912405"
+      ],
+      "reason": "The native world map has a center button, C-key path and onCenterOnPlayer handler.",
+      "decision": "Remove generic centering; automatic follow is not independently established as a missing requirement.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "map-legend",
+      "title": "Readable map legend for native colors",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "2710167561"
+      ],
+      "reason": "Native world map creates ISWorldMapKey and toggles its legend.",
+      "decision": "Remove the proposed legend.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "seed-season",
+      "title": "Show known planting-season and crop information",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3734639991",
+        "3650168851",
+        "3723726293"
+      ],
+      "reason": "Native farming tooltips show in-season and best-month data behind season knowledge/skill checks.",
+      "decision": "Remove generic seasonal information and preserve native knowledge gates.",
+      "evidence_groups": [
+        "farm"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "alarm-clear",
+      "title": "Clear and inspect alarms with fewer menu steps",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3409527910"
+      ],
+      "reason": "Native inventory offers Stop Alarm and native alarm dialog allows enabling/disabling and changing its time.",
+      "decision": "Remove generic inspect/clear alarms; no distinct bulk-reset requirement was specified.",
+      "evidence_groups": [
+        "inventory",
+        "alarm"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "radio-presets",
+      "title": "Readable radio media controls and presets",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3420581050",
+        "3779480293"
+      ],
+      "reason": "Native radio UI has channel presets, adding/editing/deleting, battery, media and volume controls.",
+      "decision": "Remove generic presets/control readability as unspecified redesign, not new capability.",
+      "evidence_groups": [
+        "radio"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "window-memory",
+      "title": "Remember inventory panel layout and filter preferences",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3586216562",
+        "3437629766"
+      ],
+      "reason": "Native layout manager saves/restores window geometry/visibility and inventory panels have native layout state.",
+      "decision": "Remove generic window persistence. No separate missing filter persistence was proven.",
+      "evidence_groups": [
+        "layout",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "medical-consent",
+      "title": "Control who may inspect personal medical details",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3820690174",
+        "3737303520"
+      ],
+      "reason": "Native medical checks already request permission, show a yes/no prompt and invoke the accepted check path.",
+      "decision": "Remove generic examination consent from this list. Remembered/revocable policies would require a separately proven scope and are not presumed absent from the engine.",
+      "evidence_groups": [
+        "health",
+        "world"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "furniture-placement",
+      "title": "Improve preview and adjustment of item placement",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3767639280",
+        "3813943783",
+        "3775423228",
+        "3796440093",
+        "3197857648"
+      ],
+      "reason": "Native placement has previews, surface selection, rotation and 3D offsets.",
+      "decision": "Remove generic placement preview/adjustment. New arrangement profiles or expanded collision bounds are separate content/mechanics, not a proven gap here.",
+      "evidence_groups": [
+        "placement",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "map-sharing",
+      "title": "Share player-approved map annotations",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3782332412"
+      ],
+      "reason": "Native annotation sharing supports private/everyone/faction/safehouse and selected-player visibility.",
+      "decision": "Remove the proposed annotation-sharing system.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "recipe-favorites",
+      "title": "Pin known recipes and remember browse preferences",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3502080466",
+        "3536052310"
+      ],
+      "reason": "Native recipe list reads favorite metadata and renders favorite stars; filters include usage sorting.",
+      "decision": "Remove generic recipe pinning/browse preference functionality.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "trait-explanation",
+      "title": "Explain selected traits and occupations",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3387957272"
+      ],
+      "reason": "Native character creation already presents trait/occupation descriptions and tooltips.",
+      "decision": "Remove generic explanations; no specific incorrect or omitted native value was identified.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "rename-items",
+      "title": "Name supported items for personal organization",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "2867163008"
+      ],
+      "reason": "Native context menu already renames supported bags, maps and food items.",
+      "decision": "The proposal explicitly uses native-supported naming; remove it rather than broaden renaming rights.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "direct-equip",
+      "title": "Equip reachable ground items through a clear native action",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3750253491",
+        "3786918614",
+        "2875848298"
+      ],
+      "reason": "Native ground-item context actions transfer/equip eligible items into primary/secondary hands.",
+      "decision": "Remove the generic equip-from-ground proposal; shortcuts are separately scoped.",
+      "evidence_groups": [
+        "inventory",
+        "hotbar"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "vehicle-repair",
+      "title": "Explain valid vehicle repair and part choices",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3782893590",
+        "2757712197"
+      ],
+      "reason": "Native mechanics and part menus already show condition, tools, requirements and available repairs.",
+      "decision": "Remove generic repair explanation. New repair recipes are mechanics and service itineraries are separately reviewed.",
+      "evidence_groups": [
+        "vehicle"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "warmth-light",
+      "title": "Make permitted clothing warmth and light state clearer",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3781012462",
+        "3420478458"
+      ],
+      "reason": "Native item/equipment/device UI already exposes permitted insulation, condition and active light/device state.",
+      "decision": "Remove generic property readouts; no specific missing display location or value was established.",
+      "evidence_groups": [
+        "inventory",
+        "options",
+        "radio"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "personal-statistics",
+      "title": "Review permitted personal kill and survival statistics",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "2553809727",
+        "3808944882"
+      ],
+      "reason": "Native character screen already shows personal survival and kill statistics.",
+      "decision": "Remove the proposed recap of native counters; indirect/category attribution is unproven and not silently added.",
+      "evidence_groups": [
+        "character"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "weapon-info",
+      "title": "Explain visible weapon and ammunition properties",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3750253491",
+        "3781012462",
+        "2256623447",
+        "2875848298"
+      ],
+      "reason": "Native weapon/magazine item views and context menus already expose permitted properties and matching ammo actions.",
+      "decision": "Remove generic weapon facts display; no concrete missing property was specified.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "craft-pack",
+      "title": "Batch ordinary packing unpacking and opening",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3775166757",
+        "3777237134"
+      ],
+      "reason": "Native recipes and container actions already support ordinary packing/unpacking/opening and repeated crafting.",
+      "decision": "No new recipe or cross-container planning scope was specified; remove the generic batch proposal.",
+      "evidence_groups": [
+        "craft",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "avatar-preview",
+      "title": "Legible character equipment and customization preview",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3387640099",
+        "3589548354"
+      ],
+      "reason": "Native character creation and character panels already provide 3D appearance/equipment previews and UI sizing.",
+      "decision": "Remove generic legible preview; a specific clipping/layout defect would be separate evidence-backed work.",
+      "evidence_groups": [
+        "character",
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "error-reporting",
+      "title": "Make local mod errors easier to identify",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "2896041179"
+      ],
+      "reason": "Vanilla has an error window with refreshable Lua error entries and counts.",
+      "decision": "Remove the generic error-viewer proposal; opt-in redaction/export would need a separate concrete requirement.",
+      "evidence_groups": [
+        "errors"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "item-model-preview",
+      "title": "Preview supported item models without placing them",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3197857648"
+      ],
+      "reason": "Native inventory page includes a 3D item preview path and native placement previews.",
+      "decision": "Remove the generic model viewer proposal; do not confuse the absence of a custom panel with missing model preview.",
+      "evidence_groups": [
+        "inventory",
+        "placement"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "mod-organization",
+      "title": "Organize and explain enabled mod dependencies",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3567084868",
+        "3423660713",
+        "3779201168"
+      ],
+      "reason": "Native selector includes ordering, requirement/load-before/load-after tooltips and mod-list presets.",
+      "decision": "Remove generic dependency/order management; do not replace native mod-list configuration.",
+      "evidence_groups": [
+        "mods"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "rest-actions",
+      "title": "Find supported native rest and pose actions",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3652012357",
+        "2487022075"
+      ],
+      "reason": "Native context actions expose ordinary rest/sit/sleep workflows.",
+      "decision": "Remove generic discovery of existing rest actions. Additional poses/animations are separate content.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "translation-access",
+      "title": "Language fallback and readable localized interface text",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3389128453",
+        "3446915394",
+        "3556540080",
+        "3556544454"
+      ],
+      "reason": "Native localization, translated strings and UI font/language options already exist.",
+      "decision": "Generic localization is an implementation requirement for every retained feature, not a new scored capability. Specific missing translations need separate evidence.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "sandbox-admin",
+      "title": "Make permitted sandbox settings easier to locate",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "2894296454",
+        "3386906181"
+      ],
+      "reason": "Native SandboxOptions and server-admin sandbox settings UI already exist.",
+      "decision": "Remove another sandbox-settings entry point as a new feature.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "placement-entry",
+      "title": "Open native extended-placement adjustment from an item",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3197857648",
+        "3796440093"
+      ],
+      "reason": "Native item placement and extended 3D adjustment already provide placement/offset controls.",
+      "decision": "Remove generic entry to native placement; a missing object-specific context entry would require reproduction.",
+      "evidence_groups": [
+        "placement",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "cosmetic-emotes",
+      "title": "Discover and bind existing native emotes",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "2207282444",
+        "2912999938",
+        "3800471544",
+        "2648779556",
+        "3650071729"
+      ],
+      "reason": "Native emote radial and emote configuration already expose and bind supported native emotes.",
+      "decision": "Remove generic emote discovery; new animations are original asset/content work.",
+      "evidence_groups": [
+        "emotes",
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "item-readability",
+      "title": "Make existing note and identity inspection discoverable",
+      "classification": "VANILLA_BASELINE_NOT_IMPLEMENTATION_WORK",
+      "source_workshop_ids": [
+        "3796373365"
+      ],
+      "reason": "Native readable literature, print-media and item inspection actions exist.",
+      "decision": "No authoritative unreadable-item defect was established. New stories or generated identities are content, not a generic UI omission.",
+      "evidence_groups": [
+        "inventory",
+        "media"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED"
     }
   ]
 }

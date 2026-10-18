@@ -7,6 +7,8 @@ The [downloaded Workshop QoL audit](docs/research/workshop-qol-2026-10-18/README
 records package provenance, the complete estimated impact ranking, and clean-room
 plans for the top 25 overall, including existing features. It is research tied to
 0.19.2; independent review and feature-specific runtime gates remain open.
+The complete vanilla recheck removes native-covered proposals and holds unproven
+additions outside the ranking while preserving current Essentials coverage.
 
 B47ANCE'd Essentials is a configurable vanilla-plus quality-of-life collection for Project Zomboid. It reduces repetitive inventory and interface work while preserving timed actions, character knowledge, capacity rules, and server authority.
 

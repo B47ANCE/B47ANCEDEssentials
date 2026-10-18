@@ -2,6 +2,10 @@
 
 Installed Steam build **25485521**, full engine version **UNKNOWN**. All observations are read-only source evidence, with **runtime NOT TESTED**. No custom Java implementation is permitted. Re-audit on build/hash changes and verify exact receiver, side, binding, synchronization and lifecycle before writing gameplay code.
 
+## Complete vanilla recheck
+
+The subsequent [requirement-by-requirement review](VANILLA_RECHECK.md) covers all 116 prior/baseline entries against 63 distinct vanilla Lua files in 26 groups. Its portable source fingerprints, scopes and anchors are in vanilla-review.json. It removes native-covered proposals and keeps uncertain additions out of the ranking. Three reusable native UI observations (recipe filters, map centering and medical-consent prompt) were recorded in the unmanaged local API audit library. The earlier 26-record/11-observation evidence below remains source-only historical support; it is not an exhaustive baseline audit.
+
 ## Important native overlap
 
 The project owner corrected inventory search/filtering as vanilla baseline on 2026-10-18. Its proposed implementation was removed. The focused installed-Lua check located the native inventory filter/weight-order menu; it did not independently establish the full-text-search binding. That distinction is recorded in vanilla-baseline.json rather than claiming unsupported source proof.

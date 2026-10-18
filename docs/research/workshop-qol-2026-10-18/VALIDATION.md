@@ -50,14 +50,35 @@ deployment, packaging or Workshop publication occurred. G7 and stable G8 remain
 BLOCKED for gameplay. Independent clean-room reviewer signoff is PENDING;
 implementation has not started. No stable release tag is appropriate.
 
-## Vanilla baseline correction
+## First vanilla baseline correction at dc5c064
 
 Following the project owner correction, inventory search/filtering is baseline
-functionality and no longer a proposed implementation. The current ranking
-contains 115 candidates; nearby loot is first, and recipe-dependency browsing
+functionality and no longer a proposed implementation. The ranking at that correction
+contained 115 candidates; nearby loot is first, and recipe-dependency browsing
 moves into the top 25. The census and provenance observations are unchanged.
 All candidates explicitly require a demonstrated vanilla gap before work begins.
 
 The audit checker now prevents vanilla-baseline entries from appearing as
 ranked implementation candidates. Current audit, version and identity checks
 PASS offline. This correction adds no runtime evidence or gameplay changes.
+
+## Complete vanilla recheck
+
+[TESTED: offline Windows] The current audit checker accounts for all 116 prior
+requirements: 37 native-covered entries removed, 33 unproven entries held, two
+duplicates merged, and 44 retained entries. All 21 prior Essentials source or
+foundation identifiers are represented, including the container-inspection alias
+under nested-view. The top 25 has been regenerated from the retained scores.
+
+The checker now enforces exact decision/active/baseline partitions, complete
+coverage, evidence-group references, preservation of existing Essentials, score
+calculations and 25 complete plans with live dependencies. Targeted comparisons
+cover 63 installed vanilla Lua files across 26 evidence groups; each file has a
+portable hash and reviewed scope. Source absence is not claimed from a text
+search alone. Existing inventory search exclusion remains owner-confirmed; its
+full-text binding is still not independently established in installed Lua.
+
+Current report, version, identity, Markdown link and source-hash checks PASS
+offline. The earlier 26-host-test result is historical baseline support; no
+runtime source changed and it is not new SP or dedicated evidence. Independent
+clean-room signoff remains pending; no deploy, package, upload or game launch.

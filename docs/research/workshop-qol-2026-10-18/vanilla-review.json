@@ -1,0 +1,3937 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "steam_build": "25485521",
+  "full_engine_version": "UNKNOWN",
+  "review_base_commit": "dc5c06485534d4f22dc5ec02c606d3725f3b4cba",
+  "method": "Compare each prior behavioral requirement with native entry points and relevant function bodies. Full native behavior is not inferred from method names or lack of text matches. Unproven additions are excluded from ranking. Existing Essentials source/foundations retained by explicit user request.",
+  "runtime_status": "NOT_TESTED",
+  "preserved_essentials_ids": [
+    "batch-transfer",
+    "clock",
+    "container-open",
+    "context",
+    "craft-output",
+    "device-menus",
+    "equipment-swap",
+    "equipment-view",
+    "heavy-movement",
+    "hotbar",
+    "item-protection",
+    "key-filing",
+    "ladder",
+    "magazine-batch",
+    "map-annotation",
+    "media-progress",
+    "nearby-view",
+    "nested-view",
+    "selection",
+    "storage-sort",
+    "transfer-feedback"
+  ],
+  "decision_counts": {
+    "REMOVE_VANILLA": 37,
+    "KEEP_EXISTING": 20,
+    "RETAIN_DELTA": 24,
+    "HOLD_UNPROVEN": 33,
+    "MERGE": 2
+  },
+  "evidence_groups": {
+    "inventory": [
+      {
+        "path": "media/lua/client/ISUI/ISInventoryPage.lua",
+        "sha256": "65ebb1668583cb7f6f346f367e68e8f045fc926db0bf9d167ca4574c2282fd3b",
+        "scope_lines": [
+          1,
+          2214
+        ],
+        "anchor_lines": [
+          189,
+          192,
+          503,
+          506,
+          630,
+          637,
+          986,
+          1119,
+          1163,
+          1334,
+          1335,
+          1461,
+          1537,
+          1564,
+          1574,
+          1588,
+          1597,
+          1612,
+          1621,
+          1701,
+          1724,
+          1743,
+          1768,
+          1777,
+          1798,
+          1928,
+          1929,
+          2010,
+          2166
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISInventoryPane.lua",
+        "sha256": "8cce738cc0dfec8655d2970c42572596bf6294b85e4917a245dc41d1827a56be",
+        "scope_lines": [
+          1,
+          2883
+        ],
+        "anchor_lines": [
+          57,
+          145,
+          185,
+          2327,
+          2360,
+          2553,
+          2599,
+          2604,
+          2646
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISInventoryPaneContextMenu.lua",
+        "sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc",
+        "scope_lines": [
+          1,
+          4794
+        ],
+        "anchor_lines": [
+          626,
+          851,
+          916,
+          1079,
+          1970,
+          2226,
+          2598,
+          2635,
+          2643,
+          2644,
+          2729,
+          2730,
+          2741,
+          2751,
+          2752,
+          2903,
+          3937,
+          3958,
+          4206,
+          4215,
+          4216,
+          4665
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "hotbar": [
+      {
+        "path": "media/lua/client/Hotbar/ISHotbar.lua",
+        "sha256": "5260ae8b0a73fbc06514f4cbebe163de848aa30546a0436ad59afa2d23d90048",
+        "scope_lines": [
+          1,
+          893
+        ],
+        "anchor_lines": [
+          7,
+          82,
+          325,
+          348,
+          548
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "actions": [
+      {
+        "path": "media/lua/client/TimedActions/ISTimedActionQueue.lua",
+        "sha256": "23c98152728172b44ccb41bc8ddc97798fee7a91b57b20620fb11d5f41e7792c",
+        "scope_lines": [
+          1,
+          308
+        ],
+        "anchor_lines": [
+          9,
+          46,
+          60,
+          133
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+        "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0",
+        "scope_lines": [
+          1,
+          184
+        ],
+        "anchor_lines": [
+          8,
+          12,
+          24,
+          28,
+          63,
+          68,
+          153,
+          158,
+          163
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/TimedActions/ISInventoryTransferUtil.lua",
+        "sha256": "8514f27e4da8730c3610629dfcf66ca4510704bd4eed1121a21ba2535d51103f",
+        "scope_lines": [
+          1,
+          67
+        ],
+        "anchor_lines": [],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/TimedActions/ISLoadBulletsInMagazine.lua",
+        "sha256": "a9faaba4ff3650de790d6c258d2214c0507ade8c3ac2461ae22dd8924ea444a9",
+        "scope_lines": [
+          1,
+          174
+        ],
+        "anchor_lines": [
+          5,
+          84,
+          151,
+          156
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/TimedActions/ISUnloadBulletsFromMagazine.lua",
+        "sha256": "5e87db57c862fb3e58ca846ba9dba1bac587857f3e299a96c8edbdad3a61ea7d",
+        "scope_lines": [
+          1,
+          153
+        ],
+        "anchor_lines": [
+          5,
+          65,
+          80,
+          132,
+          137
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "craft": [
+      {
+        "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetRecipeFilterPanel.lua",
+        "sha256": "6389e2fbd005bdd8d35d4d99df4c2333596916e713056d21a6f8d1eafa3b1ce2",
+        "scope_lines": [
+          1,
+          355
+        ],
+        "anchor_lines": [
+          29,
+          30,
+          31,
+          126,
+          127,
+          129,
+          133,
+          134,
+          135,
+          168
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetIngredientsInputs.lua",
+        "sha256": "8e5cd79aa69ae1e94ff6702b370e3d4fe868a0ce07a8f5e7b88bfed2108f7c03",
+        "scope_lines": [
+          1,
+          267
+        ],
+        "anchor_lines": [
+          13
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISCraftRecipeInfoBox.lua",
+        "sha256": "895a7e2026ad0c29133eb1a04db864eb0ef4dd17090316f44a4cb84cd2b158d8",
+        "scope_lines": [
+          1,
+          241
+        ],
+        "anchor_lines": [
+          19
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetInput.lua",
+        "sha256": "864586a8748272315be8b2fb934b3466d631895e626f53e94b13eabda5318d02",
+        "scope_lines": [
+          1,
+          658
+        ],
+        "anchor_lines": [
+          296
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetOutput.lua",
+        "sha256": "cb35ad1a75fc483b9cc511d2af9dd34b670d8325db85ebf3df0184ecb03c8b6e",
+        "scope_lines": [
+          1,
+          366
+        ],
+        "anchor_lines": [
+          316
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISRecipeScrollingListBox.lua",
+        "sha256": "17314cad20fcaafdabcb8ddffd63bc939acfcaabfb1588b4442585a90cc36ffe",
+        "scope_lines": [
+          1,
+          524
+        ],
+        "anchor_lines": [
+          58
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "build": [
+      {
+        "path": "media/lua/client/Entity/ISUI/BuildRecipe/ISBuildPanel.lua",
+        "sha256": "2b4bb8908dbf0158f68bc0a9c05b6d338fc1695d6fc9897b78e22010c342e05d",
+        "scope_lines": [
+          1,
+          484
+        ],
+        "anchor_lines": [
+          131,
+          137,
+          269
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/Building/ISBuildWindow.lua",
+        "sha256": "d6768b6c577d561fa67be9d460fbc655bfb24c281e97c692df8a88ae3e18cc40",
+        "scope_lines": [
+          1,
+          376
+        ],
+        "anchor_lines": [],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "health": [
+      {
+        "path": "media/lua/client/XpSystem/ISUI/ISHealthPanel.lua",
+        "sha256": "8138f094a76f73f275e8c65a8991fd501cdc3502547f4d08e52b122c1f9f2a10",
+        "scope_lines": [
+          1,
+          1987
+        ],
+        "anchor_lines": [
+          431,
+          471,
+          633,
+          651,
+          669,
+          742,
+          758,
+          803,
+          818,
+          830,
+          1187,
+          1218,
+          1942,
+          1943,
+          1952,
+          1954,
+          1986
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "food": [
+      {
+        "path": "media/lua/shared/TimedActions/ISEatFoodAction.lua",
+        "sha256": "76d6f2650000231f3917616356c37e4b2fd7bcabdff5fcb5298e43223b681368",
+        "scope_lines": [
+          1,
+          327
+        ],
+        "anchor_lines": [
+          13,
+          23,
+          51,
+          173
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISToolTipInv.lua",
+        "sha256": "6f36edfb2447f9faa55301c3d150ab0d76a574c9dbb661812eeaa87d736967e6",
+        "scope_lines": [
+          1,
+          210
+        ],
+        "anchor_lines": [
+          65,
+          105
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISInventoryPane.lua",
+        "sha256": "8cce738cc0dfec8655d2970c42572596bf6294b85e4917a245dc41d1827a56be",
+        "scope_lines": [
+          1,
+          2883
+        ],
+        "anchor_lines": [
+          2646
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "media": [
+      {
+        "path": "media/lua/shared/TimedActions/ISReadABook.lua",
+        "sha256": "ac7606335ac26d09c8e2c6bc3f8489e5298d71468e6af79d0ab26fbe2348228c",
+        "scope_lines": [
+          1,
+          514
+        ],
+        "anchor_lines": [
+          135,
+          193,
+          203,
+          205,
+          218,
+          323,
+          342,
+          347
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISInventoryPaneContextMenu.lua",
+        "sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc",
+        "scope_lines": [
+          1,
+          4794
+        ],
+        "anchor_lines": [
+          537,
+          1007,
+          1079
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "toolreturn": [
+      {
+        "path": "media/lua/client/ISUI/ISCraftingUI.lua",
+        "sha256": "c61d7a053f93a930a09b98ce86eb1d3009559ec1c797dc794bd09cd2ee0b0f9f",
+        "scope_lines": [
+          1,
+          23
+        ],
+        "anchor_lines": [
+          3,
+          9,
+          13
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "maps": [
+      {
+        "path": "media/lua/client/ISUI/Maps/ISWorldMap.lua",
+        "sha256": "69e77918d3f1a7b1146c96b7743ae9be2735fe46feb5d558e5f44460e67989cb",
+        "scope_lines": [
+          1,
+          1733
+        ],
+        "anchor_lines": [
+          290,
+          334,
+          1021,
+          1033,
+          1046,
+          1222
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/Maps/ISWorldMapKey.lua",
+        "sha256": "d3f2f75d260c6bf6fd3aadc3361a021889ea35b9c69f474be44ab818f19fbea2",
+        "scope_lines": [
+          1,
+          99
+        ],
+        "anchor_lines": [
+          80
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/Maps/ISWorldMapSharing.lua",
+        "sha256": "6c8d066a9a0a2a5085e45410502e829eaeac40d915dc52aed5ac86a997d5989b",
+        "scope_lines": [
+          1,
+          487
+        ],
+        "anchor_lines": [
+          177,
+          203,
+          204,
+          326,
+          416,
+          418,
+          419
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/Maps/ISWorldMapSymbols.lua",
+        "sha256": "aba98a2d3f686dd7e5fab280430ab8b9763a4e80225d7198f776d4f29c0de28f",
+        "scope_lines": [
+          1,
+          1887
+        ],
+        "anchor_lines": [
+          1004,
+          1008,
+          1038,
+          1051,
+          1079,
+          1083,
+          1089,
+          1308,
+          1401,
+          1412,
+          1418,
+          1431,
+          1443,
+          1451,
+          1459,
+          1465,
+          1485,
+          1496,
+          1503,
+          1511,
+          1577,
+          1584,
+          1591,
+          1598,
+          1606,
+          1613,
+          1685,
+          1692,
+          1709,
+          1728,
+          1735,
+          1758,
+          1763,
+          1768,
+          1773
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "generator": [
+      {
+        "path": "media/lua/client/ISUI/ISGeneratorInfoWindow.lua",
+        "sha256": "6712644e29f2a6420aa0b7f0e0388c0671a1857190b6de64fb3f61943ca992d9",
+        "scope_lines": [
+          1,
+          99
+        ],
+        "anchor_lines": [
+          6,
+          15,
+          37,
+          45,
+          60,
+          65,
+          73,
+          77,
+          84,
+          88
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "vehicle": [
+      {
+        "path": "media/lua/client/Vehicles/ISUI/ISVehicleMenu.lua",
+        "sha256": "805a7854f9f418becddc7626b6262d8665fc16129412b3a289ec623069be9f23",
+        "scope_lines": [
+          1,
+          1743
+        ],
+        "anchor_lines": [
+          21,
+          57,
+          242,
+          277,
+          377,
+          562,
+          594,
+          751,
+          828,
+          836,
+          848,
+          856,
+          864,
+          881,
+          892,
+          898,
+          902,
+          906,
+          910,
+          914,
+          918,
+          922,
+          953,
+          960,
+          1047,
+          1054,
+          1103,
+          1114,
+          1120,
+          1133,
+          1160,
+          1164,
+          1172,
+          1176,
+          1184
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Vehicles/ISUI/ISVehicleDashboard.lua",
+        "sha256": "5b56f71248cd371f3d43aebe53fe6147f785ba97fc76c380bef07da69cdb7ce1",
+        "scope_lines": [
+          1,
+          722
+        ],
+        "anchor_lines": [
+          5,
+          143,
+          156,
+          180,
+          231,
+          265,
+          393,
+          403,
+          420,
+          502,
+          513,
+          519,
+          525,
+          531,
+          537,
+          556,
+          567,
+          601,
+          608,
+          615,
+          626,
+          637,
+          641,
+          659,
+          687
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Vehicles/ISUI/ISVehicleMechanics.lua",
+        "sha256": "372baa7b9f65fb9a0fe02e91ebdff68ef135add0199d592934d86f766aadd700",
+        "scope_lines": [
+          1,
+          1575
+        ],
+        "anchor_lines": [
+          68,
+          95,
+          110,
+          119,
+          202,
+          208,
+          265,
+          325,
+          333,
+          344,
+          572,
+          645,
+          648,
+          667,
+          668,
+          690,
+          691,
+          885,
+          887,
+          923,
+          925,
+          932,
+          1029,
+          1081,
+          1342,
+          1374,
+          1464
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Vehicles/ISUI/ISVehiclePartMenu.lua",
+        "sha256": "eeca7f07fdb99f49eef75156da7d8f9a520d2f48e4dd87224847efabce57bd61",
+        "scope_lines": [
+          1,
+          576
+        ],
+        "anchor_lines": [],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "animals": [
+      {
+        "path": "media/lua/client/ISUI/Animal/ISDesignationAnimalZoneUI.lua",
+        "sha256": "0e63b438be60aea743ab3f2ef5ac0848dd38977b39d9699e2f474258d1e70248",
+        "scope_lines": [
+          1,
+          701
+        ],
+        "anchor_lines": [
+          48,
+          348,
+          527,
+          559,
+          579
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/Animal/ISAnimalContextMenu.lua",
+        "sha256": "809223fae0f268bedc203188bfdeb4b2cda0f83ad124f9dc55c7e530e39f0731",
+        "scope_lines": [
+          1,
+          1235
+        ],
+        "anchor_lines": [],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "farm": [
+      {
+        "path": "media/lua/client/Farming/ISUI/ISFarmingMenu.lua",
+        "sha256": "c3c9413f414f49f0e9639361d2bfb79397d023d30cdd80d566d5293c364948c3",
+        "scope_lines": [
+          1,
+          1338
+        ],
+        "anchor_lines": [
+          53,
+          58,
+          75,
+          147,
+          167,
+          503,
+          509,
+          514,
+          546,
+          552,
+          582,
+          593,
+          836,
+          847,
+          889,
+          930,
+          1012,
+          1072,
+          1085,
+          1100,
+          1115,
+          1156,
+          1177,
+          1242,
+          1264,
+          1286,
+          1302,
+          1324
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Farming/ISUI/ISFarmingInfo.lua",
+        "sha256": "c75013eaedbae2df90b9d93aa7d78a276dca45fdba70285902ef215b1ab9e634",
+        "scope_lines": [
+          1,
+          714
+        ],
+        "anchor_lines": [
+          16,
+          20,
+          25,
+          29,
+          43,
+          206,
+          210,
+          222,
+          249,
+          254,
+          259,
+          264,
+          273,
+          304,
+          332,
+          343,
+          350,
+          373,
+          387,
+          392,
+          397,
+          412,
+          423,
+          468,
+          494,
+          511,
+          524,
+          565,
+          580,
+          604,
+          623,
+          644,
+          649,
+          668,
+          680
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "radio": [
+      {
+        "path": "media/lua/client/RadioCom/ISRadioWindow.lua",
+        "sha256": "704976f04b887feeb22e1c05dfc8a4350f6ed1ad27156a0d905e68978cd7ecfa",
+        "scope_lines": [
+          1,
+          414
+        ],
+        "anchor_lines": [
+          9,
+          50,
+          72,
+          92,
+          96,
+          103,
+          111,
+          126,
+          161,
+          177,
+          181,
+          185,
+          189,
+          193,
+          205,
+          219,
+          255,
+          259,
+          263,
+          267,
+          271,
+          287,
+          294,
+          298,
+          305,
+          312,
+          316,
+          320,
+          324,
+          329,
+          333,
+          364,
+          373,
+          407
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/RadioCom/RadioWindowModules/RWMChannel.lua",
+        "sha256": "a98694f1425a54a320a795cd063807b9c3271dfd94e14cc8dc4806bb985a1e57",
+        "scope_lines": [
+          1,
+          402
+        ],
+        "anchor_lines": [
+          9,
+          13,
+          62,
+          83,
+          88,
+          110,
+          116,
+          122,
+          133,
+          144,
+          154,
+          166,
+          184,
+          202,
+          210,
+          219,
+          223,
+          251,
+          260,
+          264,
+          268,
+          275,
+          324,
+          336,
+          347,
+          358,
+          369,
+          381
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/RadioCom/RadioWindowModules/RWMPower.lua",
+        "sha256": "8cf031176ccf0091644c437a472280dd9cbd041db99e6836e56a0dc1087de300",
+        "scope_lines": [
+          1,
+          224
+        ],
+        "anchor_lines": [
+          8,
+          12,
+          54,
+          62,
+          68,
+          86,
+          92,
+          96,
+          113,
+          124,
+          147,
+          152,
+          156,
+          176,
+          184,
+          197,
+          201,
+          205
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/RadioCom/RadioWindowModules/RWMMedia.lua",
+        "sha256": "e9359fcd4facf814496c42b5e3ba8a2b4999ba8903d938a4aad5afa7032bba85",
+        "scope_lines": [
+          1,
+          329
+        ],
+        "anchor_lines": [
+          9,
+          13,
+          45,
+          53,
+          59,
+          76,
+          86,
+          92,
+          96,
+          127,
+          153,
+          203,
+          207,
+          211,
+          248,
+          255,
+          286,
+          290,
+          294
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "fluid": [
+      {
+        "path": "media/lua/client/Fluids/ISFluidContainerPanel.lua",
+        "sha256": "1d393c089fe60f109c9b5ee780d9dde8abec9776edabb6c854d21241dbca0a93",
+        "scope_lines": [
+          1,
+          492
+        ],
+        "anchor_lines": [
+          123,
+          231,
+          329
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/Fluids/ISFluidTransferUI.lua",
+        "sha256": "f4fa531fc756ecca2a3709130c7f69cb2065cb158ae43141a86cb24fdc041321",
+        "scope_lines": [
+          1,
+          625
+        ],
+        "anchor_lines": [
+          15,
+          69,
+          73,
+          217,
+          222,
+          227,
+          232,
+          237,
+          245,
+          264,
+          268,
+          418,
+          437,
+          448,
+          453,
+          469,
+          493,
+          536,
+          544,
+          552,
+          568,
+          581,
+          591,
+          601
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/Fluids/ISFluidTransferAction.lua",
+        "sha256": "9534d2a46ff06d425a0aa89f63c776f118bcdd36a39905748b7c7dfd1f771190",
+        "scope_lines": [
+          1,
+          141
+        ],
+        "anchor_lines": [
+          5,
+          12,
+          43,
+          63,
+          70,
+          80,
+          91
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "placement": [
+      {
+        "path": "media/lua/server/BuildingObjects/ISPlace3DItemCursor.lua",
+        "sha256": "60ac62234d09c99e22bb4f2f95b90442677098e248b435331334003a1f9dc2f4",
+        "scope_lines": [
+          1,
+          491
+        ],
+        "anchor_lines": [
+          9,
+          30,
+          41,
+          56,
+          113,
+          148,
+          150,
+          173,
+          194
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/Moveables/ISMoveableSpriteProps.lua",
+        "sha256": "a6a5ab5b36da07ce53587218bffd33963d9caf0b53e571107cc66dbe9f77ab4c",
+        "scope_lines": [
+          1,
+          4652
+        ],
+        "anchor_lines": [],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/server/BuildingObjects/ISMoveableCursor.lua",
+        "sha256": "40a3d8784805e5cfa9e09007ed7d89394c531186a2319686d8677d35c8406dfe",
+        "scope_lines": [
+          1,
+          1191
+        ],
+        "anchor_lines": [
+          30,
+          36,
+          43,
+          62,
+          73,
+          78,
+          119,
+          128,
+          139,
+          143,
+          147,
+          186,
+          237,
+          252,
+          261,
+          316,
+          337,
+          385,
+          412,
+          443,
+          464,
+          486,
+          702,
+          732,
+          759,
+          768,
+          783,
+          816,
+          833,
+          847,
+          853,
+          860,
+          873,
+          934,
+          951
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "options": [
+      {
+        "path": "media/lua/client/OptionScreens/MainOptions.lua",
+        "sha256": "bf705e2f64b6aaee7acecc1f99f0c496a4c300acebbb91a56e48ccf1b2507e96",
+        "scope_lines": [
+          1,
+          4127
+        ],
+        "anchor_lines": [
+          41,
+          45,
+          57,
+          70,
+          74,
+          94,
+          103,
+          115,
+          134,
+          148,
+          157,
+          172,
+          186,
+          196,
+          221,
+          235,
+          248,
+          277,
+          283,
+          302,
+          319,
+          329,
+          428,
+          429,
+          430,
+          431,
+          432,
+          435,
+          441,
+          445,
+          446,
+          486,
+          506,
+          507,
+          538
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/shared/keyBinding.lua",
+        "sha256": "5ca8e3820f9d241adfa8d6b5f3f7b35732560a90be43e389d2ff1639b68c768c",
+        "scope_lines": [
+          1,
+          379
+        ],
+        "anchor_lines": [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          67,
+          71,
+          75,
+          80,
+          84,
+          88,
+          92,
+          96,
+          103,
+          107,
+          111,
+          115,
+          119,
+          123,
+          127,
+          131,
+          135,
+          142,
+          146,
+          150,
+          154,
+          158
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/OptionScreens/SandboxOptions.lua",
+        "sha256": "22319f9de25c5da14146e54758a1711347f019272d1277860db66d75a2cd0833",
+        "scope_lines": [
+          1,
+          1167
+        ],
+        "anchor_lines": [
+          18,
+          42,
+          46,
+          65,
+          150,
+          160,
+          167,
+          197,
+          226,
+          233,
+          238,
+          365,
+          370,
+          377,
+          382,
+          391,
+          407,
+          559,
+          567,
+          592,
+          642,
+          746,
+          756,
+          773,
+          795,
+          817,
+          833,
+          841,
+          865,
+          872,
+          887,
+          911,
+          919,
+          925,
+          940
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/AdminPanel/ISServerSandboxOptionsUI.lua",
+        "sha256": "12c481051f89b6a76047b27c977cf6ac2a30de2470d3f231b1eefeb87081ba5d",
+        "scope_lines": [
+          1,
+          798
+        ],
+        "anchor_lines": [
+          24,
+          48,
+          52,
+          59,
+          64,
+          69,
+          110,
+          119,
+          126,
+          133,
+          138,
+          147,
+          154,
+          162,
+          171,
+          207,
+          228,
+          252,
+          268,
+          281,
+          315,
+          320,
+          336,
+          349,
+          370,
+          385,
+          388,
+          389,
+          491,
+          667,
+          677,
+          694,
+          719,
+          744,
+          759
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "mods": [
+      {
+        "path": "media/lua/client/OptionScreens/ModSelector/ModSelectorModel.lua",
+        "sha256": "a42f02da40a1f3be4e221b94ef126d38c92e71119472b097a1fdcfa826c7f67e",
+        "scope_lines": [
+          1,
+          429
+        ],
+        "anchor_lines": [
+          121,
+          142,
+          408,
+          409
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/OptionScreens/ModSelector/ModLoadOrderPanel.lua",
+        "sha256": "6f318a0702093806608edfe6db1d5785d92c8991651f8fc634c813d825506312",
+        "scope_lines": [
+          1,
+          353
+        ],
+        "anchor_lines": [
+          49,
+          52,
+          59,
+          68,
+          95,
+          222,
+          258,
+          265,
+          278
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/OptionScreens/ModSelector/ModListPresets.lua",
+        "sha256": "bbf45c84ffa0b10a746e45ee87e1c1b789d185239986d676d29cd05e846a58af",
+        "scope_lines": [
+          1,
+          309
+        ],
+        "anchor_lines": [
+          18
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "errors": [
+      {
+        "path": "media/lua/client/DebugUIs/DebugErrorsWindow.lua",
+        "sha256": "788e62d95b918573a81c5655646486d7cf03b98ff9e1734c1aec1f6fb30ba37e",
+        "scope_lines": [
+          1,
+          46
+        ],
+        "anchor_lines": [
+          5,
+          21,
+          23,
+          32,
+          40
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "sleep": [
+      {
+        "path": "media/lua/client/ISUI/ISSleepingUI.lua",
+        "sha256": "9538f8fbcd686e50f68d461c327d388e51e8cc43df165a1fcbb61e6a7e262177",
+        "scope_lines": [
+          1,
+          96
+        ],
+        "anchor_lines": [
+          1,
+          3,
+          6,
+          10,
+          13,
+          24,
+          26,
+          32,
+          36,
+          40,
+          44,
+          48,
+          59,
+          70,
+          85,
+          86,
+          88,
+          92
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISSleepDialog.lua",
+        "sha256": "89015e99b99f366960fcc806c9d9b722f3d5fc43a19592ee286edbed183a3d07",
+        "scope_lines": [
+          1,
+          165
+        ],
+        "anchor_lines": [
+          3,
+          5,
+          22,
+          24,
+          29,
+          33,
+          39,
+          51,
+          60,
+          63,
+          65,
+          66,
+          67,
+          73,
+          74,
+          75,
+          76,
+          81,
+          97,
+          103,
+          110,
+          119,
+          130
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "emotes": [
+      {
+        "path": "media/lua/client/ISUI/ISEmoteRadialMenu.lua",
+        "sha256": "9ec2082ae55a0133c682a9b0b3858ce3df1440c29282826c39615ccf1103e450",
+        "scope_lines": [
+          1,
+          271
+        ],
+        "anchor_lines": [
+          5,
+          90,
+          98,
+          109,
+          124,
+          155,
+          167,
+          179,
+          199,
+          216,
+          240
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISUIEmoteConfig.lua",
+        "sha256": "a5d82a0809967ddc7144e2f939b098c12628629412c304d97566f259c7ad9256",
+        "scope_lines": [
+          1,
+          164
+        ],
+        "anchor_lines": [
+          5,
+          69,
+          85,
+          89,
+          93,
+          98,
+          120,
+          139
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "layout": [
+      {
+        "path": "media/lua/client/ISUI/ISLayoutManager.lua",
+        "sha256": "5f784c617fb9a491f297858e662194b0ffc2b87d944e5e2365a08d0d58dd8494",
+        "scope_lines": [
+          1,
+          233
+        ],
+        "anchor_lines": [
+          15,
+          53,
+          80,
+          125,
+          169,
+          229
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/ISUI/ISCollapsableWindow.lua",
+        "sha256": "3ac31699bb9eedc26e3ac5d6c2fa4f964857e0a954b2cff4d6ddb54aed0e607d",
+        "scope_lines": [
+          1,
+          403
+        ],
+        "anchor_lines": [
+          14,
+          18,
+          22,
+          26,
+          95,
+          114,
+          134,
+          138,
+          145,
+          152,
+          179,
+          206,
+          219,
+          228,
+          249,
+          262,
+          270,
+          282,
+          290,
+          294,
+          298,
+          302,
+          306,
+          326,
+          336,
+          341,
+          351,
+          352,
+          356,
+          366
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "world": [
+      {
+        "path": "media/lua/client/ISUI/ISWorldObjectContextMenu.lua",
+        "sha256": "980e67622e34422983cd33d64ea4f6dbff5cdf151a6dd9aef6acb669261fb47f",
+        "scope_lines": [
+          1,
+          3068
+        ],
+        "anchor_lines": [
+          125,
+          225,
+          229,
+          249,
+          254,
+          261,
+          266,
+          290,
+          295,
+          331,
+          337,
+          349,
+          355,
+          407,
+          444,
+          772,
+          776,
+          883,
+          885,
+          987,
+          1034,
+          1113,
+          1120,
+          1127,
+          1177,
+          1183,
+          1210,
+          1585,
+          1594,
+          1648,
+          1827,
+          1829,
+          1838,
+          1850,
+          1876
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "alarm": [
+      {
+        "path": "media/lua/client/ISUI/ISAlarmClockDialog.lua",
+        "sha256": "ebb5c7fd12ef146acaf3824ca726b66b8a18c71918d77158d18362db4817f231",
+        "scope_lines": [
+          1,
+          234
+        ],
+        "anchor_lines": [
+          9,
+          84,
+          93,
+          95,
+          98,
+          118,
+          126,
+          134,
+          146,
+          158,
+          165,
+          169,
+          182,
+          190,
+          197,
+          204
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ],
+    "character": [
+      {
+        "path": "media/lua/client/XpSystem/ISUI/ISCharacterScreen.lua",
+        "sha256": "ac4dae5d7f749fca6654dd65b96029adea40d2a50bdb1a2a3c087aa02300ff02",
+        "scope_lines": [
+          1,
+          752
+        ],
+        "anchor_lines": [
+          32,
+          36,
+          45,
+          50,
+          58,
+          74,
+          168,
+          177,
+          181,
+          194,
+          200,
+          204,
+          219,
+          228,
+          239,
+          240,
+          248,
+          253,
+          334,
+          411,
+          415,
+          419,
+          423,
+          426,
+          452,
+          472,
+          473,
+          475,
+          476,
+          479,
+          498,
+          507,
+          516,
+          663,
+          670
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      },
+      {
+        "path": "media/lua/client/OptionScreens/CharacterCreationProfession.lua",
+        "sha256": "fac4764f0464d263bfe3cbb137793b785dbdd4e19b85db67c1c78e461e377edd",
+        "scope_lines": [
+          1,
+          1562
+        ],
+        "anchor_lines": [
+          21,
+          29,
+          38,
+          42,
+          47,
+          54,
+          59,
+          68,
+          72,
+          76,
+          80,
+          84,
+          97,
+          111,
+          113,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          374,
+          382,
+          386,
+          390,
+          395,
+          400,
+          405,
+          434,
+          464,
+          511,
+          514,
+          518
+        ],
+        "inspection": "Targeted static comparison; full-file lexical scope, selected relevant function bodies inspected. No source bodies redistributed."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "inventory-search",
+      "source_workshop_ids": [
+        "3586216562",
+        "3437629766"
+      ],
+      "previous_title": "Search and filter accessible inventory",
+      "previous_rank": "removed previously",
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Project owner confirms inventory search/filtering is native. The reviewed Lua exposes the native filter/weight menu; exact full-text binding remains unverified locally.",
+      "remaining_scope_or_reason": "Excluded by user-confirmed baseline; no replacement search implementation.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "USER_CONFIRMED_BASELINE; PARTIAL_SOURCE_BINDING",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "nearby-view",
+      "previous_title": "One view for reachable nearby loot",
+      "previous_rank": 1,
+      "source_workshop_ids": [
+        "2847184718",
+        "3586216562"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla discovers individual reachable loot containers and exposes their buttons.",
+      "remaining_scope_or_reason": "Retain Essentials' admitted-root aggregate; do not replace native discovery or expand reach.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "batch-transfer",
+      "previous_title": "Safe bulk transfer between selected containers",
+      "previous_rank": 2,
+      "source_workshop_ids": [
+        "3422220305",
+        "3586216562",
+        "3761216758"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla already transfers selected items, all items and matching types with timed actions.",
+      "remaining_scope_or_reason": "Retain the existing reference/replay/authority foundation; proposed UI is only an explicit multi-source transaction preview and result workflow, not a new Transfer All button.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "repeat-queue",
+      "previous_title": "Queue repeated ordinary actions with cancellation",
+      "previous_rank": 3,
+      "source_workshop_ids": [
+        "3777237134",
+        "3761218629",
+        "3776658529",
+        "3793163745"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native timed-action queues already sequence actions and support cancellation.",
+      "remaining_scope_or_reason": "Generic queueing/cancellation is not a new feature. Specific service playlists and selected-area planning remain separately reviewed.",
+      "evidence_groups": [
+        "actions",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "storage-sort",
+      "previous_title": "Put loot into designated or seeded storage",
+      "previous_rank": 4,
+      "source_workshop_ids": [
+        "3761216758",
+        "3807217050",
+        "3290232938"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native transfers choose a destination; container discovery is not category/seed destination planning.",
+      "remaining_scope_or_reason": "Retain bounded Essentials seeded sorting; richer shared designation rules remain Quartermaster work.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "craft-search",
+      "previous_title": "Find crafting recipes by inputs and outputs",
+      "previous_rank": 5,
+      "source_workshop_ids": [
+        "3502080466",
+        "3390169945"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "The native recipe filter exposes RecipeName, InputName and OutputName modes.",
+      "remaining_scope_or_reason": "Remove the replacement recipe-search proposal.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "craft-requirements",
+      "previous_title": "Explain missing ingredients tools and stations",
+      "previous_rank": 6,
+      "source_workshop_ids": [
+        "3502080466",
+        "3540503606",
+        "3536052310"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native recipe info and input/tool widgets show requirements, alternatives, skill checks and available/used inputs.",
+      "remaining_scope_or_reason": "Remove generic requirements explanation; no missing native outcome was established.",
+      "evidence_groups": [
+        "craft",
+        "build"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "selection",
+      "previous_title": "Keep inventory selection through refreshes",
+      "previous_rank": 7,
+      "source_workshop_ids": [
+        "3782920935",
+        "3773985930"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native pane rebuilds and transfer actions maintain their own row/selection state.",
+      "remaining_scope_or_reason": "Retain Essentials' stable-item selection repair and verify regressions against the native rebuild lifecycle.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "item-protection",
+      "previous_title": "Protect favorites and reserved equipment from bulk actions",
+      "previous_rank": 8,
+      "source_workshop_ids": [
+        "3586216562",
+        "3795435563"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native favorite checks already protect ordinary bulk transfers and some destructive operations.",
+      "remaining_scope_or_reason": "Retain only consistency and protected-equipment checks in Essentials-owned workflows; do not add a second Favorite feature.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "context",
+      "previous_title": "Make context actions easier to find",
+      "previous_rank": 9,
+      "source_workshop_ids": [
+        "3780688809",
+        "3781012462",
+        "2875848298",
+        "3554048011"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla has submenus, disabled reasons and native option callbacks.",
+      "remaining_scope_or_reason": "Retain Essentials device/developer grouping; no wholesale context-menu replacement.",
+      "evidence_groups": [
+        "inventory",
+        "world",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "capacity",
+      "previous_title": "Show container and magazine fill at a glance",
+      "previous_rank": 10,
+      "source_workshop_ids": [
+        "3789660055",
+        "3586216562",
+        "3781012462",
+        "3437629766"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "The selected inventory header already shows weight/capacity; magazine counts are available through native interactions.",
+      "remaining_scope_or_reason": "Only simultaneous fill cues on container buttons and detachable-magazine entries remain; no new capacity or ammo information is claimed.",
+      "evidence_groups": [
+        "inventory",
+        "hotbar"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "condition",
+      "previous_title": "Show item condition where it is used",
+      "previous_rank": 11,
+      "source_workshop_ids": [
+        "2852309899",
+        "3641048285",
+        "3781012462"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native inventory details already draw weapon-condition bars. The reviewed hotbar render draws slots, textures and equipped marks without a condition cue.",
+      "remaining_scope_or_reason": "Keep only an optional hotbar-slot condition cue. Remove duplicate inventory condition rendering.",
+      "evidence_groups": [
+        "inventory",
+        "hotbar"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "nested-view",
+      "previous_title": "Inspect nested bags without unpacking",
+      "previous_rank": 12,
+      "source_workshop_ids": [
+        "3410947298",
+        "3465040406",
+        "3586216562"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla exposes equipped carried bags and bags in admitted vehicle/world roots; native recursive queries are not a recursive browsing UI.",
+      "remaining_scope_or_reason": "Retain bounded stable-reference traversal foundation; a future UI is limited to deeper accessible nested inspection with breadcrumbs.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "take-quantity",
+      "previous_title": "Transfer an exact quantity from a stack",
+      "previous_rank": 13,
+      "source_workshop_ids": [
+        "3422220305",
+        "3781012462"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "The reviewed grab menu offers one, half and all for a selected stack.",
+      "remaining_scope_or_reason": "Keep a whole-item exact-count prompt, excluding existing one/half/all choices and fluid portions.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "food-state",
+      "previous_title": "Make food freshness safety and nutrition readable",
+      "previous_rank": 14,
+      "source_workshop_ids": [
+        "3586216562",
+        "3781012462",
+        "3490188370",
+        "3723726293"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native food details and item tooltips already expose permitted cooking, hunger and food state information.",
+      "remaining_scope_or_reason": "The generic readout requirement supplies no demonstrated additional workflow. Do not add hidden spoilage/poison knowledge.",
+      "evidence_groups": [
+        "food",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "equipment-view",
+      "previous_title": "Separate equipped items from carried clutter",
+      "previous_rank": 15,
+      "source_workshop_ids": [
+        "3773985930",
+        "3790656296",
+        "2950902979",
+        "3586216562"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla marks equipped rows and exposes equipment controls.",
+      "remaining_scope_or_reason": "Retain Essentials' separate worn/held/attached projection and general-list filtering; no new equipment slots.",
+      "evidence_groups": [
+        "inventory",
+        "hotbar"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "media-progress",
+      "previous_title": "Show read watched and useful-media progress",
+      "previous_rank": 16,
+      "source_workshop_ids": [
+        "2544353492",
+        "3777800131",
+        "3716522633",
+        "3739168410",
+        "2732294885"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native inventory already tests read literature and stores per-character page/media progress.",
+      "remaining_scope_or_reason": "Retain Essentials' carried-duplicate and reward context integration; existing source remains included even where native indicators overlap.",
+      "evidence_groups": [
+        "inventory",
+        "media"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "health-readability",
+      "previous_title": "Make existing health information easier to inspect",
+      "previous_rank": 17,
+      "source_workshop_ids": [
+        "2866258937",
+        "3779405481",
+        "3723726293"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Vanilla already has body-part injuries, bandage details and treatment handlers in the health panel.",
+      "remaining_scope_or_reason": "Only an optional compact local injury summary outside the full panel remains; no new diagnosis, hidden wound or other-player detail.",
+      "evidence_groups": [
+        "health"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "status-readability",
+      "previous_title": "Readable configurable survival status and moodles",
+      "previous_rank": 18,
+      "source_workshop_ids": [
+        "2867431511",
+        "3399432867",
+        "3451167732",
+        "3776182375",
+        "3389003300",
+        "3674800555",
+        "3395171770",
+        "3753700423"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Vanilla already has moodles, status views, font/scaling options and privileged numeric displays.",
+      "remaining_scope_or_reason": "A permitted additional HUD outcome was not established without native renderer/runtime comparison; exclude from ranking for now.",
+      "evidence_groups": [
+        "health",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "tool-return",
+      "previous_title": "Return borrowed tools and magazines to their source",
+      "previous_rank": 19,
+      "source_workshop_ids": [
+        "2769706949",
+        "3793171582",
+        "2366717227"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native crafting explicitly returns borrowed items; magazine load/unload menu paths do not call that return helper.",
+      "remaining_scope_or_reason": "Keep only optional magazine source restoration after a verified load/unload action. Remove generic tool-return replacement.",
+      "evidence_groups": [
+        "toolreturn",
+        "inventory"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "build-search",
+      "previous_title": "Search and explain available construction recipes",
+      "previous_rank": 20,
+      "source_workshop_ids": [
+        "3536052310",
+        "3540503606"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "The native build panel instantiates searchable/filterable recipe widgets and native material/skill views.",
+      "remaining_scope_or_reason": "Remove generic construction search and requirements browsing.",
+      "evidence_groups": [
+        "build",
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "magazine-batch",
+      "previous_title": "Load and unload matching magazines in batches",
+      "previous_rank": 21,
+      "source_workshop_ids": [
+        "2920899878",
+        "3777237134",
+        "3750253491",
+        "2875848298"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native magazine menu loads/unloads the selected magazine through native timed actions.",
+      "remaining_scope_or_reason": "Retain existing matching-magazine batching and reservation checks; no direct ammunition setters.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "shortcuts",
+      "previous_title": "Rebindable shortcuts for ordinary item and recipe actions",
+      "previous_rank": 22,
+      "source_workshop_ids": [
+        "3470659758",
+        "3786918614"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native hotbar/keybindings expose equipment and predefined actions.",
+      "remaining_scope_or_reason": "Only configurable item-action and known-recipe shortcut slots beyond native equipment hotkeys remain.",
+      "evidence_groups": [
+        "options",
+        "hotbar",
+        "craft"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "consumable-assist",
+      "previous_title": "Opt-in safe-food reminders and native consumption assistance",
+      "previous_rank": 23,
+      "source_workshop_ids": [
+        "3795435563"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native hunger feedback and explicit timed Eat actions already exist; automatic drinking is native.",
+      "remaining_scope_or_reason": "A reminder plus an ordinary chosen Eat action does not establish an additional workflow. Knowledge-safe automated food selection and its native coverage are unproven; exclude from ranking.",
+      "evidence_groups": [
+        "food",
+        "inventory",
+        "actions"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "container-labels",
+      "previous_title": "Name order and recognize storage containers",
+      "previous_rank": 24,
+      "source_workshop_ids": [
+        "3290232938",
+        "2901962885",
+        "3586216562",
+        "2867163008",
+        "3437629766"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Vanilla names bag buttons from items, selects built-in container icons and persists ordinary window layout.",
+      "remaining_scope_or_reason": "Only local world-container button label/icon/order presets remain; remove ordinary bag renaming and native window persistence.",
+      "evidence_groups": [
+        "inventory",
+        "layout"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "recipe-chain",
+      "previous_title": "Trace recipe dependencies and useful item applications",
+      "previous_rank": 25,
+      "source_workshop_ids": [
+        "3502080466"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native input/output widgets jump to recipes producing/using that item through the filter panel.",
+      "remaining_scope_or_reason": "The existing proposal is navigable recipe relationships, not a separately specified graph planner; remove it rather than invent a new requirement to retain its score.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "craft-output",
+      "previous_title": "Choose a safe destination for bulky crafting output",
+      "previous_rank": 26,
+      "source_workshop_ids": [
+        "3782291042",
+        "3781012462"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla crafting owns output creation and item consumption.",
+      "remaining_scope_or_reason": "Retain the current approved plank/heavy-output routing adapter, subject to authoritative output and capacity rules.",
+      "evidence_groups": [
+        "craft",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "hotbar",
+      "previous_title": "Arrange hotbar slots without reattaching items",
+      "previous_rank": 27,
+      "source_workshop_ids": [
+        "3663625294",
+        "2903771337",
+        "3461263912"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native hotbar supports attaching, removing and activating equipment slots.",
+      "remaining_scope_or_reason": "Retain Essentials' slot-order swaps preserving attached-item indices.",
+      "evidence_groups": [
+        "hotbar"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "action-preview",
+      "previous_title": "Highlight exactly what a bulk action will affect",
+      "previous_rank": 28,
+      "source_workshop_ids": [
+        "3422220305",
+        "3793163745"
+      ],
+      "decision": "MERGE",
+      "vanilla_baseline": "Native transfer buttons execute ordinary selections; proposed preview concerns the same planned batch operation.",
+      "remaining_scope_or_reason": "Merge preview requirements into batch-transfer and task-specific planners; no separate impact score.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "DUPLICATE_REQUIREMENT",
+      "runtime_status": "NOT_TESTED",
+      "merged_into": "batch-transfer",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "compact-ui",
+      "previous_title": "Compact readable native panel layouts",
+      "previous_rank": 29,
+      "source_workshop_ids": [
+        "3437629766",
+        "3723726293",
+        "3461263912",
+        "3397561666",
+        "3785033563"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native panels already resize, collapse and support layout/scaling preferences.",
+      "remaining_scope_or_reason": "No concrete missing workflow remains after removing these baseline capabilities; hold a redesign until a measured usability gap exists.",
+      "evidence_groups": [
+        "inventory",
+        "layout",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "controller-access",
+      "previous_title": "Provide controller and scalable alternatives to mouse UI",
+      "previous_rank": 30,
+      "source_workshop_ids": [
+        "3502080466",
+        "3536052310",
+        "3420581050",
+        "3437629766",
+        "3723726293"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Reviewed native panels implement joypad focus/navigation and native settings expose controller/font choices.",
+      "remaining_scope_or_reason": "Remove generic controller/scaling support. A specific broken focus path would be a separately reproduced fix.",
+      "evidence_groups": [
+        "options",
+        "craft",
+        "health",
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "craft-xp",
+      "previous_title": "Explain recipe experience and source ownership",
+      "previous_rank": 31,
+      "source_workshop_ids": [
+        "3540503606"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native recipe UI already presents recipe details and tools; no complete XP/source-display contract was established in this review.",
+      "remaining_scope_or_reason": "Keep outside the ranking until exact native tooltip/engine XP and source-display coverage is proven; absence of a Lua text match is not proof.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "generator-info",
+      "previous_title": "Explain generator fuel load and connected demand",
+      "previous_rank": 32,
+      "source_workshop_ids": [
+        "3576056135",
+        "2972289937"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native generator info already shows fuel, condition, powered items and total draw.",
+      "remaining_scope_or_reason": "Only a clearly labeled remaining-runtime estimate under current measured load remains; remove duplicate fuel/load/device lists and unproven range rendering.",
+      "evidence_groups": [
+        "generator"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "map-annotation",
+      "previous_title": "Fast map notes and reusable marker preferences",
+      "previous_rank": 33,
+      "source_workshop_ids": [
+        "3020323164",
+        "3399645148",
+        "3395592779",
+        "2734705913",
+        "2804531012"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native maps already have notes, symbols, sharing and scale controls.",
+      "remaining_scope_or_reason": "Retain only Essentials' configured default symbol scale; no new notes/symbol editor or copied symbol pack.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "device-menus",
+      "previous_title": "Keep device power actions attached to the device",
+      "previous_rank": 34,
+      "source_workshop_ids": [
+        "3781012462",
+        "3420581050"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native devices already have battery, power and media actions.",
+      "remaining_scope_or_reason": "Retain current device-owned grouping and optional-provider duplicate suppression, not new electricity/device ownership.",
+      "evidence_groups": [
+        "radio",
+        "inventory"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "maintenance-queue",
+      "previous_title": "Queue vehicle and clothing maintenance",
+      "previous_rank": 35,
+      "source_workshop_ids": [
+        "3387539308",
+        "3635856965",
+        "3388183573",
+        "3522680786",
+        "3777237134"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native mechanics offers part-specific servicing and ordinary queued actions.",
+      "remaining_scope_or_reason": "Keep an explicit finite vehicle-part service itinerary with skip reasons and tool return; exclude generic repair menus and repeated XP-training loops.",
+      "evidence_groups": [
+        "vehicle",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "reading-queue",
+      "previous_title": "Queue unread books and recorded media",
+      "previous_rank": 36,
+      "source_workshop_ids": [
+        "3393291384",
+        "3777237134",
+        "3777800131"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native reading processes one selected book and tracks pages.",
+      "remaining_scope_or_reason": "Keep an explicitly selected eligible unread-book/media playlist with return and interruption; no new reading/progress engine.",
+      "evidence_groups": [
+        "media",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "key-filing",
+      "previous_title": "File keys into an eligible carried key ring",
+      "previous_rank": 37,
+      "source_workshop_ids": [
+        "3765689485"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native menus already transfer keys into recognized key rings.",
+      "remaining_scope_or_reason": "Retain Essentials' bounded automatic filing via native transfers, not another manual Move To Ring menu.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "area-clean",
+      "previous_title": "Select an area for ordinary cleanup tasks",
+      "previous_rank": 38,
+      "source_workshop_ids": [
+        "3793163745",
+        "3777237134",
+        "3820151540"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Vanilla provides target-specific cleanup actions and some area-affecting actions.",
+      "remaining_scope_or_reason": "Keep a player-drawn bounded cleanup target plan, eligible-target preview and finite itinerary across that selection; no global scan or speed boost.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "fluid-readouts",
+      "previous_title": "Readable fluid identity amount and container compatibility",
+      "previous_rank": 39,
+      "source_workshop_ids": [
+        "3791681525",
+        "3791686284",
+        "3791686779"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native fluid panels already show amount/capacity and fluid details and provide transfer controls.",
+      "remaining_scope_or_reason": "Remove the generic fluid readout/compatibility UI proposal; unknown contamination details are not grounds to invent a second panel.",
+      "evidence_groups": [
+        "fluid"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "loot-categories",
+      "previous_title": "Consistent discoverable inventory categories",
+      "previous_rank": 40,
+      "source_workshop_ids": [
+        "2313387159",
+        "3650035249",
+        "3781012462"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Vanilla already displays item categories and sorts category/name columns.",
+      "remaining_scope_or_reason": "No concrete missing category set or misclassification was specified. Hold taxonomy changes rather than relabel the native category feature.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "transfer-feedback",
+      "previous_title": "Make partial transfer failures understandable",
+      "previous_rank": 41,
+      "source_workshop_ids": [
+        "3586216562",
+        "3761216758"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native transfers perform valid moves and handle access/capacity failures.",
+      "remaining_scope_or_reason": "Retain the existing Essentials committed/skipped/stale transaction result foundation; no independent inventory ownership.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "map-center",
+      "previous_title": "Center the map on the permitted current position",
+      "previous_rank": 42,
+      "source_workshop_ids": [
+        "3790912405"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "The native world map has a center button, C-key path and onCenterOnPlayer handler.",
+      "remaining_scope_or_reason": "Remove generic centering; automatic follow is not independently established as a missing requirement.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "bandage-queue",
+      "previous_title": "Replace an eligible bandage with one request",
+      "previous_rank": 43,
+      "source_workshop_ids": [
+        "2944344655",
+        "3750253491",
+        "3777237134",
+        "2875848298"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native health handlers remove and apply bandages as separate actions.",
+      "remaining_scope_or_reason": "Keep one explicit replace request chaining those actions with revalidation; no new treatment effect or hidden diagnosis.",
+      "evidence_groups": [
+        "health",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "dashboard",
+      "previous_title": "Show vehicle condition on the driving dashboard",
+      "previous_rank": 44,
+      "source_workshop_ids": [
+        "3306168142",
+        "3635591071"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native dashboard already has engine, battery and headlight indicators and condition/damage handling.",
+      "remaining_scope_or_reason": "Exact remaining readout differences were not proven against native-rendered tooltips; no generic dashboard replacement is ranked.",
+      "evidence_groups": [
+        "vehicle"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "map-legend",
+      "previous_title": "Readable map legend for native colors",
+      "previous_rank": 45,
+      "source_workshop_ids": [
+        "2710167561"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native world map creates ISWorldMapKey and toggles its legend.",
+      "remaining_scope_or_reason": "Remove the proposed legend.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "seed-season",
+      "previous_title": "Show known planting-season and crop information",
+      "previous_rank": 46,
+      "source_workshop_ids": [
+        "3734639991",
+        "3650168851",
+        "3723726293"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native farming tooltips show in-season and best-month data behind season knowledge/skill checks.",
+      "remaining_scope_or_reason": "Remove generic seasonal information and preserve native knowledge gates.",
+      "evidence_groups": [
+        "farm"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "alarm-clear",
+      "previous_title": "Clear and inspect alarms with fewer menu steps",
+      "previous_rank": 47,
+      "source_workshop_ids": [
+        "3409527910"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native inventory offers Stop Alarm and native alarm dialog allows enabling/disabling and changing its time.",
+      "remaining_scope_or_reason": "Remove generic inspect/clear alarms; no distinct bulk-reset requirement was specified.",
+      "evidence_groups": [
+        "inventory",
+        "alarm"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "food-prep-queue",
+      "previous_title": "Queue ordinary food opening and preparation",
+      "previous_rank": 48,
+      "source_workshop_ids": [
+        "3777237134",
+        "3422220305",
+        "3490188370"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native opening/eating and selected recipe crafting already sequence preparation actions.",
+      "remaining_scope_or_reason": "No concrete recipe/selection gap was established beyond existing native action queues; exclude until reproduced.",
+      "evidence_groups": [
+        "inventory",
+        "food",
+        "craft"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "livestock-table",
+      "previous_title": "Summarize known livestock care state",
+      "previous_rank": 49,
+      "source_workshop_ids": [
+        "3783623999",
+        "3723726293"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native zone panel lists animals and opens an individual animal info action.",
+      "remaining_scope_or_reason": "Only a sortable cross-animal care comparison table with the same revealed facts remains; no new animal knowledge or care mechanics.",
+      "evidence_groups": [
+        "animals"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "washing-queue",
+      "previous_title": "Queue native washing of chosen body clothing and gear",
+      "previous_rank": 50,
+      "source_workshop_ids": [
+        "3777237134",
+        "3750253491",
+        "3592172476",
+        "2875848298"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native world washing menus and washing actions already support clothing/body choices and batches.",
+      "remaining_scope_or_reason": "A broader wardrobe restoration gap was not established; hold instead of duplicating Wash All.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "gas-pump",
+      "previous_title": "Identify available inspected fuel-pump service",
+      "previous_rank": 51,
+      "source_workshop_ids": [
+        "3755993986"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native fuel interactions already gate pump access and permitted refueling actions.",
+      "remaining_scope_or_reason": "No verified missing indicator or inspection scope was established; do not reveal uninspected fuel reserves.",
+      "evidence_groups": [
+        "world",
+        "vehicle"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "personal-marks",
+      "previous_title": "Personal item marks and exclusions",
+      "previous_rank": 52,
+      "source_workshop_ids": [
+        "2544353492",
+        "3586216562"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native favorites and native learned/read state already exist.",
+      "remaining_scope_or_reason": "Only separate local seen-for-later notes on not-yet-readable media remain, without setting Favorite or granting read knowledge.",
+      "evidence_groups": [
+        "inventory",
+        "media"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "radio-presets",
+      "previous_title": "Readable radio media controls and presets",
+      "previous_rank": 53,
+      "source_workshop_ids": [
+        "3420581050",
+        "3779480293"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native radio UI has channel presets, adding/editing/deleting, battery, media and volume controls.",
+      "remaining_scope_or_reason": "Remove generic presets/control readability as unspecified redesign, not new capability.",
+      "evidence_groups": [
+        "radio"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "window-memory",
+      "previous_title": "Remember inventory panel layout and filter preferences",
+      "previous_rank": 54,
+      "source_workshop_ids": [
+        "3586216562",
+        "3437629766"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native layout manager saves/restores window geometry/visibility and inventory panels have native layout state.",
+      "remaining_scope_or_reason": "Remove generic window persistence. No separate missing filter persistence was proven.",
+      "evidence_groups": [
+        "layout",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "equipment-swap",
+      "previous_title": "Swap hands and attached equipment predictably",
+      "previous_rank": 55,
+      "source_workshop_ids": [
+        "2366717227",
+        "3786918614",
+        "3771638611"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla already equips primary/secondary items and switches attached equipment.",
+      "remaining_scope_or_reason": "Keep only Essentials' existing independent-hand classifier foundation. It does not implement new swaps, off-hand attacks or dual wielding.",
+      "evidence_groups": [
+        "hotbar",
+        "inventory"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "medical-consent",
+      "previous_title": "Control who may inspect personal medical details",
+      "previous_rank": 56,
+      "source_workshop_ids": [
+        "3820690174",
+        "3737303520"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native medical checks already request permission, show a yes/no prompt and invoke the accepted check path.",
+      "remaining_scope_or_reason": "Remove generic examination consent from this list. Remembered/revocable policies would require a separately proven scope and are not presumed absent from the engine.",
+      "evidence_groups": [
+        "health",
+        "world"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "weight-column",
+      "previous_title": "Compare individual and stack weights in inventory",
+      "previous_rank": 57,
+      "source_workshop_ids": [
+        "3586216562"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native header shows selected-container weight/capacity and inventory supports weight sorting.",
+      "remaining_scope_or_reason": "Only an optional simultaneously visible per-row individual/stack weight column remains; no new weight calculation or carrying capacity.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "context-performance",
+      "previous_title": "Reduce redundant presentation work in menus",
+      "previous_rank": 58,
+      "source_workshop_ids": [
+        "3777958977"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native context menu/layout code already measures and renders options.",
+      "remaining_scope_or_reason": "No native performance regression or benchmark was established; speculative caching is excluded from the ranking.",
+      "evidence_groups": [
+        "inventory",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "furniture-placement",
+      "previous_title": "Improve preview and adjustment of item placement",
+      "previous_rank": 59,
+      "source_workshop_ids": [
+        "3767639280",
+        "3813943783",
+        "3775423228",
+        "3796440093",
+        "3197857648"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native placement has previews, surface selection, rotation and 3D offsets.",
+      "remaining_scope_or_reason": "Remove generic placement preview/adjustment. New arrangement profiles or expanded collision bounds are separate content/mechanics, not a proven gap here.",
+      "evidence_groups": [
+        "placement",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "map-sharing",
+      "previous_title": "Share player-approved map annotations",
+      "previous_rank": 60,
+      "source_workshop_ids": [
+        "3782332412"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native annotation sharing supports private/everyone/faction/safehouse and selected-player visibility.",
+      "remaining_scope_or_reason": "Remove the proposed annotation-sharing system.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "recipe-favorites",
+      "previous_title": "Pin known recipes and remember browse preferences",
+      "previous_rank": 61,
+      "source_workshop_ids": [
+        "3502080466",
+        "3536052310"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native recipe list reads favorite metadata and renders favorite stars; filters include usage sorting.",
+      "remaining_scope_or_reason": "Remove generic recipe pinning/browse preference functionality.",
+      "evidence_groups": [
+        "craft"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "vehicle-entry",
+      "previous_title": "Make valid vehicle entry choice predictable",
+      "previous_rank": 62,
+      "source_workshop_ids": [
+        "3785695033",
+        "3802614552"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native vehicle menus and keybindings already choose valid entry and seats with movement.",
+      "remaining_scope_or_reason": "No reproducible wrong-door path or distinct missing control was established; hold instead of replacing engine entry behavior.",
+      "evidence_groups": [
+        "vehicle",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "clock",
+      "previous_title": "Display available watch time more precisely",
+      "previous_rank": 63,
+      "source_workshop_ids": [
+        "3778884296"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native watch display supplies device-dependent time information.",
+      "remaining_scope_or_reason": "Retain current Essentials exact-minute formatting and device precision constraints; native rendering comparison remains a runtime gate.",
+      "evidence_groups": [
+        "options",
+        "inventory"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "container-open",
+      "previous_title": "Open several selected containers for inspection",
+      "previous_rank": 64,
+      "source_workshop_ids": [
+        "3465040406",
+        "3410947298"
+      ],
+      "decision": "MERGE",
+      "vanilla_baseline": "Vanilla already opens admitted containers and exposed bags.",
+      "remaining_scope_or_reason": "Merge any deeper accessible nested inspection into nested-view; do not score an additional generic Open Containers feature.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "DUPLICATE_REQUIREMENT",
+      "runtime_status": "NOT_TESTED",
+      "merged_into": "nested-view",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "treatment-queue",
+      "previous_title": "Queue permitted ordinary treatment across revealed wounds",
+      "previous_rank": 65,
+      "source_workshop_ids": [
+        "3777237134"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Vanilla treats individual selected body parts with separate native handlers.",
+      "remaining_scope_or_reason": "Keep an explicit finite treatment plan across already revealed wounds, with patient consent and per-step revalidation.",
+      "evidence_groups": [
+        "health",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "xp-feedback",
+      "previous_title": "Show personal skill progress after native gains",
+      "previous_rank": 66,
+      "source_workshop_ids": [
+        "3776490883",
+        "3760545452",
+        "3781012462"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native skill screens and engine XP feedback already expose personal progression.",
+      "remaining_scope_or_reason": "Exact missing ordinary HUD notifications were not established; no generic XP display is ranked.",
+      "evidence_groups": [
+        "options",
+        "craft"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "hud-autohide",
+      "previous_title": "Reduce HUD clutter with reversible local hiding",
+      "previous_rank": 67,
+      "source_workshop_ids": [
+        "3606878738",
+        "3642084851"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native UI toggle, pinned/unpinned windows and mouse-away auto-collapse already exist.",
+      "remaining_scope_or_reason": "A specific unmet contextual hiding rule for a named HUD panel was not established. Exclude generic auto-hiding instead of duplicating native collapse.",
+      "evidence_groups": [
+        "layout",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "navigation",
+      "previous_title": "Provide navigation assistance over already known map data",
+      "previous_rank": 68,
+      "source_workshop_ids": [
+        "3708816224",
+        "3770149036"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native maps already center, show permitted player position and provide known map data.",
+      "remaining_scope_or_reason": "A safe and original route/bearing assistance gap was not fully established; route data and unknown-map disclosure remain excluded.",
+      "evidence_groups": [
+        "maps"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "room-organization",
+      "previous_title": "Designate rooms and make access rules understandable",
+      "previous_rank": 69,
+      "source_workshop_ids": [
+        "3820077442"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native world/safehouse permissions and map labels already exist.",
+      "remaining_scope_or_reason": "Custom player-defined room geometry/permissions may be a separate Rooms mechanic, but its delta/authority is not proven by this QoL baseline check.",
+      "evidence_groups": [
+        "world",
+        "maps"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "trait-explanation",
+      "previous_title": "Explain selected traits and occupations",
+      "previous_rank": 70,
+      "source_workshop_ids": [
+        "3387957272"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native character creation already presents trait/occupation descriptions and tooltips.",
+      "remaining_scope_or_reason": "Remove generic explanations; no specific incorrect or omitted native value was identified.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "driving-controls",
+      "previous_title": "Predictable rebindable native driving controls",
+      "previous_rank": 71,
+      "source_workshop_ids": [
+        "3805307651"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native bindings and dashboard already expose driving controls and cruise-related hints.",
+      "remaining_scope_or_reason": "No specific missing binding or measured stutter/control defect was demonstrated; exclude generic control and scheduling changes.",
+      "evidence_groups": [
+        "vehicle",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "fuel-service",
+      "previous_title": "Queue permitted fuel and generator service tasks",
+      "previous_rank": 72,
+      "source_workshop_ids": [
+        "3750253491",
+        "3777237134",
+        "2875848298"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native menus already refuel and service supported generators/vehicles through actions.",
+      "remaining_scope_or_reason": "No distinct finite itinerary was specified beyond maintenance-queue; hold rather than score generic service twice.",
+      "evidence_groups": [
+        "world",
+        "vehicle",
+        "generator"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "mp-sleep",
+      "previous_title": "Coordinate multiplayer rest and time-control requests",
+      "previous_rank": 73,
+      "source_workshop_ids": [
+        "3777715063",
+        "3781533687"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native sleep/time behavior depends on server settings and engine-owned multiplayer state.",
+      "remaining_scope_or_reason": "Unanimity/cancel/acceleration coverage and Lua-only authority remain unresolved; no new time-control feature is ranked.",
+      "evidence_groups": [
+        "sleep",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "rename-items",
+      "previous_title": "Name supported items for personal organization",
+      "previous_rank": 74,
+      "source_workshop_ids": [
+        "2867163008"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native context menu already renames supported bags, maps and food items.",
+      "remaining_scope_or_reason": "The proposal explicitly uses native-supported naming; remove it rather than broaden renaming rights.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "device-off",
+      "previous_title": "Offer explicit fridge and device power toggles",
+      "previous_rank": 75,
+      "source_workshop_ids": [
+        "3778868211"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native stoves, washers and radios already expose their own power toggles.",
+      "remaining_scope_or_reason": "Only a reviewed fridge/freezer-specific off toggle remains a candidate; other powered-device toggles are baseline and no parallel power simulation is proposed.",
+      "evidence_groups": [
+        "world",
+        "radio"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "water-queue",
+      "previous_title": "Queue refilling and sterilization tasks",
+      "previous_rank": 76,
+      "source_workshop_ids": [
+        "3777237134"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native fluid transfer and cleaning/sterilizing recipes already exist.",
+      "remaining_scope_or_reason": "A missing batch scope beyond native controls was not established; hold the generic refill/sterilize queue.",
+      "evidence_groups": [
+        "fluid",
+        "world",
+        "craft"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "bag-traversal",
+      "previous_title": "Plan safe bag handling around native traversal",
+      "previous_rank": 77,
+      "source_workshop_ids": [
+        "3389093252",
+        "3391902125"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native traversal and inventory transfer already manage burden and equipped items.",
+      "remaining_scope_or_reason": "No safe missing Lua-only traversal sequence was established; prior blocked speculation is outside the ranking.",
+      "evidence_groups": [
+        "world",
+        "inventory",
+        "actions"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "direct-equip",
+      "previous_title": "Equip reachable ground items through a clear native action",
+      "previous_rank": 78,
+      "source_workshop_ids": [
+        "3750253491",
+        "3786918614",
+        "2875848298"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native ground-item context actions transfer/equip eligible items into primary/secondary hands.",
+      "remaining_scope_or_reason": "Remove the generic equip-from-ground proposal; shortcuts are separately scoped.",
+      "evidence_groups": [
+        "inventory",
+        "hotbar"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "visual-storage",
+      "previous_title": "Recognize stored equipment and materials through displays",
+      "previous_rank": 79,
+      "source_workshop_ids": [
+        "3784677588",
+        "3793403177",
+        "3813053718",
+        "3806955469",
+        "3786155157"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Vanilla already has containers and item/world model rendering.",
+      "remaining_scope_or_reason": "New cargo/rack previews may need original assets and mechanics; no bounded generic QoL delta was established.",
+      "evidence_groups": [
+        "inventory",
+        "placement"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "map-automark",
+      "previous_title": "Mark locations the character actually observes",
+      "previous_rank": 80,
+      "source_workshop_ids": [
+        "3782332412"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native maps support manually authored marks and known-data display.",
+      "remaining_scope_or_reason": "Only opt-in rate-limited marks from actual permitted observations remain, using native notes and no unexplored-world scan.",
+      "evidence_groups": [
+        "maps",
+        "world"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "vehicle-repair",
+      "previous_title": "Explain valid vehicle repair and part choices",
+      "previous_rank": 81,
+      "source_workshop_ids": [
+        "3782893590",
+        "2757712197"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native mechanics and part menus already show condition, tools, requirements and available repairs.",
+      "remaining_scope_or_reason": "Remove generic repair explanation. New repair recipes are mechanics and service itineraries are separately reviewed.",
+      "evidence_groups": [
+        "vehicle"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "warmth-light",
+      "previous_title": "Make permitted clothing warmth and light state clearer",
+      "previous_rank": 82,
+      "source_workshop_ids": [
+        "3781012462",
+        "3420478458"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native item/equipment/device UI already exposes permitted insulation, condition and active light/device state.",
+      "remaining_scope_or_reason": "Remove generic property readouts; no specific missing display location or value was established.",
+      "evidence_groups": [
+        "inventory",
+        "options",
+        "radio"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "building-maintenance",
+      "previous_title": "Queue ordinary barricade curtain and window tasks",
+      "previous_rank": 83,
+      "source_workshop_ids": [
+        "3793163745"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native windows, curtains and barricades have valid single-target actions.",
+      "remaining_scope_or_reason": "Keep only a bounded player-selected multi-target itinerary, not new barricade/window actions or changed material cost.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "corpse-haul",
+      "previous_title": "Queue ordinary corpse handling and cleanup",
+      "previous_rank": 84,
+      "source_workshop_ids": [
+        "3793163745"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Vanilla already permits ordinary corpse handling and its constraints.",
+      "remaining_scope_or_reason": "Keep only selected-source-area to chosen-destination planning with native carry/drag actions; no faster dragging or teleportation.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "personal-statistics",
+      "previous_title": "Review permitted personal kill and survival statistics",
+      "previous_rank": 85,
+      "source_workshop_ids": [
+        "2553809727",
+        "3808944882"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native character screen already shows personal survival and kill statistics.",
+      "remaining_scope_or_reason": "Remove the proposed recap of native counters; indirect/category attribution is unproven and not silently added.",
+      "evidence_groups": [
+        "character"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "weapon-info",
+      "previous_title": "Explain visible weapon and ammunition properties",
+      "previous_rank": 86,
+      "source_workshop_ids": [
+        "3750253491",
+        "3781012462",
+        "2256623447",
+        "2875848298"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native weapon/magazine item views and context menus already expose permitted properties and matching ammo actions.",
+      "remaining_scope_or_reason": "Remove generic weapon facts display; no concrete missing property was specified.",
+      "evidence_groups": [
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "craft-pack",
+      "previous_title": "Batch ordinary packing unpacking and opening",
+      "previous_rank": 87,
+      "source_workshop_ids": [
+        "3775166757",
+        "3777237134"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native recipes and container actions already support ordinary packing/unpacking/opening and repeated crafting.",
+      "remaining_scope_or_reason": "No new recipe or cross-container planning scope was specified; remove the generic batch proposal.",
+      "evidence_groups": [
+        "craft",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "item-distinction",
+      "previous_title": "Distinguish native media ammo and material types visually",
+      "previous_rank": 88,
+      "source_workshop_ids": [
+        "3781012462"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native items already have icons, names and categories.",
+      "remaining_scope_or_reason": "Original replacement artwork alone does not establish a missing functional distinction; hold until a confusing pair is identified.",
+      "evidence_groups": [
+        "inventory",
+        "media"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "weapon-ammo",
+      "previous_title": "Retrieve existing firearm ammunition in one queue",
+      "previous_rank": 89,
+      "source_workshop_ids": [
+        "3422220305"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native unload magazine and firearm actions are separate and gated by current state.",
+      "remaining_scope_or_reason": "Only a one-request finite native unload-magazine/chamber sequence remains; no new instant extraction or count setters.",
+      "evidence_groups": [
+        "inventory",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "crop-queue",
+      "previous_title": "Queue ordinary planting watering and harvesting",
+      "previous_rank": 90,
+      "source_workshop_ids": [
+        "3793163745",
+        "3777237134"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native farming menus already plant, water and harvest selected targets.",
+      "remaining_scope_or_reason": "Keep only an explicit bounded player-selected plot itinerary with existing season/tool/water constraints.",
+      "evidence_groups": [
+        "farm",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "heavy-movement",
+      "previous_title": "Assist permitted furniture and heavy-object movement",
+      "previous_rank": 91,
+      "source_workshop_ids": [
+        "3781319724",
+        "3805553089",
+        "3781716360"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Vanilla moveable/placement systems own supported movement and collision.",
+      "remaining_scope_or_reason": "Retain Essentials' provider observation and reserve/start/complete/cancel foundation only; no production physics provider is claimed.",
+      "evidence_groups": [
+        "placement",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "tow-feedback",
+      "previous_title": "Make towing connections and requirements visible",
+      "previous_rank": 92,
+      "source_workshop_ids": [
+        "3442862183",
+        "3776082565",
+        "3807182783"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Vanilla already has towing context/attachment operations and constraints.",
+      "remaining_scope_or_reason": "No missing feedback case or permitted rendering seam was demonstrated; hold instead of replacing towing.",
+      "evidence_groups": [
+        "vehicle"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "avatar-preview",
+      "previous_title": "Legible character equipment and customization preview",
+      "previous_rank": 93,
+      "source_workshop_ids": [
+        "3387640099",
+        "3589548354"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native character creation and character panels already provide 3D appearance/equipment previews and UI sizing.",
+      "remaining_scope_or_reason": "Remove generic legible preview; a specific clipping/layout defect would be separate evidence-backed work.",
+      "evidence_groups": [
+        "character",
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "visible-carry",
+      "previous_title": "Make held heavy items visually understandable",
+      "previous_rank": 94,
+      "source_workshop_ids": [
+        "3390487814",
+        "3749026793"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Vanilla already represents held items and supports world models.",
+      "remaining_scope_or_reason": "Specific missing heavy-item model/attachment cases need an original asset and synchronization audit; not ranked as generic visibility.",
+      "evidence_groups": [
+        "placement",
+        "inventory"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "animal-queue",
+      "previous_title": "Queue ordinary livestock care tasks",
+      "previous_rank": 95,
+      "source_workshop_ids": [
+        "3793163745",
+        "3783623999"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native animal menus perform individual care actions and zone UI opens individual inspections.",
+      "remaining_scope_or_reason": "Keep only a selected finite herd-care itinerary using revealed eligible targets and native actions.",
+      "evidence_groups": [
+        "animals",
+        "actions"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "ladder",
+      "previous_title": "Expose valid native ladder interactions",
+      "previous_rank": 96,
+      "source_workshop_ids": [
+        "3629835761"
+      ],
+      "decision": "KEEP_EXISTING",
+      "vanilla_baseline": "Native traversal states support climbing; their presence is not an automatic property-based ladder context adapter.",
+      "remaining_scope_or_reason": "Retain the current tagged-tile native-transition adapter and landing/access safety.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "CURRENT_ESSENTIALS_SOURCE",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": true
+    },
+    {
+      "id": "error-reporting",
+      "previous_title": "Make local mod errors easier to identify",
+      "previous_rank": 97,
+      "source_workshop_ids": [
+        "2896041179"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Vanilla has an error window with refreshable Lua error entries and counts.",
+      "remaining_scope_or_reason": "Remove the generic error-viewer proposal; opt-in redaction/export would need a separate concrete requirement.",
+      "evidence_groups": [
+        "errors"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "session-briefing",
+      "previous_title": "Optional recap of permitted personal session facts",
+      "previous_rank": 98,
+      "source_workshop_ids": [
+        "3808944882"
+      ],
+      "decision": "RETAIN_DELTA",
+      "vanilla_baseline": "Native panels already contain personal session facts.",
+      "remaining_scope_or_reason": "Only an original optional brief nonblocking start-of-session recap remains, without copying presentation themes or adding hidden coordinates.",
+      "evidence_groups": [
+        "character",
+        "options"
+      ],
+      "status": "SOURCE_COMPARISON; DELTA INFERRED",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "furniture-look",
+      "previous_title": "Preserve an explicitly selected supported furniture appearance",
+      "previous_rank": 99,
+      "source_workshop_ids": [
+        "3197857648"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Vanilla moveables and placement retain supported sprite/model state.",
+      "remaining_scope_or_reason": "A specific unsupported appearance-retention case was not reproduced; no new shared appearance state is ranked.",
+      "evidence_groups": [
+        "placement"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "vehicle-push",
+      "previous_title": "Offer a validated native vehicle-pushing workflow",
+      "previous_rank": 100,
+      "source_workshop_ids": [
+        "3780639614"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native vehicle physics and interactions govern movement.",
+      "remaining_scope_or_reason": "A safe Lua-only server-owned pushing path and missing native behavior remain unproven; exclude the blocked proposal.",
+      "evidence_groups": [
+        "vehicle",
+        "actions"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "item-model-preview",
+      "previous_title": "Preview supported item models without placing them",
+      "previous_rank": 101,
+      "source_workshop_ids": [
+        "3197857648"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native inventory page includes a 3D item preview path and native placement previews.",
+      "remaining_scope_or_reason": "Remove the generic model viewer proposal; do not confuse the absence of a custom panel with missing model preview.",
+      "evidence_groups": [
+        "inventory",
+        "placement"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "mod-organization",
+      "previous_title": "Organize and explain enabled mod dependencies",
+      "previous_rank": 102,
+      "source_workshop_ids": [
+        "3567084868",
+        "3423660713",
+        "3779201168"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native selector includes ordering, requirement/load-before/load-after tooltips and mod-list presets.",
+      "remaining_scope_or_reason": "Remove generic dependency/order management; do not replace native mod-list configuration.",
+      "evidence_groups": [
+        "mods"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "rest-actions",
+      "previous_title": "Find supported native rest and pose actions",
+      "previous_rank": 103,
+      "source_workshop_ids": [
+        "3652012357",
+        "2487022075"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native context actions expose ordinary rest/sit/sleep workflows.",
+      "remaining_scope_or_reason": "Remove generic discovery of existing rest actions. Additional poses/animations are separate content.",
+      "evidence_groups": [
+        "world",
+        "actions"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "map-conflicts",
+      "previous_title": "Preview map-mod cell conflicts during setup",
+      "previous_rank": 104,
+      "source_workshop_ids": [
+        "3360392628"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native mod and map order management exists.",
+      "remaining_scope_or_reason": "A cell-overlap conflict analyzer may be additional tooling, but map metadata completeness/conflict semantics were not established in this check.",
+      "evidence_groups": [
+        "mods",
+        "maps"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "translation-access",
+      "previous_title": "Language fallback and readable localized interface text",
+      "previous_rank": 105,
+      "source_workshop_ids": [
+        "3389128453",
+        "3446915394",
+        "3556540080",
+        "3556544454"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native localization, translated strings and UI font/language options already exist.",
+      "remaining_scope_or_reason": "Generic localization is an implementation requirement for every retained feature, not a new scored capability. Specific missing translations need separate evidence.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "equipment-light",
+      "previous_title": "Simplify valid native light attachment choices",
+      "previous_rank": 106,
+      "source_workshop_ids": [
+        "3394588830",
+        "3778709615",
+        "3790743470"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native attachments and light/device controls already exist.",
+      "remaining_scope_or_reason": "New slots/attachment allowances are mechanics and exact missing safe native choices were not established.",
+      "evidence_groups": [
+        "hotbar",
+        "inventory"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "sandbox-admin",
+      "previous_title": "Make permitted sandbox settings easier to locate",
+      "previous_rank": 107,
+      "source_workshop_ids": [
+        "2894296454",
+        "3386906181"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native SandboxOptions and server-admin sandbox settings UI already exist.",
+      "remaining_scope_or_reason": "Remove another sandbox-settings entry point as a new feature.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "visual-contrast",
+      "previous_title": "Optional contrast aids using original interface assets",
+      "previous_rank": 108,
+      "source_workshop_ids": [
+        "3371613588",
+        "3616381828"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native options already expose font, highlight-color and display configuration.",
+      "remaining_scope_or_reason": "No specific unmet contrast problem was established; new world textures/visibility changes are outside this QoL implementation list.",
+      "evidence_groups": [
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "placement-entry",
+      "previous_title": "Open native extended-placement adjustment from an item",
+      "previous_rank": 109,
+      "source_workshop_ids": [
+        "3197857648",
+        "3796440093"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native item placement and extended 3D adjustment already provide placement/offset controls.",
+      "remaining_scope_or_reason": "Remove generic entry to native placement; a missing object-specific context entry would require reproduction.",
+      "evidence_groups": [
+        "placement",
+        "inventory"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "sound-accessibility",
+      "previous_title": "Optional reversible local world-audio filtering",
+      "previous_rank": 110,
+      "source_workshop_ids": [
+        "3781012462"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native audio settings and device volume exist, but a reversible diegetic-only Lua listener filter is not proven.",
+      "remaining_scope_or_reason": "Keep the historical blocker outside ranked implementable work; no Java substitute or AI-hearing changes.",
+      "evidence_groups": [
+        "options",
+        "radio"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "update-notices",
+      "previous_title": "Opt-in source and update notices for installed mods",
+      "previous_rank": 111,
+      "source_workshop_ids": [
+        "3077900375"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native mod selector and Workshop metadata already expose mod information.",
+      "remaining_scope_or_reason": "No distinct opt-in update-notice gap or safe Lua-only refresh source was verified; no executable downloader or forced update.",
+      "evidence_groups": [
+        "mods"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "camera-accessibility",
+      "previous_title": "Optional camera framing over permitted visible information",
+      "previous_rank": 112,
+      "source_workshop_ids": [
+        "3684713089",
+        "3808805481",
+        "3809306528",
+        "3792740760",
+        "3814073243"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native camera/visibility remains engine-owned; public/internal descriptor names do not establish a safe Lua-only alteration.",
+      "remaining_scope_or_reason": "Prior camera/visibility proposals remain blocked and outside the ranked backlog.",
+      "evidence_groups": [
+        "maps",
+        "options"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "cosmetic-emotes",
+      "previous_title": "Discover and bind existing native emotes",
+      "previous_rank": 113,
+      "source_workshop_ids": [
+        "2207282444",
+        "2912999938",
+        "3800471544",
+        "2648779556",
+        "3650071729"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native emote radial and emote configuration already expose and bind supported native emotes.",
+      "remaining_scope_or_reason": "Remove generic emote discovery; new animations are original asset/content work.",
+      "evidence_groups": [
+        "emotes",
+        "options"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "radio-state",
+      "previous_title": "Preserve supported radio state across ordinary equipment changes",
+      "previous_rank": 114,
+      "source_workshop_ids": [
+        "3779480293"
+      ],
+      "decision": "HOLD_UNPROVEN",
+      "vanilla_baseline": "Native radio power and equipment transitions already exist.",
+      "remaining_scope_or_reason": "No reproducible current state-loss defect was established; hold a fix until failing native steps are provided.",
+      "evidence_groups": [
+        "radio",
+        "hotbar"
+      ],
+      "status": "UNKNOWN",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    },
+    {
+      "id": "item-readability",
+      "previous_title": "Make existing note and identity inspection discoverable",
+      "previous_rank": 115,
+      "source_workshop_ids": [
+        "3796373365"
+      ],
+      "decision": "REMOVE_VANILLA",
+      "vanilla_baseline": "Native readable literature, print-media and item inspection actions exist.",
+      "remaining_scope_or_reason": "No authoritative unreadable-item defect was established. New stories or generated identities are content, not a generic UI omission.",
+      "evidence_groups": [
+        "inventory",
+        "media"
+      ],
+      "status": "SOURCE_OVERLAP",
+      "runtime_status": "NOT_TESTED",
+      "existing_essentials_preserved": false
+    }
+  ]
+}

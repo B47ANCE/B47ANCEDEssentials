@@ -2,6 +2,11 @@
 
 ## 0.19.2 — 2026-10-18
 
+- Rechecked every prior QoL requirement against vanilla and rebuilt the top 25.
+  The shortlist now has 44 entries: 20 existing Essentials entries and 24 scoped
+  additions. Removed 37 native-covered proposals, held 33 unproven entries, and
+  merged two duplicates while preserving all 21 prior Essentials source/foundation
+  identifiers. Recorded native coverage and remaining scope for every decision.
 - Corrected the research backlog after the owner's vanilla-baseline clarification:
   inventory search/filtering is excluded from new implementation work. Reranked
   115 candidates and updated the top 25; every candidate now explicitly requires
