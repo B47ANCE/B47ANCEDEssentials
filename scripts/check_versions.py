@@ -16,7 +16,7 @@ MIRRORS = {
     'WORKSHOP_DESCRIPTION.txt': r'Mod Version: ([0-9.]+)',
     'workshop.txt': r'Mod Version: ([0-9.]+)',
     'WORKSHOP_CHANGE_NOTE.txt': r'^\[b\]Version ([0-9.]+)\[/b\]',
-    'CHANGELOG.md': r'^## ([0-9.]+) ',
+    'CHANGELOG.md': r'\A# Changelog\s+## ([0-9.]+) ',
 }
 
 def check(release=False):
