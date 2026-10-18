@@ -3,6 +3,20 @@
 The implementation and approved clean-room research backlog are documented in
 [docs/ROADMAP.md](docs/ROADMAP.md).
 
+The [downloaded Workshop QoL audit](docs/research/workshop-qol-2026-10-18/README.md)
+records package provenance, the complete estimated impact ranking, and clean-room
+plans for the Essentials-only top 25, including all current Essentials features.
+It is research tied to 0.19.2; independent review and feature-specific runtime
+gates remain open.
+The complete vanilla recheck removes native-covered proposals and holds unproven
+additions outside the ranking while preserving current Essentials coverage.
+The [portfolio audit](docs/research/workshop-qol-2026-10-18/PORTFOLIO_OWNERSHIP.md)
+compares all 44 candidates with 28 local projects and separates existing coverage
+from proposed domain-owned work.
+The current [Essentials-only ranking](docs/research/workshop-qol-2026-10-18/ESSENTIALS_RANKING.md)
+retains 20 existing source/partial/foundation entries and selects five new
+Essentials workflows, excluding 15 other-domain proposals.
+
 B47ANCE'd Essentials is a configurable vanilla-plus quality-of-life collection for Project Zomboid. It reduces repetitive inventory and interface work while preserving timed actions, character knowledge, capacity rules, and server authority.
 
 - Version: `0.19.2` (canonical: `VERSION`)

@@ -3,7 +3,7 @@
   "id": "essentials",
   "name": "Essentials",
   "version": "0.19.2",
-  "source_digest": "0e3da0d13ff9787f8009dc7431072799fa4a69b69d227581bd69a8b44c5887ed",
+  "source_digest": "93b5ebc07c729e2f1fe835c745bcdbbfc672066ed9347054f25397f643c9837f",
   "reviewed": true,
   "features": [
     {"status": "Source", "text": "Nearby inventory aggregation, Equipped view, exact-minute watch clock, selection repair and automatic key filing."},
@@ -13,7 +13,8 @@
     {"status": "Foundation", "text": "Heavy-object provider observations and authoritative reserve/start/complete/cancel lifecycle; no production physics provider or generic movement engine."},
     {"status": "Foundation", "text": "Fail-closed independent-hand equipment classification only; no dual-wield attacks, reloads, animations or input integration."},
     {"status": "Blocked", "text": "Ear-protector audio needs a verified reversible Lua-accessible diegetic listener path. Camera/visibility Java proposals are superseded by Lua-only policy."},
-    {"status": "Blocked", "text": "Automatic traversal needs verified consumable input and safe native transition hooks; context-action support does not prove these capabilities."}
+    {"status": "Blocked", "text": "Automatic traversal needs verified consumable input and safe native transition hooks; context-action support does not prove these capabilities."},
+    {"status": "Planned", "text": "Essentials-only top 25 retains all 20 existing source/partial/foundation entries and five new workflows. 29 eligible entries, 15 other-domain exclusions; prior 44-entry portfolio comparison preserved. Research only; independent review pending."}
   ],
   "limits": "Reviewed source description only. 0.19.2 SP and dedicated multiplayer NOT TESTED; G7 and stable G8 BLOCKED. Rename requires coordinated mod lists, sandbox presets and consumers. Legacy powerWorks adapter compatibility with renamed Power is unverified. No hard mod dependencies.",
   "evidence": [
@@ -28,7 +29,12 @@
     "docs/VALIDATION_0.19.0.md",
     "docs/THUMBNAIL_0.19.1.md",
     "docs/WORKSHOP_PUBLISHING.md",
-    "docs/ICON_0.19.2.md"
+    "docs/ICON_0.19.2.md",
+    "docs/research/workshop-qol-2026-10-18/README.md",
+    "docs/research/workshop-qol-2026-10-18/VANILLA_RECHECK.md",
+    "docs/research/workshop-qol-2026-10-18/PORTFOLIO_OWNERSHIP.md",
+    "docs/research/workshop-qol-2026-10-18/ESSENTIALS_RANKING.md",
+    "docs/research/workshop-qol-2026-10-18/TOP_25_PLAN.md"
   ],
   "relations": [
     {"target": "power", "kind": "Optional", "text": "Device-menu and watch adapters probe the legacy powerWorks namespace/provider contract. No current renamed-Power compatibility or runtime connection is claimed."}

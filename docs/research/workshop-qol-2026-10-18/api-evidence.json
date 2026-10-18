@@ -1,0 +1,739 @@
+{
+  "steam_build": "25485521",
+  "full_engine_version": "UNKNOWN",
+  "scope": "Read-only installed vanilla Lua; no game/server execution. Observed calls are not complete public extension contracts.",
+  "curated_rechecks": [
+    {
+      "symbol": "getAllInputItems",
+      "receiver_type": "zombie.entity.components.crafting.recipe.CraftRecipeData",
+      "signature": "logic:getRecipeData():getAllInputItems()",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/ISUI/ISInventoryPaneContextMenu.lua",
+          "sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc",
+          "lines": [
+            3177,
+            3181
+          ],
+          "statement": "Reviewed caller uses logic:getRecipeData():getAllInputItems(). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc"
+        }
+      ]
+    },
+    {
+      "symbol": "luaCallOnCreate",
+      "receiver_type": "zombie.entity.components.crafting.recipe.CraftRecipeData",
+      "signature": "self.logic:getRecipeData():luaCallOnCreate(self.character)",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/shared/Entity/TimedActions/ISHandcraftAction.lua",
+          "sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e",
+          "lines": [
+            231,
+            235
+          ],
+          "statement": "Reviewed caller uses self.logic:getRecipeData():luaCallOnCreate(self.character). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e"
+        }
+      ]
+    },
+    {
+      "symbol": "processDestroyAndUsedItems",
+      "receiver_type": "zombie.entity.components.crafting.recipe.CraftRecipeData",
+      "signature": "self.logic:getRecipeData():processDestroyAndUsedItems(self.character)",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/shared/Entity/TimedActions/ISHandcraftAction.lua",
+          "sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e",
+          "lines": [
+            232,
+            236
+          ],
+          "statement": "Reviewed caller uses self.logic:getRecipeData():processDestroyAndUsedItems(self.character). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e"
+        }
+      ]
+    },
+    {
+      "symbol": "hasRoomFor",
+      "receiver_type": "zombie.inventory.ItemContainer",
+      "signature": "lootContainer:hasRoomFor(self.playerObj, totalWeight + weight)",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/ISUI/InventoryWindow/Handlers/TransferSameTypeMultiContainer.lua",
+          "sha256": "2cebe0ac959665a4dbe4ee306a2c8709548b23a0408ca70c80536e5ffd60f32c",
+          "lines": [
+            50,
+            54
+          ],
+          "statement": "Reviewed caller uses lootContainer:hasRoomFor(self.playerObj, totalWeight + weight). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "2cebe0ac959665a4dbe4ee306a2c8709548b23a0408ca70c80536e5ffd60f32c"
+        }
+      ]
+    },
+    {
+      "symbol": "isItemAllowed",
+      "receiver_type": "zombie.inventory.ItemContainer",
+      "signature": "targetContainer:isItemAllowed(itemObj)",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/Foraging/ISWorldItemIcon.lua",
+          "sha256": "d7c2a658709a83afeafbee6d5516274f43b01cfefda1322de31944812f4f3acc",
+          "lines": [
+            24,
+            28
+          ],
+          "statement": "Reviewed caller uses targetContainer:isItemAllowed(itemObj). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "d7c2a658709a83afeafbee6d5516274f43b01cfefda1322de31944812f4f3acc"
+        }
+      ]
+    },
+    {
+      "symbol": "getMediaData",
+      "receiver_type": "zombie.inventory.InventoryItem",
+      "signature": "testItem:getMediaData()",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/ISUI/ISInventoryPaneContextMenu.lua",
+          "sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc",
+          "lines": [
+            160,
+            164
+          ],
+          "statement": "Reviewed caller uses testItem:getMediaData(). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc"
+        }
+      ]
+    },
+    {
+      "symbol": "getFluidContainer",
+      "receiver_type": "zombie.inventory.InventoryItem",
+      "signature": "item:getFluidContainer()",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/Farming/ISUI/ISFarmingMenu.lua",
+          "sha256": "c3c9413f414f49f0e9639361d2bfb79397d023d30cdd80d566d5293c364948c3",
+          "lines": [
+            59,
+            63
+          ],
+          "statement": "Reviewed caller uses item:getFluidContainer(). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "c3c9413f414f49f0e9639361d2bfb79397d023d30cdd80d566d5293c364948c3"
+        }
+      ]
+    },
+    {
+      "symbol": "getCapacity",
+      "receiver_type": "zombie.entity.components.fluids.FluidContainer",
+      "signature": "self.container:getCapacity()",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/Fluids/ISFluidBar.lua",
+          "sha256": "642b880020de93352930f0c1e237d46c9953b577b5f697736a2dc0574d50d257",
+          "lines": [
+            25,
+            29
+          ],
+          "statement": "Reviewed caller uses self.container:getCapacity(). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "642b880020de93352930f0c1e237d46c9953b577b5f697736a2dc0574d50d257"
+        }
+      ]
+    },
+    {
+      "symbol": "getAmount",
+      "receiver_type": "zombie.entity.components.fluids.FluidContainer",
+      "signature": "item:getFluidContainer():getAmount()",
+      "signature_scope": "observed_vanilla_call; contextual receiver and packaged metadata corroborated; not exhaustive overloads",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/Fluids/ISFluidContainerPanel.lua",
+          "sha256": "1d393c089fe60f109c9b5ee780d9dde8abec9776edabb6c854d21241dbca0a93",
+          "lines": [
+            71,
+            75
+          ],
+          "statement": "Reviewed caller uses item:getFluidContainer():getAmount(). Only this source call form and contextual receiver are verified; runtime dispatch and native behavior are not tested.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "1d393c089fe60f109c9b5ee780d9dde8abec9776edabb6c854d21241dbca0a93"
+        }
+      ]
+    },
+    {
+      "symbol": "luaCallOnCreate",
+      "receiver_type": "recipe data returned by self.logic:getRecipeData()",
+      "signature": "self.logic:getRecipeData():luaCallOnCreate(self.character)",
+      "signature_scope": "observed_vanilla_call_or_Lua_definition; not exhaustive native overloads",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            221,
+            234
+          ],
+          "path": "media/lua/shared/Entity/TimedActions/ISHandcraftAction.lua",
+          "sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e",
+          "statement": "After successful performCurrentRecipe and output handling, performRecipe calls luaCallOnCreate before processDestroyAndUsedItems.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e"
+        }
+      ]
+    },
+    {
+      "symbol": "processDestroyAndUsedItems",
+      "receiver_type": "recipe data returned by self.logic:getRecipeData()",
+      "signature": "self.logic:getRecipeData():processDestroyAndUsedItems(self.character)",
+      "signature_scope": "observed_vanilla_call_or_Lua_definition; not exhaustive native overloads",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            233,
+            234
+          ],
+          "path": "media/lua/shared/Entity/TimedActions/ISHandcraftAction.lua",
+          "sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e",
+          "statement": "performRecipe calls processDestroyAndUsedItems immediately after luaCallOnCreate.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e"
+        }
+      ]
+    },
+    {
+      "symbol": "OnFillWorldObjectContextMenu",
+      "receiver_type": "Events.OnFillWorldObjectContextMenu",
+      "signature": "Events.OnFillWorldObjectContextMenu.Add(callback)",
+      "signature_scope": "observed_vanilla_registration_only; callback parameter contract UNKNOWN",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            88,
+            88
+          ],
+          "path": "media/lua/client/DebugUIs/AdminContextMenu.lua",
+          "sha256": "93b44a4ef611543bbfd5d31ef9296faebe8cee265923e9e591758cb3166dbf09",
+          "statement": "Installed vanilla Lua registers a callback with this event; this verifies the observed registration name/side only.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "93b44a4ef611543bbfd5d31ef9296faebe8cee265923e9e591758cb3166dbf09"
+        }
+      ]
+    },
+    {
+      "symbol": "OnFillInventoryObjectContextMenu",
+      "receiver_type": "Events.OnFillInventoryObjectContextMenu",
+      "signature": "Events.OnFillInventoryObjectContextMenu.Add(callback)",
+      "signature_scope": "observed_vanilla_registration_only; callback parameter contract UNKNOWN",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            42,
+            42
+          ],
+          "path": "media/lua/client/Context/ISContextManager.lua",
+          "sha256": "2dfdf2e8b85f0ab253b5cf37f1d124e8270bf545da0eb18f48f461a10ea1ad11",
+          "statement": "Installed vanilla Lua registers a callback with this event; this verifies the observed registration name/side only.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "2dfdf2e8b85f0ab253b5cf37f1d124e8270bf545da0eb18f48f461a10ea1ad11"
+        }
+      ]
+    },
+    {
+      "symbol": "addOption",
+      "receiver_type": "ISContextMenu",
+      "signature": "ISContextMenu:addOption(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            873,
+            873
+          ],
+          "path": "media/lua/client/ISUI/ISContextMenu.lua",
+          "sha256": "4e4616dedbf135960dd2b7c63d67480ad19ff17352b1797cf9224631f9a669c8",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "4e4616dedbf135960dd2b7c63d67480ad19ff17352b1797cf9224631f9a669c8"
+        }
+      ]
+    },
+    {
+      "symbol": "addSubMenu",
+      "receiver_type": "ISContextMenu",
+      "signature": "ISContextMenu:addSubMenu(option, menu)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            1075,
+            1075
+          ],
+          "path": "media/lua/client/ISUI/ISContextMenu.lua",
+          "sha256": "4e4616dedbf135960dd2b7c63d67480ad19ff17352b1797cf9224631f9a669c8",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "4e4616dedbf135960dd2b7c63d67480ad19ff17352b1797cf9224631f9a669c8"
+        }
+      ]
+    },
+    {
+      "symbol": "addActionsOption",
+      "receiver_type": "ISContextMenu",
+      "signature": "ISContextMenu:addActionsOption(text, getActionsFunction, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            1079,
+            1079
+          ],
+          "path": "media/lua/client/ISUI/ISContextMenu.lua",
+          "sha256": "4e4616dedbf135960dd2b7c63d67480ad19ff17352b1797cf9224631f9a669c8",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "4e4616dedbf135960dd2b7c63d67480ad19ff17352b1797cf9224631f9a669c8"
+        }
+      ]
+    },
+    {
+      "symbol": "isValid",
+      "receiver_type": "ISBaseTimedAction",
+      "signature": "ISBaseTimedAction:isValid()",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            12,
+            12
+          ],
+          "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+          "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+        }
+      ]
+    },
+    {
+      "symbol": "start",
+      "receiver_type": "ISBaseTimedAction",
+      "signature": "ISBaseTimedAction:start()",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            55,
+            55
+          ],
+          "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+          "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+        }
+      ]
+    },
+    {
+      "symbol": "stop",
+      "receiver_type": "ISBaseTimedAction",
+      "signature": "ISBaseTimedAction:stop()",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            63,
+            63
+          ],
+          "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+          "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+        }
+      ]
+    },
+    {
+      "symbol": "perform",
+      "receiver_type": "ISBaseTimedAction",
+      "signature": "ISBaseTimedAction:perform()",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            68,
+            68
+          ],
+          "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+          "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+        }
+      ]
+    },
+    {
+      "symbol": "getDuration",
+      "receiver_type": "ISBaseTimedAction",
+      "signature": "ISBaseTimedAction:getDuration()",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "shared",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            74,
+            74
+          ],
+          "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+          "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+        }
+      ]
+    },
+    {
+      "symbol": "new",
+      "receiver_type": "SGlobalObjectSystem",
+      "signature": "SGlobalObjectSystem:new(name)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "server",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            11,
+            11
+          ],
+          "path": "media/lua/server/Map/SGlobalObjectSystem.lua",
+          "sha256": "0f29131a414c391c60513e4bad4202b0b07295265f1609cb8c8adb7401d16b8b",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "0f29131a414c391c60513e4bad4202b0b07295265f1609cb8c8adb7401d16b8b"
+        }
+      ]
+    },
+    {
+      "symbol": "new",
+      "receiver_type": "CGlobalObjectSystem",
+      "signature": "CGlobalObjectSystem:new(name)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            9,
+            9
+          ],
+          "path": "media/lua/client/Map/CGlobalObjectSystem.lua",
+          "sha256": "c3c8f8c8b2249266ee43476b6e97179f73a9493ff921340275a4082943a5d17c",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "c3c8f8c8b2249266ee43476b6e97179f73a9493ff921340275a4082943a5d17c"
+        }
+      ]
+    },
+    {
+      "symbol": "addAfter",
+      "receiver_type": "ISTimedActionQueue",
+      "signature": "ISTimedActionQueue.addAfter(previousAction, action)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            203,
+            203
+          ],
+          "path": "media/lua/client/TimedActions/ISTimedActionQueue.lua",
+          "sha256": "23c98152728172b44ccb41bc8ddc97798fee7a91b57b20620fb11d5f41e7792c",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "23c98152728172b44ccb41bc8ddc97798fee7a91b57b20620fb11d5f41e7792c"
+        }
+      ]
+    },
+    {
+      "symbol": "queueActions",
+      "receiver_type": "ISTimedActionQueue",
+      "signature": "ISTimedActionQueue.queueActions(character, addActionsFunction, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            224,
+            224
+          ],
+          "path": "media/lua/client/TimedActions/ISTimedActionQueue.lua",
+          "sha256": "23c98152728172b44ccb41bc8ddc97798fee7a91b57b20620fb11d5f41e7792c",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "23c98152728172b44ccb41bc8ddc97798fee7a91b57b20620fb11d5f41e7792c"
+        }
+      ]
+    },
+    {
+      "symbol": "new",
+      "receiver_type": "ISInventoryTransferAction",
+      "signature": "ISInventoryTransferAction:new(character, item, srcContainer, destContainer, time)",
+      "signature_scope": "observed_vanilla_lua_definition; formal parameter names only, not full semantic contract",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "lines": [
+            764,
+            764
+          ],
+          "path": "media/lua/client/TimedActions/ISInventoryTransferAction.lua",
+          "sha256": "96ee554609f9ae029809643d50e4f31dbc5a7d21a558934be0804fd909c345b4",
+          "statement": "Installed vanilla Lua defines this method on the stated Lua class; only the declaration and formal parameter list are recorded.",
+          "hash_recheck": "MATCH",
+          "actual_sha256": "96ee554609f9ae029809643d50e4f31dbc5a7d21a558934be0804fd909c345b4"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "group": "inventory",
+      "path": "media/lua/client/ISUI/ISInventoryPane.lua",
+      "sha256": "8cce738cc0dfec8655d2970c42572596bf6294b85e4917a245dc41d1827a56be",
+      "lines": [
+        2659,
+        2659
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Native inventory row code already renders a condition ratio. Verify an actual display gap before adding a second indicator.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "inventory",
+      "path": "media/lua/client/ISUI/ISInventoryPane.lua",
+      "sha256": "8cce738cc0dfec8655d2970c42572596bf6294b85e4917a245dc41d1827a56be",
+      "lines": [
+        451,
+        451
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Native selection/transfer-related inventory code checks favorite state. This observation does not prove server protection for a new operation.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "craft",
+      "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetRecipeFilterPanel.lua",
+      "sha256": "6389e2fbd005bdd8d35d4d99df4c2333596916e713056d21a6f8d1eafa3b1ce2",
+      "lines": [
+        123,
+        123
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "The native crafting UI already has search/filter widgets; a new adapter must demonstrate missing behavior rather than duplicate the whole panel.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "craft",
+      "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetRecipeFilterPanel.lua",
+      "sha256": "6389e2fbd005bdd8d35d4d99df4c2333596916e713056d21a6f8d1eafa3b1ce2",
+      "lines": [
+        344,
+        344
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Native filtering declares an output-item filter capability. Runtime availability and exact input coverage still need comparison.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "building",
+      "path": "media/lua/client/Entity/ISUI/BuildRecipe/ISBuildPanel.lua",
+      "sha256": "2b4bb8908dbf0158f68bc0a9c05b6d338fc1695d6fc9897b78e22010c342e05d",
+      "lines": [
+        131,
+        131
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Building has a separate native recipe-panel path. Crafting-hook correctness does not prove construction correctness.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "health",
+      "path": "media/lua/client/XpSystem/ISUI/ISHealthPanel.lua",
+      "sha256": "8138f094a76f73f275e8c65a8991fd501cdc3502547f4d08e52b122c1f9f2a10",
+      "lines": [
+        633,
+        633
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Native health presentation gates some wound details by doctor skill or cheat state. Preserve the ordinary player visibility path.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "status",
+      "path": "media/lua/client/XpSystem/ISUI/ISHealthPanel.lua",
+      "sha256": "8138f094a76f73f275e8c65a8991fd501cdc3502547f4d08e52b122c1f9f2a10",
+      "lines": [
+        467,
+        467
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "A native panel reads the current pain moodle; nearby numeric health/stat displays also have privilege gates and cannot be reused as unrestricted HUD data.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "food",
+      "path": "media/lua/shared/TimedActions/ISEatFoodAction.lua",
+      "sha256": "76d6f2650000231f3917616356c37e4b2fd7bcabdff5fcb5298e43223b681368",
+      "lines": [
+        173,
+        173
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Native eating has a completion phase. New assistance must delegate to the validated action lifecycle rather than mutate nutrition from a background UI callback.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "magazine",
+      "path": "media/lua/shared/TimedActions/ISLoadBulletsInMagazine.lua",
+      "sha256": "a9faaba4ff3650de790d6c258d2214c0507ade8c3ac2461ae22dd8924ea444a9",
+      "lines": [
+        162,
+        162
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "A native magazine loading action is present; inspect its exact constructor, validity and complete path before extending queues.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "input",
+      "path": "media/lua/shared/keyBinding.lua",
+      "sha256": "5ca8e3820f9d241adfa8d6b5f3f7b35732560a90be43e389d2ff1639b68c768c",
+      "lines": [
+        3,
+        3
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "Native keybinding declarations exist; a shortcut adapter still needs exact registration and focus/controller verification.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "group": "media",
+      "path": "media/lua/client/ISUI/ISInventoryPaneContextMenu.lua",
+      "sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc",
+      "lines": [
+        162,
+        162
+      ],
+      "status": "VERIFIED source observation only",
+      "statement": "A native inventory context path accesses recorded-media data; knowledge checks must be audited separately.",
+      "runtime_status": "NOT_TESTED"
+    }
+  ]
+}

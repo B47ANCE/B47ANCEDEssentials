@@ -1,0 +1,1768 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "version": "0.19.2",
+  "source_commit": "84009973a446f62595032dfcfc006d53b07981ee",
+  "scope": "Essentials only; existing source/partial/foundation entries explicitly retained. Other domain work excluded.",
+  "selection_rule": "Retain all 20 current Essentials entries (representing 21 original identifiers), then fill five slots with the highest-scored new eligible Essentials workflows. Sort the selected set by impact then stable ID. This is a preservation-constrained top 25, not the unrestricted highest 25 of 29.",
+  "weights": {
+    "frequency": 30,
+    "reach": 25,
+    "friction": 25,
+    "error_prevention": 10,
+    "accessibility": 10
+  },
+  "existing_retained": [
+    "batch-transfer",
+    "clock",
+    "context",
+    "craft-output",
+    "device-menus",
+    "equipment-swap",
+    "equipment-view",
+    "heavy-movement",
+    "hotbar",
+    "item-protection",
+    "key-filing",
+    "ladder",
+    "magazine-batch",
+    "map-annotation",
+    "media-progress",
+    "nearby-view",
+    "nested-view",
+    "selection",
+    "storage-sort",
+    "transfer-feedback"
+  ],
+  "new_selected": [
+    "take-quantity",
+    "shortcuts",
+    "maintenance-queue",
+    "reading-queue",
+    "personal-marks"
+  ],
+  "top_25_ids": [
+    "nearby-view",
+    "batch-transfer",
+    "storage-sort",
+    "selection",
+    "item-protection",
+    "context",
+    "nested-view",
+    "take-quantity",
+    "equipment-view",
+    "media-progress",
+    "magazine-batch",
+    "shortcuts",
+    "craft-output",
+    "hotbar",
+    "map-annotation",
+    "device-menus",
+    "maintenance-queue",
+    "reading-queue",
+    "key-filing",
+    "transfer-feedback",
+    "personal-marks",
+    "equipment-swap",
+    "clock",
+    "heavy-movement",
+    "ladder"
+  ],
+  "eligible": [
+    {
+      "id": "nearby-view",
+      "eligible_rank": 1,
+      "portfolio_rank": 1,
+      "selected_rank": 1,
+      "title": "Reachable nearby-loot view",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 96.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 5,
+        "error_prevention": 4,
+        "accessibility": 4
+      },
+      "scope_boundary": "Combine only real containers already admitted by vanilla. Keep true item sources and native access; no Quartermaster storage scanner.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "2847184718",
+        "3586216562"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla discovers individual reachable loot containers and exposes their buttons.",
+        "remaining_scope": "Retain Essentials' admitted-root aggregate; do not replace native discovery or expand reach.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the current aggregator. Review source admission, refresh invalidation and coexistence with standalone inventory mods; add only missing source labels and failure explanations after runtime reproduction.",
+        "state": "Pure read projection of currently admitted vanilla loot buttons. Preserve true source containers and item identity. Do not persist projected contents or synchronize a second inventory.",
+        "configuration": "Retain existing proximity master, scan and safety settings. No new search-radius slider that exceeds native loot admission. Any optional label is a presentation choice.",
+        "acceptance": "Walk across admission boundaries, close a door, stream a vehicle out, change corpse state and reconnect. Each real item appears once; locked or removed roots disappear. Compare with standalone Proximity Inventory enabled and disabled.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: admitted-root lifecycle and replacement-pane interoperability.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryViews.lua",
+          "InventoryReferences.lua"
+        ]
+      }
+    },
+    {
+      "id": "batch-transfer",
+      "eligible_rank": 2,
+      "portfolio_rank": 2,
+      "selected_rank": 2,
+      "title": "Validated bulk-transfer preview and execution",
+      "owner": "Essentials",
+      "essentials_status": "FOUNDATION",
+      "impact_score": 94.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 5,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "scope_boundary": "Retain Essentials stable references, replay binding and transfer core; finish its own explicit preview/result workflow only. Quartermaster keeps its logistics executor and rules.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3422220305",
+        "3586216562",
+        "3761216758"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla already transfers selected items, all items and matching types with timed actions.",
+        "remaining_scope": "Retain the existing reference/replay/authority foundation; proposed UI is only an explicit multi-source transaction preview and result workflow, not a new Transfer All button.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Complete only Essentials' explicit selected-item preview and committed-result workflow over its existing exact-reference/transfer service. Do not merge in Quartermaster executors or designation policy.",
+        "state": "Client supplies intent and stable references. Server re-resolves actor, source, destination, ownership, access, capacity and item restrictions for every move. Use the existing replay binding and committed-result snapshots; never persist live Lua item pointers.",
+        "configuration": "Reuse current operation and traversal limits. Propose EnableBatchTransfer=false until runtime gates pass; protect favorites and equipped items by default. Avoid configurable retry/protocol internals.",
+        "acceptance": "Test two clients moving the same item, duplicate and reordered requests, disconnect after commit, full destination, removed container, invalid source and partial completion. Inventory totals and unique ownership must remain conserved after restart.",
+        "depends": [
+          "item-protection",
+          "selection"
+        ],
+        "effort": "L",
+        "risk": "High: duplication, replay handling and authority. A preview alone is not authorization.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "InventoryTransfers.lua",
+          "InventoryTransferServer.lua",
+          "InventoryTransferClient.lua",
+          "InventoryReferences.lua"
+        ]
+      }
+    },
+    {
+      "id": "storage-sort",
+      "eligible_rank": 3,
+      "portfolio_rank": 3,
+      "selected_rank": 3,
+      "title": "Sort into nearby seeded containers",
+      "owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "impact_score": 92.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 5,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "scope_boundary": "Retain current bounded seeded matching only. Category designations, storage presets, room allocations and building logistics remain Quartermaster work.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3761216758",
+        "3807217050",
+        "3290232938"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native transfers choose a destination; container discovery is not category/seed destination planning.",
+        "remaining_scope": "Retain bounded Essentials seeded sorting; richer shared designation rules remain Quartermaster work.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain seeded-container matching and clarify eligible/skipped destinations/results. Do not implement designated category storage, presets, quotas, room/building logistics or a new taxonomy.",
+        "state": "The existing server sorting and transfer core owns mutations. Quartermaster would own shared destination rules and validate edits. Resolve storage identity on authority; replicate committed changes and read canonical rules on join.",
+        "configuration": "Retain existing exact-type preference, category fallback, favorite protection and bounded range settings. Future designation policy belongs to Quartermaster's authoritative sandbox; client presentation never overrides it.",
+        "acceptance": "Test seeded ties, no eligible destination, stacked and nested containers, capacity changes mid-sort, safehouse access, two clients sorting concurrently, reconnect and restart. Confirm each moved item has one owner and native timing is retained where required.",
+        "depends": [
+          "item-protection",
+          "batch-transfer"
+        ],
+        "effort": "M",
+        "risk": "High: shared ownership and cross-project policy overlap.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "SortingCore.lua",
+          "SortingServer.lua",
+          "SortingClient.lua",
+          "InventoryTransfers.lua"
+        ]
+      }
+    },
+    {
+      "id": "selection",
+      "eligible_rank": 4,
+      "portfolio_rank": 4,
+      "selected_rank": 4,
+      "title": "Preserve inventory selection through refreshes",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 89.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "scope_boundary": "Repair local native-pane selection by surviving item identity. Do not build a replacement inventory interface.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3782920935",
+        "3773985930"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native pane rebuilds and transfer actions maintain their own row/selection state.",
+        "remaining_scope": "Retain Essentials' stable-item selection repair and verify regressions against the native rebuild lifecycle.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the current selection repair and review edge cases around filtered, nested and virtual views. Add stable focus restoration only where native controller behavior leaves a reproducible gap.",
+        "state": "Local selection and focus only. Preserve identity for surviving visible items; remove destroyed or inaccessible items. No gameplay persistence or network commands.",
+        "configuration": "Use existing selection feature toggle. Any optional focus preference remains local and must not change which items a bulk gameplay action is permitted to move.",
+        "acceptance": "Test sorting, stack expansion, item removal, pane switch, search changes, controller selection and split-screen. A removed item must never remain an actionable hidden selection.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Low to medium: native row rebuilding and replacement UI hooks.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventorySelectionRepair.lua",
+          "InventoryViews.lua"
+        ]
+      }
+    },
+    {
+      "id": "item-protection",
+      "eligible_rank": 5,
+      "portfolio_rank": 5,
+      "selected_rank": 5,
+      "title": "Protect items during Essentials bulk actions",
+      "owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "impact_score": 88.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 5,
+        "accessibility": 4
+      },
+      "scope_boundary": "Apply favorite/equipped/crafting/reservation checks to Essentials-owned operations where verified. Do not create a global Dibs, reservation or protection engine for other mods.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3586216562",
+        "3795435563"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native favorite checks already protect ordinary bulk transfers and some destructive operations.",
+        "remaining_scope": "Retain only consistency and protected-equipment checks in Essentials-owned workflows; do not add a second Favorite feature.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Audit and consistently apply protection to Essentials-owned transfer/sorting/queue entry points. Revalidate at execution; leave Quartermaster Dibs and cross-mod reservation authority with their owners.",
+        "state": "For shared mutations the server checks authoritative protection and equipment state at execution. Client marks are advisory unless a validated server policy stores them. Avoid inventing persistent item flags until their native lifecycle is verified.",
+        "configuration": "Retain existing favorite protection. Propose ProtectEquippedItems=true and an explicit per-operation opt-in override only where server policy allows it. Confirm existing keys to avoid conflicting mirrors.",
+        "acceptance": "Mark an item favorite or equip it after preview, retry the request, change character and reconnect. Protected items stay untouched; manual native actions remain available with clear scope.",
+        "depends": [],
+        "effort": "M",
+        "risk": "High: a client-only exclusion is insufficient for a shared transaction. Native favorite visibility/replication is UNKNOWN until audited; do not label a client preference as an authoritative reservation.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "SortingCore.lua",
+          "InventoryTransfers.lua",
+          "AutoKeyRing.lua",
+          "BulkMagazines.lua"
+        ]
+      }
+    },
+    {
+      "id": "context",
+      "eligible_rank": 6,
+      "portfolio_rank": 6,
+      "selected_rank": 6,
+      "title": "Group related context-menu actions",
+      "owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "impact_score": 87.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "scope_boundary": "Keep current native-menu grouping and preserved callbacks. Domain actions retain their own authorization; no shared-UI overhaul.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3780688809",
+        "3781012462",
+        "2875848298",
+        "3554048011"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla has submenus, disabled reasons and native option callbacks.",
+        "remaining_scope": "Retain Essentials device/developer grouping; no wholesale context-menu replacement.",
+        "evidence_groups": [
+          "inventory",
+          "world",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain device and developer grouping. Extend only demonstrably crowded families with an original grouping policy, localized labels and preserved option objects; coordinate overlapping menu providers.",
+        "state": "Local presentation; callbacks and permissions remain the original owners' responsibility. The grouping layer never recreates, elevates or executes callbacks automatically.",
+        "configuration": "Keep existing menu toggles. Propose one opt-in group policy per meaningful family, not individual option micro-settings. Technical ordering and UI geometry remain internal.",
+        "acceptance": "Compare callback target and arguments before and after grouping; test disabled options, nested submenus, tooltip ownership, controller back navigation and duplicate providers.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: compatibility with mods that mutate the same option objects.",
+        "api_groups": [
+          "inventory",
+          "world",
+          "actions"
+        ],
+        "existing": [
+          "ContextMenuCleanup.lua",
+          "DevicePowerMenu.lua",
+          "InventoryActionGrouping.lua"
+        ]
+      }
+    },
+    {
+      "id": "nested-view",
+      "eligible_rank": 7,
+      "portfolio_rank": 7,
+      "selected_rank": 7,
+      "title": "Inspect nested bags without unpacking",
+      "owner": "Essentials",
+      "essentials_status": "FOUNDATION",
+      "impact_score": 85.0,
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "scope_boundary": "Retain traversal/reference foundation and complete an Essentials inventory workflow over authorized roots. UI may render generic controls, but does not own this inventory behavior.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3410947298",
+        "3465040406",
+        "3586216562"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla exposes equipped carried bags and bags in admitted vehicle/world roots; native recursive queries are not a recursive browsing UI.",
+        "remaining_scope": "Retain bounded stable-reference traversal foundation; a future UI is limited to deeper accessible nested inspection with breadcrumbs.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Render the existing bounded traversal and stable reference foundation as native-compatible nested inspection with breadcrumbs. First slice remains read-only; transfers use a separately reviewed action path.",
+        "state": "No projected-container ownership or saved contents. Every nested result retains an admitted root and exact path; root removal or failed resolution hides it. Join rebuilds from current game state.",
+        "configuration": "Reuse traversal depth and item/container budgets. Propose EnableNestedInspection=false until UI and runtime checks pass. No option may bypass locks or make remote roots visible.",
+        "acceptance": "Test deep nesting, cycles, duplicate roots, bag removal, permission change, streamed-out vehicle, zero items and budget exhaustion. Explain truncation instead of silently implying full coverage.",
+        "depends": [],
+        "effort": "M",
+        "risk": "Medium: nested access rules and virtual-pane compatibility.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryTraversal.lua",
+          "InventoryReferences.lua",
+          "InventoryViews.lua"
+        ]
+      }
+    },
+    {
+      "id": "take-quantity",
+      "eligible_rank": 8,
+      "portfolio_rank": 8,
+      "selected_rank": 8,
+      "title": "Choose an exact whole-item transfer quantity",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 83.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "scope_boundary": "Add an explicit count for a finite native transfer of whole items. Do not duplicate native one/half/all choices or Quartermaster shopping targets.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3422220305",
+        "3781012462"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "The reviewed grab menu offers one, half and all for a selected stack.",
+        "remaining_scope": "Keep a whole-item exact-count prompt, excluding existing one/half/all choices and fluid portions.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Add an original bounded count prompt for a selected real-item stack, with an eligible-item preview. Distinguish item count from fluid amount and food portions; the first slice supports whole items only.",
+        "state": "Resolve a finite list of actual item identities; native transfer actions own moves. Shared transfer extensions require the existing authoritative reference service. Never split an item by cloning its fields.",
+        "configuration": "Propose EnableQuantityTransfer=true; reuse batch limits. Count defaults to one and is bounded by eligible items and server policy. UI step controls remain local.",
+        "acceptance": "Test zero/negative/malformed count, mixed items in one displayed stack, favorites, disappearing items, partial capacity, controller entry and another client taking one item mid-queue.",
+        "depends": [
+          "item-protection",
+          "batch-transfer"
+        ],
+        "effort": "M",
+        "risk": "Medium: displayed stacks are not necessarily homogeneous item objects.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "InventoryTransfers.lua",
+          "InventoryReferences.lua"
+        ]
+      }
+    },
+    {
+      "id": "equipment-view",
+      "eligible_rank": 9,
+      "portfolio_rank": 9,
+      "selected_rank": 9,
+      "title": "Separate equipped items from carried inventory",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 81.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "scope_boundary": "Keep current worn/held/attached projection in Essentials. No new equipment state, lighting-attachment ownership or broad UI framework.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3773985930",
+        "3790656296",
+        "2950902979",
+        "3586216562"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla marks equipped rows and exposes equipment controls.",
+        "remaining_scope": "Retain Essentials' separate worn/held/attached projection and general-list filtering; no new equipment slots.",
+        "evidence_groups": [
+          "inventory",
+          "hotbar"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the current worn/held/attached projection and deferral to compatible standalone providers. Improve missing labels or controller behavior only after inspecting actual conflicts; keep a paper-doll redesign in SPXTRM.",
+        "state": "Read-only local view of native equipment. A worn-and-held item appears once; drag and equip continue through native actions. No new equipment slots or independent-hand combat behavior.",
+        "configuration": "Keep current Equipped view and carried-filter toggles. Retain safe native fallback if another mod owns the view. UI layout preferences remain local.",
+        "acceptance": "Test key rings, two-handed items, holsters, bags, rapid equip changes, split-screen and standalone O.C.D. Inventory. Selection must survive without hiding an actionable equipped item from both views.",
+        "depends": [
+          "selection"
+        ],
+        "effort": "S",
+        "risk": "Medium: equipment classifier and replacement-pane compatibility.",
+        "api_groups": [
+          "inventory",
+          "hotbar"
+        ],
+        "existing": [
+          "InventoryViews.lua",
+          "InventorySelectionRepair.lua",
+          "IndependentHandClassifier.lua"
+        ]
+      }
+    },
+    {
+      "id": "media-progress",
+      "eligible_rank": 10,
+      "portfolio_rank": 10,
+      "selected_rank": 10,
+      "title": "Show native reading/media progress and carried duplicates",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 81.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "scope_boundary": "Keep existing native progress, carried-copy counts and data-driven hints. Knowledge & Wisdom retains custom knowledge, research and progression; no duplicate ledger or knowledge grant.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "2544353492",
+        "3777800131",
+        "3716522633",
+        "3739168410",
+        "2732294885"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native inventory already tests read literature and stores per-character page/media progress.",
+        "remaining_scope": "Retain Essentials' carried-duplicate and reward context integration; existing source remains included even where native indicators overlap.",
+        "evidence_groups": [
+          "inventory",
+          "media"
+        ]
+      },
+      "plan": {
+        "slice": "Retain existing literature/media tracking, then verify partial completion, nested carried duplicates and modded reward data. Present original concise text and do not maintain a second knowledge registry.",
+        "state": "Read native per-character pages, known recipes and recorded-media lines. Cache only bounded derived data, invalidating on character and inventory changes. Never mark media learned merely because it is carried.",
+        "configuration": "Retain existing literature master, duplicate and scan-limit settings. Keep knowledge-respecting defaults; reward-detail display is optional. Existing saves derive progress from vanilla state.",
+        "acceptance": "Test partially read books, differently named copies, media with multiple lessons, no reward metadata, nested bags, character switch, reconnect and standalone tracker coexistence.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: recorded-media identity and knowledge leaks.",
+        "api_groups": [
+          "inventory",
+          "media"
+        ],
+        "existing": [
+          "LiteratureCore.lua",
+          "LiteratureTracking.lua"
+        ]
+      }
+    },
+    {
+      "id": "magazine-batch",
+      "eligible_rank": 11,
+      "portfolio_rank": 13,
+      "selected_rank": 11,
+      "title": "Load or unload matching magazines in batches",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 78.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "scope_boundary": "Keep current native magazine action orchestration, ammunition reservations, timing and interruption behavior.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "2920899878",
+        "3777237134",
+        "3750253491",
+        "2875848298"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native magazine menu loads/unloads the selected magazine through native timed actions.",
+        "remaining_scope": "Retain existing matching-magazine batching and reservation checks; no direct ammunition setters.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain current native batch loading/unloading and audit ammunition reservation, nested sources and interrupt handling. Add a preview or optional return adapter only after the existing workflow passes dedicated scenarios.",
+        "state": "Native timed actions own ammunition changes. Reserve unique real rounds within a finite client plan, then rely on current execution validation; never set ammo counts directly. Reconnect discards pending work and reads actual magazine state.",
+        "configuration": "Retain current magazine master, nesting and operation limits. Keep matching restrictions and normal load duration. Any source-return option follows the separately validated tool-return policy.",
+        "acceptance": "Test mixed ammunition, partial magazines, nested bags, two clients sharing rounds, interruption during transfer/load, missing magazine and repeated command. Total rounds must be conserved apart from ordinary firing.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "S",
+        "risk": "High until native multiplayer action behavior is exercised.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "BulkMagazines.lua"
+        ]
+      }
+    },
+    {
+      "id": "shortcuts",
+      "eligible_rank": 12,
+      "portfolio_rank": 14,
+      "selected_rank": 12,
+      "title": "Item and recipe action shortcuts",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 78.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 5
+      },
+      "scope_boundary": "Own the workflow that invokes a known native item/recipe action. Generic UI controls may be optional helpers; exclude a general hotbar replacement, theme/layout engine and PC app host.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3470659758",
+        "3786918614"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native hotbar/keybindings expose equipment and predefined actions.",
+        "remaining_scope": "Only configurable item-action and known-recipe shortcut slots beyond native equipment hotkeys remain.",
+        "evidence_groups": [
+          "options",
+          "hotbar",
+          "craft"
+        ]
+      },
+      "plan": {
+        "slice": "Add a small configurable set of item/known-native-recipe invocation slots. Resolve a valid native action on use and preserve requirements/time; UI may supply controls without transferring this workflow or introducing a presentation framework.",
+        "state": "Persist local identifiers and preference data only, never serialized item objects or executable callbacks. Resolve a permitted current item/action on use and delegate gameplay effects to ordinary authority paths.",
+        "configuration": "Owning UI project provides enable policy, rebindable keys and local slot count within layout limits. Default bindings must avoid native and existing team conflicts; provide a reset action.",
+        "acceptance": "Test missing item, duplicate type, removed recipe, key conflict, controller, text entry focus, reconnect and mod removal. An empty slot may display a preference but must never create an item.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "M",
+        "risk": "Medium: input conflicts and selecting an unintended same-type item.",
+        "api_groups": [
+          "options",
+          "hotbar",
+          "craft"
+        ],
+        "existing": []
+      }
+    },
+    {
+      "id": "craft-output",
+      "eligible_rank": 13,
+      "portfolio_rank": 16,
+      "selected_rank": 13,
+      "title": "Route bulky native crafting output safely",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 74.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "scope_boundary": "Keep current authoritative native crafting-output routing and provider predicates. Junk Drawer salvage outcomes and Provisions process transactions remain their own.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3782291042",
+        "3781012462"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla crafting owns output creation and item consumption.",
+        "remaining_scope": "Retain the current approved plank/heavy-output routing adapter, subject to authoritative output and capacity rules.",
+        "evidence_groups": [
+          "craft",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Keep the existing authoritative output adapter. Recheck the approved plank rule and heavy-output option against native creation, and fix only reproduced routing defects.",
+        "state": "Native crafting owns consumption and output creation; the existing scoped adapter chooses an allowed output destination. Clients never create results or mutate yield. No independent output registry is introduced.",
+        "configuration": "Reuse current output-routing master, approved rules and heavy threshold. No new output count or capacity setting. Existing saves continue using native item ownership.",
+        "acceptance": "Test sawed planks, disallowed recipes, full ground capacity, heavy outputs, interrupted crafting, hook restoration, concurrent crafting and reconnect; inputs and outputs must remain conserved.",
+        "depends": [],
+        "effort": "S",
+        "risk": "High until current native completion and dedicated replication are exercised.",
+        "api_groups": [
+          "craft",
+          "actions"
+        ],
+        "existing": [
+          "CraftOutputRouting.lua"
+        ]
+      }
+    },
+    {
+      "id": "hotbar",
+      "eligible_rank": 14,
+      "portfolio_rank": 17,
+      "selected_rank": 14,
+      "title": "Reorder existing hotbar slots",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 74.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "scope_boundary": "Keep current left/right reorder with native attachment indexes. New condition overlays and general hotbar presentation belong to UI.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3663625294",
+        "2903771337",
+        "3461263912"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native hotbar supports attaching, removing and activating equipment slots.",
+        "remaining_scope": "Retain Essentials' slot-order swaps preserving attached-item indices.",
+        "evidence_groups": [
+          "hotbar"
+        ]
+      },
+      "plan": {
+        "slice": "Keep Essentials' existing left/right slot swaps and controller menu. Compare against native attach/remove/activate behavior; add no replacement hotbar or automatic equipment swap.",
+        "state": "Local slot order and matching native attachment indices stay paired. Native equipment actions retain mutation ownership. Rebuild from actual equipment after reconnect or item removal.",
+        "configuration": "Reuse the existing hotbar reorder toggle. Layout limits stay internal; no new equipment-slot or combat setting.",
+        "acceptance": "Test empty and occupied swaps, incompatible attachment types, missing items, rapid equipment changes, save/reload and controller focus. Saved slot order must not detach or duplicate equipment.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: attachment index persistence and hotbar replacement conflicts.",
+        "api_groups": [
+          "hotbar"
+        ],
+        "existing": [
+          "HotbarReordering.lua"
+        ]
+      }
+    },
+    {
+      "id": "map-annotation",
+      "eligible_rank": 15,
+      "portfolio_rank": 19,
+      "selected_rank": 15,
+      "title": "Remember the default map-symbol scale",
+      "owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "impact_score": 72.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 1
+      },
+      "scope_boundary": "Retain the current default-scale behavior while preserving the native symbol editor. Do not add Rooms designation editing or replace map UI.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3020323164",
+        "3399645148",
+        "3395592779",
+        "2734705913",
+        "2804531012"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native maps already have notes, symbols, sharing and scale controls.",
+        "remaining_scope": "Retain only Essentials' configured default symbol scale; no new notes/symbol editor or copied symbol pack.",
+        "evidence_groups": [
+          "maps"
+        ]
+      },
+      "plan": {
+        "slice": "Retain only the existing configured default symbol-scale adapter. Vanilla already supplies notes, symbols, per-symbol resizing and sharing; do not rebuild those tools.",
+        "state": "Local default presentation preference; native map symbols and synchronization own saved notes. Changing the default does not resize existing annotations or add a second map store.",
+        "configuration": "Reuse the current map-symbol default and existing supported bounds. Do not add a second scale slider or symbol pack.",
+        "acceptance": "Test a new symbol, a previously edited symbol, notes, map reopening, character changes, native sharing and another map UI. Only new-symbol defaults should change.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Low to medium: defaults must not overwrite per-symbol choices.",
+        "api_groups": [
+          "maps"
+        ],
+        "existing": [
+          "MapSymbolDefaults.lua"
+        ]
+      }
+    },
+    {
+      "id": "device-menus",
+      "eligible_rank": 16,
+      "portfolio_rank": 20,
+      "selected_rank": 16,
+      "title": "Group battery actions under their device",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 71.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "scope_boundary": "Keep current Essentials presentation adapter, including a future repair for the renamed Power API. Power owns compatibility, energy and battery actions; SPXTRM owns lighting service.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3781012462",
+        "3420581050"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native devices already have battery, power and media actions.",
+        "remaining_scope": "Retain current device-owned grouping and optional-provider duplicate suppression, not new electricity/device ownership.",
+        "evidence_groups": [
+          "radio",
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the existing device-owned action grouping and optional-provider duplicate suppression. Native radio and item menus already supply power, battery and media actions.",
+        "state": "Client rearranges existing option objects; native actions or the verified optional power provider own mutations. Never infer current Power compatibility from the old powerWorks namespace.",
+        "configuration": "Reuse current device-menu options. Optional provider detection fails safely to native menus; no new electricity model or battery rates.",
+        "acceptance": "Compare callback identity and arguments; test provider absent/present/error, installed cells, ordinary cells, radio/media controls, disabled reasons and controller navigation.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: optional provider identity and duplicated menu ownership.",
+        "api_groups": [
+          "radio",
+          "inventory"
+        ],
+        "existing": [
+          "DevicePowerMenu.lua"
+        ]
+      }
+    },
+    {
+      "id": "maintenance-queue",
+      "eligible_rank": 17,
+      "portfolio_rank": 21,
+      "selected_rank": 17,
+      "title": "Queue selected vanilla vehicle-part services",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 71.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "scope_boundary": "Coordinate a finite player-selected native mechanics itinerary only. No general vehicle simulation, CAT qualification system, clothing-maintenance system or changed service requirements.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3387539308",
+        "3635856965",
+        "3388183573",
+        "3522680786",
+        "3777237134"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native mechanics offers part-specific servicing and ordinary queued actions.",
+        "remaining_scope": "Keep an explicit finite vehicle-part service itinerary with skip reasons and tool return; exclude generic repair menus and repeated XP-training loops.",
+        "evidence_groups": [
+          "vehicle",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Start with an explicit reviewed list of eligible vehicle parts and one supported ordinary service action per part. Present a finite itinerary with skip reasons. Do not add a generic queue engine, clothing repair replacement or XP training loop.",
+        "state": "Native mechanics actions own servicing, parts, wear and experience. Revalidate part identity, tools, skill, access and vehicle state at each step. Pending intent is discarded on disconnect; shared results remain native.",
+        "configuration": "Owning vehicle project supplies a server enable policy, default off, protected-item handling and a meaningful finite part limit. UI preferences remain local; no duration/XP multiplier.",
+        "acceptance": "Test tool loss, failed native repair, vehicle movement, another player servicing the same part, full inventory, cancel, reconnect and restart. No repeated training cycle or automatic restart.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "L",
+        "risk": "High: each native mechanics action needs independent authority and interruption evidence.",
+        "api_groups": [
+          "vehicle",
+          "actions"
+        ],
+        "existing": []
+      }
+    },
+    {
+      "id": "reading-queue",
+      "eligible_rank": 18,
+      "portfolio_rank": 22,
+      "selected_rank": 18,
+      "title": "Queue selected eligible native books",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 70.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 4
+      },
+      "scope_boundary": "Coordinate a finite native-book reading list. Exclude custom study, research, progression, journal recovery and recorded-media playback/device scheduling. Knowledge & Wisdom retains those domain contracts.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3393291384",
+        "3777237134",
+        "3777800131"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native reading processes one selected book and tracks pages.",
+        "remaining_scope": "Keep an explicitly selected eligible unread-book/media playlist with return and interruption; no new reading/progress engine.",
+        "evidence_groups": [
+          "media",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Offer an explicit finite list of eligible native books, with a skip preview and native reading actions. Exclude recorded-media playback, custom research/study or knowledge-provider actions from this slice.",
+        "state": "Native reading owns pages, recipe unlocks and knowledge. Essentials coordinates selected eligible books only, uses no custom progression store and clears pending intent on reconnect. No bypass of Knowledge & Wisdom MP guards or invocation of its blocked mutation APIs.",
+        "configuration": "Propose a server-visible reading-playlist enable, default off, with favorite protection and a bounded list size. Preserve reading speed, skill eligibility, light and interruption rules. Exact identifiers must be reviewed before implementation.",
+        "acceptance": "Test partial books, already learned recipes, books above skill level, darkness, missing or moved books, source removal, interruption and character switch. Never reread forever or grant media completion from carrying an item.",
+        "depends": [
+          "media-progress",
+          "item-protection"
+        ],
+        "effort": "M",
+        "risk": "Native reading sequencing and source restoration require verified action adapters and runtime acceptance. Custom provider research and recorded-media playback are excluded.",
+        "api_groups": [
+          "media",
+          "actions"
+        ],
+        "existing": [
+          "LiteratureCore.lua",
+          "LiteratureTracking.lua"
+        ]
+      }
+    },
+    {
+      "id": "key-filing",
+      "eligible_rank": 19,
+      "portfolio_rank": 23,
+      "selected_rank": 19,
+      "title": "Automatically file keys into carried key rings",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 69.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 1
+      },
+      "scope_boundary": "Keep current recognition predicates and bounded native transfers into accessible carried rings. No global storage policy.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3765689485"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native menus already transfer keys into recognized key rings.",
+        "remaining_scope": "Retain Essentials' bounded automatic filing via native transfers, not another manual Move To Ring menu.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the existing automatic bounded filing helper. Native menus already provide manual transfers into key rings; the retained behavior is explicit-policy automatic filing through those native actions.",
+        "state": "Native transfer actions own item movement. Search only authorized carried roots and recognized rings; revalidate access and protection before moving. No custom key registry or remote key storage.",
+        "configuration": "Reuse existing key-filing settings and recognition predicates. Preserve favorite protection, limits and safe defaults for existing saves.",
+        "acceptance": "Test nested bags, multiple rings, full rings, protected keys, predicate errors, item removal mid-queue, reconnect and manual destination changes. Each real key retains one owner.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "S",
+        "risk": "Medium until current native transfer replication is exercised in dedicated multiplayer.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "AutoKeyRing.lua"
+        ]
+      }
+    },
+    {
+      "id": "transfer-feedback",
+      "eligible_rank": 20,
+      "portfolio_rank": 26,
+      "selected_rank": 20,
+      "title": "Explain Essentials partial-transfer outcomes",
+      "owner": "Essentials",
+      "essentials_status": "FOUNDATION",
+      "impact_score": 68.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "scope_boundary": "Retain current read-only transaction results and add explanations for this executor only. Quartermaster retains its own logistics progress/results; no universal notifications framework.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3586216562",
+        "3761216758"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native transfers perform valid moves and handle access/capacity failures.",
+        "remaining_scope": "Retain the existing Essentials committed/skipped/stale transaction result foundation; no independent inventory ownership.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain inspectReferencedTransferResult and its bounded read-only snapshots. Add a compact explanation of committed, skipped, stale and rejected moves to Essentials-owned confirmation/results; do not retry automatically.",
+        "state": "Only authority receipts establish completion. Local text must not recalculate ownership or infer success from a closed pane. Reconnect requires current state rather than replaying stale client intent.",
+        "configuration": "Reuse current operation/result bounds and feature policy; presentation verbosity can remain local. No retry/protocol micro-settings.",
+        "acceptance": "Exercise partial capacity failures, disappeared containers, inaccessible items, duplicate/reordered replies, missing result, disconnect after commit and operation-ID mismatch. Never present unknown ownership as success.",
+        "depends": [
+          "batch-transfer"
+        ],
+        "effort": "M",
+        "risk": "Result presentation is incomplete; native receipt/replication behavior remains a runtime gate.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "InventoryTransferClient.lua",
+          "InventoryTransferServer.lua",
+          "InventoryTransfers.lua"
+        ]
+      }
+    },
+    {
+      "id": "personal-marks",
+      "eligible_rank": 21,
+      "portfolio_rank": 29,
+      "selected_rank": 21,
+      "title": "Mark an owned book or media item for later",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 63.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 2,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "scope_boundary": "Local, explicitly chosen seen-for-later mark on an accessible item. Do not grant read state, reveal hidden titles, create a research/study ledger, add shopping demands or duplicate Dibs lists.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "2544353492",
+        "3586216562"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native favorites and native learned/read state already exist.",
+        "remaining_scope": "Only separate local seen-for-later notes on not-yet-readable media remain, without setting Favorite or granting read knowledge.",
+        "evidence_groups": [
+          "inventory",
+          "media"
+        ]
+      },
+      "plan": {
+        "slice": "Prototype a local explicit read-later mark for an exact accessible item. Resolve native identity and a supported local persistence route before shipping; if identity cannot survive reload safely, keep it session-only and label that limit.",
+        "state": "Personal note only, never a favorite/read/learned setter. Do not expose inaccessible item names or sync another player's notes. Removed or replaced items must not inherit a stale mark.",
+        "configuration": "Propose a meaningful enable policy; mark display and confirmation are local preferences. Choose actual identifiers and old-save defaults in the future implementation version. No custom knowledge or shopping configuration.",
+        "acceptance": "Test not-yet-readable books, known/unknown media titles, nested items, split/merge, transfer, destruction, reconnect, save/reload and character replacement. A bookmark grants no recipe, page progress, title knowledge or demand.",
+        "depends": [
+          "media-progress"
+        ],
+        "effort": "M",
+        "risk": "Stable local item identity/persistence and native title-reveal policy need verification; no implementation claimed.",
+        "api_groups": [
+          "inventory",
+          "media"
+        ],
+        "existing": []
+      }
+    },
+    {
+      "id": "equipment-swap",
+      "eligible_rank": 22,
+      "portfolio_rank": 30,
+      "selected_rank": 22,
+      "title": "Independent-hand compatibility classifier",
+      "owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "impact_score": 62.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 2,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 1
+      },
+      "scope_boundary": "Keep the existing fail-closed pairing classifier and bounded providers only. No working dual-wield combat, input, reload or animation system is claimed by this entry.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "2366717227",
+        "3786918614",
+        "3771638611"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla already equips primary/secondary items and switches attached equipment.",
+        "remaining_scope": "Keep only Essentials' existing independent-hand classifier foundation. It does not implement new swaps, off-hand attacks or dual wielding.",
+        "evidence_groups": [
+          "hotbar",
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain and validate the current independent-hand classifier/provider registry. Audit pair changes and provider errors; defer any attack, input, swapping or animation implementation to a separate proven Lua-only slice.",
+        "state": "Read-only classification of real current hand equipment. No ammunition, damage, animation or equipment mutation is provided by this foundation.",
+        "configuration": "Retain current classifier/provider configuration; no hypothetical combat balance settings are implemented by this plan.",
+        "acceptance": "Test one/two-handed, broken, duplicate and unknown weapons, reversed pairs, missing actors, provider failure/removal and repeated registration. Unsupported equipment must fail closed.",
+        "depends": [],
+        "effort": "Validation first",
+        "risk": "Classifier source is not dual-wield feasibility or dedicated combat proof.",
+        "api_groups": [
+          "hotbar",
+          "inventory"
+        ],
+        "existing": [
+          "IndependentHandClassifier.lua"
+        ]
+      }
+    },
+    {
+      "id": "tool-return",
+      "eligible_rank": 23,
+      "portfolio_rank": 31,
+      "selected_rank": null,
+      "title": "Return a loaded magazine to its source",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 62.0,
+      "dimensions": {
+        "frequency": 3,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "scope_boundary": "Only optional restoration of a magazine after its native action. Generic crafting tool returns are vanilla; borrowed cleaning tools are already Auto Clean/Quartermaster work.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "2769706949",
+        "3793171582",
+        "2366717227"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native crafting explicitly returns borrowed items; magazine load/unload menu paths do not call that return helper.",
+        "remaining_scope": "Keep only optional magazine source restoration after a verified load/unload action. Remove generic tool-return replacement.",
+        "evidence_groups": [
+          "toolreturn",
+          "inventory"
+        ]
+      }
+    },
+    {
+      "id": "clock",
+      "eligible_rank": 24,
+      "portfolio_rank": 33,
+      "selected_rank": 23,
+      "title": "Display permitted watch time to the minute",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 59.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 4,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "scope_boundary": "Keep current clock formatting and device information limits. Power retains powered-watch behavior; the legacy adapter mismatch is an unresolved compatibility gate.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3778884296"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native watch display supplies device-dependent time information.",
+        "remaining_scope": "Retain current Essentials exact-minute formatting and device precision constraints; native rendering comparison remains a runtime gate.",
+        "evidence_groups": [
+          "options",
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain exact-minute formatting and current native device precision limits. Separately repair the legacy Power contract only after checking the renamed provider in its own current source; no new watch simulation.",
+        "state": "Local formatting of permitted time/device facts. Power owns battery/charge and mechanical/digital behavior. No extra information for a device that cannot supply it.",
+        "configuration": "Retain EnableExactMinuteClock and native clock-size/12/24-hour preferences. Keep energy/service policy in Power.",
+        "acceptance": "Check minute rollover, midnight/noon, 12/24-hour, mechanical/digital clocks, unavailable or unpowered devices, UI scale and split-screen. Test renamed-Power present/absent without claiming adapter compatibility before proof.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Legacy powerWorks watch probe is incompatible/unverified against renamed Power; native layout and device behavior remain runtime gates.",
+        "api_groups": [
+          "options",
+          "inventory"
+        ],
+        "existing": [
+          "ExactWatchClock.lua"
+        ]
+      }
+    },
+    {
+      "id": "map-automark",
+      "eligible_rank": 25,
+      "portfolio_rank": 36,
+      "selected_rank": null,
+      "title": "Mark only personally observed map locations",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 54.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "scope_boundary": "Optional bounded native-map note from an actual permitted observation. No geographic knowledge ledger, unexplored-world scans, room ownership map or UI replacement.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3782332412"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native maps support manually authored marks and known-data display.",
+        "remaining_scope": "Only opt-in rate-limited marks from actual permitted observations remain, using native notes and no unexplored-world scan.",
+        "evidence_groups": [
+          "maps",
+          "world"
+        ]
+      }
+    },
+    {
+      "id": "building-maintenance",
+      "eligible_rank": 26,
+      "portfolio_rank": 37,
+      "selected_rank": null,
+      "title": "Queue selected native curtain or barricade actions",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 53.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "scope_boundary": "Only a finite explicit multi-target vanilla-action itinerary. No new Rooms geometry/policy engine, construction catalog, Auto Clean work or automatic building-wide discovery.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3793163745"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native windows, curtains and barricades have valid single-target actions.",
+        "remaining_scope": "Keep only a bounded player-selected multi-target itinerary, not new barricade/window actions or changed material cost.",
+        "evidence_groups": [
+          "world",
+          "actions"
+        ]
+      }
+    },
+    {
+      "id": "weapon-ammo",
+      "eligible_rank": 27,
+      "portfolio_rank": 39,
+      "selected_rank": null,
+      "title": "Queue native firearm and magazine unloading",
+      "owner": "Essentials",
+      "essentials_status": "NEW",
+      "impact_score": 52.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 2
+      },
+      "scope_boundary": "One explicit finite native unload sequence, preserving action order, eligibility and real ammunition. No direct count setters or new firearm simulation.",
+      "retention": "NEW_ESSENTIALS_CANDIDATE",
+      "source_workshop_ids": [
+        "3422220305"
+      ],
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native unload magazine and firearm actions are separate and gated by current state.",
+        "remaining_scope": "Only a one-request finite native unload-magazine/chamber sequence remains; no new instant extraction or count setters.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      }
+    },
+    {
+      "id": "heavy-movement",
+      "eligible_rank": 28,
+      "portfolio_rank": 41,
+      "selected_rank": 24,
+      "title": "Heavy-object provider lifecycle foundation",
+      "owner": "Essentials",
+      "essentials_status": "FOUNDATION",
+      "impact_score": 51.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "scope_boundary": "Keep existing capability and reserve/start/complete/cancel contracts. Domain providers own all physics/object/terrain state; Quartermaster keeps hauling logistics. No production physics provider is claimed.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3781319724",
+        "3805553089",
+        "3781716360"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla moveable/placement systems own supported movement and collision.",
+        "remaining_scope": "Retain Essentials' provider observation and reserve/start/complete/cancel foundation only; no production physics provider is claimed.",
+        "evidence_groups": [
+          "placement",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the bounded provider query and authoritative lifecycle/recovery foundation. Validate contracts with disposable offline providers; do not add physics, wheelbarrow or logistics implementations to fill this entry.",
+        "state": "Provider owns actual object mutation and simulation. Essentials validates operation identity and lifecycle; clients submit intent. Uncertain commits stay quarantined and replay must not repeat mutation.",
+        "configuration": "Preserve current enable/policy settings and technical limits. A later gameplay provider must define its own meaningful server sandbox policy, supported persistence and old-save behavior.",
+        "acceptance": "Test missing/failed provider, changed actor/target, denied reach, duplicate requests, reserve/start/complete/cancel ordering, uncertain completion, reload and restart. Dedicated evidence with a real safe provider is required before production claims.",
+        "depends": [],
+        "effort": "Validation first",
+        "risk": "No production physics provider; native authority, synchronization and recovery are not established by mocks.",
+        "api_groups": [
+          "placement",
+          "actions"
+        ],
+        "existing": [
+          "HeavyObjects.lua",
+          "HeavyObjectServer.lua",
+          "HeavyObjectClient.lua"
+        ]
+      }
+    },
+    {
+      "id": "ladder",
+      "eligible_rank": 29,
+      "portfolio_rank": 43,
+      "selected_rank": 25,
+      "title": "Expose valid tagged-ladder interactions",
+      "owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "impact_score": 49.0,
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "scope_boundary": "Keep the current property-based native-transition adapter and access/landing checks. No teleportation, terrain simulation, Fences catalog or new traversal engine.",
+      "retention": "EXISTING_RETAINED",
+      "source_workshop_ids": [
+        "3629835761"
+      ],
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native traversal states support climbing; their presence is not an automatic property-based ladder context adapter.",
+        "remaining_scope": "Retain the current tagged-tile native-transition adapter and landing/access safety.",
+        "evidence_groups": [
+          "world",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain property-driven ladder context actions and verify the existing native rope-state adapter on valid orientations. No new automatic input/traversal or terrain system.",
+        "state": "Native transition states own movement. Admit only valid tagged loaded tiles with legal access and safe landing; no teleport or global scan.",
+        "configuration": "Reuse existing ladder master/safety settings and bounded property registration. No speed boost or physics setting.",
+        "acceptance": "Test four orientations, blocked/missing landing, multi-floor edges, actor death/incapacitation, streamed tiles, modded tags, controller selection and two-client observation. Native transition/replication remains untested until actual PZ evidence.",
+        "depends": [],
+        "effort": "Validation first",
+        "risk": "Source adapter does not prove runtime collision, animation or dedicated movement correctness.",
+        "api_groups": [
+          "world",
+          "actions"
+        ],
+        "existing": [
+          "LadderInteraction.lua"
+        ]
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "id": "nearby-view",
+      "portfolio_rank": 1,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Combine only real containers already admitted by vanilla. Keep true item sources and native access; no Quartermaster storage scanner."
+    },
+    {
+      "id": "batch-transfer",
+      "portfolio_rank": 2,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Retain Essentials stable references, replay binding and transfer core; finish its own explicit preview/result workflow only. Quartermaster keeps its logistics executor and rules."
+    },
+    {
+      "id": "storage-sort",
+      "portfolio_rank": 3,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Retain current bounded seeded matching only. Category designations, storage presets, room allocations and building logistics remain Quartermaster work."
+    },
+    {
+      "id": "selection",
+      "portfolio_rank": 4,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Repair local native-pane selection by surviving item identity. Do not build a replacement inventory interface."
+    },
+    {
+      "id": "item-protection",
+      "portfolio_rank": 5,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Apply favorite/equipped/crafting/reservation checks to Essentials-owned operations where verified. Do not create a global Dibs, reservation or protection engine for other mods."
+    },
+    {
+      "id": "context",
+      "portfolio_rank": 6,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current native-menu grouping and preserved callbacks. Domain actions retain their own authorization; no shared-UI overhaul."
+    },
+    {
+      "id": "nested-view",
+      "portfolio_rank": 7,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Retain traversal/reference foundation and complete an Essentials inventory workflow over authorized roots. UI may render generic controls, but does not own this inventory behavior."
+    },
+    {
+      "id": "take-quantity",
+      "portfolio_rank": 8,
+      "decision": "SELECT_NEW",
+      "owner": "Essentials",
+      "reason": "Add an explicit count for a finite native transfer of whole items. Do not duplicate native one/half/all choices or Quartermaster shopping targets."
+    },
+    {
+      "id": "equipment-view",
+      "portfolio_rank": 9,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current worn/held/attached projection in Essentials. No new equipment state, lighting-attachment ownership or broad UI framework."
+    },
+    {
+      "id": "media-progress",
+      "portfolio_rank": 10,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep existing native progress, carried-copy counts and data-driven hints. Knowledge & Wisdom retains custom knowledge, research and progression; no duplicate ledger or knowledge grant."
+    },
+    {
+      "id": "capacity",
+      "portfolio_rank": 11,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "UI",
+      "reason": "Simultaneous container/magazine fill overlays are presentation adapters; not current Essentials source."
+    },
+    {
+      "id": "health-readability",
+      "portfolio_rank": 12,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Health Care + UI",
+      "reason": "Medical fact visibility and injury summaries belong to the medical/presentation owners."
+    },
+    {
+      "id": "magazine-batch",
+      "portfolio_rank": 13,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current native magazine action orchestration, ammunition reservations, timing and interruption behavior."
+    },
+    {
+      "id": "shortcuts",
+      "portfolio_rank": 14,
+      "decision": "SELECT_NEW",
+      "owner": "Essentials",
+      "reason": "Own the workflow that invokes a known native item/recipe action. Generic UI controls may be optional helpers; exclude a general hotbar replacement, theme/layout engine and PC app host."
+    },
+    {
+      "id": "container-labels",
+      "portfolio_rank": 15,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "UI",
+      "reason": "Local container-button labels/order belong to presentation; shared storage rules/names remain Quartermaster/Rooms."
+    },
+    {
+      "id": "craft-output",
+      "portfolio_rank": 16,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current authoritative native crafting-output routing and provider predicates. Junk Drawer salvage outcomes and Provisions process transactions remain their own."
+    },
+    {
+      "id": "hotbar",
+      "portfolio_rank": 17,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current left/right reorder with native attachment indexes. New condition overlays and general hotbar presentation belong to UI."
+    },
+    {
+      "id": "condition",
+      "portfolio_rank": 18,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "UI",
+      "reason": "General hotbar condition overlay belongs to planned vanilla presentation adapters."
+    },
+    {
+      "id": "map-annotation",
+      "portfolio_rank": 19,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Retain the current default-scale behavior while preserving the native symbol editor. Do not add Rooms designation editing or replace map UI."
+    },
+    {
+      "id": "device-menus",
+      "portfolio_rank": 20,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current Essentials presentation adapter, including a future repair for the renamed Power API. Power owns compatibility, energy and battery actions; SPXTRM owns lighting service."
+    },
+    {
+      "id": "maintenance-queue",
+      "portfolio_rank": 21,
+      "decision": "SELECT_NEW",
+      "owner": "Essentials",
+      "reason": "Coordinate a finite player-selected native mechanics itinerary only. No general vehicle simulation, CAT qualification system, clothing-maintenance system or changed service requirements."
+    },
+    {
+      "id": "reading-queue",
+      "portfolio_rank": 22,
+      "decision": "SELECT_NEW",
+      "owner": "Essentials",
+      "reason": "Coordinate a finite native-book reading list. Exclude custom study, research, progression, journal recovery and recorded-media playback/device scheduling. Knowledge & Wisdom retains those domain contracts."
+    },
+    {
+      "id": "key-filing",
+      "portfolio_rank": 23,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current recognition predicates and bounded native transfers into accessible carried rings. No global storage policy."
+    },
+    {
+      "id": "area-clean",
+      "portfolio_rank": 24,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Auto Clean",
+      "reason": "Selected-area cleaning already has selection, confirmation, guarded native actions and tool returns there."
+    },
+    {
+      "id": "generator-info",
+      "portfolio_rank": 25,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Power + UI",
+      "reason": "Generator observations/calculation and presentation belong to the power/presentation owners."
+    },
+    {
+      "id": "transfer-feedback",
+      "portfolio_rank": 26,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Retain current read-only transaction results and add explanations for this executor only. Quartermaster retains its own logistics progress/results; no universal notifications framework."
+    },
+    {
+      "id": "bandage-queue",
+      "portfolio_rank": 27,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Health Care",
+      "reason": "Bandage sequencing belongs to medical procedure ownership, not generic Essentials actions."
+    },
+    {
+      "id": "livestock-table",
+      "portfolio_rank": 28,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Animal owner TBD + UI",
+      "reason": "General livestock domain is unassigned and must not silently become Essentials or canine-only Dog Training scope."
+    },
+    {
+      "id": "personal-marks",
+      "portfolio_rank": 29,
+      "decision": "SELECT_NEW",
+      "owner": "Essentials",
+      "reason": "Local, explicitly chosen seen-for-later mark on an accessible item. Do not grant read state, reveal hidden titles, create a research/study ledger, add shopping demands or duplicate Dibs lists."
+    },
+    {
+      "id": "equipment-swap",
+      "portfolio_rank": 30,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep the existing fail-closed pairing classifier and bounded providers only. No working dual-wield combat, input, reload or animation system is claimed by this entry."
+    },
+    {
+      "id": "tool-return",
+      "portfolio_rank": 31,
+      "decision": "ELIGIBLE_BACKLOG",
+      "owner": "Essentials",
+      "reason": "Only optional restoration of a magazine after its native action. Generic crafting tool returns are vanilla; borrowed cleaning tools are already Auto Clean/Quartermaster work."
+    },
+    {
+      "id": "weight-column",
+      "portfolio_rank": 32,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "UI",
+      "reason": "A native inventory weight-column adapter is broad presentation work."
+    },
+    {
+      "id": "clock",
+      "portfolio_rank": 33,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep current clock formatting and device information limits. Power retains powered-watch behavior; the legacy adapter mismatch is an unresolved compatibility gate."
+    },
+    {
+      "id": "treatment-queue",
+      "portfolio_rank": 34,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Health Care",
+      "reason": "Treatment eligibility, medical authority and procedure sequencing belong to Health Care."
+    },
+    {
+      "id": "device-off",
+      "portfolio_rank": 35,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Power",
+      "reason": "Fridge/freezer power control belongs to the electrical-state owner."
+    },
+    {
+      "id": "map-automark",
+      "portfolio_rank": 36,
+      "decision": "ELIGIBLE_BACKLOG",
+      "owner": "Essentials",
+      "reason": "Optional bounded native-map note from an actual permitted observation. No geographic knowledge ledger, unexplored-world scans, room ownership map or UI replacement."
+    },
+    {
+      "id": "building-maintenance",
+      "portfolio_rank": 37,
+      "decision": "ELIGIBLE_BACKLOG",
+      "owner": "Essentials",
+      "reason": "Only a finite explicit multi-target vanilla-action itinerary. No new Rooms geometry/policy engine, construction catalog, Auto Clean work or automatic building-wide discovery."
+    },
+    {
+      "id": "corpse-haul",
+      "portfolio_rank": 38,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Auto Clean",
+      "reason": "Selected-area corpse cleanup is an Auto Clean extension; native corpse handling and anatomy remain their own."
+    },
+    {
+      "id": "weapon-ammo",
+      "portfolio_rank": 39,
+      "decision": "ELIGIBLE_BACKLOG",
+      "owner": "Essentials",
+      "reason": "One explicit finite native unload sequence, preserving action order, eligibility and real ammunition. No direct count setters or new firearm simulation."
+    },
+    {
+      "id": "crop-queue",
+      "portfolio_rank": 40,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Harvest",
+      "reason": "Crop work belongs to Harvest, with Waterworks retaining water resources."
+    },
+    {
+      "id": "heavy-movement",
+      "portfolio_rank": 41,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep existing capability and reserve/start/complete/cancel contracts. Domain providers own all physics/object/terrain state; Quartermaster keeps hauling logistics. No production physics provider is claimed."
+    },
+    {
+      "id": "animal-queue",
+      "portfolio_rank": 42,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "Animal owner TBD",
+      "reason": "General herd-care behavior has no verified current domain owner; it is not an Essentials feature."
+    },
+    {
+      "id": "ladder",
+      "portfolio_rank": 43,
+      "decision": "RETAIN_EXISTING",
+      "owner": "Essentials",
+      "reason": "Keep the current property-based native-transition adapter and access/landing checks. No teleportation, terrain simulation, Fences catalog or new traversal engine."
+    },
+    {
+      "id": "session-briefing",
+      "portfolio_rank": 44,
+      "decision": "EXCLUDE_OTHER_DOMAIN",
+      "owner": "UI",
+      "reason": "Cross-domain session recap is general presentation/provider integration work."
+    }
+  ],
+  "runtime_status": "NOT TESTED",
+  "independent_review": "PENDING"
+}

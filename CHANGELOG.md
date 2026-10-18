@@ -2,6 +2,31 @@
 
 ## 0.19.2 — 2026-10-18
 
+- Rebuilt the current top 25 for Essentials only: all 20 existing source, partial
+  and foundation entries plus the five highest-scored eligible new workflows.
+  Recorded 29 eligible entries, 15 other-domain exclusions and four optional
+  backlog items; preserved the earlier portfolio plan as historical research.
+  Runtime source, version, dependencies and configuration are unchanged.
+
+- Audited 28 local project scopes against all 44 retained QoL entries. Corrected
+  UI/SPXTRM and Health Care/Medical Checks ownership, identified existing Auto Clean
+  area cleanup and Quartermaster logistics, and recorded incomplete adapters,
+  unassigned livestock scope and Lua-only blockers. Research/documentation only.
+
+- Rechecked every prior QoL requirement against vanilla and rebuilt the top 25.
+  The shortlist now has 44 entries: 20 existing Essentials entries and 24 scoped
+  additions. Removed 37 native-covered proposals, held 33 unproven entries, and
+  merged two duplicates while preserving all 21 prior Essentials source/foundation
+  identifiers. Recorded native coverage and remaining scope for every decision.
+- Corrected the research backlog after the owner's vanilla-baseline clarification:
+  inventory search/filtering is excluded from new implementation work. Reranked
+  115 candidates and updated the top 25; every candidate now explicitly requires
+  a demonstrated gap against vanilla before any implementation is proposed.
+- Added a documentation-only downloaded-Workshop QoL census, impact ranking and
+  top-25 clean-room implementation plan, including current Essentials coverage,
+  proposed owning projects, native overlap and explicit evidence limits.
+  Added development-only metadata and report consistency tools. No runtime,
+  identity, configuration, package or Workshop change; independent review pending.
 - Added a backpack-only transparent icon derived from the supplied thumbnail:
   no text, loose keys, wristwatch or background fill. Saved the full-resolution
   RGBA master, a 128 px export and a 32 px export matching the existing game slot.

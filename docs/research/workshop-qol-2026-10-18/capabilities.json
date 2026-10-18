@@ -1,0 +1,2286 @@
+{
+  "schema": 2,
+  "scope": "44-entry portfolio comparison; current Essentials selection is essentials-only.json",
+  "plan_document": "PORTFOLIO_TOP_25_HISTORY.md",
+  "date": "2026-10-18",
+  "ranking": "Vanilla-filtered shortlist. Existing Essentials source/foundations preserved by user request. Scores estimate the remaining workflow, not the value of duplicating native controls. Ties use capability ID.",
+  "weights": {
+    "frequency": 30,
+    "reach": 25,
+    "friction": 25,
+    "error_prevention": 10,
+    "accessibility": 10
+  },
+  "capabilities": [
+    {
+      "id": "nearby-view",
+      "title": "One view for reachable nearby loot",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 5,
+        "error_prevention": 4,
+        "accessibility": 4
+      },
+      "impact_score": 96.0,
+      "source_workshop_ids": [
+        "2847184718",
+        "3586216562"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain Essentials' admitted-root aggregate; do not replace native discovery or expand reach.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 1,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla discovers individual reachable loot containers and exposes their buttons.",
+        "remaining_scope": "Retain Essentials' admitted-root aggregate; do not replace native discovery or expand reach.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the current aggregator. Review source admission, refresh invalidation and coexistence with standalone inventory mods; add only missing source labels and failure explanations after runtime reproduction.",
+        "state": "Pure read projection of currently admitted vanilla loot buttons. Preserve true source containers and item identity. Do not persist projected contents or synchronize a second inventory.",
+        "configuration": "Retain existing proximity master, scan and safety settings. No new search-radius slider that exceeds native loot admission. Any optional label is a presentation choice.",
+        "acceptance": "Walk across admission boundaries, close a door, stream a vehicle out, change corpse state and reconnect. Each real item appears once; locked or removed roots disappear. Compare with standalone Proximity Inventory enabled and disabled.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: admitted-root lifecycle and replacement-pane interoperability.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryViews.lua",
+          "InventoryReferences.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep the admitted-root nearby projection. Quartermaster can inspect multiple storage targets, but that is not a replacement loot pane.",
+        "evidence_projects": [
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "batch-transfer",
+      "title": "Safe bulk transfer between selected containers",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 5,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 94.0,
+      "source_workshop_ids": [
+        "3422220305",
+        "3586216562",
+        "3761216758"
+      ],
+      "proposed_owner": "Essentials + Quartermaster",
+      "essentials_status": "FOUNDATION",
+      "neutral_requirement": "Retain the existing reference/replay/authority foundation; proposed UI is only an explicit multi-source transaction preview and result workflow, not a new Transfer All button.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 2,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla already transfers selected items, all items and matching types with timed actions.",
+        "remaining_scope": "Retain the existing reference/replay/authority foundation; proposed UI is only an explicit multi-source transaction preview and result workflow, not a new Transfer All button.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Expose the existing transfer foundation through an explicit preview and finite confirmation workflow. First support player-selected carried and ordinary world-container items; extend vehicle and corpse domains only after dedicated tests.",
+        "state": "Client supplies intent and stable references. Server re-resolves actor, source, destination, ownership, access, capacity and item restrictions for every move. Use the existing replay binding and committed-result snapshots; never persist live Lua item pointers.",
+        "configuration": "Reuse current operation and traversal limits. Propose EnableBatchTransfer=false until runtime gates pass; protect favorites and equipped items by default. Avoid configurable retry/protocol internals.",
+        "acceptance": "Test two clients moving the same item, duplicate and reordered requests, disconnect after commit, full destination, removed container, invalid source and partial completion. Inventory totals and unique ownership must remain conserved after restart.",
+        "depends": [
+          "item-protection",
+          "selection"
+        ],
+        "effort": "L",
+        "risk": "High: duplication, replay handling and authority. A preview alone is not authorization.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "InventoryTransfers.lua",
+          "InventoryTransferServer.lua",
+          "InventoryTransferClient.lua",
+          "InventoryReferences.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials retains its reference/transaction service. Quartermaster already owns a separate logistics executor. A general explicit preview remains unfinished; do not merge executors or introduce a dependency without a reviewed contract.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "storage-sort",
+      "title": "Put loot into designated or seeded storage",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 5,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "impact_score": 92.0,
+      "source_workshop_ids": [
+        "3761216758",
+        "3807217050",
+        "3290232938"
+      ],
+      "proposed_owner": "Quartermaster + Essentials",
+      "essentials_status": "PARTIAL",
+      "neutral_requirement": "Retain bounded Essentials seeded sorting; richer shared designation rules remain Quartermaster work.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 3,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native transfers choose a destination; container discovery is not category/seed destination planning.",
+        "remaining_scope": "Retain bounded Essentials seeded sorting; richer shared designation rules remain Quartermaster work.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Keep Essentials' bounded seeded-container behavior and make its exclusions and partial results visible. Route richer category designations to Quartermaster via a reviewed optional contract; do not introduce a second competing taxonomy or storage authority.",
+        "state": "The existing server sorting and transfer core owns mutations. Quartermaster would own shared destination rules and validate edits. Resolve storage identity on authority; replicate committed changes and read canonical rules on join.",
+        "configuration": "Retain existing exact-type preference, category fallback, favorite protection and bounded range settings. Future designation policy belongs to Quartermaster's authoritative sandbox; client presentation never overrides it.",
+        "acceptance": "Test seeded ties, no eligible destination, stacked and nested containers, capacity changes mid-sort, safehouse access, two clients sorting concurrently, reconnect and restart. Confirm each moved item has one owner and native timing is retained where required.",
+        "depends": [
+          "item-protection",
+          "batch-transfer"
+        ],
+        "effort": "M",
+        "risk": "High: shared ownership and cross-project policy overlap.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "SortingCore.lua",
+          "SortingServer.lua",
+          "SortingClient.lua",
+          "InventoryTransfers.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Quartermaster already supplies designated category/item rules, priorities and sorting. Keep current Essentials seeded sorting for standalone use; do not rebuild designation policy. Prevent competing menu actions/plans when both are enabled.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "rooms"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "selection",
+      "title": "Keep inventory selection through refreshes",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "impact_score": 89.0,
+      "source_workshop_ids": [
+        "3782920935",
+        "3773985930"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain Essentials' stable-item selection repair and verify regressions against the native rebuild lifecycle.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 4,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native pane rebuilds and transfer actions maintain their own row/selection state.",
+        "remaining_scope": "Retain Essentials' stable-item selection repair and verify regressions against the native rebuild lifecycle.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the current selection repair and review edge cases around filtered, nested and virtual views. Add stable focus restoration only where native controller behavior leaves a reproducible gap.",
+        "state": "Local selection and focus only. Preserve identity for surviving visible items; remove destroyed or inaccessible items. No gameplay persistence or network commands.",
+        "configuration": "Use existing selection feature toggle. Any optional focus preference remains local and must not change which items a bulk gameplay action is permitted to move.",
+        "acceptance": "Test sorting, stack expansion, item removal, pane switch, search changes, controller selection and split-screen. A removed item must never remain an actionable hidden selection.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Low to medium: native row rebuilding and replacement UI hooks.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventorySelectionRepair.lua",
+          "InventoryViews.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep native inventory selection repair here. The UI library has focus helpers, not this inventory integration.",
+        "evidence_projects": [
+          "essentials",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "item-protection",
+      "title": "Protect favorites and reserved equipment from bulk actions",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 5,
+        "accessibility": 4
+      },
+      "impact_score": 88.0,
+      "source_workshop_ids": [
+        "3586216562",
+        "3795435563"
+      ],
+      "proposed_owner": "Essentials + Quartermaster",
+      "essentials_status": "PARTIAL",
+      "neutral_requirement": "Retain only consistency and protected-equipment checks in Essentials-owned workflows; do not add a second Favorite feature.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 5,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native favorite checks already protect ordinary bulk transfers and some destructive operations.",
+        "remaining_scope": "Retain only consistency and protected-equipment checks in Essentials-owned workflows; do not add a second Favorite feature.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Document one original eligibility policy across existing key filing, sorting and magazine helpers before exposing new bulk operations. Add an explicit protected-item explanation; do not silently override the native favorite flag.",
+        "state": "For shared mutations the server checks authoritative protection and equipment state at execution. Client marks are advisory unless a validated server policy stores them. Avoid inventing persistent item flags until their native lifecycle is verified.",
+        "configuration": "Retain existing favorite protection. Propose ProtectEquippedItems=true and an explicit per-operation opt-in override only where server policy allows it. Confirm existing keys to avoid conflicting mirrors.",
+        "acceptance": "Mark an item favorite or equip it after preview, retry the request, change character and reconnect. Protected items stay untouched; manual native actions remain available with clear scope.",
+        "depends": [],
+        "effort": "M",
+        "risk": "High: a client-only exclusion is insufficient for a shared transaction. Native favorite visibility/replication is UNKNOWN until audited; do not label a client preference as an authoritative reservation.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "SortingCore.lua",
+          "InventoryTransfers.lua",
+          "AutoKeyRing.lua",
+          "BulkMagazines.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Both executors already check some protected states. Quartermaster SupplyAPI checks favorites, equipped/attached and crafting-consumed items. Define interoperability for active reservations; no portfolio-wide protection API is established.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "context",
+      "title": "Make context actions easier to find",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "impact_score": 87.0,
+      "source_workshop_ids": [
+        "3780688809",
+        "3781012462",
+        "2875848298",
+        "3554048011"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "neutral_requirement": "Retain Essentials device/developer grouping; no wholesale context-menu replacement.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 6,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla has submenus, disabled reasons and native option callbacks.",
+        "remaining_scope": "Retain Essentials device/developer grouping; no wholesale context-menu replacement.",
+        "evidence_groups": [
+          "inventory",
+          "world",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain device and developer grouping. Extend only demonstrably crowded families with an original grouping policy, localized labels and preserved option objects; coordinate overlapping menu providers.",
+        "state": "Local presentation; callbacks and permissions remain the original owners' responsibility. The grouping layer never recreates, elevates or executes callbacks automatically.",
+        "configuration": "Keep existing menu toggles. Propose one opt-in group policy per meaningful family, not individual option micro-settings. Technical ordering and UI geometry remain internal.",
+        "acceptance": "Compare callback target and arguments before and after grouping; test disabled options, nested submenus, tooltip ownership, controller back navigation and duplicate providers.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: compatibility with mods that mutate the same option objects.",
+        "api_groups": [
+          "context"
+        ],
+        "existing": [
+          "ContextMenuCleanup.lua",
+          "DevicePowerMenu.lua",
+          "InventoryActionGrouping.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep native context grouping here. Domain callbacks and validation remain with their owning mods; UI may supply reusable controls.",
+        "evidence_projects": [
+          "essentials",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "nested-view",
+      "title": "Inspect nested bags without unpacking",
+      "dimensions": {
+        "frequency": 5,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "impact_score": 85.0,
+      "source_workshop_ids": [
+        "3410947298",
+        "3465040406",
+        "3586216562"
+      ],
+      "proposed_owner": "Essentials + UI",
+      "essentials_status": "FOUNDATION",
+      "neutral_requirement": "Retain bounded stable-reference traversal foundation; a future UI is limited to deeper accessible nested inspection with breadcrumbs.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 7,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla exposes equipped carried bags and bags in admitted vehicle/world roots; native recursive queries are not a recursive browsing UI.",
+        "remaining_scope": "Retain bounded stable-reference traversal foundation; a future UI is limited to deeper accessible nested inspection with breadcrumbs.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Render the existing bounded traversal and stable reference foundation as native-compatible nested inspection with breadcrumbs. First slice remains read-only; transfers use a separately reviewed action path.",
+        "state": "No projected-container ownership or saved contents. Every nested result retains an admitted root and exact path; root removal or failed resolution hides it. Join rebuilds from current game state.",
+        "configuration": "Reuse traversal depth and item/container budgets. Propose EnableNestedInspection=false until UI and runtime checks pass. No option may bypass locks or make remote roots visible.",
+        "acceptance": "Test deep nesting, cycles, duplicate roots, bag removal, permission change, streamed-out vehicle, zero items and budget exhaustion. Explain truncation instead of silently implying full coverage.",
+        "depends": [],
+        "effort": "M",
+        "risk": "Medium: nested access rules and virtual-pane compatibility.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryTraversal.lua",
+          "InventoryReferences.lua",
+          "InventoryViews.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials has traversal and nested stable references, while Quartermaster has selected nested-bag logistics. Neither establishes the proposed finished nested browser. Keep the read model in Essentials; UI may render controls.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "take-quantity",
+      "title": "Choose an exact whole-item transfer count",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 83.0,
+      "source_workshop_ids": [
+        "3422220305",
+        "3781012462"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep a whole-item exact-count prompt, excluding existing one/half/all choices and fluid portions.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 8,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "The reviewed grab menu offers one, half and all for a selected stack.",
+        "remaining_scope": "Keep a whole-item exact-count prompt, excluding existing one/half/all choices and fluid portions.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Add an original bounded count prompt for a selected real-item stack, with an eligible-item preview. Distinguish item count from fluid amount and food portions; the first slice supports whole items only.",
+        "state": "Resolve a finite list of actual item identities; native transfer actions own moves. Shared transfer extensions require the existing authoritative reference service. Never split an item by cloning its fields.",
+        "configuration": "Propose EnableQuantityTransfer=true; reuse batch limits. Count defaults to one and is bounded by eligible items and server policy. UI step controls remain local.",
+        "acceptance": "Test zero/negative/malformed count, mixed items in one displayed stack, favorites, disappearing items, partial capacity, controller entry and another client taking one item mid-queue.",
+        "depends": [
+          "item-protection",
+          "batch-transfer"
+        ],
+        "effort": "M",
+        "risk": "Medium: displayed stacks are not necessarily homogeneous item objects.",
+        "api_groups": [
+          "inventory",
+          "actions",
+          "context"
+        ],
+        "existing": [
+          "InventoryTransfers.lua",
+          "InventoryReferences.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Exact whole-item count selection belongs with inventory workflows. Quartermaster shopping target quantities are not the same native inventory transfer dialog.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "equipment-view",
+      "title": "Separate equipped items from carried clutter",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "impact_score": 81.0,
+      "source_workshop_ids": [
+        "3773985930",
+        "3790656296",
+        "2950902979",
+        "3586216562"
+      ],
+      "proposed_owner": "Essentials + UI",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain Essentials' separate worn/held/attached projection and general-list filtering; no new equipment slots.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 9,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla marks equipped rows and exposes equipment controls.",
+        "remaining_scope": "Retain Essentials' separate worn/held/attached projection and general-list filtering; no new equipment slots.",
+        "evidence_groups": [
+          "inventory",
+          "hotbar"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the current worn/held/attached projection and deferral to compatible standalone providers. Improve missing labels or controller behavior only after inspecting actual conflicts; keep a paper-doll redesign in SPXTRM.",
+        "state": "Read-only local view of native equipment. A worn-and-held item appears once; drag and equip continue through native actions. No new equipment slots or independent-hand combat behavior.",
+        "configuration": "Keep current Equipped view and carried-filter toggles. Retain safe native fallback if another mod owns the view. UI layout preferences remain local.",
+        "acceptance": "Test key rings, two-handed items, holsters, bags, rapid equip changes, split-screen and standalone O.C.D. Inventory. Selection must survive without hiding an actionable equipped item from both views.",
+        "depends": [
+          "selection"
+        ],
+        "effort": "S",
+        "risk": "Medium: equipment classifier and replacement-pane compatibility.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryViews.lua",
+          "InventorySelectionRepair.lua",
+          "IndependentHandClassifier.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "The Equipped view is already in Essentials. UI can provide presentation helpers; SPXTRM owns light attachments only and must not own this inventory pane.",
+        "evidence_projects": [
+          "essentials",
+          "ui",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "media-progress",
+      "title": "Show read watched and useful-media progress",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 4,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "impact_score": 81.0,
+      "source_workshop_ids": [
+        "2544353492",
+        "3777800131",
+        "3716522633",
+        "3739168410",
+        "2732294885"
+      ],
+      "proposed_owner": "Essentials + Knowledge & Wisdom",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain Essentials' carried-duplicate and reward context integration; existing source remains included even where native indicators overlap.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 10,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native inventory already tests read literature and stores per-character page/media progress.",
+        "remaining_scope": "Retain Essentials' carried-duplicate and reward context integration; existing source remains included even where native indicators overlap.",
+        "evidence_groups": [
+          "inventory",
+          "media"
+        ]
+      },
+      "plan": {
+        "slice": "Retain existing literature/media tracking, then verify partial completion, nested carried duplicates and modded reward data. Present original concise text and do not maintain a second knowledge registry.",
+        "state": "Read native per-character pages, known recipes and recorded-media lines. Cache only bounded derived data, invalidating on character and inventory changes. Never mark media learned merely because it is carried.",
+        "configuration": "Retain existing literature master, duplicate and scan-limit settings. Keep knowledge-respecting defaults; reward-detail display is optional. Existing saves derive progress from vanilla state.",
+        "acceptance": "Test partially read books, differently named copies, media with multiple lessons, no reward metadata, nested bags, character switch, reconnect and standalone tracker coexistence.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: recorded-media identity and knowledge leaks.",
+        "api_groups": [
+          "media",
+          "inventory"
+        ],
+        "existing": [
+          "LiteratureCore.lua",
+          "LiteratureTracking.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Keep existing menu progress and carried-duplicate hints in Essentials. Knowledge & Wisdom already supplies bounded recorded-media inspection and owns custom knowledge/research. Do not create a second knowledge ledger; any optional adapter remains unimplemented.",
+        "evidence_projects": [
+          "essentials",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "capacity",
+      "title": "Compare fill across container buttons and magazine entries",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 4
+      },
+      "impact_score": 80.0,
+      "source_workshop_ids": [
+        "3789660055",
+        "3586216562",
+        "3781012462",
+        "3437629766"
+      ],
+      "proposed_owner": "UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only simultaneous fill cues on container buttons and detachable-magazine entries remain; no new capacity or ammo information is claimed.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 11,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "The selected inventory header already shows weight/capacity; magazine counts are available through native interactions.",
+        "remaining_scope": "Only simultaneous fill cues on container buttons and detachable-magazine entries remain; no new capacity or ammo information is claimed.",
+        "evidence_groups": [
+          "inventory",
+          "hotbar"
+        ]
+      },
+      "score_note": "Reduced estimate after subtracting native information/controls; benefit is the specific remaining workflow only.",
+      "plan": {
+        "slice": "Add simultaneous compact fill cues to native container buttons and detachable-magazine entries only. Native header weight/capacity and ordinary ammo information remain the source.",
+        "state": "Local display of already visible weight/capacity and current magazine state. Do not set item or container fields, synchronize an extra count or reveal inaccessible bag contents.",
+        "configuration": "Propose EnableCapacityIndicators=true, with local text/bar and contrast preferences. A magazine indicator can be toggled as a presentation choice. Never make actual capacity configurable through this feature.",
+        "acceptance": "Test zero or unknown capacity, nested bags, weight reduction, overfull containers, empty and mixed magazines, UI scale and color-blind readability. Verify gameplay state is unchanged.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Low: receiver-specific capacity semantics and overlapping overlays.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryViews.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Simultaneous container-button and magazine fill cues fit planned vanilla presentation adapters. UI has reusable controls but no implemented overlay. Essentials can supply permitted inventory views.",
+        "evidence_projects": [
+          "ui",
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "health-readability",
+      "title": "Compact local injury summary outside the health panel",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 4
+      },
+      "impact_score": 80.0,
+      "source_workshop_ids": [
+        "2866258937",
+        "3779405481",
+        "3723726293"
+      ],
+      "proposed_owner": "Health Care + UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only an optional compact local injury summary outside the full panel remains; no new diagnosis, hidden wound or other-player detail.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 12,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Vanilla already has body-part injuries, bandage details and treatment handlers in the health panel.",
+        "remaining_scope": "Only an optional compact local injury summary outside the full panel remains; no new diagnosis, hidden wound or other-player detail.",
+        "evidence_groups": [
+          "health"
+        ]
+      },
+      "plan": {
+        "slice": "Create an optional compact local injury summary outside the full native health panel. Render only already revealed facts; native diagnosis, treatment and examination consent are baseline.",
+        "state": "Local personal presentation only; no other-player inspection or custom consent/network protocol. Native health state owns all facts. Treatment remains outside this first display slice.",
+        "configuration": "Owning medical project sets shared visibility policy and any skill threshold. Personal size, contrast and collapse choices remain local. Confirm actual project option identifiers before implementation.",
+        "acceptance": "Compare uncovered, covered and undiagnosed injuries across skill levels; test split-screen privacy, medical-check permission denial, reconnect, healing updates and no stale urgent warnings.",
+        "depends": [],
+        "effort": "M",
+        "risk": "High: medical privacy and skill-gated hidden state.",
+        "api_groups": [
+          "health"
+        ],
+        "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Health Care has examination reports and an examiner/patient-scoped five-minute snapshot, not a live injury HUD. Put medical visibility/meaning there and rendering in UI. Medical Checks supplies no enforcing consent service today.",
+        "evidence_projects": [
+          "health",
+          "medical",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "magazine-batch",
+      "title": "Load and unload matching magazines in batches",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "impact_score": 78.0,
+      "source_workshop_ids": [
+        "2920899878",
+        "3777237134",
+        "3750253491",
+        "2875848298"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain existing matching-magazine batching and reservation checks; no direct ammunition setters.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 13,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native magazine menu loads/unloads the selected magazine through native timed actions.",
+        "remaining_scope": "Retain existing matching-magazine batching and reservation checks; no direct ammunition setters.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain current native batch loading/unloading and audit ammunition reservation, nested sources and interrupt handling. Add a preview or optional return adapter only after the existing workflow passes dedicated scenarios.",
+        "state": "Native timed actions own ammunition changes. Reserve unique real rounds within a finite client plan, then rely on current execution validation; never set ammo counts directly. Reconnect discards pending work and reads actual magazine state.",
+        "configuration": "Retain current magazine master, nesting and operation limits. Keep matching restrictions and normal load duration. Any source-return option follows the separately validated tool-return policy.",
+        "acceptance": "Test mixed ammunition, partial magazines, nested bags, two clients sharing rounds, interruption during transfer/load, missing magazine and repeated command. Total rounds must be conserved apart from ordinary firing.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "S",
+        "risk": "High until native multiplayer action behavior is exercised.",
+        "api_groups": [
+          "actions",
+          "inventory",
+          "magazine"
+        ],
+        "existing": [
+          "BulkMagazines.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep existing matching-magazine native action orchestration. Power and SPXTRM do not own firearm ammunition.",
+        "evidence_projects": [
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "shortcuts",
+      "title": "Configurable non-equipment item and recipe action slots",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 5
+      },
+      "impact_score": 78.0,
+      "source_workshop_ids": [
+        "3470659758",
+        "3786918614"
+      ],
+      "proposed_owner": "Essentials + UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only configurable item-action and known-recipe shortcut slots beyond native equipment hotkeys remain.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 14,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native hotbar/keybindings expose equipment and predefined actions.",
+        "remaining_scope": "Only configurable item-action and known-recipe shortcut slots beyond native equipment hotkeys remain.",
+        "evidence_groups": [
+          "options",
+          "hotbar",
+          "craft"
+        ]
+      },
+      "plan": {
+        "slice": "SPXTRM should supply original configurable action slots using native keybinding and controller conventions. First support a small documented set of native item actions; defer automatic build/craft activation until their adapters exist.",
+        "state": "Persist local identifiers and preference data only, never serialized item objects or executable callbacks. Resolve a permitted current item/action on use and delegate gameplay effects to ordinary authority paths.",
+        "configuration": "Owning UI project provides enable policy, rebindable keys and local slot count within layout limits. Default bindings must avoid native and existing team conflicts; provide a reset action.",
+        "acceptance": "Test missing item, duplicate type, removed recipe, key conflict, controller, text entry focus, reconnect and mod removal. An empty slot may display a preference but must never create an item.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "M",
+        "risk": "Medium: input conflicts and selecting an unintended same-type item.",
+        "api_groups": [
+          "input",
+          "actions",
+          "context"
+        ],
+        "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Essentials owns ordinary item/recipe invocation and validation; UI can render/configure slots. PC Framework apps are world-computer applications, not global survivor action shortcuts.",
+        "evidence_projects": [
+          "essentials",
+          "ui",
+          "pc"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "container-labels",
+      "title": "Customize local world-container button presets and order",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 4
+      },
+      "impact_score": 76.0,
+      "source_workshop_ids": [
+        "3290232938",
+        "2901962885",
+        "3586216562",
+        "2867163008",
+        "3437629766"
+      ],
+      "proposed_owner": "UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only local world-container button label/icon/order presets remain; remove ordinary bag renaming and native window persistence.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 15,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Vanilla names bag buttons from items, selects built-in container icons and persists ordinary window layout.",
+        "remaining_scope": "Only local world-container button label/icon/order presets remain; remove ordinary bag renaming and native window persistence.",
+        "evidence_groups": [
+          "inventory",
+          "layout"
+        ]
+      },
+      "plan": {
+        "slice": "Start with local world-container button label/icon/order presets over stable identities. Native bag renaming and window persistence are excluded. Shared storage designation rules belong to the separately reviewed sorting owner.",
+        "state": "Local presentation order has no custom networking. Shared names/designations need server-owned validation, safehouse checks, persistence and canonical snapshots on join; do not overload an item name with a hidden storage rule.",
+        "configuration": "Owning storage project sets shared-label edit policy; local order and visual choices use native preferences. Defaults preserve native labels, and reset removes only feature-owned presentation data.",
+        "acceptance": "Test two same-name containers, relocation, destruction, rename conflicts, object replacement, save/load, reconnect and another container-order mod. No stale label may target a newly created object at the same coordinates.",
+        "depends": [],
+        "effort": "M",
+        "risk": "High for shared labels; low to medium for local ordering.",
+        "api_groups": [
+          "inventory",
+          "context"
+        ],
+        "existing": [
+          "InventoryReferences.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Local button label/icon/order presets belong to UI presentation. Quartermaster storage presets/rules and Rooms room names already exist but are different data. Displaying a label must not create a designation or edit shared names.",
+        "evidence_projects": [
+          "ui",
+          "qm",
+          "rooms"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "craft-output",
+      "title": "Choose a safe destination for bulky crafting output",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 5,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "impact_score": 74.0,
+      "source_workshop_ids": [
+        "3782291042",
+        "3781012462"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain the current approved plank/heavy-output routing adapter, subject to authoritative output and capacity rules.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 16,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla crafting owns output creation and item consumption.",
+        "remaining_scope": "Retain the current approved plank/heavy-output routing adapter, subject to authoritative output and capacity rules.",
+        "evidence_groups": [
+          "craft",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Keep the existing authoritative output adapter. Recheck the approved plank rule and heavy-output option against native creation, and fix only reproduced routing defects.",
+        "state": "Native crafting owns consumption and output creation; the existing scoped adapter chooses an allowed output destination. Clients never create results or mutate yield. No independent output registry is introduced.",
+        "configuration": "Reuse current output-routing master, approved rules and heavy threshold. No new output count or capacity setting. Existing saves continue using native item ownership.",
+        "acceptance": "Test sawed planks, disallowed recipes, full ground capacity, heavy outputs, interrupted crafting, hook restoration, concurrent crafting and reconnect; inputs and outputs must remain conserved.",
+        "depends": [],
+        "effort": "S",
+        "risk": "High until current native completion and dedicated replication are exercised.",
+        "api_groups": [
+          "craft",
+          "actions"
+        ],
+        "existing": [
+          "CraftOutputRouting.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep existing native craft-output routing. Junk Drawer owns salvage outcomes and Provisions owns food-process outcomes; do not intercept or redirect their custom transactions without an explicit provider contract.",
+        "evidence_projects": [
+          "essentials",
+          "junk",
+          "food"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "hotbar",
+      "title": "Arrange hotbar slots without reattaching items",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "impact_score": 74.0,
+      "source_workshop_ids": [
+        "3663625294",
+        "2903771337",
+        "3461263912"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain Essentials' slot-order swaps preserving attached-item indices.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 17,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native hotbar supports attaching, removing and activating equipment slots.",
+        "remaining_scope": "Retain Essentials' slot-order swaps preserving attached-item indices.",
+        "evidence_groups": [
+          "hotbar"
+        ]
+      },
+      "plan": {
+        "slice": "Keep Essentials' existing left/right slot swaps and controller menu. Compare against native attach/remove/activate behavior; add no replacement hotbar or automatic equipment swap.",
+        "state": "Local slot order and matching native attachment indices stay paired. Native equipment actions retain mutation ownership. Rebuild from actual equipment after reconnect or item removal.",
+        "configuration": "Reuse the existing hotbar reorder toggle. Layout limits stay internal; no new equipment-slot or combat setting.",
+        "acceptance": "Test empty and occupied swaps, incompatible attachment types, missing items, rapid equipment changes, save/reload and controller focus. Saved slot order must not detach or duplicate equipment.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: attachment index persistence and hotbar replacement conflicts.",
+        "api_groups": [
+          "hotbar"
+        ],
+        "existing": [
+          "HotbarReordering.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep current slot reordering and saved attachment-index handling. Shared styling can use UI.",
+        "evidence_projects": [
+          "essentials",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "condition",
+      "title": "Show condition directly on hotbar slots",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 73.0,
+      "source_workshop_ids": [
+        "2852309899",
+        "3641048285",
+        "3781012462"
+      ],
+      "proposed_owner": "UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep only an optional hotbar-slot condition cue. Remove duplicate inventory condition rendering.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 18,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native inventory details already draw weapon-condition bars. The reviewed hotbar render draws slots, textures and equipped marks without a condition cue.",
+        "remaining_scope": "Keep only an optional hotbar-slot condition cue. Remove duplicate inventory condition rendering.",
+        "evidence_groups": [
+          "inventory",
+          "hotbar"
+        ]
+      },
+      "score_note": "Reduced estimate after subtracting native information/controls; benefit is the specific remaining workflow only.",
+      "plan": {
+        "slice": "Add only an original optional condition cue to native hotbar slots; inventory condition rendering is already vanilla and is excluded.",
+        "state": "Local read model, invalidated by actual item changes. Do not expose hidden mechanical state, modify durability or predict future breakage as a fact.",
+        "configuration": "Propose a hotbar-only enable policy and local accessible text/bar style. No duplicate inventory indicator, durability mutation or new low-condition gameplay threshold.",
+        "acceptance": "Test broken, unconditioned, renamed and modded items, hotbar swaps, equipment changes, UI scaling and another overlay mod. Maximum-condition zero and missing APIs must safely hide the cue.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Low: overlay overlap and different item receiver types.",
+        "api_groups": [
+          "inventory"
+        ],
+        "existing": [
+          "InventoryViews.lua",
+          "HotbarReordering.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Hotbar-only condition display is a planned vanilla UI adapter. Eyewear already displays its own retainer durability, which does not cover general hotbar condition.",
+        "evidence_projects": [
+          "ui",
+          "eyewear"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "map-annotation",
+      "title": "Preserve a configured default map-symbol scale",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 1
+      },
+      "impact_score": 72.0,
+      "source_workshop_ids": [
+        "3020323164",
+        "3399645148",
+        "3395592779",
+        "2734705913",
+        "2804531012"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "neutral_requirement": "Retain only Essentials' configured default symbol scale; no new notes/symbol editor or copied symbol pack.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 19,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native maps already have notes, symbols, sharing and scale controls.",
+        "remaining_scope": "Retain only Essentials' configured default symbol scale; no new notes/symbol editor or copied symbol pack.",
+        "evidence_groups": [
+          "maps"
+        ]
+      },
+      "plan": {
+        "slice": "Retain only the existing configured default symbol-scale adapter. Vanilla already supplies notes, symbols, per-symbol resizing and sharing; do not rebuild those tools.",
+        "state": "Local default presentation preference; native map symbols and synchronization own saved notes. Changing the default does not resize existing annotations or add a second map store.",
+        "configuration": "Reuse the current map-symbol default and existing supported bounds. Do not add a second scale slider or symbol pack.",
+        "acceptance": "Test a new symbol, a previously edited symbol, notes, map reopening, character changes, native sharing and another map UI. Only new-symbol defaults should change.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Low to medium: defaults must not overwrite per-symbol choices.",
+        "api_groups": [
+          "maps"
+        ],
+        "existing": [
+          "MapSymbolDefaults.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep the current default-symbol-scale behavior. Rooms designation editing and SPXTRM optical rendering are different systems.",
+        "evidence_projects": [
+          "essentials",
+          "rooms",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "device-menus",
+      "title": "Keep device power actions attached to the device",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "impact_score": 71.0,
+      "source_workshop_ids": [
+        "3781012462",
+        "3420581050"
+      ],
+      "proposed_owner": "Essentials + Power",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain current device-owned grouping and optional-provider duplicate suppression, not new electricity/device ownership.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 20,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native devices already have battery, power and media actions.",
+        "remaining_scope": "Retain current device-owned grouping and optional-provider duplicate suppression, not new electricity/device ownership.",
+        "evidence_groups": [
+          "radio",
+          "inventory"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the existing device-owned action grouping and optional-provider duplicate suppression. Native radio and item menus already supply power, battery and media actions.",
+        "state": "Client rearranges existing option objects; native actions or the verified optional power provider own mutations. Never infer current Power compatibility from the old powerWorks namespace.",
+        "configuration": "Reuse current device-menu options. Optional provider detection fails safely to native menus; no new electricity model or battery rates.",
+        "acceptance": "Compare callback identity and arguments; test provider absent/present/error, installed cells, ordinary cells, radio/media controls, disabled reasons and controller navigation.",
+        "depends": [],
+        "effort": "S",
+        "risk": "Medium: optional provider identity and duplicated menu ownership.",
+        "api_groups": [
+          "radio",
+          "inventory"
+        ],
+        "existing": [
+          "DevicePowerMenu.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Keep grouping in Essentials and battery transactions in Power; light-specific servicing belongs to SPXTRM. Essentials still probes legacy powerWorks globals/imports, while renamed Power has no legacy aliases: current pairing requires a compatibility repair and tests.",
+        "evidence_projects": [
+          "essentials",
+          "power",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "maintenance-queue",
+      "title": "Plan a finite vehicle-part service itinerary",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "impact_score": 71.0,
+      "source_workshop_ids": [
+        "3387539308",
+        "3635856965",
+        "3388183573",
+        "3522680786",
+        "3777237134"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep an explicit finite vehicle-part service itinerary with skip reasons and tool return; exclude generic repair menus and repeated XP-training loops.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 21,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native mechanics offers part-specific servicing and ordinary queued actions.",
+        "remaining_scope": "Keep an explicit finite vehicle-part service itinerary with skip reasons and tool return; exclude generic repair menus and repeated XP-training loops.",
+        "evidence_groups": [
+          "vehicle",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Start with an explicit reviewed list of eligible vehicle parts and one supported ordinary service action per part. Present a finite itinerary with skip reasons. Do not add a generic queue engine, clothing repair replacement or XP training loop.",
+        "state": "Native mechanics actions own servicing, parts, wear and experience. Revalidate part identity, tools, skill, access and vehicle state at each step. Pending intent is discarded on disconnect; shared results remain native.",
+        "configuration": "Owning vehicle project supplies a server enable policy, default off, protected-item handling and a meaningful finite part limit. UI preferences remain local; no duration/XP multiplier.",
+        "acceptance": "Test tool loss, failed native repair, vehicle movement, another player servicing the same part, full inventory, cancel, reconnect and restart. No repeated training cycle or automatic restart.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "L",
+        "risk": "High: each native mechanics action needs independent authority and interruption evidence.",
+        "api_groups": [
+          "vehicle",
+          "actions"
+        ],
+        "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "No general vehicle-service owner was identified. A finite vanilla vehicle-part itinerary fits Essentials. CAT construction machinery qualification and Eyewear retainers do not cover ordinary mechanics. Scope excludes clothing queues.",
+        "evidence_projects": [
+          "essentials",
+          "cat",
+          "eyewear"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "reading-queue",
+      "title": "Queue a chosen eligible unread-book and media playlist",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 4
+      },
+      "impact_score": 70.0,
+      "source_workshop_ids": [
+        "3393291384",
+        "3777237134",
+        "3777800131"
+      ],
+      "proposed_owner": "Essentials + Knowledge & Wisdom",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep an explicitly selected eligible unread-book/media playlist with return and interruption; no new reading/progress engine.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 22,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native reading processes one selected book and tracks pages.",
+        "remaining_scope": "Keep an explicitly selected eligible unread-book/media playlist with return and interruption; no new reading/progress engine.",
+        "evidence_groups": [
+          "media",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "First offer a player-selected finite list of eligible unread books with ordinary native reading actions and a clear skip preview. Add recorded-media playback only after the powered-player/media lifecycle is separately proven.",
+        "state": "Native reading/media systems own pages and knowledge. The client only coordinates chosen actions and optional source return; no learned-content registry or knowledge grant. Reconnect clears pending intent and reads actual progress.",
+        "configuration": "Propose a server-visible reading-playlist enable, default off, with favorite protection and a bounded list size. Preserve reading speed, skill eligibility, light and interruption rules. Exact identifiers must be reviewed before implementation.",
+        "acceptance": "Test partial books, already learned recipes, books above skill level, darkness, missing or moved books, source removal, interruption and character switch. Never reread forever or grant media completion from carrying an item.",
+        "depends": [
+          "media-progress",
+          "item-protection"
+        ],
+        "effort": "M",
+        "risk": "Medium to high: source restoration and media device sequencing are separate action adapters.",
+        "api_groups": [
+          "media",
+          "actions",
+          "inventory"
+        ],
+        "existing": [
+          "LiteratureCore.lua",
+          "LiteratureTracking.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials may orchestrate native reading; Knowledge & Wisdom owns provider documents, completion and knowledge requirements. A finished reading/media playlist was not found. Preserve its MP authority guard; start only with a proven native reading slice.",
+        "evidence_projects": [
+          "essentials",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "key-filing",
+      "title": "File keys into an eligible carried key ring",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 4,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 1
+      },
+      "impact_score": 69.0,
+      "source_workshop_ids": [
+        "3765689485"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain Essentials' bounded automatic filing via native transfers, not another manual Move To Ring menu.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 23,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native menus already transfer keys into recognized key rings.",
+        "remaining_scope": "Retain Essentials' bounded automatic filing via native transfers, not another manual Move To Ring menu.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Retain the existing automatic bounded filing helper. Native menus already provide manual transfers into key rings; the retained behavior is explicit-policy automatic filing through those native actions.",
+        "state": "Native transfer actions own item movement. Search only authorized carried roots and recognized rings; revalidate access and protection before moving. No custom key registry or remote key storage.",
+        "configuration": "Reuse existing key-filing settings and recognition predicates. Preserve favorite protection, limits and safe defaults for existing saves.",
+        "acceptance": "Test nested bags, multiple rings, full rings, protected keys, predicate errors, item removal mid-queue, reconnect and manual destination changes. Each real key retains one owner.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "S",
+        "risk": "Medium until current native transfer replication is exercised in dedicated multiplayer.",
+        "api_groups": [
+          "inventory",
+          "actions"
+        ],
+        "existing": [
+          "AutoKeyRing.lua"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep current key/ring predicates and native transfers. Quartermaster storage/shopping rules are not a key-ring replacement.",
+        "evidence_projects": [
+          "essentials",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "area-clean",
+      "title": "Preview and queue cleanup across a chosen rectangle",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 68.0,
+      "source_workshop_ids": [
+        "3793163745",
+        "3777237134",
+        "3820151540"
+      ],
+      "proposed_owner": "Auto Clean",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep a player-drawn bounded cleanup target plan, eligible-target preview and finite itinerary across that selection; no global scan or speed boost.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 24,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Vanilla provides target-specific cleanup actions and some area-affecting actions.",
+        "remaining_scope": "Keep a player-drawn bounded cleanup target plan, eligible-target preview and finite itinerary across that selection; no global scan or speed boost.",
+        "evidence_groups": [
+          "world",
+          "actions"
+        ]
+      },
+      "plan": {
+        "slice": "Do not implement another area cleaner in Essentials. Auto Clean already provides confirmed rectangle/paint/erase/floor selection, native cleanup and supply return. Review that existing workflow and its runtime acceptance matrix; implement only a reproduced missing behavior in Auto Clean after its own freshness gate.",
+        "state": "Native timed actions own cleanup mutations and supplies. Selected targets are intent, never authority; revalidate loaded target identity, access, distance, tool and resources at execution. Cancel clears pending work and reconnect does not restart it.",
+        "configuration": "Reuse current Auto Clean, Rooms cleaning-scope and Quartermaster supply settings. Do not invent a second Essentials cleaning enable switch, selection policy or supply store.",
+        "acceptance": "Test rectangle edges, targets removed by another player, safehouses, exhausted tools, resource depletion, cancel, danger, disconnect and server restart. No target outside the selection or unloaded-world scan is admitted.",
+        "depends": [
+          "item-protection"
+        ],
+        "effort": "Validation first",
+        "risk": "High: selected-area planning differs from an action merely affecting neighboring tiles; each cleanup adapter needs authority proof.",
+        "api_groups": [
+          "world",
+          "actions"
+        ],
+        "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "COVERED_SOURCE",
+        "recommendation": "Already covered by Auto Clean rectangle/paint/erase/floor selection, confirmation, building cleanup, guarded actions and tool returns. Remove duplicate implementation work from Essentials. Validate or improve the existing Auto Clean workflow in its own repository.",
+        "evidence_projects": [
+          "clean",
+          "rooms",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "generator-info",
+      "title": "Estimate remaining generator runtime from inspected load",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 68.0,
+      "source_workshop_ids": [
+        "3576056135",
+        "2972289937"
+      ],
+      "proposed_owner": "Power + UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only a clearly labeled remaining-runtime estimate under current measured load remains; remove duplicate fuel/load/device lists and unproven range rendering.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 25,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native generator info already shows fuel, condition, powered items and total draw.",
+        "remaining_scope": "Only a clearly labeled remaining-runtime estimate under current measured load remains; remove duplicate fuel/load/device lists and unproven range rendering.",
+        "evidence_groups": [
+          "generator"
+        ]
+      },
+      "score_note": "Reduced estimate after subtracting native information/controls; benefit is the specific remaining workflow only.",
+      "plan": {
+        "slice": "Extend only the inspected generator panel with an original remaining-runtime estimate from currently inspected fuel and actual load. Native fuel, condition, powered-item and consumption lists remain unchanged. Do not add an unproven power-range overlay.",
+        "state": "Local derived presentation only; generator fuel, load and consumption remain native authoritative state. Show units and assumptions, invalidate when inspected load/fuel changes and label estimates rather than predicting unknown devices or future operation.",
+        "configuration": "Propose an estimate-display enable policy with local formatting preferences. No new fuel consumption, generator range, capacity or electricity setting. Calculation limits and zero-load safety stay internal.",
+        "acceptance": "Test generator off/on, zero or changing load, empty fuel, native consumption units, sandbox time/fuel modifiers, inspection ending, stream-out and reconnect. Unsupported or uncertain unit conversions must display unavailable rather than a fabricated duration.",
+        "depends": [],
+        "effort": "M",
+        "risk": "Medium: exact native units and changing loads need verified Lua receiver contracts and runtime comparison before any estimate is shipped.",
+        "api_groups": [
+          "generator"
+        ],
+        "existing": []
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Power already reports loaded generator fuel, condition, activation, connection and native consumption. A remaining-runtime estimate is not implemented in that adapter; keep calculation/units with Power and optional presentation with UI. Electrical output capacity remains unknown.",
+        "evidence_projects": [
+          "power",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "transfer-feedback",
+      "title": "Make partial transfer failures understandable",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "impact_score": 68.0,
+      "source_workshop_ids": [
+        "3586216562",
+        "3761216758"
+      ],
+      "proposed_owner": "Essentials + Quartermaster",
+      "essentials_status": "FOUNDATION",
+      "neutral_requirement": "Retain the existing Essentials committed/skipped/stale transaction result foundation; no independent inventory ownership.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 26,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native transfers perform valid moves and handle access/capacity failures.",
+        "remaining_scope": "Retain the existing Essentials committed/skipped/stale transaction result foundation; no independent inventory ownership.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials exposes committed result snapshots; Quartermaster has progress, rejection and partial-outcome presentation. Reuse each executor result contract. A common result vocabulary may be specified, but is not currently a shared implemented API.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "bandage-queue",
+      "title": "Replace an eligible bandage with one request",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "impact_score": 66.0,
+      "source_workshop_ids": [
+        "2944344655",
+        "3750253491",
+        "3777237134",
+        "2875848298"
+      ],
+      "proposed_owner": "Health Care",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep one explicit replace request chaining those actions with revalidation; no new treatment effect or hidden diagnosis.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 27,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native health handlers remove and apply bandages as separate actions.",
+        "remaining_scope": "Keep one explicit replace request chaining those actions with revalidation; no new treatment effect or hidden diagnosis.",
+        "evidence_groups": [
+          "health",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "One-request replace-bandage sequencing belongs to medical procedure ownership, with native action guards. Medical Checks is a blocked consent scaffold, not a treatment engine.",
+        "evidence_projects": [
+          "health",
+          "medical"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "livestock-table",
+      "title": "Compare revealed care needs across animals in one table",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 2,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "impact_score": 64.0,
+      "source_workshop_ids": [
+        "3783623999",
+        "3723726293"
+      ],
+      "proposed_owner": "Animal owner TBD + UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only a sortable cross-animal care comparison table with the same revealed facts remains; no new animal knowledge or care mechanics.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 28,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native zone panel lists animals and opens an individual animal info action.",
+        "remaining_scope": "Only a sortable cross-animal care comparison table with the same revealed facts remains; no new animal knowledge or care mechanics.",
+        "evidence_groups": [
+          "animals"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "OWNER_UNASSIGNED",
+        "recommendation": "No general livestock owner was identified among these projects. Dog Training is canine-specific and not a deployed herd-care provider. Keep a neutral read-only proposal; do not silently expand Dog Training or Harvest scope.",
+        "evidence_projects": [
+          "dog",
+          "harvest",
+          "ui"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "personal-marks",
+      "title": "Mark not-yet-readable media for later without granting knowledge",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 2,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 63.0,
+      "source_workshop_ids": [
+        "2544353492",
+        "3586216562"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only separate local seen-for-later notes on not-yet-readable media remain, without setting Favorite or granting read knowledge.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 29,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native favorites and native learned/read state already exist.",
+        "remaining_scope": "Only separate local seen-for-later notes on not-yet-readable media remain, without setting Favorite or granting read knowledge.",
+        "evidence_groups": [
+          "inventory",
+          "media"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Local seen-for-later media notes fit Essentials. Quartermaster Dibs personal item labels/Wanted/Needed lists overlap in intent, but do not prove an unreadability-aware media bookmark. Integrate optionally rather than duplicate shopping or knowledge ledgers.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "equipment-swap",
+      "title": "Independent-hand compatibility classifier foundation",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 2,
+        "friction": 4,
+        "error_prevention": 3,
+        "accessibility": 1
+      },
+      "impact_score": 62.0,
+      "source_workshop_ids": [
+        "2366717227",
+        "3786918614",
+        "3771638611"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "PARTIAL",
+      "neutral_requirement": "Keep only Essentials' existing independent-hand classifier foundation. It does not implement new swaps, off-hand attacks or dual wielding.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 30,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla already equips primary/secondary items and switches attached equipment.",
+        "remaining_scope": "Keep only Essentials' existing independent-hand classifier foundation. It does not implement new swaps, off-hand attacks or dual wielding.",
+        "evidence_groups": [
+          "hotbar",
+          "inventory"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep only current independent-hand classifier foundation. It supplies no off-hand attacks, animations or finished swapping workflow. Eyewear protection and SPXTRM light mounts have separate ownership.",
+        "evidence_projects": [
+          "essentials",
+          "eyewear",
+          "spectrum"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "tool-return",
+      "title": "Restore magazines to their source after native loading",
+      "dimensions": {
+        "frequency": 3,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 62.0,
+      "source_workshop_ids": [
+        "2769706949",
+        "3793171582",
+        "2366717227"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep only optional magazine source restoration after a verified load/unload action. Remove generic tool-return replacement.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 31,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native crafting explicitly returns borrowed items; magazine load/unload menu paths do not call that return helper.",
+        "remaining_scope": "Keep only optional magazine source restoration after a verified load/unload action. Remove generic tool-return replacement.",
+        "evidence_groups": [
+          "toolreturn",
+          "inventory"
+        ]
+      },
+      "score_note": "Reduced estimate after subtracting native information/controls; benefit is the specific remaining workflow only.",
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "The retained delta is magazine source restoration only. Auto Clean already returns its borrowed cleaning equipment through its own job/SupplyAPI contract; generic crafting returns are vanilla and stay excluded.",
+        "evidence_projects": [
+          "essentials",
+          "clean",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "weight-column",
+      "title": "Compare per-item and stack weights in a dedicated column",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 3,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 2
+      },
+      "impact_score": 62.0,
+      "source_workshop_ids": [
+        "3586216562"
+      ],
+      "proposed_owner": "UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only an optional simultaneously visible per-row individual/stack weight column remains; no new weight calculation or carrying capacity.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 32,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native header shows selected-container weight/capacity and inventory supports weight sorting.",
+        "remaining_scope": "Only an optional simultaneously visible per-row individual/stack weight column remains; no new weight calculation or carrying capacity.",
+        "evidence_groups": [
+          "inventory"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Optional simultaneous per-item/stack weight columns fit vanilla UI adapters. Quartermaster carry budgets govern logistics, not a general native inventory column.",
+        "evidence_projects": [
+          "ui",
+          "qm"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "clock",
+      "title": "Display available watch time more precisely",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 4,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "impact_score": 59.0,
+      "source_workshop_ids": [
+        "3778884296"
+      ],
+      "proposed_owner": "Essentials + Power",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain current Essentials exact-minute formatting and device precision constraints; native rendering comparison remains a runtime gate.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 33,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native watch display supplies device-dependent time information.",
+        "remaining_scope": "Retain current Essentials exact-minute formatting and device precision constraints; native rendering comparison remains a runtime gate.",
+        "evidence_groups": [
+          "options",
+          "inventory"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Essentials owns exact-minute formatting; Power owns powered watches, cell charge and mechanical/digital device distinctions. Current legacy namespace integration needs review; neither project should invent hidden watch information.",
+        "evidence_projects": [
+          "essentials",
+          "power"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "treatment-queue",
+      "title": "Plan treatment over already revealed eligible wounds",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 2,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "impact_score": 59.0,
+      "source_workshop_ids": [
+        "3777237134"
+      ],
+      "proposed_owner": "Health Care",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep an explicit finite treatment plan across already revealed wounds, with patient consent and per-step revalidation.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 34,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Vanilla treats individual selected body parts with separate native handlers.",
+        "remaining_scope": "Keep an explicit finite treatment plan across already revealed wounds, with patient consent and per-step revalidation.",
+        "evidence_groups": [
+          "health",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Finite treatment plans belong to Health Care. Its reservation/procedure framework is related foundation, not a finished wound itinerary. Do not use inactive Medical Checks preferences as valid consent.",
+        "evidence_projects": [
+          "health",
+          "medical"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "device-off",
+      "title": "Optional fridge and freezer off control",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 3,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "impact_score": 56.0,
+      "source_workshop_ids": [
+        "3778868211"
+      ],
+      "proposed_owner": "Power",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only a reviewed fridge/freezer-specific off toggle remains a candidate; other powered-device toggles are baseline and no parallel power simulation is proposed.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 35,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native stoves, washers and radios already expose their own power toggles.",
+        "remaining_scope": "Only a reviewed fridge/freezer-specific off toggle remains a candidate; other powered-device toggles are baseline and no parallel power simulation is proposed.",
+        "evidence_groups": [
+          "world",
+          "radio"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Power infrastructure/appliance registries are related foundation. No implemented fridge/freezer off toggle is established by the reviewed adapter/API/docs. Provisions can consume real appliance state; it should not own a competing electrical simulation.",
+        "evidence_projects": [
+          "power",
+          "food"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "map-automark",
+      "title": "Mark only player-observed locations automatically",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 3
+      },
+      "impact_score": 54.0,
+      "source_workshop_ids": [
+        "3782332412"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only opt-in rate-limited marks from actual permitted observations remain, using native notes and no unexplored-world scan.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 36,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native maps support manually authored marks and known-data display.",
+        "remaining_scope": "Only opt-in rate-limited marks from actual permitted observations remain, using native notes and no unexplored-world scan.",
+        "evidence_groups": [
+          "maps",
+          "world"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Observed-only native map annotation fits Essentials. Knowledge & Wisdom geographic familiarity and Rooms designations are separate facts and must not reveal unobserved world state. UI may style controls.",
+        "evidence_projects": [
+          "essentials",
+          "knowledge",
+          "rooms"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "building-maintenance",
+      "title": "Queue a chosen multi-window curtain or barricade itinerary",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 4,
+        "accessibility": 3
+      },
+      "impact_score": 53.0,
+      "source_workshop_ids": [
+        "3793163745"
+      ],
+      "proposed_owner": "Essentials + Rooms",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep only a bounded player-selected multi-target itinerary, not new barricade/window actions or changed material cost.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 37,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native windows, curtains and barricades have valid single-target actions.",
+        "remaining_scope": "Keep only a bounded player-selected multi-target itinerary, not new barricade/window actions or changed material cost.",
+        "evidence_groups": [
+          "world",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Essentials may orchestrate player-selected vanilla curtain/barricade actions. Rooms can supply explicit permitted geometry only through a reviewed adapter; its existing API explicitly does not enforce unrelated doors/building/destruction actions. Fences & Gates owns its added construction content.",
+        "evidence_projects": [
+          "essentials",
+          "rooms",
+          "fences"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "corpse-haul",
+      "title": "Plan selected-area corpse handling to one destination",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "impact_score": 53.0,
+      "source_workshop_ids": [
+        "3793163745"
+      ],
+      "proposed_owner": "Auto Clean",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep only selected-source-area to chosen-destination planning with native carry/drag actions; no faster dragging or teleportation.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 38,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Vanilla already permits ordinary corpse handling and its constraints.",
+        "remaining_scope": "Keep only selected-source-area to chosen-destination planning with native carry/drag actions; no faster dragging or teleportation.",
+        "evidence_groups": [
+          "world",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "Selected-area corpse handling is an Auto Clean extension candidate, not current trash cleanup. Corpses must use native handling and exact identities; Health Care recovers body parts and MORTIS supplies anatomy/provenance, neither is a hauling planner.",
+        "evidence_projects": [
+          "clean",
+          "essentials",
+          "health",
+          "mortis"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "weapon-ammo",
+      "title": "Queue native firearm and magazine unloading in one request",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 3,
+        "error_prevention": 2,
+        "accessibility": 2
+      },
+      "impact_score": 52.0,
+      "source_workshop_ids": [
+        "3422220305"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only a one-request finite native unload-magazine/chamber sequence remains; no new instant extraction or count setters.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 39,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native unload magazine and firearm actions are separate and gated by current state.",
+        "remaining_scope": "Only a one-request finite native unload-magazine/chamber sequence remains; no new instant extraction or count setters.",
+        "evidence_groups": [
+          "inventory",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "A finite native firearm/magazine unloading sequence belongs with existing magazine workflows. Do not introduce instant extraction or modify ammunition counts directly.",
+        "evidence_projects": [
+          "essentials"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "crop-queue",
+      "title": "Queue work over player-selected eligible plots",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 4,
+        "accessibility": 2
+      },
+      "impact_score": 51.0,
+      "source_workshop_ids": [
+        "3793163745",
+        "3777237134"
+      ],
+      "proposed_owner": "Harvest",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep only an explicit bounded player-selected plot itinerary with existing season/tool/water constraints.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 40,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native farming menus already plant, water and harvest selected targets.",
+        "remaining_scope": "Keep only an explicit bounded player-selected plot itinerary with existing season/tool/water constraints.",
+        "evidence_groups": [
+          "farm",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "FOUNDATION_ONLY",
+        "recommendation": "Harvest owns crops, bounded field inspection and crop-side irrigation. A selected-plot planting/watering/harvest itinerary is not implemented. Waterworks owns real water withdrawal/quality; atomic cross-owner delivery remains incomplete.",
+        "evidence_projects": [
+          "harvest",
+          "water"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "heavy-movement",
+      "title": "Heavy-object provider lifecycle foundation",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 3,
+        "accessibility": 3
+      },
+      "impact_score": 51.0,
+      "source_workshop_ids": [
+        "3781319724",
+        "3805553089",
+        "3781716360"
+      ],
+      "proposed_owner": "Essentials + domain providers",
+      "essentials_status": "FOUNDATION",
+      "neutral_requirement": "Retain Essentials' provider observation and reserve/start/complete/cancel foundation only; no production physics provider is claimed.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 41,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Vanilla moveable/placement systems own supported movement and collision.",
+        "remaining_scope": "Retain Essentials' provider observation and reserve/start/complete/cancel foundation only; no production physics provider is claimed.",
+        "evidence_groups": [
+          "placement",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "RELATED_SOURCE",
+        "recommendation": "Keep generic capability/lifecycle foundation in Essentials. Quartermaster already owns carry logistics; Earthworks/CAT own terrain/machine/wheelbarrow state. No generic physics provider is established and the experimental Earthworks wheelbarrow is SP-only.",
+        "evidence_projects": [
+          "essentials",
+          "qm",
+          "earth",
+          "cat"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "animal-queue",
+      "title": "Queue native care over a player-selected herd list",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 4,
+        "accessibility": 1
+      },
+      "impact_score": 49.0,
+      "source_workshop_ids": [
+        "3793163745",
+        "3783623999"
+      ],
+      "proposed_owner": "Animal owner TBD",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Keep only a selected finite herd-care itinerary using revealed eligible targets and native actions.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 42,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native animal menus perform individual care actions and zone UI opens individual inspections.",
+        "remaining_scope": "Keep only a selected finite herd-care itinerary using revealed eligible targets and native actions.",
+        "evidence_groups": [
+          "animals",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "OWNER_UNASSIGNED",
+        "recommendation": "No general herd-care owner was identified. Dog Training owns canine-specific tasks and remains blocked on native ownership/persistence. Do not create client-authoritative animal jobs or treat crop irrigation as animal care.",
+        "evidence_projects": [
+          "dog",
+          "harvest"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "ladder",
+      "title": "Expose valid native ladder interactions",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 2,
+        "error_prevention": 3,
+        "accessibility": 2
+      },
+      "impact_score": 49.0,
+      "source_workshop_ids": [
+        "3629835761"
+      ],
+      "proposed_owner": "Essentials",
+      "essentials_status": "IMPLEMENTED",
+      "neutral_requirement": "Retain the current tagged-tile native-transition adapter and landing/access safety.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 43,
+      "vanilla_gap_status": "EXISTING_ESSENTIALS_PRESERVED",
+      "vanilla_review": {
+        "decision": "KEEP_EXISTING",
+        "baseline": "Native traversal states support climbing; their presence is not an automatic property-based ladder context adapter.",
+        "remaining_scope": "Retain the current tagged-tile native-transition adapter and landing/access safety.",
+        "evidence_groups": [
+          "world",
+          "actions"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "EXISTING_ESSENTIALS",
+        "recommendation": "Keep the tagged-tile native-transition adapter. Earthworks owns its excavation/climb affordances and Fences & Gates owns construction content; do not replace either domain state with a generic traversal engine.",
+        "evidence_projects": [
+          "essentials",
+          "earth",
+          "fences"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    },
+    {
+      "id": "session-briefing",
+      "title": "Optional nonblocking recap at session start",
+      "dimensions": {
+        "frequency": 4,
+        "reach": 1,
+        "friction": 1,
+        "error_prevention": 3,
+        "accessibility": 4
+      },
+      "impact_score": 48.0,
+      "source_workshop_ids": [
+        "3808944882"
+      ],
+      "proposed_owner": "UI",
+      "essentials_status": "NEW",
+      "neutral_requirement": "Only an original optional brief nonblocking start-of-session recap remains, without copying presentation themes or adding hidden coordinates.",
+      "evidence": "INFERRED capability from metadata/declarations; not runtime verification",
+      "implementation_origin": "Independent design required; external code/assets/text import NONE",
+      "rank": 44,
+      "vanilla_gap_status": "SCOPED_SOURCE_DELTA_INFERRED; engine-wide absence and runtime behavior not proven",
+      "vanilla_review": {
+        "decision": "RETAIN_DELTA",
+        "baseline": "Native panels already contain personal session facts.",
+        "remaining_scope": "Only an original optional brief nonblocking start-of-session recap remains, without copying presentation themes or adding hidden coordinates.",
+        "evidence_groups": [
+          "character",
+          "options"
+        ]
+      },
+      "portfolio_review": {
+        "coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+        "recommendation": "A nonblocking recap fits UI presentation. Domain providers retain data permissions, age/completeness and provenance; Knowledge & Wisdom history is not a live omniscient session report.",
+        "evidence_projects": [
+          "ui",
+          "knowledge"
+        ],
+        "audit": "PORTFOLIO_OWNERSHIP.md"
+      }
+    }
+  ]
+}

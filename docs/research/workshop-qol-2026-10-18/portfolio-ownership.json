@@ -1,0 +1,2001 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "purpose": "Audit current 44 QoL candidates against local project ownership and existing coverage; recommendations only.",
+  "essentials_version": "0.19.2",
+  "essentials_source_commit": "ff59b1e877e9cc09e1481e33bb04e72356eafb81",
+  "projects": [
+    {
+      "id": "essentials",
+      "folder": "B47ANCEDEssentials",
+      "version": "0.19.2",
+      "head": "ff59b1e877e9cc09e1481e33bb04e72356eafb81",
+      "branch": "research/essentials-qol-20261018",
+      "origin": "https://github.com/B47ANCE/B47ANCEDEssentials.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Standalone inventory/action conveniences and shared bounded references/transfers; preserve current source features.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "4800d7a5a406788ced011ae05694ce29be747629ea93c7d627c90259a2a60511",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEssentials/blob/ff59b1e877e9cc09e1481e33bb04e72356eafb81/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "recorded Essentials source commit before audit documentation edits"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEssentials/blob/ff59b1e877e9cc09e1481e33bb04e72356eafb81/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEssentials/blob/ff59b1e877e9cc09e1481e33bb04e72356eafb81/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua",
+          "sha256": "8a9bc2e3f66bfe59dc3f8df5678963e2f0b366c043ad88908cfb6f80aa23e7d2",
+          "anchor_line": 73,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEssentials/blob/ff59b1e877e9cc09e1481e33bb04e72356eafb81/Contents/mods/B47ANCEDEssentials/42/media/lua/client/B47ANCEDEssentials/DevicePowerMenu.lua#L73",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua",
+          "sha256": "96c12ca09c2e032ea2289124e169f541af22b864d17cf53442ea429f3e6c4056",
+          "anchor_line": 4,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEssentials/blob/ff59b1e877e9cc09e1481e33bb04e72356eafb81/Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTransfers.lua#L4",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua",
+          "sha256": "a3165ceeb3bc2a4da44694c54b7a1af0756e3251e6d3b65f0077af80f082d832",
+          "anchor_line": 3,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEssentials/blob/ff59b1e877e9cc09e1481e33bb04e72356eafb81/Contents/mods/B47ANCEDEssentials/42/media/lua/shared/B47ANCEDEssentials/InventoryTraversal.lua#L3",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "Contents/mods/B47ANCEDEssentials/42/mod.info",
+          "sha256": "23c9b0d46514ebbc0a68a7c5ab4ae902d424964cc13764d44dee0cdce429b8a4"
+        }
+      ],
+      "remote_freshness": "PASS_HEAD_EQUALS_UPSTREAM_DEFAULT_BEHIND_0"
+    },
+    {
+      "id": "qm",
+      "folder": "B47ANCEDQuartermaster",
+      "version": "0.18.0-dev.1",
+      "head": "bec375b0483ec8d9d4bbf1565cd897c50d6fb887",
+      "branch": "integration/applied-allocation-20261017",
+      "origin": "https://github.com/B47ANCE/B47ANCEDQuartermaster.git",
+      "working_tree": "DIRTY_PRESERVED",
+      "scope": "Storage rules, priorities, sorting, shopping/Dibs, supply services, carry and ledgers exist. Allocation is advisory; enforcement/live routing remain disabled.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "8b987a7ba866db507b0deb64f2e8c7bf30145eaf2c4123ee32a7a447d699f469",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDQuartermaster/blob/bec375b0483ec8d9d4bbf1565cd897c50d6fb887/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDQuartermaster/blob/bec375b0483ec8d9d4bbf1565cd897c50d6fb887/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "18da34d48f7a227227e6eccb15a4a24e6ea5995e601ca2e5ccdd0ff089e3bedd",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDQuartermaster/blob/bec375b0483ec8d9d4bbf1565cd897c50d6fb887/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDQuartermaster/42/media/lua/shared/B47ANCEDQuartermaster/SupplyAPI.lua",
+          "sha256": "5ef56e705e71d612ef2f9170de02a63ce186b2702e65981f63524623cb9da714",
+          "anchor_line": 12,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDQuartermaster/blob/bec375b0483ec8d9d4bbf1565cd897c50d6fb887/src/B47ANCEDQuartermaster/42/media/lua/shared/B47ANCEDQuartermaster/SupplyAPI.lua#L12",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDQuartermaster/42/media/lua/client/B47ANCEDQuartermaster/Sorter.lua",
+          "sha256": "80fd8d5b87c01df311e9013c03a6a82429bc209f51ac91569b9a4d39c2723b96",
+          "anchor_line": 74,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDQuartermaster/blob/bec375b0483ec8d9d4bbf1565cd897c50d6fb887/src/B47ANCEDQuartermaster/42/media/lua/client/B47ANCEDQuartermaster/Sorter.lua#L74",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "docs/ALLOCATION_INTEGRATION.md",
+          "sha256": "9f24155aa97a540435efc3c6b248e4bec19169f2453ec2bfc57cc67951c44b5f",
+          "anchor_line": 31,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDQuartermaster/blob/bec375b0483ec8d9d4bbf1565cd897c50d6fb887/docs/ALLOCATION_INTEGRATION.md#L31",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDQuartermaster/42/mod.info",
+          "sha256": "c89bd7d2f172632d5d90eae86a4d42e9d6ae76917f2a85861f8d811c38d5249d"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "rooms",
+      "folder": "B47ANCEDRooms",
+      "version": "0.2.0-dev.7",
+      "head": "e12573c2d493c44415509f67387e6ca90a784f87",
+      "branch": "release/rooms-icon-dev7",
+      "origin": "https://github.com/B47ANCE/B47ANCEDRooms.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Designation geometry, names/types/roles and cooperating-mod policy API exist. No general inventory access or unrelated vanilla-action enforcement.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "5399f7b128ec2ddc1eff8c8b1aaa386464cb3ddabea51daf5f8fd19bac444972",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDRooms/blob/e12573c2d493c44415509f67387e6ca90a784f87/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "8e94d54a517602ed722698a23646c2310e95ef033893d831bc7fac26b1cfcc4e",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDRooms/blob/e12573c2d493c44415509f67387e6ca90a784f87/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "1f2cbbb92988a9a29e4f72aae4c913d5b7ecb0e3d2b5e3c835200576ea8feb8d",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDRooms/blob/e12573c2d493c44415509f67387e6ca90a784f87/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDRooms/42/media/lua/shared/B47ANCEDRooms/API.lua",
+          "sha256": "71460a10fdff3e7e2f9ce5b3927023df6ccb17de519220169cd9c38430aab5f5",
+          "anchor_line": 21,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDRooms/blob/e12573c2d493c44415509f67387e6ca90a784f87/src/B47ANCEDRooms/42/media/lua/shared/B47ANCEDRooms/API.lua#L21",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDRooms/42/mod.info",
+          "sha256": "cad344945511c8ece2c79f8991cd5d0a50ac5df29336146639ed19a1404867c6"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "clean",
+      "folder": "B47ANCEDAutoClean",
+      "version": "0.5.2-dev.1",
+      "head": "d37c0e7943dba5cb72523309013575f5c524026b",
+      "branch": "main",
+      "origin": "https://github.com/B47ANCE/B47ANCEDAutoClean.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Confirmed area/building cleaning, decorative trash, supply fetch/return and progress exist. Corpse hauling is additional work.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "5c4979e14f75f3018b3bda6745b0f36bdd82604b55c0c25050f7a2e63ee389c2",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDAutoClean/blob/d37c0e7943dba5cb72523309013575f5c524026b/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "8de7ef84a3d6e503923b73611542f00d2199dbf9e7d50e9aad02d8817fac2250",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDAutoClean/blob/d37c0e7943dba5cb72523309013575f5c524026b/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "48a8986f719aa4ae1e42c8083e4df877357eff02e3124e571bea3d60a2326dcd",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDAutoClean/blob/d37c0e7943dba5cb72523309013575f5c524026b/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDAutoClean/42/media/lua/shared/B47ANCEDAutoClean/AreaScope.lua",
+          "sha256": "55c98241261300d6ffb2389225df5cc082cda39348bbb3003c99d65ed44ebe98",
+          "anchor_line": 37,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDAutoClean/blob/d37c0e7943dba5cb72523309013575f5c524026b/src/B47ANCEDAutoClean/42/media/lua/shared/B47ANCEDAutoClean/AreaScope.lua#L37",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDAutoClean/42/media/lua/shared/B47ANCEDAutoClean/BuildingJob.lua",
+          "sha256": "a105071126520de1dff98bbb53a559e827ded1fe3da61b3814421219aae0ff3c",
+          "anchor_line": 44,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDAutoClean/blob/d37c0e7943dba5cb72523309013575f5c524026b/src/B47ANCEDAutoClean/42/media/lua/shared/B47ANCEDAutoClean/BuildingJob.lua#L44",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDAutoClean/42/mod.info",
+          "sha256": "b396c334384e59295861f17f5fe6d1c1b86b28bb87e1c57458afc2f13cd315ff"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "ui",
+      "folder": "B47ANCEDUI",
+      "version": "0.1.0-dev.1",
+      "head": "ad48807afb5da7af9bb9e66078e726774cc65682",
+      "branch": "feature/shared-ui-api",
+      "origin": "https://github.com/B47ANCE/B47ANCEDUI.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Shared client controls, layouts, focus, dialogs, appearance and tooltips exist. Broad vanilla adapters/overhaul remain planned.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "76fb2cc141468b55a9a272b57b95b918e09c0a108627f38185576963fdff0cc0",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDUI/blob/ad48807afb5da7af9bb9e66078e726774cc65682/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "c367d91863a25ca85f086c1c9b49641c30c31ea6ec557813094e1d4315be25fe",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDUI/blob/ad48807afb5da7af9bb9e66078e726774cc65682/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "4017a74020d05db7a1aaf72546702eb3045f148c3f7fa349feedba8f347057af",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDUI/blob/ad48807afb5da7af9bb9e66078e726774cc65682/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDUI/42/media/lua/client/B47ANCEDUI/API.lua",
+          "sha256": "5c7229276640f4abf29bdd7b35f81546492375bdd6b85dd4bfe8bf47a5dbdb38",
+          "anchor_line": 14,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDUI/blob/ad48807afb5da7af9bb9e66078e726774cc65682/src/B47ANCEDUI/42/media/lua/client/B47ANCEDUI/API.lua#L14",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDUI/42/mod.info",
+          "sha256": "13039b6a58ebdcd75c2acaf0714d130cc0e3857a727385dd9dcf6638006f769a"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "pc",
+      "folder": "B47ANCEDPCFramework",
+      "version": "0.2.0-dev.1",
+      "head": "13cfb03f7b8b4f5e011fa8a9cd8c196a3c3e6ef9",
+      "branch": "feature/standalone-pc-framework",
+      "origin": "https://github.com/B47ANCE/B47ANCEDPCFramework.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Powered world-PC desktop, app registry and media bindings exist. Application data and permission remain consumer-owned.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "f10349a024f95d4dd4aef3a4a879eb530c6f6a89e7a0712662aa3caab82a7621",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPCFramework/blob/13cfb03f7b8b4f5e011fa8a9cd8c196a3c3e6ef9/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1881961e4217ecd5d6221abf286de1aa117c1ba3644ffe350fac0d8b5003591c",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPCFramework/blob/13cfb03f7b8b4f5e011fa8a9cd8c196a3c3e6ef9/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "9b165e1a0cd8098ba8c54812af374beb509af90e04f90a87fc449ca671601e93",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPCFramework/blob/13cfb03f7b8b4f5e011fa8a9cd8c196a3c3e6ef9/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "docs/API.md",
+          "sha256": "64b0393a474ab83eb5d5e660d8acfd8c2c0fc108cc2fd3e2f0262a1883d60896",
+          "anchor_line": 40,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPCFramework/blob/13cfb03f7b8b4f5e011fa8a9cd8c196a3c3e6ef9/docs/API.md#L40",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDPCFramework/42/mod.info",
+          "sha256": "1d217ba9dd4ed9082a79303afc4ea46b851088c778768d7ed97780ba4d41bba2"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "power",
+      "folder": "B47ANCEDPower",
+      "version": "0.17.0-dev.2",
+      "head": "cd66cb5e5af4d433b23dc0a68ec2c3dad819c015",
+      "branch": "art/matching-battery-models-v2",
+      "origin": "https://github.com/B47ANCE/B47ANCEDPower.git",
+      "working_tree": "DIRTY_PRESERVED",
+      "scope": "Battery/device transactions, watches and energy accounting exist. Generator read adapter and infrastructure registries are foundation; runtime estimate and fridge controls remain proposals.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "06ab6217adbf753055de233cf675ad82e6e9a167c4dfca3746bff43e2bf989b9",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPower/blob/cd66cb5e5af4d433b23dc0a68ec2c3dad819c015/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "40f78c5c44b86dcd72ad0ee2b3705d747bd6257e5d2d0bd0927fcec4dcf9c7d3",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPower/blob/cd66cb5e5af4d433b23dc0a68ec2c3dad819c015/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "da83e3df4c0806b47c1b36bc75a88a2d4ffeab3d25802304300fcedb5e6d3ab8",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPower/blob/cd66cb5e5af4d433b23dc0a68ec2c3dad819c015/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDPower/42/media/lua/shared/B47ANCEDPower/VanillaGeneratorProvider.lua",
+          "sha256": "39a8e2a1a777699fcb13f5770ff999034c9226ca491de3347c9edf73fff6c996",
+          "anchor_line": 27,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDPower/blob/cd66cb5e5af4d433b23dc0a68ec2c3dad819c015/src/B47ANCEDPower/42/media/lua/shared/B47ANCEDPower/VanillaGeneratorProvider.lua#L27",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDPower/42/mod.info",
+          "sha256": "85a33c937f2f181a690d43655377d0fb35a879b15f5e3bb434b98a118009d284"
+        },
+        {
+          "path": "Contents/mods/B47ANCEDPower/42/mod.info",
+          "sha256": "85a33c937f2f181a690d43655377d0fb35a879b15f5e3bb434b98a118009d284"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "spectrum",
+      "folder": "B47ANCEDSPXTRM",
+      "version": "0.30.2",
+      "head": "d5602da6bd03cf11c9a54dc2f5ff46c617e3ae2a",
+      "branch": "publish/spxtrm-0.30.2",
+      "origin": "https://github.com/B47ANCE/B47ANCEDSPXTRM.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Lighting, bulbs, optical exposure, light servicing and emitter rendering. Not a general HUD/inventory/UI owner.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "70d1097141e72cba261db96ee12a23c0ccd9c62fb439c965b71e3d5fc5f12a46",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDSPXTRM/blob/d5602da6bd03cf11c9a54dc2f5ff46c617e3ae2a/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "c614f461eb8f3521ea9d6f0d3f719f3ea45e92e8f6f0d314ec5ca253c2091297",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDSPXTRM/blob/d5602da6bd03cf11c9a54dc2f5ff46c617e3ae2a/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "228667ac2fe2c272d5a43eaf03e0c8dd0b602d9acdeb3d8ae6bd5da80b9a2560",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDSPXTRM/blob/d5602da6bd03cf11c9a54dc2f5ff46c617e3ae2a/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDSPXTRM/42/mod.info",
+          "sha256": "6be67a66d309f4ee1dd565fd5e03bd4c7bdf94df879551af397f4d298eef1a35"
+        },
+        {
+          "path": "Contents/mods/lightWorks/42/mod.info",
+          "sha256": "9cbdb3bd8aa3d06699690573d70ec2c8064cd7f9cfc04219719c9c2f6cadf7ac"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "knowledge",
+      "folder": "B47ANCEDKnowledgeAndWisdom",
+      "version": "0.16.0",
+      "head": "6ba66c0d8f246d438f2e2f3c974fee9f77fdb426",
+      "branch": "fix/authority-persistence-0.14.0",
+      "origin": "https://github.com/B47ANCE/B47ANCEDKnowledgeAndWisdom.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Knowledge/research, provider documents, recorded-media projection and journal/history cores. Affected multiplayer storage/progression APIs deliberately blocked at 0.16.0.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "c2c8f56eaeb68a7ed10fc9baf28638617e1532fa332d29c46c171269e60a9982",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDKnowledgeAndWisdom/blob/6ba66c0d8f246d438f2e2f3c974fee9f77fdb426/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "3bf6de22b67f10c31f327f01e18a3f63d8d271bbe71f149e35a81e6685649441",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDKnowledgeAndWisdom/blob/6ba66c0d8f246d438f2e2f3c974fee9f77fdb426/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "aa037454b5e8320521a32b278a3f4aff05fc79009ab5503f5d4a1b9a33b38c47",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDKnowledgeAndWisdom/blob/6ba66c0d8f246d438f2e2f3c974fee9f77fdb426/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDKnowledgeAndWisdom/42/media/lua/shared/B47ANCEDKnowledgeAndWisdom/MediaKnowledge.lua",
+          "sha256": "6cdaa56a22ba7eed4f2df9c0c29c1ef41e54635792425b9310977d2e8325c53e",
+          "anchor_line": 29,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDKnowledgeAndWisdom/blob/6ba66c0d8f246d438f2e2f3c974fee9f77fdb426/src/B47ANCEDKnowledgeAndWisdom/42/media/lua/shared/B47ANCEDKnowledgeAndWisdom/MediaKnowledge.lua#L29",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDKnowledgeAndWisdom/42/mod.info",
+          "sha256": "33100c50f65bbc5760874baa9e06e3f329a06733b54ab66cd973910ca45e23a2"
+        },
+        {
+          "path": "Contents/mods/experienceWorks/42/mod.info",
+          "sha256": "1aaf94a4fb1596261d28bce8b63173daba131b7b5120b1b722569696b18cf0d2"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "health",
+      "folder": "B47ANCEDHealthCare",
+      "version": "0.11.0",
+      "head": "a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f",
+      "branch": "feat/only-cure-fork-prototype",
+      "origin": "https://github.com/B47ANCE/B47ANCEDHealthCare.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Examination/action/report/procedure foundation and corpse-part recovery. No finished injury HUD, replace-bandage queue or wound-treatment itinerary established.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "1fbf036e94775ad70eaa4190c6635ebec58343e0cc8cd73b263532aa430d2543",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHealthCare/blob/a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "ed3e3f574a00f24aed4d4c96ee564d718a3d95591166a3ac94b74cbb4e16acb9",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHealthCare/blob/a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "6a9b524a9fd4f1f95f08a1db768ade6b9ef841e66ecf4893ff9393dafc33c13e",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHealthCare/blob/a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDHealthCare/42/media/lua/client/medWorks/CompletedExaminations.lua",
+          "sha256": "5a089250c290ed06ee3191fc8e3f2d21172b62e60020038e14b62b38157823aa",
+          "anchor_line": 39,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHealthCare/blob/a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f/src/B47ANCEDHealthCare/42/media/lua/client/medWorks/CompletedExaminations.lua#L39",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDHealthCare/42/mod.info",
+          "sha256": "0c9ecaa77eeea646980136cc226029164e3f0567b21269b57888da6c6b2ea658"
+        },
+        {
+          "path": "Contents/mods/medWorks/42/mod.info",
+          "sha256": "06de16e8fb2be8d036eb2ff372aeeb21caf4cbc607ed5a29cf8fb6c9a1480ab1"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "medical",
+      "folder": "B47ANCEDMedicalChecks",
+      "version": "0.2.0-dev.3",
+      "head": "85e29ca811ae70ed08bb75613cf4892837a3c867",
+      "branch": "feature/lua-only-conversion",
+      "origin": "https://github.com/B47ANCE/B47ANCEDMedicalChecks.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Inactive consent preferences/metadata only. Engine rejects Request/Answer/Grant and reports enforcement=false. Does not own treatment.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "1168bb170293e9dd3e7584b2bcc91f532049f0068139e8bca27acee11bdd572a",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDMedicalChecks/blob/85e29ca811ae70ed08bb75613cf4892837a3c867/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDMedicalChecks/blob/85e29ca811ae70ed08bb75613cf4892837a3c867/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "567f66d27b284057b21c3fd348909dbdfb97c0373d43cd17301030db183d6eff",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDMedicalChecks/blob/85e29ca811ae70ed08bb75613cf4892837a3c867/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "src/B47ANCEDMedicalChecks/42/media/lua/shared/B47ANCEDMedicalChecks/Engine.lua",
+          "sha256": "cc4d34cd44158d05a0a952d312452df18cec2f73e7b899fbde61d15330fcd358",
+          "anchor_line": 19,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDMedicalChecks/blob/85e29ca811ae70ed08bb75613cf4892837a3c867/src/B47ANCEDMedicalChecks/42/media/lua/shared/B47ANCEDMedicalChecks/Engine.lua#L19",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDMedicalChecks/42/mod.info",
+          "sha256": "5ca863799b778c5af16a14ee3f728f9e1635d2515f817120d422fc411713b6b3"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "harvest",
+      "folder": "B47ANCEDHarvest",
+      "version": "0.9.1",
+      "head": "95e09891c29d0562c9756c2dfade7836c9754505",
+      "branch": "release/harvest-0.9.1-mp-test",
+      "origin": "https://github.com/B47ANCE/B47ANCEDHarvest.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Crop/field inspection, native seasonal guidance and crop-side irrigation foundation. Field UI and automatic irrigation remain planned.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "a9e3d86c782d582c2212eb3e724ba203bf2a9b7b987716c146eb4b4b640eda2e",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHarvest/blob/95e09891c29d0562c9756c2dfade7836c9754505/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "c5a99fdb88f1d9697e6537003f4763da4d1eae6fd011b950aca4f492aa30f7d1",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHarvest/blob/95e09891c29d0562c9756c2dfade7836c9754505/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "179a5390966e85c2071a87c1b31de13df67460665196f6529f8c4986842f81e5",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHarvest/blob/95e09891c29d0562c9756c2dfade7836c9754505/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "Contents/mods/B47ANCEDHarvest/42/media/lua/shared/farmWorks/API.lua",
+          "sha256": "5d34723fd94e196ccc7337283a082dc64aec39bbd7f9d9007e9d9dceb4375019",
+          "anchor_line": 77,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHarvest/blob/95e09891c29d0562c9756c2dfade7836c9754505/Contents/mods/B47ANCEDHarvest/42/media/lua/shared/farmWorks/API.lua#L77",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "Contents/mods/B47ANCEDHarvest/42/mod.info",
+          "sha256": "1f499831467ec3ac5107cabf66dca460572fa1a3992a83aaa2ae459bf2c4fbf5"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "water",
+      "folder": "B47ANCEDWaterworks",
+      "version": "0.35.2",
+      "head": "3b0524a1fef514805d2aa443ce04b61b9ed7805d",
+      "branch": "release/workshop-0.35.2",
+      "origin": "https://github.com/B47ANCE/B47ANCEDWaterworks.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Fluid transfers/quality/treatment, networks and sediment batch filter. Owns water resources, not crops or electrical power.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "72fecc2047e972e496497c7fb5a74a6e7e2160e4287270c27ce4792dad388b2b",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDWaterworks/blob/3b0524a1fef514805d2aa443ce04b61b9ed7805d/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "aa73b90c28c4912f14c51f1b850d0044d552fd6aa0acd86304edeeb38a012101",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDWaterworks/blob/3b0524a1fef514805d2aa443ce04b61b9ed7805d/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "8b8c93432c785b4b0f408b269696dd4cf5d34aeb517c2c5ba00f183ffc9960fb",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDWaterworks/blob/3b0524a1fef514805d2aa443ce04b61b9ed7805d/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "Contents/mods/B47ANCEDWaterworks/42/mod.info",
+          "sha256": "62aa57ed46d3f7f0c264f5a953812412b6b4e61841b5bf3a15a146662b12cc02"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "food",
+      "folder": "B47ANCEDProvisions",
+      "version": "0.7.0",
+      "head": "055fc4e61e5c136fe0bbf6e7cdc5226e1f1f9d66",
+      "branch": "chore/provisions-0.7.0-rename",
+      "origin": "https://github.com/B47ANCE/B47ANCEDProvisions.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Read-only food inspection and appliance/preservation transaction foundation. No production preservation process registered; no general inventory sorting.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "c6e2664bdfd0de758bcdfa0aab188a20994270de2eb49774f4fc23bf7303ddb5",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDProvisions/blob/055fc4e61e5c136fe0bbf6e7cdc5226e1f1f9d66/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "3c6c083d6178710b853cd467557fc505586f84d595b6152759d326a7f8a25c74",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDProvisions/blob/055fc4e61e5c136fe0bbf6e7cdc5226e1f1f9d66/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "967d9afb101346667166f2e76e81910bc190488d7d41d50ca0072e9d92f00e32",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDProvisions/blob/055fc4e61e5c136fe0bbf6e7cdc5226e1f1f9d66/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "Contents/mods/B47ANCEDProvisions/42/mod.info",
+          "sha256": "413fe9bab83473bfa372c2cd53847265d35a60a5c0b8bf23a644b077dd0cdfc8"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "junk",
+      "folder": "B47ANCEDJunkDrawer",
+      "version": "0.5.0",
+      "head": "UNKNOWN",
+      "branch": "UNKNOWN",
+      "origin": "UNKNOWN",
+      "working_tree": "UNKNOWN_NON_GIT",
+      "scope": "Salvage profile/transaction, examination and timed-action foundation. Owns salvage outputs; explicitly excludes inventory sorting. Public Git onboarding pending.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "c6fc49a3f7c0449d6b6081217065610c1122975b240eaeeef1229340bacf8ae0",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "a0ad50640139a524f86591157145bf1d4674ea9c065bfea21558f0f7b04430c8",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "Contents/mods/B47ANCEDJunkDrawer/42/mod.info",
+          "sha256": "9328d820f35149269e6f67851039d5421616899821a871ca5743fa801f6b8705"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "earth",
+      "folder": "B47ANCEDEarthworks",
+      "version": "0.17.0",
+      "head": "fce40171309b79799098ff0296989e6e679702b5",
+      "branch": "chore/repository-onboarding-0.17.0",
+      "origin": "https://github.com/B47ANCE/B47ANCEDEarthworks.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Excavation, routes, terrain/material transactions and CAT integration. Wheelbarrow pushing is experimental/SP-only, not generic MP hauling.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "6163000faddfb414bdb79a17cce9e2657167a036c9336d61773baa30f9f30b84",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEarthworks/blob/fce40171309b79799098ff0296989e6e679702b5/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "516eab3be55bff9f911d3af525879b264de4d294e93878b507e8fcfebdcf96e8",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEarthworks/blob/fce40171309b79799098ff0296989e6e679702b5/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "0f305403349162fe328624f2997e15cf6246657deb04d0739be8904ce1501b0a",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEarthworks/blob/fce40171309b79799098ff0296989e6e679702b5/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDEarthworks/42/mod.info",
+          "sha256": "8dc8381a9a4ca8fa5f4891819a1795317d8ac3bc663ba5118981c8c191f2abfc"
+        },
+        {
+          "path": "Contents/mods/groundWorks/42/mod.info",
+          "sha256": "7d9b405e7eef5b98bd33bc87bedf193f3252eb615895f219fd51e975e6178ab9"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "fences",
+      "folder": "B47ANCEDBuildableFences",
+      "version": "1.1.0-dev.15",
+      "head": "12338a1ee8179ff62beb6cace56e45b117a9dc66",
+      "branch": "feature/complete-vanilla-fence-catalog",
+      "origin": "https://github.com/B47ANCE/B47ANCEDBuildableFences.git",
+      "working_tree": "DIRTY_PRESERVED",
+      "scope": "Fences & Gates construction/catalog, family selectors and corner connections. Not general building-maintenance policy.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "131c3fd53a446b63d40f9c48c00e4a5eea930b0b2cc363796fe47cf2ddb6a503",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDBuildableFences/blob/12338a1ee8179ff62beb6cace56e45b117a9dc66/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDBuildableFences/blob/12338a1ee8179ff62beb6cace56e45b117a9dc66/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "5f96bd1032f9e679d18d630d9a40a33b216e99daa708d549a434f321d91b79b5",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDBuildableFences/blob/12338a1ee8179ff62beb6cace56e45b117a9dc66/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDBuildableFences/42/mod.info",
+          "sha256": "00c6c8d824fcb7b464c2aa45a6917ea3fa5895f4ffde2708e4d268652bf68b84"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "eyewear",
+      "folder": "B47ANCEDEyewear",
+      "version": "0.15.0-dev.1",
+      "head": "41125e19945b97dca4975a09232e3e662bbbb36e",
+      "branch": "maintenance/lua-only-workshop-cleanup",
+      "origin": "https://github.com/B47ANCE/B47ANCEDEyewear.git",
+      "working_tree": "DIRTY_PRESERVED",
+      "scope": "Eyewear/hat ties and retainers, wear/protection, reinforcement and item-specific durability presentation. Not generic item protection or hotbar condition.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "7778c4cb95f405bf8430b2ecfd6cc371bf39fb5e0e0d7ea43dc4ecd74b02dcc1",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEyewear/blob/41125e19945b97dca4975a09232e3e662bbbb36e/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEyewear/blob/41125e19945b97dca4975a09232e3e662bbbb36e/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "1c67165624da36ef6bdcc2183929f60d73707c3a48cc5de5c3b9328768d2d5f3",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDEyewear/blob/41125e19945b97dca4975a09232e3e662bbbb36e/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDEyewear/42/mod.info",
+          "sha256": "36092644216266161b5896cd4c36c76ec6181c2faca00f1e3fa4b8ea1defa1a7"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "dog",
+      "folder": "B47ANCEDDogmeat",
+      "version": "0.2.0-dev.7",
+      "head": "ee800456caffbe051164420a935c04fb5885fc99",
+      "branch": "docs/m0r-contracts",
+      "origin": "https://github.com/B47ANCE/B47ANCEDDogmeat.git",
+      "working_tree": "DIRTY_PRESERVED",
+      "scope": "Dog Training canine domain and private identity/persistence/task foundations. General livestock scope absent; production ownership/persistence blocked.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "610fea5cec207437cccbe582266ece717f711f3affde6d568225ed8e6763211b",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDDogmeat/blob/ee800456caffbe051164420a935c04fb5885fc99/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDDogmeat/blob/ee800456caffbe051164420a935c04fb5885fc99/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "1f2cbbb92988a9a29e4f72aae4c913d5b7ecb0e3d2b5e3c835200576ea8feb8d",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDDogmeat/blob/ee800456caffbe051164420a935c04fb5885fc99/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/metadata/mod.info",
+          "sha256": "b93729f5ce32c3928213d0f17cdb7f8eaeb728de0d77ebeb37e3028db8f71268"
+        },
+        {
+          "path": "src/metadata/mod.info",
+          "sha256": "b93729f5ce32c3928213d0f17cdb7f8eaeb728de0d77ebeb37e3028db8f71268"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "cat",
+      "folder": "CATConstruction",
+      "version": "UNKNOWN",
+      "head": "UNKNOWN",
+      "branch": "UNKNOWN",
+      "origin": "UNKNOWN",
+      "working_tree": "UNKNOWN_NON_GIT",
+      "scope": "Editable third-party construction-machine integration copy. No Git/root VERSION; reuse/redistribution rights UNKNOWN. Treat as external, not automatically team-owned.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "da44d6f903c7722c08dad5f7df375bb321526444e2952a06b7df91008b305db3",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "39d4c3dc60555652d09a5eecfa2715c913b4deeeca3b7231b6988fd06c7da889",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/CATConstruction/mod.info",
+          "sha256": "ebf6624bfc795d32109ed87c6ef6893d4a2069b54b995c50a89c38eaecc49407"
+        },
+        {
+          "path": "src/CATConstruction/42/mod.info",
+          "sha256": "ebf6624bfc795d32109ed87c6ef6893d4a2069b54b995c50a89c38eaecc49407"
+        },
+        {
+          "path": "Contents/mods/CATConstruction/mod.info",
+          "sha256": "3a1dce07c59326bfb01ab39b91a2727f03f4a42a36b370de55bcd70183a79ad6"
+        },
+        {
+          "path": "Contents/mods/CATConstruction/42/mod.info",
+          "sha256": "c10d78a52159dfdd7ecb41b33535a1c60f33f4664d335aed8f55d406e00a5b0c"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "mortis",
+      "folder": "Project MORTIS",
+      "version": "0.25.0-dev.4",
+      "head": "f0358fef2ec4519cbfb26bad641699488c7f8ec9",
+      "branch": "fix/locomotion-override-recovery",
+      "origin": "https://github.com/B47ANCE/ProjectMORTIS.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Neutral zombie/anatomy/locomotion/group/provenance framework; consumer gameplay policy remains elsewhere. Includes gated Active Hours scope.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "6d809c6e374c9a5a22c6cfb9576f7770400afa4e118747ed28ef2c742388088e",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/ProjectMORTIS/blob/f0358fef2ec4519cbfb26bad641699488c7f8ec9/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "41233a355de963aea5dfd93f6a60e711771203ba5cb006b452cfad137e9b4cac",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/ProjectMORTIS/blob/f0358fef2ec4519cbfb26bad641699488c7f8ec9/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "ce01e6f593271f33b9e3103417974441dbb4233756a8c323d68700898b98c402",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/ProjectMORTIS/blob/f0358fef2ec4519cbfb26bad641699488c7f8ec9/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "41233a355de963aea5dfd93f6a60e711771203ba5cb006b452cfad137e9b4cac",
+          "anchor_line": 23,
+          "source_url": "https://github.com/B47ANCE/ProjectMORTIS/blob/f0358fef2ec4519cbfb26bad641699488c7f8ec9/AGENTS.md#L23",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/ProjectMORTIS/42/mod.info",
+          "sha256": "7928a373c2e0e30ac680379dde29f337f8312d8b9159ed13bf8b57b9c4223c1e"
+        },
+        {
+          "path": "Contents/mods/ProjectMORTIS/42/mod.info",
+          "sha256": "8421263d51b676a00c5f2129499c40db25de4162fbdd339e0494d5b6a755d94c"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "nightfall",
+      "folder": "Project Nightfall",
+      "version": "0.30.0",
+      "head": "66b82575eaf2e7bb5becfcb0314e5e3dc56c7fbb",
+      "branch": "fix/spxtrm-mod-dependency",
+      "origin": "https://github.com/B47ANCE/ProjectNightfall.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "UV infected types/behaviors, corpse/effigy content and research. Its remains-condition row is domain presentation, not general corpse logistics.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "86e1ebe8313bc9286a4bb3b192ae2e1f1e54086b92de7383ceb1a76ed073fda1",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/ProjectNightfall/blob/66b82575eaf2e7bb5becfcb0314e5e3dc56c7fbb/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "18bf8e8179cd33bd51025060b09e6d3afd9a7e134ec224d67d114c9a4bd07c15",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/ProjectNightfall/blob/66b82575eaf2e7bb5becfcb0314e5e3dc56c7fbb/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "42659901f3c792eb230cf32b2c844ae738cd6d53dd84c1b7eb434e969b472ec2",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/ProjectNightfall/blob/66b82575eaf2e7bb5becfcb0314e5e3dc56c7fbb/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/ProjectNightfall/42/mod.info",
+          "sha256": "9aad9f0edac2f2628cae7edda0089344bfba8c4fa70ca0284b300da19217abbe"
+        },
+        {
+          "path": "Contents/mods/ProjectNightfall/42/mod.info",
+          "sha256": "062defc287982131505b1f5b65f33746100c4045e8d1c6957692ae78efb72e39"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "hours",
+      "folder": "B47ANCEDActiveHours",
+      "version": "0.1.0-dev.4",
+      "head": "1994da75e808c16e75def6c15480c08d8187f4ce",
+      "branch": "docs/absorbed-by-mortis",
+      "origin": "https://github.com/B47ANCE/B47ANCEDActiveHours.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Standalone Active Hours remains maintained under current MORTIS project instructions; when MORTIS is enabled it must yield. Standalone README absorption banner is stale/conflicting; integrated production policy remains gated.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "ed0e5f651d401f1659a21c55f0cb113317df49ef90ed7316670fb3a80b0b986c",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDActiveHours/blob/1994da75e808c16e75def6c15480c08d8187f4ce/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDActiveHours/blob/1994da75e808c16e75def6c15480c08d8187f4ce/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "69c044262fd317266194afded2166c43daa82230565d85c8a883543e07ba59a2",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDActiveHours/blob/1994da75e808c16e75def6c15480c08d8187f4ce/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "helicopter",
+      "folder": "B47ANCEDHelicopterEvents",
+      "version": "0.1.0-dev.6",
+      "head": "e604fd5685ba7a23967a982ca8facd2d75b8c2b1",
+      "branch": "feature/decorative-wreck-probe",
+      "origin": "https://github.com/B47ANCE/B47ANCEDHelicopterEvents.git",
+      "working_tree": "CLEAN_AT_SNAPSHOT",
+      "scope": "Disabled diagnostic audio/support/wreck foundations and planned military-support content. No general vehicle, radio-menu or inventory ownership.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "fb16b084e6a5f6b8285569f6f305426c39467ec68042477822c9de00d5f584af",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHelicopterEvents/blob/e604fd5685ba7a23967a982ca8facd2d75b8c2b1/README.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHelicopterEvents/blob/e604fd5685ba7a23967a982ca8facd2d75b8c2b1/AGENTS.md#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "51847a7effd12c1dfa4c8031dbe67bb1d1eda35e1c13600720e424912eb6e2c1",
+          "anchor_line": 1,
+          "source_url": "https://github.com/B47ANCE/B47ANCEDHelicopterEvents/blob/e604fd5685ba7a23967a982ca8facd2d75b8c2b1/VERSION#L1",
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCEDHelicopterEvents/42/mod.info",
+          "sha256": "aabc43597eb7fb95ce115aa317b863a1c6d790d6ba7a795d5be6e588e9f73044"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "weather",
+      "folder": "weatherWorks",
+      "version": "UNKNOWN",
+      "head": "UNKNOWN",
+      "branch": "UNKNOWN",
+      "origin": "UNKNOWN",
+      "working_tree": "UNKNOWN_NON_GIT",
+      "scope": "Read-only climate/calendar/history/events/exposure foundation. Consequences belong to consuming domains. No canonical root VERSION/Git identified.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "85a42660d19b281c3dab1307db41abf813026c5f9f450ffbe86b46061a478daf",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "Contents/mods/weatherWorks/42/mod.info",
+          "sha256": "3cfa070148614bea325154b2a5e6781f560ab1d078743d8f5e68c4300c628163"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "glow",
+      "folder": "AuthenticZGlowstickMPPatch",
+      "version": "0.3.1",
+      "head": "UNKNOWN",
+      "branch": "UNKNOWN",
+      "origin": "UNKNOWN",
+      "working_tree": "UNKNOWN_NON_GIT",
+      "scope": "Authentic Z remote/floor glowstick presentation adapter; external dependency rights remain separately scoped. No general lighting/UI ownership.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "422a97fe7bd542fc14a080c1e01d2a762beb2fd83a9fce5dacd76583d0845e51",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "d9efe4074c06b76df743eb109bd414f65043a25ba26b8340c8406a9f2fd2e90b",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/AuthenticZGlowstickMPPatch/42/mod.info",
+          "sha256": "2529a5b77a0fda805ada4726d4b1de777e496451a41b1d96c72631cb584392ed"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "costume",
+      "folder": "B47ANCE Costume",
+      "version": "UNKNOWN",
+      "head": "UNKNOWN",
+      "branch": "UNKNOWN",
+      "origin": "UNKNOWN",
+      "working_tree": "UNKNOWN_NON_GIT",
+      "scope": "Wearable costume/art candidate; no general clothing-maintenance queue. No canonical root VERSION/Git identified.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "73a8acf62ca475d91dc454a3d9283623d45c4277d18cd899178b7a7d6901045d",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/B47ANCECostume/42/mod.info",
+          "sha256": "c97fa8d3f9a8bf706b8a78bb2d521c12427fefe5d176a06635712d9e220b37e2"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    },
+    {
+      "id": "home",
+      "folder": "Last Known Address",
+      "version": "UNKNOWN",
+      "head": "UNKNOWN",
+      "branch": "UNKNOWN",
+      "origin": "UNKNOWN",
+      "working_tree": "UNKNOWN_NON_GIT",
+      "scope": "Saved-home/spawn preview, not map annotation or session UI. README declares active FJL/custom JAR dependency: policy conflict blocks any reuse/deploy/publish until a Lua-only redesign; no migration performed.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "sha256": "7cc50cc55c11d25bdb4ffb86a916ca69b5ee265602b799025a679674f8d2638d",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1a702604e0f73b138f5b01d5f9a93e27e9f3f1a70cf6f9165bf3b17f5fa5ee08",
+          "anchor_line": 1,
+          "source_url": null,
+          "scope": "whole readme/instructions or targeted source path; not an exhaustive code audit",
+          "verification_basis": "pre-edit local working-tree snapshot"
+        }
+      ],
+      "metadata_candidates": [
+        {
+          "path": "src/LastKnownAddress/42/mod.info",
+          "sha256": "83cd516f71130cf75e99c779d16ca62f77365c22d183f6ad0596bac4f8e9f1d9"
+        }
+      ],
+      "remote_freshness": "NOT_CHECKED_LOCAL_SNAPSHOT"
+    }
+  ],
+  "features": [
+    {
+      "id": "nearby-view",
+      "rank": 1,
+      "title": "One view for reachable nearby loot",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep the admitted-root nearby projection. Quartermaster can inspect multiple storage targets, but that is not a replacement loot pane.",
+      "evidence_projects": [
+        "essentials"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "batch-transfer",
+      "rank": 2,
+      "title": "Safe bulk transfer between selected containers",
+      "previous_proposed_owner": "Essentials + Quartermaster",
+      "recommended_owner": "Essentials + Quartermaster",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Essentials retains its reference/transaction service. Quartermaster already owns a separate logistics executor. A general explicit preview remains unfinished; do not merge executors or introduce a dependency without a reviewed contract.",
+      "evidence_projects": [
+        "essentials",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "storage-sort",
+      "rank": 3,
+      "title": "Put loot into designated or seeded storage",
+      "previous_proposed_owner": "Quartermaster + Essentials",
+      "recommended_owner": "Quartermaster + Essentials",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Quartermaster already supplies designated category/item rules, priorities and sorting. Keep current Essentials seeded sorting for standalone use; do not rebuild designation policy. Prevent competing menu actions/plans when both are enabled.",
+      "evidence_projects": [
+        "essentials",
+        "qm",
+        "rooms"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "selection",
+      "rank": 4,
+      "title": "Keep inventory selection through refreshes",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep native inventory selection repair here. The UI library has focus helpers, not this inventory integration.",
+      "evidence_projects": [
+        "essentials",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "item-protection",
+      "rank": 5,
+      "title": "Protect favorites and reserved equipment from bulk actions",
+      "previous_proposed_owner": "Essentials + Quartermaster",
+      "recommended_owner": "Essentials + Quartermaster",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Both executors already check some protected states. Quartermaster SupplyAPI checks favorites, equipped/attached and crafting-consumed items. Define interoperability for active reservations; no portfolio-wide protection API is established.",
+      "evidence_projects": [
+        "essentials",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "context",
+      "rank": 6,
+      "title": "Make context actions easier to find",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep native context grouping here. Domain callbacks and validation remain with their owning mods; UI may supply reusable controls.",
+      "evidence_projects": [
+        "essentials",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "nested-view",
+      "rank": 7,
+      "title": "Inspect nested bags without unpacking",
+      "previous_proposed_owner": "Essentials + SPXTRM",
+      "recommended_owner": "Essentials + UI",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Essentials has traversal and nested stable references, while Quartermaster has selected nested-bag logistics. Neither establishes the proposed finished nested browser. Keep the read model in Essentials; UI may render controls.",
+      "evidence_projects": [
+        "essentials",
+        "qm",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "take-quantity",
+      "rank": 8,
+      "title": "Choose an exact whole-item transfer count",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Exact whole-item count selection belongs with inventory workflows. Quartermaster shopping target quantities are not the same native inventory transfer dialog.",
+      "evidence_projects": [
+        "essentials",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "equipment-view",
+      "rank": 9,
+      "title": "Separate equipped items from carried clutter",
+      "previous_proposed_owner": "Essentials + SPXTRM",
+      "recommended_owner": "Essentials + UI",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "The Equipped view is already in Essentials. UI can provide presentation helpers; SPXTRM owns light attachments only and must not own this inventory pane.",
+      "evidence_projects": [
+        "essentials",
+        "ui",
+        "spectrum"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "media-progress",
+      "rank": 10,
+      "title": "Show read watched and useful-media progress",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials + Knowledge & Wisdom",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Keep existing menu progress and carried-duplicate hints in Essentials. Knowledge & Wisdom already supplies bounded recorded-media inspection and owns custom knowledge/research. Do not create a second knowledge ledger; any optional adapter remains unimplemented.",
+      "evidence_projects": [
+        "essentials",
+        "knowledge"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "capacity",
+      "rank": 11,
+      "title": "Compare fill across container buttons and magazine entries",
+      "previous_proposed_owner": "SPXTRM + Essentials",
+      "recommended_owner": "UI",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Simultaneous container-button and magazine fill cues fit planned vanilla presentation adapters. UI has reusable controls but no implemented overlay. Essentials can supply permitted inventory views.",
+      "evidence_projects": [
+        "ui",
+        "essentials"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "health-readability",
+      "rank": 12,
+      "title": "Compact local injury summary outside the health panel",
+      "previous_proposed_owner": "Health Care + Medical Checks + SPXTRM",
+      "recommended_owner": "Health Care + UI",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Health Care has examination reports and an examiner/patient-scoped five-minute snapshot, not a live injury HUD. Put medical visibility/meaning there and rendering in UI. Medical Checks supplies no enforcing consent service today.",
+      "evidence_projects": [
+        "health",
+        "medical",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "magazine-batch",
+      "rank": 13,
+      "title": "Load and unload matching magazines in batches",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep existing matching-magazine native action orchestration. Power and SPXTRM do not own firearm ammunition.",
+      "evidence_projects": [
+        "essentials"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "shortcuts",
+      "rank": 14,
+      "title": "Configurable non-equipment item and recipe action slots",
+      "previous_proposed_owner": "SPXTRM + Essentials",
+      "recommended_owner": "Essentials + UI",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Essentials owns ordinary item/recipe invocation and validation; UI can render/configure slots. PC Framework apps are world-computer applications, not global survivor action shortcuts.",
+      "evidence_projects": [
+        "essentials",
+        "ui",
+        "pc"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "container-labels",
+      "rank": 15,
+      "title": "Customize local world-container button presets and order",
+      "previous_proposed_owner": "Quartermaster + SPXTRM",
+      "recommended_owner": "UI",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Local button label/icon/order presets belong to UI presentation. Quartermaster storage presets/rules and Rooms room names already exist but are different data. Displaying a label must not create a designation or edit shared names.",
+      "evidence_projects": [
+        "ui",
+        "qm",
+        "rooms"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "craft-output",
+      "rank": 16,
+      "title": "Choose a safe destination for bulky crafting output",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep existing native craft-output routing. Junk Drawer owns salvage outcomes and Provisions owns food-process outcomes; do not intercept or redirect their custom transactions without an explicit provider contract.",
+      "evidence_projects": [
+        "essentials",
+        "junk",
+        "food"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "hotbar",
+      "rank": 17,
+      "title": "Arrange hotbar slots without reattaching items",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep current slot reordering and saved attachment-index handling. Shared styling can use UI.",
+      "evidence_projects": [
+        "essentials",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "condition",
+      "rank": 18,
+      "title": "Show condition directly on hotbar slots",
+      "previous_proposed_owner": "SPXTRM + Essentials",
+      "recommended_owner": "UI",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Hotbar-only condition display is a planned vanilla UI adapter. Eyewear already displays its own retainer durability, which does not cover general hotbar condition.",
+      "evidence_projects": [
+        "ui",
+        "eyewear"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "map-annotation",
+      "rank": 19,
+      "title": "Preserve a configured default map-symbol scale",
+      "previous_proposed_owner": "Essentials + SPXTRM",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep the current default-symbol-scale behavior. Rooms designation editing and SPXTRM optical rendering are different systems.",
+      "evidence_projects": [
+        "essentials",
+        "rooms",
+        "spectrum"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "device-menus",
+      "rank": 20,
+      "title": "Keep device power actions attached to the device",
+      "previous_proposed_owner": "Essentials + Power",
+      "recommended_owner": "Essentials + Power",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Keep grouping in Essentials and battery transactions in Power; light-specific servicing belongs to SPXTRM. Essentials still probes legacy powerWorks globals/imports, while renamed Power has no legacy aliases: current pairing requires a compatibility repair and tests.",
+      "evidence_projects": [
+        "essentials",
+        "power",
+        "spectrum"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "maintenance-queue",
+      "rank": 21,
+      "title": "Plan a finite vehicle-part service itinerary",
+      "previous_proposed_owner": "Vehicle and clothing owners + Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "No general vehicle-service owner was identified. A finite vanilla vehicle-part itinerary fits Essentials. CAT construction machinery qualification and Eyewear retainers do not cover ordinary mechanics. Scope excludes clothing queues.",
+      "evidence_projects": [
+        "essentials",
+        "cat",
+        "eyewear"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "reading-queue",
+      "rank": 22,
+      "title": "Queue a chosen eligible unread-book and media playlist",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials + Knowledge & Wisdom",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Essentials may orchestrate native reading; Knowledge & Wisdom owns provider documents, completion and knowledge requirements. A finished reading/media playlist was not found. Preserve its MP authority guard; start only with a proven native reading slice.",
+      "evidence_projects": [
+        "essentials",
+        "knowledge"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "key-filing",
+      "rank": 23,
+      "title": "File keys into an eligible carried key ring",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep current key/ring predicates and native transfers. Quartermaster storage/shopping rules are not a key-ring replacement.",
+      "evidence_projects": [
+        "essentials",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "area-clean",
+      "rank": 24,
+      "title": "Preview and queue cleanup across a chosen rectangle",
+      "previous_proposed_owner": "Auto Clean + Essentials",
+      "recommended_owner": "Auto Clean",
+      "portfolio_coverage": "COVERED_SOURCE",
+      "recommendation": "Already covered by Auto Clean rectangle/paint/erase/floor selection, confirmation, building cleanup, guarded actions and tool returns. Remove duplicate implementation work from Essentials. Validate or improve the existing Auto Clean workflow in its own repository.",
+      "evidence_projects": [
+        "clean",
+        "rooms",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "generator-info",
+      "rank": 25,
+      "title": "Estimate remaining generator runtime from inspected load",
+      "previous_proposed_owner": "Power + SPXTRM",
+      "recommended_owner": "Power + UI",
+      "portfolio_coverage": "FOUNDATION_ONLY",
+      "recommendation": "Power already reports loaded generator fuel, condition, activation, connection and native consumption. A remaining-runtime estimate is not implemented in that adapter; keep calculation/units with Power and optional presentation with UI. Electrical output capacity remains unknown.",
+      "evidence_projects": [
+        "power",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "transfer-feedback",
+      "rank": 26,
+      "title": "Make partial transfer failures understandable",
+      "previous_proposed_owner": "Essentials + Quartermaster",
+      "recommended_owner": "Essentials + Quartermaster",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Essentials exposes committed result snapshots; Quartermaster has progress, rejection and partial-outcome presentation. Reuse each executor result contract. A common result vocabulary may be specified, but is not currently a shared implemented API.",
+      "evidence_projects": [
+        "essentials",
+        "qm",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "bandage-queue",
+      "rank": 27,
+      "title": "Replace an eligible bandage with one request",
+      "previous_proposed_owner": "Medical Checks",
+      "recommended_owner": "Health Care",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "One-request replace-bandage sequencing belongs to medical procedure ownership, with native action guards. Medical Checks is a blocked consent scaffold, not a treatment engine.",
+      "evidence_projects": [
+        "health",
+        "medical"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "livestock-table",
+      "rank": 28,
+      "title": "Compare revealed care needs across animals in one table",
+      "previous_proposed_owner": "Animal owner + SPXTRM",
+      "recommended_owner": "Animal owner TBD + UI",
+      "portfolio_coverage": "OWNER_UNASSIGNED",
+      "recommendation": "No general livestock owner was identified among these projects. Dog Training is canine-specific and not a deployed herd-care provider. Keep a neutral read-only proposal; do not silently expand Dog Training or Harvest scope.",
+      "evidence_projects": [
+        "dog",
+        "harvest",
+        "ui"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "personal-marks",
+      "rank": 29,
+      "title": "Mark not-yet-readable media for later without granting knowledge",
+      "previous_proposed_owner": "Essentials + Quartermaster",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Local seen-for-later media notes fit Essentials. Quartermaster Dibs personal item labels/Wanted/Needed lists overlap in intent, but do not prove an unreadability-aware media bookmark. Integrate optionally rather than duplicate shopping or knowledge ledgers.",
+      "evidence_projects": [
+        "essentials",
+        "qm",
+        "knowledge"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "equipment-swap",
+      "rank": 30,
+      "title": "Independent-hand compatibility classifier foundation",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep only current independent-hand classifier foundation. It supplies no off-hand attacks, animations or finished swapping workflow. Eyewear protection and SPXTRM light mounts have separate ownership.",
+      "evidence_projects": [
+        "essentials",
+        "eyewear",
+        "spectrum"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "tool-return",
+      "rank": 31,
+      "title": "Restore magazines to their source after native loading",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "The retained delta is magazine source restoration only. Auto Clean already returns its borrowed cleaning equipment through its own job/SupplyAPI contract; generic crafting returns are vanilla and stay excluded.",
+      "evidence_projects": [
+        "essentials",
+        "clean",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "weight-column",
+      "rank": 32,
+      "title": "Compare per-item and stack weights in a dedicated column",
+      "previous_proposed_owner": "SPXTRM",
+      "recommended_owner": "UI",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Optional simultaneous per-item/stack weight columns fit vanilla UI adapters. Quartermaster carry budgets govern logistics, not a general native inventory column.",
+      "evidence_projects": [
+        "ui",
+        "qm"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "clock",
+      "rank": 33,
+      "title": "Display available watch time more precisely",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials + Power",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Essentials owns exact-minute formatting; Power owns powered watches, cell charge and mechanical/digital device distinctions. Current legacy namespace integration needs review; neither project should invent hidden watch information.",
+      "evidence_projects": [
+        "essentials",
+        "power"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "treatment-queue",
+      "rank": 34,
+      "title": "Plan treatment over already revealed eligible wounds",
+      "previous_proposed_owner": "Medical Checks",
+      "recommended_owner": "Health Care",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Finite treatment plans belong to Health Care. Its reservation/procedure framework is related foundation, not a finished wound itinerary. Do not use inactive Medical Checks preferences as valid consent.",
+      "evidence_projects": [
+        "health",
+        "medical"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "device-off",
+      "rank": 35,
+      "title": "Optional fridge and freezer off control",
+      "previous_proposed_owner": "Power",
+      "recommended_owner": "Power",
+      "portfolio_coverage": "FOUNDATION_ONLY",
+      "recommendation": "Power infrastructure/appliance registries are related foundation. No implemented fridge/freezer off toggle is established by the reviewed adapter/API/docs. Provisions can consume real appliance state; it should not own a competing electrical simulation.",
+      "evidence_projects": [
+        "power",
+        "food"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "map-automark",
+      "rank": 36,
+      "title": "Mark only player-observed locations automatically",
+      "previous_proposed_owner": "SPXTRM",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Observed-only native map annotation fits Essentials. Knowledge & Wisdom geographic familiarity and Rooms designations are separate facts and must not reveal unobserved world state. UI may style controls.",
+      "evidence_projects": [
+        "essentials",
+        "knowledge",
+        "rooms"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "building-maintenance",
+      "rank": 37,
+      "title": "Queue a chosen multi-window curtain or barricade itinerary",
+      "previous_proposed_owner": "Building owners + Essentials",
+      "recommended_owner": "Essentials + Rooms",
+      "portfolio_coverage": "FOUNDATION_ONLY",
+      "recommendation": "Essentials may orchestrate player-selected vanilla curtain/barricade actions. Rooms can supply explicit permitted geometry only through a reviewed adapter; its existing API explicitly does not enforce unrelated doors/building/destruction actions. Fences & Gates owns its added construction content.",
+      "evidence_projects": [
+        "essentials",
+        "rooms",
+        "fences"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "corpse-haul",
+      "rank": 38,
+      "title": "Plan selected-area corpse handling to one destination",
+      "previous_proposed_owner": "Auto Clean + Essentials",
+      "recommended_owner": "Auto Clean",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "Selected-area corpse handling is an Auto Clean extension candidate, not current trash cleanup. Corpses must use native handling and exact identities; Health Care recovers body parts and MORTIS supplies anatomy/provenance, neither is a hauling planner.",
+      "evidence_projects": [
+        "clean",
+        "essentials",
+        "health",
+        "mortis"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "weapon-ammo",
+      "rank": 39,
+      "title": "Queue native firearm and magazine unloading in one request",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "A finite native firearm/magazine unloading sequence belongs with existing magazine workflows. Do not introduce instant extraction or modify ammunition counts directly.",
+      "evidence_projects": [
+        "essentials"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "crop-queue",
+      "rank": 40,
+      "title": "Queue work over player-selected eligible plots",
+      "previous_proposed_owner": "Harvest",
+      "recommended_owner": "Harvest",
+      "portfolio_coverage": "FOUNDATION_ONLY",
+      "recommendation": "Harvest owns crops, bounded field inspection and crop-side irrigation. A selected-plot planting/watering/harvest itinerary is not implemented. Waterworks owns real water withdrawal/quality; atomic cross-owner delivery remains incomplete.",
+      "evidence_projects": [
+        "harvest",
+        "water"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "heavy-movement",
+      "rank": 41,
+      "title": "Heavy-object provider lifecycle foundation",
+      "previous_proposed_owner": "Heavy-object provider owner TBD + Essentials",
+      "recommended_owner": "Essentials + domain providers",
+      "portfolio_coverage": "RELATED_SOURCE",
+      "recommendation": "Keep generic capability/lifecycle foundation in Essentials. Quartermaster already owns carry logistics; Earthworks/CAT own terrain/machine/wheelbarrow state. No generic physics provider is established and the experimental Earthworks wheelbarrow is SP-only.",
+      "evidence_projects": [
+        "essentials",
+        "qm",
+        "earth",
+        "cat"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "animal-queue",
+      "rank": 42,
+      "title": "Queue native care over a player-selected herd list",
+      "previous_proposed_owner": "Animal owner",
+      "recommended_owner": "Animal owner TBD",
+      "portfolio_coverage": "OWNER_UNASSIGNED",
+      "recommendation": "No general herd-care owner was identified. Dog Training owns canine-specific tasks and remains blocked on native ownership/persistence. Do not create client-authoritative animal jobs or treat crop irrigation as animal care.",
+      "evidence_projects": [
+        "dog",
+        "harvest"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "ladder",
+      "rank": 43,
+      "title": "Expose valid native ladder interactions",
+      "previous_proposed_owner": "Essentials",
+      "recommended_owner": "Essentials",
+      "portfolio_coverage": "EXISTING_ESSENTIALS",
+      "recommendation": "Keep the tagged-tile native-transition adapter. Earthworks owns its excavation/climb affordances and Fences & Gates owns construction content; do not replace either domain state with a generic traversal engine.",
+      "evidence_projects": [
+        "essentials",
+        "earth",
+        "fences"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    },
+    {
+      "id": "session-briefing",
+      "rank": 44,
+      "title": "Optional nonblocking recap at session start",
+      "previous_proposed_owner": "SPXTRM",
+      "recommended_owner": "UI",
+      "portfolio_coverage": "NOT_FOUND_IN_REVIEWED_SCOPE",
+      "recommendation": "A nonblocking recap fits UI presentation. Domain providers retain data permissions, age/completeness and provenance; Knowledge & Wisdom history is not a live omniscient session report.",
+      "evidence_projects": [
+        "ui",
+        "knowledge"
+      ],
+      "runtime_evidence": "NOT_ESTABLISHED_BY_THIS_AUDIT"
+    }
+  ],
+  "limits": [
+    "28 primary local project folders; alternate Medical Checks/worktree checkouts excluded as separate products. CATConstruction is external provenance.",
+    "Other project remote freshness not checked; local branches and preserved dirty work are not merged/released/installed evidence.",
+    "Source scope and targeted read audit, not a full correctness/security/performance audit or proof of feature absence.",
+    "Third-party code/assets/text imported NONE. Existing clean-room independent signoff PENDING.",
+    "No SP/dedicated runtime tests, package, deploy, publish, migrations or gameplay changes."
+  ]
+}

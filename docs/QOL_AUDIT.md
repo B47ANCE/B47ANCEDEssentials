@@ -1,5 +1,18 @@
 # Quality-of-Life Audit
 
+The current [Essentials-only top 25](research/workshop-qol-2026-10-18/TOP_25_PLAN.md) retains all 20 existing entries plus five new Essentials workflows. The broader portfolio ranking remains comparison research; other-domain additions are excluded from current Essentials work.
+
+The [portfolio ownership audit](research/workshop-qol-2026-10-18/PORTFOLIO_OWNERSHIP.md) checks all 44 retained entries against 28 local projects, identifies existing coverage and corrects proposed owners. Auto Clean already covers selected-area cleaning; SPXTRM is the lighting owner, UI is presentation, and Health Care owns treatment.
+
+The [2026-10-18 downloaded-Workshop census](research/workshop-qol-2026-10-18/README.md)
+adds per-package provenance, a deduplicated estimated impact ranking and detailed
+top-25 clean-room plans. The implementation table below describes the existing
+source; the broader portfolio ranking also includes planned capabilities and work owned
+by other projects. Neither document establishes current runtime verification.
+The [complete vanilla recheck](research/workshop-qol-2026-10-18/VANILLA_RECHECK.md)
+removes native-covered proposals, excludes unresolved additions from ranking,
+and preserves existing Essentials features and accurately labeled foundations.
+
 The implementation was cross-checked against installed Build 42 Workshop examples and the installed 42.20.3 vanilla Lua/tile definitions. Third-party code and assets are not included.
 
 ## Completed ownership
@@ -21,9 +34,9 @@ The implementation was cross-checked against installed Build 42 Workshop example
 
 ## Ownership boundaries
 
-- powerWorks owns batteries, energy stores, consumption rates, watches as devices, and grid power.
-- lightWorks owns light compatibility, emitters, bulbs, colors, cones, attachment rules, and light semantics.
-- uiWorks owns broad reusable presentation and accessibility systems.
+- B47ANCE’d Power owns batteries, energy stores, consumption rates, watches as devices, and grid power.
+- B47ANCED SPXTRM (retained lightWorks API) owns light compatibility, emitters, bulbs, colors, cones, attachment rules, and light semantics.
+- B47ANCE’d UI owns broad reusable presentation and accessibility systems.
 - B47ANCEDEssentials owns small workflow and vanilla-interface conveniences.
 
 ## Deliberate exclusions
