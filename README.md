@@ -5,7 +5,7 @@ The implementation and approved clean-room research backlog are documented in
 
 B47ANCE'd Essentials is a configurable vanilla-plus quality-of-life collection for Project Zomboid. It reduces repetitive inventory and interface work while preserving timed actions, character knowledge, capacity rules, and server authority.
 
-- Version: `0.19.0` (canonical: `VERSION`)
+- Version: `0.19.1` (canonical: `VERSION`)
 - Mod ID: `B47ANCEDEssentials`
 - Namespace: `B47ANCEDEssentials`
 - Author: B47ANCE
@@ -71,10 +71,14 @@ do not enable both identities. See [rename compatibility](docs/RENAME_COMPATIBIL
 Workshop item `3788591728` is unchanged. Historical packages and evidence are preserved.
 
 Public source: [B47ANCE/B47ANCEDEssentials](https://github.com/B47ANCE/B47ANCEDEssentials).
-The initial `0.19.0` source snapshot is submitted through
-`feature/essentials-0.19.0` for review; `main` begins with an empty bootstrap commit.
+The initial `0.19.0` source snapshot was merged through PR #1. Current development
+iterations use named feature branches and PRs.
 GitHub source history is separate from Workshop distribution and runtime evidence.
 See [repository onboarding](docs/GITHUB_ONBOARDING.md) and the reviewed
 [feature overview](docs/MOD_OVERVIEW.json).
+
+Version `0.19.1` uses user-supplied backpack, keys and watch artwork for the
+Workshop thumbnail. The mod poster and icon remain unchanged; see
+[artwork roles and provenance](docs/ARTWORK.md).
 
 No multiplayer compatibility claim is made until the current build is exercised on a dedicated server.

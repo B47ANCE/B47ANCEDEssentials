@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.19.1 — 2026-10-17
+
+- Replaced the Workshop thumbnail with the user-supplied Essentials backpack,
+  keys and watch artwork. Preserved its exact PNG as the authoring master and
+  exported the current 512 x 512 preview. No image generation or content edits.
+- Preserved the existing mod poster, icon, prior artwork and historical packages.
+- Synchronized current version metadata and the reviewed feature overview.
+  Corrected the version checker to compare only the current changelog entry,
+  preserving prior version headers as historical records.
+  Gameplay, configuration, networking and persistence are unchanged; the sole
+  Lua edit is the diagnostic version string.
+
+Validation: offline version/identity and PNG integrity/visual checks; see
+`docs/THUMBNAIL_0.19.1.md`. SP/dedicated NOT TESTED; G7 and stable G8 BLOCKED.
+No deployment or Workshop upload.
+
 ## 0.19.0 — 2026-10-16
 
 - Renamed the project to **B47ANCE'd Essentials** and the Mod ID, public Lua

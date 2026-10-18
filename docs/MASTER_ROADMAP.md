@@ -1,6 +1,6 @@
 # B47ANCE'd Essentials Master Roadmap
 
-Current version: `0.19.0`, governed by root `VERSION`.
+Current version: `0.19.1`, governed by root `VERSION`.
 
 ## Implemented
 
